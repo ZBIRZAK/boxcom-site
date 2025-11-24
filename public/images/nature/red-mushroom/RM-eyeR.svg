@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="4mm"
+   height="6mm"
+   viewBox="0 0 4 6"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (2aeb623e1d, 2025-05-12)"
+   sodipodi:docname="red-mushroom-eyeR.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="4.4970258"
+     inkscape:cx="23.126396"
+     inkscape:cy="66.599573"
+     inkscape:window-width="1600"
+     inkscape:window-height="836"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       class="cls-12"
+       d="M 2.3659358,0.51032469 C 0.80754585,0.55792469 0.56941585,2.7143047 0.22810585,3.8731847 l 3.30199995,0.44714 a 16.221604,16.221604 0 0 1 0.0609,-2.58497 c 0.0847,-0.79375006 -0.67998,-1.51078001 -1.40758,-1.58750001 -0.7276,-0.0767 -1.66422995,0.35454 -1.78593995,1.16416001 a 18.867437,18.867437 0 0 0 -0.23018,3.01625 1.6853958,1.6853958 0 0 0 3.30463995,0.44715 7.1622707,7.1622707 0 0 0 0.39423,-2.28865 c -0.0159,-0.8546 -0.49477,-2.00554001 -1.51077,-1.97644001 z"
+       id="path26"
+       style="fill:#231f20;stroke-width:0.264583" />
+  </g>
+</svg>

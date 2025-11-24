@@ -1,0 +1,63 @@
+.app {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+  min-height: 100vh;
+  color: white;
+
+  h1 {
+    margin-bottom: 30px;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+  }
+
+  input[type="range"] {
+    width: 150px;
+  }
+
+  .sparklers-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .sparkler-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .sparkler-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .sparkler-container {
+    display: inline-block;
+    margin: 10px;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+  }
+}

@@ -1,0 +1,101 @@
+.screen6 {
+  width: 100%;
+  height: auto;
+  background: #111 url('/images/bg-screen6-9-3.webp') center / cover no-repeat;
+  padding: 5rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  line-height: 1.5em;
+  
+  span {
+    position: relative;
+    display: inline-block;
+  }
+}
+
+.gifUnderline {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 200px;
+  margin-top: -40px;
+  display: block;
+}
+  
+  .grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 4em;
+    width: 100%;
+  }
+  
+  .box {
+    border: 1px solid #dedede;
+    border-radius: 30px;
+    padding: 1em 1.5em;
+    display: flex;
+    padding-bottom: 0.5em;
+    width: 350px;
+    // margin-bottom: 2em;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 300ms ease-in-out;
+    &:hover {
+      background-color: rgba(255, 255, 255, .1)
+    }
+  }
+  
+  .boxTitle {
+    font-size: 2em;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .gifUnderline {
+  display: block;
+  max-width: 200px;
+  position: absolute;
+  top: 9%;
+  right: 28%;
+}
+  
+  .boxSubtitle {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .boxDescription {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+  
+  .learnMore {
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+  }
+  
+  .learnMore:hover {
+    color: #ff007a;
+  }
+.buttonContainer{
+    font-size: .9em;
+    font-weight: bold;
+    display: flex;
+    justify-content: start;
+}
+.scrollButtonContainer {
+    position: absolute;
+    bottom: 5%;
+    right: 5%
+}

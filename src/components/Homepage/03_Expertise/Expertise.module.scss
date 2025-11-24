@@ -1,0 +1,174 @@
+.expertiseSection {
+  background-image: url('/images/bg-screen6-9-3.webp');
+  background-color: #111;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  text-align: center;
+  color: white;
+  height: 100vh;
+  position: relative;
+  z-index: 30;
+}
+
+
+.title {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  // text-transform: uppercase;
+  // font-family: Impact, Anton ;
+
+  margin-top: 4.2%;
+  margin-bottom: 2.5rem;
+
+  span {
+    color: #ff0078;
+    position: relative;
+    display: inline-block;
+  }
+}
+
+.gifUnderline {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 200px;
+  margin-top: -90px;
+  display: block;
+}
+
+
+.timeline {
+  position: relative;
+  top: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .line {
+    position: absolute;
+    top: 130px;
+    left: 9%;
+    width: 82%;
+    right:0;
+    height: 2.5px;
+    background-color: white;
+    z-index: 0;
+  }
+
+  .item {
+    width: 18%;
+    min-width: 150px;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+
+    .year {
+      font-weight: bold;
+      color: #ff0078;
+      margin-top: 3.5rem ;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .circle {
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      background-color: white;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .description {
+      margin-top: 1rem;
+      color: #ccc;
+      line-height: 1.3;
+      font-size: 0.95rem;
+    }
+
+    .star {
+      width: 64px;
+      height: 61px;
+      background: #ff2262;
+      clip-path: polygon(
+        51% 0%,
+        62% 29%,
+        96% 35%,
+        70% 58%,
+        78% 91%,
+        51% 75%,
+        24% 91%,
+        30% 58%,
+        4% 35%,
+        38% 29%
+      );
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .eye {
+  width: 55px;
+  height: 55px;
+  background-image: url('/images/oeil.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mosaic {
+  width: 55px;
+  height: 55px;
+  background-image: url('/images/cercle-mozaic.svg'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.globe {
+  width: 55px;
+  height: 55px;
+  background-image: url('/images/globe.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.saga {
+  width: 55px;
+  height: 55px;
+  background-image: url('/images/saga-africa.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  }
+}
+
+.scrollButtonContainer {
+  position: absolute;
+  bottom: 5%;
+  right: 5%
+}

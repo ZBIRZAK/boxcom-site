@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Calque_2"
+   data-name="Calque 2"
+   viewBox="0 0 28.000001 30.000001"
+   version="1.1"
+   sodipodi:docname="smiley-eye.svg"
+   width="28"
+   height="30"
+   inkscape:version="1.4.2 (2aeb623e1d, 2025-05-12)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="8.1356372"
+     inkscape:cx="35.830015"
+     inkscape:cy="38.779999"
+     inkscape:window-width="1600"
+     inkscape:window-height="836"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g12" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .cls-1 {
+        fill: #ffce62;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 2.51px;
+      }
+
+      .cls-1, .cls-3, .cls-4 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-1, .cls-4 {
+        stroke: #733d00;
+      }
+
+      .cls-5 {
+        fill: #81273e;
+      }
+
+      .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
+        stroke-width: 0px;
+      }
+
+      .cls-11 {
+        opacity: .5;
+      }
+
+      .cls-6, .cls-4 {
+        fill: none;
+      }
+
+      .cls-12 {
+        opacity: .34;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #2f2629;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-7 {
+        fill: #231f20;
+      }
+
+      .cls-13 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-3 {
+        fill: #fc3352;
+        stroke: #6d002a;
+      }
+
+      .cls-8 {
+        fill: #eafdf1;
+      }
+
+      .cls-9 {
+        fill: #82263e;
+      }
+
+      .cls-10 {
+        fill: #f7f1eb;
+      }
+    </style>
+    <clipPath
+       id="clippath">
+      <ellipse
+         class="cls-6"
+         cx="35.869999"
+         cy="38.779999"
+         rx="34.619999"
+         ry="37.529999"
+         id="ellipse1" />
+    </clipPath>
+  </defs>
+  <g
+     id="Layer_1"
+     data-name="Layer 1">
+    <g
+       id="g12">
+      <path
+         class="cls-2"
+         d="m 9.550126,26.973899 c 0,0 -10.14999989,-4.79 -7.1599999,-14.6 2.99,-9.8000005 12.2999999,-10.4700005 12.2999999,-10.4700005 0,0 15.96,1.04 10.31,15.8100005 -5.65,14.77 -15.45,9.25 -15.45,9.25 z"
+         id="path2"
+         style="fill:#ffffff;stroke:#2f2629;stroke-width:2.51px;stroke-miterlimit:10" />
+      <path
+         class="cls-7"
+         d="m 14.550126,16.323899 0.48,-0.94 c 0.16,-0.32 0.19,-0.37 0.47,-0.56 l -1.02,-0.58 c 0.03,0.33 0.04,0.54 -0.14,0.83 l 2.04,0.27 c -0.09,-0.24 0,-0.17 -0.24,0.02 l -2.21,-1.7 c -0.1,0.3 -0.17,0.81 -0.24,0.97 l 0.66,-0.66 -0.3,0.16 2.91,0.76 c 0.4,0.7 -0.13,-0.16 -0.17,-0.34 l 0.13,0.29 c 0.03,0.36 0.04,0.45 0.04,0.27 0,-0.12 0,-0.09 -0.02,0.1 0,0.17 -0.05,0.32 -0.15,0.47 -0.07,0.12 -0.68,0.55 -0.35,0.38 l -3.37,-2.59 c -0.1,0.44 -0.19,0.88 -0.29,1.32 l 4.6,0.62 c -0.01,-0.14 -0.01,-0.29 -0.02,-0.43 v -0.21 c -0.04,0.24 -0.04,0.27 -0.01,0.1 0.03,-0.13 0.09,-0.28 0.1,-0.42 0.04,-0.31 -0.21,0.4 0.04,-0.12 l -4.42,-1.86 c -0.26,1.39 -0.76,3.25 -0.04,4.54 0.72,1.29 2.51,1.43 3.54,0.46 1.03,-0.97 1.08,-2.99 1.25,-4.35 0.14,-1.19 -1.03,-2.23 -2.1,-2.38 -1.29,-0.17 -2.18,0.6 -2.65,1.73 -0.47,1.13 -0.47,2.35 -0.29,3.56 0.14,0.96 1.33,1.76 2.26,1.72 0.93,-0.04 2.1,-0.69 2.26,-1.72 0.07,-0.45 0.14,-0.9 0.2,-1.35 0.14,-0.94 -0.02,-1.8 -0.82,-2.41 -0.71,-0.55 -1.76,-0.66 -2.55,-0.18 -2.24,1.36 -2.28,5.08 0.44,5.92 1.45,0.45 3.2,-1.09 2.62,-2.62 -0.09,-0.25 -0.05,-0.64 -0.09,-0.92 -0.06,-0.43 -0.16,-0.81 -0.41,-1.18 -0.57,-0.86 -2.09,-1.09 -2.6,0 -0.51,1.09 -0.46,2.28 0.43,3.13 0.69,0.66 1.9,0.19 1.9,-0.79 0,-0.69 -0.24,-1.43 -0.78,-1.87 -0.54,-0.44 -1.26,-0.03 -1.13,0.66 0.06,0.34 0.04,0.35 -0.08,0.71 l -0.35,0.99 c -0.1,0.27 0.34,0.46 0.47,0.2 z"
+         id="path3"
+         style="fill:#231f20;stroke-width:0px" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+.marqueeWrapper {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(to right, #000, #333333, #6c6c6c);
+    white-space: nowrap;
+    position: absolute;
+    height: 9%;
+    // padding: 3% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0px;
+    z-index: 21;
+  }
+  
+  .marqueeInner {
+    display: inline-flex;
+    animation: scroll 15s linear infinite;
+  }
+  
+  .marqueeItem {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 2rem;
+    color: white;
+    white-space: nowrap;
+  }
+  // .buttonContainer{
+  //   width: 20%;
+  //   font-size: 1.4em;
+  //   font-weight: 600;
+  // }
+  // .buttonContainer img{
+  //   width: 10%;
+  // }
+  // .buttonContainer button{
+  //   padding: .3em 0;
+  // }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  

@@ -1,0 +1,397 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@utility border-red {
+  @apply border border-red-500;
+}
+@utility border-blue {
+  @apply border border-blue-500;
+}
+@utility badge-tag {
+  @apply block border border-gray-500 rounded-full px-3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+}
+
+.dark {
+  --text: #fff;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+}
+
+.scrollContainer {
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+section {
+  scroll-snap-align: start;
+  height: 100vh;
+  position: relative;
+}
+
+.heading-primary {
+  /* font-family: Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif; */
+  /* font-family: "Fjalla One", sans-serif; */
+  font-family: Impact, "Anton", sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ff0062;
+  /* font-weight: 900; */
+}
+.heading-primary--black {
+  color: black; /* Blanc pour un contraste élevé */
+}
+.heading-primary--stroke {
+  font-size: 3.5rem;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+
+.heading-secondary {
+  font-family: Impact, "Anton", sans-serif;
+  /* font-family: "Staatliches", sans-serif; */
+  font-size: 2.5rem;
+  /* Entre bold (700) et black (900) */
+  color: black; /* Noir pur pour un contraste maximal */
+  line-height: 1;
+  text-transform: uppercase; /* Tout en majuscules */
+}
+.heading-secondary--rose {
+  color: #ff0062; /* Couleur rose vif pour le titre secondaire */
+}
+
+.heading-secondary--white {
+  color: #ffffff; /* Blanc pour un contraste élevé */
+}
+
+.heading-tertiary {
+  font-family: Impact, "Anton", sans-serif;
+  /* font-family: "Helvetica Neue", Arial, sans-serif; */
+  font-size: 3rem;
+  /* font-weight: 800; */
+  line-height: 1;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: #ffffff; /* Blanc pour un contraste élevé */
+}
+.heading-tertiary--black {
+  color: black; /* Noir pour un contraste élevé */
+}
+.heading-tertiary--rose {
+  color: #ff0062; /* Couleur rose vif pour le titre secondaire */
+}
+
+/* .subtitle {
+
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #333;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.4rem;
+} */
+.section-dark .subtitle,
+.section-dark .text,
+.section-dark .end-title {
+  color: #ffffff;
+}
+.section-light {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* ----- Paragraphes ----- */
+/* .text {
+  font-size: 1rem; 
+  line-height: 1.6;
+  color: #333;
+} */
+
+.text--white {
+  color: #ffffff;
+}
+
+.text--large {
+  font-size: 1.25rem; /* 20px */
+}
+
+.text--bold {
+  font-weight: 700;
+}
+
+.minimal-text {
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  line-height: normal;
+}
+.minimal-text--size {
+  font-size: 1.2rem; /* 20px */
+}
+
+@keyframes glowAnim {
+  0% {
+    filter: none;
+  }
+  100% {
+    filter: drop-shadow(0 0 6px white) drop-shadow(0 0 3px white);
+  }
+}
+
+/* Classes */
+
+/* Split Sections */
+
+.title {
+  font-family: Impact, "Anton", sans-serif;
+  font-size: 3rem;
+  line-height: 1.03;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.496);
+  color: #fff;
+  margin-bottom: 4%;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 4rem;
+    text-shadow: none;
+    color: #ff0062;
+  }
+}
+.section-dark .mid-title,
+.section-dark .subtitle,
+.section-dark .text,
+.section-dark .end-title,
+.section-dark ul,
+.section-dark .mid-title {
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  font-style: normal;
+  line-height: 1.2rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+}
+
+.text {
+  letter-spacing: 0.05em;
+  margin-bottom: 1em;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+}
+@media (min-width: 768px) {
+  .text {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+}
+
+.text p {
+  margin-bottom: 1em;
+}
+
+.mid-title {
+  font-size: 1.5em;
+  line-height: 1.4rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.7em;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .mid-title {
+    line-height: 1.2rem;
+  }
+}
+.mid-title span {
+  color: #ff0062;
+}
+
+@media (min-width: 768px) {
+  .mid-title {
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+  }
+}
+
+.end-title {
+  font-family: Impact, "Anton", sans-serif;
+  font-size: 1.5em;
+  color: black;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .end-title {
+    font-size: 2.3rem;
+    line-height: 1.2;
+  }
+}
+.end-title span {
+  color: #ff0062;
+  display: block;
+}
+.text-pink {
+  color: #ff0062;
+}
+.text-white {
+  color: white;
+}
+
+/* Hero Screens*/
+
+.hero-title {
+  padding-bottom: 1.5rem;
+  line-height: 1.5;
+  font-family: Impact, "Anton", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px black;
+}
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.8rem;
+    line-height: 1.5;
+    text-shadow: none;
+  }
+}
+
+.hero-title span {
+  position: relative;
+  display: inline-block;
+  padding: 0em 0.5em;
+}
+
+.hero-title span::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ff0062;
+  border-radius: 50px;
+  z-index: -1;
+  transform: rotate(-3deg);
+}
+.hero-text {
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1em;
+  text-shadow: 1px 1px 4px black;
+}
+@media (min-width: 768px) {
+  .hero-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-shadow: none;
+  }
+}
+
+.hero-title2 {
+  padding-bottom: 1.5rem;
+  line-height: 1.5;
+  font-family: Impact, "Anton", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px black;
+}
+@media (min-width: 768px) {
+  .hero-title2 {
+    font-size: 3rem;
+    line-height: 1.5;
+    text-shadow: none;
+  }
+}
+.hero-title2 span {
+  color: #ff0062;
+}
+.subtitle2 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  font-style: normal;
+  line-height: 1.2rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 768px) {
+  .subtitle2 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+}
+.title2 {
+  font-family: Impact, "Anton", sans-serif;
+  font-size: 1.9em;
+  color: black;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .title2 {
+    font-size: 2.3rem;
+    line-height: 1.2;
+  }
+}
+.text-shadow {
+  text-shadow: 1px 1px 4px white;
+}
+.highlight-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ff0062;
+  border-radius: 20px;
+  z-index: -10;
+  transform: rotate(-3deg);
+}

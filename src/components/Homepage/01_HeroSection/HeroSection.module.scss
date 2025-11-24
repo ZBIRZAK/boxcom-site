@@ -1,0 +1,233 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: url('/images/bg_ecran1.jpg');
+  z-index: 1;
+}
+
+// Halo lumineux (ring light)
+.ringLightContainer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 90%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+// La fille avec les lunettes au centre (on peut pas la rater)
+.girlWithGlassesContainer {
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  width: 60%;
+  transform: translateX(-50%) translateY(0%);
+  opacity: 0;
+}
+.girlWithGlassesContainer img{
+  filter: drop-shadow(0px 0px 14px rgb(76, 76, 76));
+}
+// Le texte "because your brand deserves to be..."
+.textContainer{
+  position: absolute;
+  z-index: 3;
+  top: 0%;
+  left: 20%;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  width: 60%;
+  text-align: center;
+}
+.title {
+  font-size: 2rem;
+  z-index: 10;
+  opacity: 0;
+}
+.slogan {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 15%;
+  font-family: 'Anton', sans-serif;
+  font-size: 9rem;
+  text-transform: uppercase;
+  right: 7%;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+// Les vagues
+.waterSplashLeftContainer {
+  position: absolute;
+  width: 35%;
+  top: 38%;
+  left: 10%;
+  transform: scale(-1, 1) rotate(10deg);
+  z-index: 1;
+}
+.waterSplashRightContainer{
+  position: absolute;
+  width: 35%;
+  top: 38%;
+  right: 10%;
+  transform: scale(1) rotate(10deg);
+  z-index: 1;
+}
+
+// Surfeuse
+.surfeuseContainer {
+  position: absolute;
+  width: 10%;
+  top: 45%;
+  right: 25%;
+  transform: scale(1) rotate(0deg);
+  z-index: 30;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// Hello
+.helloContainer {
+  position: absolute;
+  width: 10%;
+  top: 10%;
+  right: 15%;
+  z-index: 5;
+}
+
+// Enveloppe
+// .enveloppeContainer {
+//   position: absolute;
+//   z-index: 5;
+//   top: 40%;
+//   right: 8%;
+//   width: 20%;
+// }
+
+// Papillon
+.butterflyContainer {
+  position: absolute;
+  width: 5%;
+  top: 45%;
+  left: 35%;
+  z-index: 25;
+}
+
+// Fleur bleue
+.blueFlowerContainer{
+  position: absolute;
+  width: 15%;
+  bottom: -3%;
+  left: 2%;
+  z-index: 15;
+}
+
+
+// Champignion rouge 🍄
+.redMushroomContainer {
+  opacity: 0;
+  position: absolute;
+  width: 7%;
+  top: 82%;
+  left: 13%;
+  z-index: 15;
+}
+// Fleur orange 🌼
+.orangeFlowerContainer{
+  opacity: 0;
+  position: absolute;
+  width: 7%;
+  bottom: -3%;
+  right: 5%;
+  z-index: 15;
+}
+// Pink mushroom 
+.pinkMushroomContainer {
+  opacity: 0;
+  position: absolute;
+  width: 7%;
+  bottom: 5%;
+  right: 13%;
+  z-index: 15;
+}
+// le coeur rose 🩷
+.pinkHeartContainer {
+  opacity: 0;
+  position: absolute;
+  width: 10%;
+  bottom: 10%;
+  transform: rotateY(180deg);
+  left: 11%;
+  z-index: 15;
+}
+.creatureContainer{
+  opacity: 0;
+  position: absolute;
+  width: 150%;
+  bottom: 10%;
+  right: -25%;
+  z-index: 20;
+  // border: 1px solid red;
+}
+.yellowButterflyContainer{
+  opacity: 0;
+  position: absolute;
+  width: 3%;
+  top: 30%;
+  right: 34%;
+  z-index: 19;
+  rotate: 20deg;
+}
+.purpleStarContainer{
+  opacity: 0;
+  position: absolute;
+  width: 5%;
+  bottom: 52%;
+  right: 30%;
+  z-index: 30;
+}
+.musicalNote1Container{ //CleDeSol
+  opacity: 1;
+  position: absolute;
+  width: 2.2%;
+  top: 20%;
+  left: 5%;
+  transform: rotate(9deg);
+  z-index: 20;
+}
+
+.musicalNote2Container {
+  position: absolute;
+  width: 50px;
+  bottom: -68%;
+  right: -84%;
+}
+
+.musicalNote3Container{ //CorcheVerte
+  opacity: 0;
+  position: absolute;
+  width: 2.5%;
+  bottom: 35%;
+  left: 15%;
+  transform: rotate(180deg);
+  z-index: 20;
+}
+.scrollButtonContainer {
+  position: absolute;
+  bottom: 8%;
+  right: -2%;
+  width: 16%;
+  height: 10%;
+  display: flex;
+  padding: 0 5rem;
+  z-index: 20;
+}
+
+.scrollButtonContainer button:hover {
+  box-shadow: #6c6c6c 0px 0px 10px 2px;
+}

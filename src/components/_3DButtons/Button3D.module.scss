@@ -1,0 +1,74 @@
+.button3D {
+  position: relative;
+  display: inline-block;
+  padding: 1em 2em;
+  margin: 0.5em;
+  border-radius: 50px;
+  border: none;
+  background: var(--btn-bg, gray);
+  color: var(--btn-color, white);
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: var(--btn-shadow, 0 5px 15px rgba(0, 0, 0, 0.5));
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 20%);
+    border-radius: inherit;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    background: conic-gradient(from 0deg, #ffffff33, #ffffff11, transparent 60%, #ffffff22);
+    border-radius: inherit;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 1.5s linear;
+  }
+
+  &:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: var(--btn-hover-shadow, 0 8px 30px rgba(0, 0, 0, 0.4));
+  }
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &:hover::after {
+    transform: rotate(360deg);
+  }
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: var(--btn-active-shadow, 0 4px 10px rgba(0, 0, 0, 0.2));
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,74 @@
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 4.5rem 1rem;
+  z-index: 30;
+  position: relative;
+
+  .container {
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .boxcomInfo {
+    flex: 1 1 250px;
+
+    p { font-size: 0.9rem; color: #ccc; }
+
+    .socialIcons {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+
+      img { width: 40px; transition: 0.3s; }
+      img:hover { transform: scale(1.2); }
+    }
+  }
+
+.links {
+  flex: 1 1 250px;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+
+  h4 { 
+    color: #ff0078; 
+    margin-bottom: 1rem; 
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+
+  li { 
+    cursor: pointer; 
+    margin-bottom: .5rem; 
+  }
+  li:hover { text-decoration: underline; }
+}
+
+  .bottomBar {
+    border-top: 1px solid #333;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .contactButton {
+    border: 2px solid #fff;
+    border-radius: 9999px;
+    background: transparent;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .contactButton:hover { background: #fff; color: #111; }
+}

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Calque_2"
+   data-name="Calque 2"
+   viewBox="0 0 18.490002 16.600002"
+   version="1.1"
+   sodipodi:docname="calculator-button3.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   width="18.49"
+   height="16.6"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview29"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="9.7210133"
+     inkscape:cx="65.425278"
+     inkscape:cy="28.546407"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g29" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-6 {
+        fill: #d737b8;
+      }
+
+      .cls-6, .cls-7, .cls-2, .cls-8 {
+        stroke-width: 2.51px;
+      }
+
+      .cls-6, .cls-7, .cls-8 {
+        stroke: #231f20;
+      }
+
+      .cls-6, .cls-2, .cls-8 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-7 {
+        fill: #5270d5;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke: #641233;
+      }
+
+      .cls-8 {
+        fill: #ff8799;
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-3 {
+        fill: #eafdf1;
+      }
+
+      .cls-10 {
+        opacity: .42;
+      }
+
+      .cls-4 {
+        fill: #82263e;
+      }
+
+      .cls-5 {
+        fill: #1d3e83;
+      }
+    </style>
+    <clipPath
+       id="clippath">
+      <path
+         class="cls-1"
+         d="M 26.83,94.52 C 20.77,79.93 9.8,54.8 3.46,40.36 0.7,34.08 3.36,26.73 9.5,23.67 25.56,15.66 54.85,2.1 65.79,3.86 77.47,5.74 89.32,50.12 94.38,71.51 95.9,77.93 92.33,84.45 86.1,86.63 l -43.13,15.1 c -6.44,2.26 -13.53,-0.9 -16.15,-7.21 z"
+         id="path1" />
+    </clipPath>
+  </defs>
+  <g
+     id="Layer_1"
+     data-name="Layer 1">
+    <g
+       id="g29">
+      <path
+         class="cls-7"
+         d="M 2.3681743,5.6205754 0.84658331,4.8667204 C 2.3167933,8.6918714 9.5299117,1.3322204 14.627296,1.0884794 l 0.332859,-0.55143599 c 1.24,4.47999999 2.770699,10.68126759 2.592432,11.28011659 L 5.0260923,15.007483 C 3.3024183,13.258971 2.8670233,9.3516104 1.4870233,5.8116104 Z"
+         id="path5"
+         style="stroke:none"
+         sodipodi:nodetypes="cccccccc" />
+      <g
+         class="cls-10"
+         id="g21"
+         transform="translate(-42.754373,-74.707342)">
+        <g
+           class="cls-9"
+           clip-path="url(#clippath)"
+           id="g20">
+          <path
+             class="cls-3"
+             d="m 43.23,82.23 c 10.73,-2.27 21.12,-5.34 31.15,-9.79 0.15,-0.06 0.04,-0.31 -0.11,-0.26 -10.28,3.5 -20.62,6.96 -31.08,9.91 -0.09,0.02 -0.05,0.15 0.04,0.14 z"
+             id="path18" />
+          <path
+             class="cls-3"
+             d="m 67.73,2.59 c 3.68,2.02 6.77,6.92 9.05,10.28 2.1,3.1 3.76,6.5 5.36,9.88 3.88,8.21 6.9,16.8 10.79,25 0.61,1.28 2.47,0.34 2.19,-0.92 C 92.98,37.11 89.39,27.4 85.14,18.4 83.48,14.88 81.43,11.43 78.91,8.45 75.8,4.78 72.34,3.81 68.11,1.95 67.68,1.76 67.3,2.36 67.73,2.6 v 0 z"
+             id="path20" />
+        </g>
+      </g>
+      <g
+         id="g25"
+         transform="translate(-42.754373,-74.707342)">
+        <path
+           class="cls-2"
+           d="M 27.72,64.85 C 28.98,64.7 83.26,45.71 83.26,45.71"
+           id="path21"
+           style="display:none" />
+        <line
+           class="cls-2"
+           x1="31.799999"
+           y1="75.260002"
+           x2="85.910004"
+           y2="55.279999"
+           id="line21"
+           style="display:none" />
+        <line
+           class="cls-2"
+           x1="34.720001"
+           y1="82.739998"
+           x2="88.669998"
+           y2="65.269997"
+           id="line22"
+           style="display:none" />
+        <line
+           class="cls-2"
+           x1="47.43"
+           y1="89.949997"
+           x2="34.720001"
+           y2="50.470001"
+           id="line23"
+           style="display:none" />
+        <path
+           class="cls-2"
+           d="M 59.895459,85.463507 C 60.153389,84.22753 56.940026,76.11225 56.940026,76.11225"
+           id="path23"
+           sodipodi:nodetypes="cc" />
+        <path
+           class="cls-2"
+           d="m 56.878092,76.341184 c 0.25793,-1.235977 -12.303557,3.481474 -12.303557,3.481474"
+           id="path23-2-5"
+           sodipodi:nodetypes="cc"
+           style="fill:none;stroke:#641233;stroke-width:2.51px;stroke-linecap:round;stroke-linejoin:round" />
+        <path
+           class="cls-2"
+           d="m 59.919488,85.708109 c -1.651902,0.506326 -11.934993,3.649003 -11.934993,3.649003"
+           id="path23-2-5-1"
+           sodipodi:nodetypes="cc"
+           style="fill:none;stroke:#641233;stroke-width:2.51px;stroke-linecap:round;stroke-linejoin:round" />
+        <path
+           class="cls-2"
+           d="M 47.764508,89.380123 C 47.184793,88.211158 44.373499,79.92835 44.373499,79.92835"
+           id="path23-4"
+           sodipodi:nodetypes="cc"
+           style="fill:none;stroke:#641233;stroke-width:2.51px;stroke-linecap:round;stroke-linejoin:round" />
+        <line
+           class="cls-2"
+           x1="72.089996"
+           y1="81.720001"
+           x2="57.779999"
+           y2="42.029999"
+           id="line24"
+           style="display:none" />
+        <line
+           class="cls-2"
+           x1="83.269997"
+           y1="77.5"
+           x2="67.389999"
+           y2="36.970001"
+           id="line25"
+           style="display:none" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+{
+"screen3_animations": [
+  { "id": "background", "lottieLayerName": "background_lumineux", "description": "Aura lumineuse en fond, animée en début de séquence." },
+  { "id": "personnage", "lottieLayerName": "personnage_central", "description": "Personnage principal féminin au centre de la scène." },
+  { "id": "feuilles", "lottieLayerName": "doodle_feuilles", "description": "Chute ou flottement de feuilles stylisées." },
+  { "id": "hashtag", "lottieLayerName": "doodle_hashtag", "description": "Hashtag #1 animé." },
+  { "id": "seo", "lottieLayerName": "doodle_plaque_seo", "description": "Plaque 'SEO' animée." },
+  { "id": "loupe", "lottieLayerName": "doodle_loupe", "description": "Loupe d'analyse animée." },
+  { "id": "subscribe", "lottieLayerName": "doodle_subscribe", "description": "Bouton 'Subscribe' animé." },
+  { "id": "enveloppe", "lottieLayerName": "doodle_enveloppe", "description": "Enveloppe ailée animée." },
+  { "id": "amplifier", "lottieLayerName": "doodle_traits_amplifier", "description": "Traits graphiques jaillissant du mot 'Amplifier'." },
+  { "id": "micro", "lottieLayerName": "doodle_micro", "description": "Microphone animé." },
+  { "id": "camera", "lottieLayerName": "doodle_camera", "description": "Caméra animée." },
+  { "id": "graphique", "lottieLayerName": "doodle_graphique", "description": "Graphique de croissance animé." },
+  { "id": "news", "lottieLayerName": "doodle_news", "description": "Mot 'NEWS' animé." },
+  { "id": "couronne", "lottieLayerName": "doodle_couronne", "description": "Couronne qui apparaît et se pose sur le personnage en fin de séquence." }
+]}

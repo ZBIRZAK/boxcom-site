@@ -1,0 +1,70 @@
+/* Base button */
+.button {
+    padding: 0.5em 2em;
+    font-size: 1.2em;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    width: 100%;
+}
+  
+.default {
+    border: 2px solid currentColor;
+}
+  
+.ghost {
+    border: none;
+}
+  
+.dark {
+    color: #fa2162;
+}
+  
+.light {
+    color: white;
+}
+  
+.fill.dark {
+    background-color: #fa2162;
+    border-color: #e73269;
+    color: white;
+}
+  
+.fill.light {
+    background-color: white;
+    color: #222;
+}
+  
+.noFill {
+    background-color: transparent;
+}
+  
+.button:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+  
+.button:hover.fill.dark {
+    background-color: #e73269;
+}
+  
+.button:hover.fill.light {
+    background-color: #f0f0f0;
+    color: #222;
+}
+  
+.button:hover.noFill.dark {
+    color: #e73269;
+    border-color: #e73269;
+    background-color: rgba(255, 0, 85, 0.199);
+}
+  
+.button:hover.noFill.light {
+    color: white;
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}

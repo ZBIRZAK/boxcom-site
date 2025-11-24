@@ -1,0 +1,178 @@
+// /components/Header.scss
+
+/* --- Définition des Thèmes --- */
+:root {
+  --bg-color: #FFFFFF;
+  --text-color: #111111;
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --header-border: #EAEAEA;
+  --icon-color: #111111;
+}
+
+html.dark {
+  --bg-color: #111111;
+  --text-color: #FFFFFF;
+  // --header-bg: rgba(17, 17, 17, 0.85);
+  --header-bg: red;
+  --header-border: #2e2e2e;
+  --icon-color: #FFFFFF;
+}
+
+/* --- Styles du Header --- */
+$header-height: 80px;
+$header-mobile-height: 70px;
+$transition-speed: 0.4s;
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-mobile-height;
+  // @media (min-width: 1024px) { height: $header-height; }
+  z-index: 1000;
+  padding: 0 5%;
+  background-color: transparent;
+  transition: background-color $transition-speed ease, border-color $transition-speed ease, backdrop-filter $transition-speed ease;
+
+  &.scrolled {
+    background-color: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--header-border);
+  }
+
+  .header-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  // .logo-link .logo {
+  //   height: 65px;
+  //   transition: filter 0.3s ease;
+  // }
+
+  .controls-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    @media (min-width: 1024px) { gap: 1.5rem; }
+  }
+
+  .desktop-nav {
+    display: none;
+    @media (min-width: 1024px) {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-link {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bolder;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--text-color);
+        transition: width $transition-speed ease;
+      }
+      &:hover::after { width: 100%; }
+    }
+  }
+  
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--icon-color);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: rgba(128,128,128, 0.1);
+    }
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+    @media (min-width: 1024px) { display: none; }
+    
+    .burger-icon {
+      width: 24px;
+      height: 18px;
+      position: relative;
+      
+      span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--icon-color);
+        transition: transform $transition-speed ease, opacity $transition-speed ease, top $transition-speed ease;
+        transform-origin: center;
+        &:nth-child(1) { top: 0; }
+        &:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        &:nth-child(3) { bottom: 0; }
+      }
+
+      &.open {
+        span {
+          &:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+          &:nth-child(2) { opacity: 0; }
+          &:nth-child(3) { top: 50%; transform: translateY(-50%) rotate(-45deg); }
+        }
+      }
+    }
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity $transition-speed ease;
+
+    &.open {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .mobile-nav-link {
+      color: var(--text-color);
+      font-size: 1.5rem;
+      // font-weight: bolder;
+      text-decoration: none;
+    }
+  }
+}
+.nav-link.active,
+.mobile-nav-link.active {
+  color: #ff0077 !important;
+}

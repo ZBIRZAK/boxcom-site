@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Calque_2"
+   data-name="Calque 2"
+   viewBox="0 0 42.490004 24.600002"
+   version="1.1"
+   sodipodi:docname="calculator-numbers.svg"
+   width="42.490002"
+   height="24.6"
+   inkscape:version="1.4.2 (2aeb623e1d, 2025-05-12)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview29"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="7.4613901"
+     inkscape:cx="21.309702"
+     inkscape:cy="16.283829"
+     inkscape:window-width="1600"
+     inkscape:window-height="836"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g29" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-6 {
+        fill: #d737b8;
+      }
+
+      .cls-6, .cls-7, .cls-2, .cls-8 {
+        stroke-width: 2.51px;
+      }
+
+      .cls-6, .cls-7, .cls-8 {
+        stroke: #231f20;
+      }
+
+      .cls-6, .cls-2, .cls-8 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-7 {
+        fill: #5270d5;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke: #641233;
+      }
+
+      .cls-8 {
+        fill: #ff8799;
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-3 {
+        fill: #eafdf1;
+      }
+
+      .cls-10 {
+        opacity: .42;
+      }
+
+      .cls-4 {
+        fill: #82263e;
+      }
+
+      .cls-5 {
+        fill: #1d3e83;
+      }
+    </style>
+    <clipPath
+       id="clippath">
+      <path
+         class="cls-1"
+         d="M 26.83,94.52 C 20.77,79.93 9.8,54.8 3.46,40.36 0.7,34.08 3.36,26.73 9.5,23.67 25.56,15.66 54.85,2.1 65.79,3.86 77.47,5.74 89.32,50.12 94.38,71.51 95.9,77.93 92.33,84.45 86.1,86.63 l -43.13,15.1 c -6.44,2.26 -13.53,-0.9 -16.15,-7.21 z"
+         id="path1" />
+    </clipPath>
+  </defs>
+  <g
+     id="Layer_1"
+     data-name="Layer 1">
+    <g
+       id="g29">
+      <path
+         class="cls-5"
+         d="m 1.220065,22.357322 c 1.78,-2.43 3.01,-4.96 3.97,-7.81 h -2.05 c 0.41,1.72 0.81,3.45 1.2,5.17 0.33,1.45 0.4,3.01 1.49,4.09 0.49,0.49 1.34,0.26 1.53,-0.4 0.42,-1.48 -0.28,-2.9 -0.7,-4.33 -0.5,-1.7 -0.99,-3.39 -1.47,-5.1 -0.29,-1.02 -1.76,-1 -2.05,0 -0.78,2.65 -1.79,5.27 -2.92999998,7.78 -0.31,0.69 0.57,1.21 1.00999998,0.59 v 0 z"
+         id="path6" />
+      <g
+         class="cls-10"
+         id="g21"
+         transform="translate(-22.649935,-15.412678)" />
+    </g>
+  </g>
+</svg>

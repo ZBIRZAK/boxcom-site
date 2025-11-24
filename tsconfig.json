@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.jsx",
+    "src/app/digital-marketing/page.jsx",
+    "src/components/Homepage/05_Art/BrushStains/BrushStains.jsx"
+, "src/components/Audio/audios.js", "src/components/DigitalMarketing/03_SocialMediaManagement/SocialMedia", "src/components/DigitalMarketing/03_SocialMediaManagement/MusicalNotes", "src/components/DigitalMarketing/03_SocialMediaManagement/Texts"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

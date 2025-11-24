@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 39.000001 41.000002"
+   version="1.1"
+   id="svg17"
+   sodipodi:docname="bubble-1.svg"
+   width="39"
+   height="41"
+   inkscape:version="1.4.2 (2aeb623e1d, 2025-05-12)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.4036265"
+     inkscape:cx="148.73359"
+     inkscape:cy="96.312801"
+     inkscape:window-width="1600"
+     inkscape:window-height="836"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Warstwa_10" />
+  <defs
+     id="defs3">
+    <style
+       id="style1">.cls-1,.cls-9{fill:none;}.cls-2{fill:#ddf1f3;}.cls-2,.cls-9{stroke:#016673;stroke-linecap:round;stroke-linejoin:round;stroke-width:5px;}.cls-3{opacity:0.33;}.cls-4{clip-path:url(#clip-path);}.cls-5{fill:#901a3d;}.cls-6{fill:#e6fff2;}.cls-7{clip-path:url(#clip-path-2);}.cls-8{clip-path:url(#clip-path-3);}</style>
+    <clipPath
+       id="clip-path"
+       transform="translate(2.76 1.94)">
+      <path
+         class="cls-1"
+         d="m 67.48,50.86 c 0,0 6.1,-58.1 57.52,-27.81 0,0 16.71,-24.28 42.2,-21.3 28.21,3.3 29.71,21.3 29.71,21.3 0,0 57.73,-20.63 64.37,27.81 0,0 41.14,30.52 10.61,63.7 -30.53,33.18 -58.28,18.58 -58.28,18.58 0,0 -11.42,31.19 -42.61,31.19 -31.19,0 -46,-15.26 -46,-15.26 0,0 -20.88,25.93 -49.15,15.26 -28.27,-10.67 -23,-47.77 -23,-47.77 0,0 -31.85,-8.9 -20.54,-39.63 C 43.62,46.2 67.48,50.86 67.48,50.86 Z"
+         id="path1" />
+    </clipPath>
+    <clipPath
+       id="clip-path-2"
+       transform="translate(2.76 1.94)">
+      <path
+         class="cls-1"
+         d="m 52.88,215.43 c -2,1.33 -25.9,8 -31.2,-14.89 0,0 -17.43,-34.88 8.21,-36.87 25.64,-1.99 23,17.25 23,17.25 0,0 34,1.33 23,22.57 -11,21.24 -23.01,11.94 -23.01,11.94 z"
+         id="path2" />
+    </clipPath>
+    <clipPath
+       id="clip-path-3"
+       transform="translate(2.76 1.94)">
+      <path
+         class="cls-1"
+         d="m 9.75,253.92 c 0,0 -15.93,-6 -6,-26.54 9.93,-20.54 26.12,0 26.12,0 0,0 12.84,17.25 0,22.56 -12.84,5.31 -20.12,3.98 -20.12,3.98 z"
+         id="path3" />
+    </clipPath>
+  </defs>
+  <g
+     id="Calque_2"
+     data-name="Calque 2"
+     style="display:inline">
+    <g
+       id="Warstwa_10"
+       data-name="Warstwa 10"
+       style="display:inline">
+      <path
+         class="cls-2"
+         d="m 10.97962,38.257963 c 0,0 -15.9200002,-6 -6.0000005,-26.54 9.9200005,-20.5399996 26.1200005,0 26.1200005,0 0,0 12.84,17.25 0,22.56 -12.84,5.31 -20.12,3.98 -20.12,3.98 z"
+         id="path6"
+         style="display:inline;stroke-width:1.5;stroke-dasharray:none"
+         inkscape:label="path6" />
+      <g
+         class="cls-3"
+         id="g15"
+         style="display:inline"
+         transform="translate(0.83207553,-215.92373)">
+        <g
+           class="cls-8"
+           clip-path="url(#clip-path-3)"
+           id="g14">
+          <path
+             class="cls-5"
+             d="m 0.09,249.88 c 1.51,9.57 17.64,12.95 25.5,12.62 9.61,-0.41 25.34,-4.06 26.14,-15.66 a 7.58,7.58 0 0 0 -5.54,-7.28 c -5.31,-1.07 -8.07,1.32 -12.59,3.42 a 25.67,25.67 0 0 1 -8.73,2.23 32.55,32.55 0 0 1 -10,-0.36 c -3.64,-0.84 -7.44,-2.37 -11.16,-1.26 -2.87,0.86 -4,3.5 -3.57,6.29 z"
+             id="path13" />
+          <path
+             class="cls-6"
+             d="m 17.16,225.3 a 1.73,1.73 0 0 0 -0.21,0.34 7.37,7.37 0 0 0 -0.54,1.34 5.47,5.47 0 0 0 -0.21,1.89 l 1.48,-3.59 -0.05,0.05 a 4.1,4.1 0 0 0 -1.14,1.77 4.15,4.15 0 0 0 -0.47,2.12 l 0.19,1.46 a 5.52,5.52 0 0 0 1.42,2.42 1.83,1.83 0 0 0 0.62,0.51 4.08,4.08 0 0 0 1.87,1 l 0.23,0.06 a 9.26,9.26 0 0 0 1.57,0.21 6.12,6.12 0 0 0 2.73,-0.76 l 1.06,-0.81 a 4,4 0 0 0 1.09,-1.69 2.66,2.66 0 0 0 0.35,-1.32 3.91,3.91 0 0 0 -0.09,-2.09 5.94,5.94 0 0 0 -0.69,-1.59 l 0.55,1.3 a 6,6 0 0 0 -1.53,-2.58 l -1.11,-0.86 a 4.06,4.06 0 0 0 -2,-0.65 2.78,2.78 0 0 0 -1.46,0 4.06,4.06 0 0 0 -2,0.65 v 0 l 6.15,0.79 -0.2,-0.22 0.78,1 a 1.63,1.63 0 0 1 -0.19,-0.34 l 0.48,1.15 a 2.29,2.29 0 0 1 -0.08,-0.28 l 0.17,1.25 a 1.5,1.5 0 0 1 0,-0.2 4.87,4.87 0 0 0 -1,-2.82 4.48,4.48 0 0 0 -2.41,-1.66 5.72,5.72 0 0 0 -2.47,0 3.54,3.54 0 0 0 -1.58,0.83 3.55,3.55 0 0 0 -1.19,1.3 z"
+             transform="translate(2.76,1.94)"
+             id="path14" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

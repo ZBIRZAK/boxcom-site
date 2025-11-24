@@ -1,0 +1,178 @@
+/* components/Sections/SayItBetter/SayItBetter.module.scss */
+
+.container {
+  background: url('/images/bg-screen6-9-3.webp') center/cover no-repeat;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  margin-top: 7.3rem;
+
+  span {
+    position: relative;
+    display: inline-block;
+  }
+}
+
+.gifUnderline {
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  transform: translateX(-50%);
+  max-width: 200px;
+  margin-top: -80px;
+  display: block;
+}
+
+// .swiperContainer {
+//   margin-top: 3.75rem;
+//   width: min(1000px, 92%);
+// }
+
+// .cards {
+//   display: grid;
+//   grid-template-columns: repeat(3, minmax(260px, 1fr));
+//   gap: 2rem;
+//   width: 100%;
+//   margin: 0;
+// }
+
+// .card {
+//   background: #f8026980;
+//   color: #fff;
+//   border-radius: 14px;
+//   padding: 1.25rem 1.5rem;
+//   box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+//   border: 2px solid #fff;
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 427px;
+// }
+
+// .name {
+//   letter-spacing: .2px;
+//   margin-bottom: .35rem;
+//   font-size: 1.7rem;
+//   font-family: impact, 'anton', sans-serif;
+//   line-height: 1em;
+// }
+
+// .role { 
+//   margin-top: .4rem; 
+// }
+
+// .testiText { 
+//   margin-top: .8rem; 
+// }
+
+// .sliderNav {
+//   display: flex;
+//   gap: .5rem;
+//   justify-content: center;
+//   margin: 1rem 0 0;
+// }
+
+// .dot {
+//   width: 10px;
+//   height: 10px;
+//   border-radius: 999px;
+//   background: rgba(255,255,255,.35);
+//   border: 2px solid #111;
+//   cursor: pointer;
+//   transition: transform .2s ease, background .2s ease;
+// }
+
+// .dot:hover { 
+//   transform: scale(1.1); 
+// }
+
+// .dotActive { 
+//   background: #fff; 
+// }
+
+// @media (max-width: 1024px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+  
+//   .swiperContainer {
+//     width: min(760px, 92%);
+//   }
+// }
+
+// .bottomBar {
+//   margin-top: 1.25rem;
+//   margin-bottom: 1.25rem;
+//   width: min(1000px, 92%);
+//   border: 1px solid rgba(255,255,255,.2);
+//   background: linear-gradient(
+//     90deg,
+//     rgba(0, 0, 0, 0.55) 0%,
+//     rgba(255, 255, 255, 0.08) 100%
+//   );
+//   border-radius: 14px;
+//   padding: 1rem 7rem;
+//   display: grid;
+//   grid-template-columns: 200px 1fr 350px;
+//   align-items: center;
+//   gap: 1rem;
+//   position: relative;
+
+//   .rating {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     color: #fff;
+//   }
+
+//   .score {
+//     display: flex;
+//     align-items: center;
+//     gap: 0.4rem;
+//   }
+
+//   .star {
+//     width: 52px;
+//     height: auto;
+//     display: block;
+//     transform: rotate(-20deg);
+//   }
+
+//   .ratingValue {
+//     font-size: 3.5rem;
+//     font-weight: 900;
+//     font-family: Impact, Arial, sans-serif;
+//     color: #FFD700;
+//   }
+
+//   .onGoogle {
+//     font-weight: 700;
+//     font-size: .85rem;
+//     opacity: .85;
+//     margin-top: 0.25rem;
+//   }
+// }
+
+// .pitch {
+//   color: #fff;
+//   font-weight: 700;
+//   line-height: 1.2;
+//   margin: 0;
+//   font-size: 1em;
+//   font-style: italic;
+// }
+
+// .ctaWrap {
+//   font-weight: 900;
+//   font-size: 0.8em;
+
+//   button {
+//     padding: 1rem 2rem;
+//     font-size: 1rem;
+//   }
+// }

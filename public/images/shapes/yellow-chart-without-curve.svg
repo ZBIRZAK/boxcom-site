@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   data-name="Calque 2"
+   viewBox="0 0 134 129.63"
+   style="fill: rgb(0, 0, 0);"
+   original_string_length="6613"
+   width="130.72511481835724px"
+   height="126.68452036033533px"
+   version="1.1"
+   id="svg28"
+   sodipodi:docname="yellow-chart-without-curve.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview28"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="6.1017717"
+     inkscape:cx="65.390844"
+     inkscape:cy="63.342258"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg28" />
+  <defs
+     id="defs1">
+    <clipPath
+       id="__id15_scabk0g7c">
+      <path
+         d="m1.25,48.86c.87,2.33,33.75,78.84,33.75,78.84l97.75-46.55L97.83,1,1.25,48.86Z"
+         stroke-width="0"
+         style="fill: none;"
+         id="path1" />
+    </clipPath>
+  </defs>
+  <g
+     data-name="Layer 1"
+     id="g28">
+    <g
+       id="g27">
+      <path
+         d="m1.25,49.11c.87,2.33,33.75,78.84,33.75,78.84l97.75-46.55L97.83,1.25,1.25,49.11Z"
+         stroke="#231f20"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2.51"
+         style="fill: rgb(252, 250, 51);"
+         id="path2" />
+      <g
+         stroke="#2b4d4a"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1.5"
+         style="fill: none;"
+         id="g13">
+        <path
+           d="m7.83,64.6S104.5,16.55,104.65,16.9"
+           style="fill: inherit;"
+           id="path3" />
+        <path
+           d="M11.66 43.96L45.09 123.14"
+           style="fill: inherit;"
+           id="path4" />
+        <path
+           d="M21.6 39.03L53.92 118.94"
+           style="fill: inherit;"
+           id="path5" />
+        <path
+           d="M31.15 35.16L63.47 115.07"
+           style="fill: inherit;"
+           id="path6" />
+        <path
+           d="M40.08 31.16L72.4 111.06"
+           style="fill: inherit;"
+           id="path7" />
+        <path
+           d="M47.31 26.3L79.63 106.21"
+           style="fill: inherit;"
+           id="path8" />
+        <path
+           d="M55.61 22.61L87.93 102.52"
+           style="fill: inherit;"
+           id="path9" />
+        <path
+           d="M63.47 18.97L95.79 98.88"
+           style="fill: inherit;"
+           id="path10" />
+        <path
+           d="M71.77 14.76L104.09 94.66"
+           style="fill: inherit;"
+           id="path11" />
+        <path
+           d="M79.63 10.06L111.95 89.97"
+           style="fill: inherit;"
+           id="path12" />
+        <path
+           d="M88.49 5.68L120.81 85.59"
+           style="fill: inherit;"
+           id="path13" />
+      </g>
+      <g
+         opacity=".35"
+         id="g14" />
+      <g
+         opacity=".34"
+         id="g20">
+        <g
+           clip-path="url(#__id15_scabk0g7c)"
+           style="fill: rgb(234, 253, 241);"
+           id="g19">
+          <path
+             d="m1.69,52.02c8.16.08,15.85-3.74,23.18-7.02,8.31-3.71,16.55-7.57,24.75-11.5,16.38-7.86,32.58-16.08,48.68-24.5,4.87-2.55.58-9.76-4.29-7.34-15.98,7.95-32.01,15.81-48.01,23.73-7.84,3.89-15.67,7.8-23.5,11.72s-15.8,7.37-21.22,13.94c-.3.36-.12.96.4.96h0Z"
+             style="fill: inherit;"
+             id="path16" />
+          <path
+             d="m4.08,49.58c-.82,6.67,2.52,13.99,4.71,20.15,2.49,7,5.24,13.88,8.16,20.71s6.03,13.74,9.27,20.5c2.9,6.06,5.69,14.64,10.62,19.27,1.44,1.36,3.37-.04,3.1-1.81-.51-3.3-2.43-6.15-3.89-9.13-1.66-3.37-3.28-6.75-4.89-10.14-3.38-7.14-6.61-14.35-9.65-21.64-2.89-6.92-5.69-13.9-8.41-20.89-2.21-5.68-4.1-12.81-8.41-17.27-.23-.24-.57-.03-.6.25h0Z"
+             style="fill: inherit;"
+             id="path17" />
+          <path
+             d="m35.72,126c4.38-1.6,9.09-2.29,13.54-3.89s8.81-3.35,13.17-5.14c7.81-3.22,15.5-6.74,23.17-10.28,8.03-3.7,16-7.55,23.92-11.49,3.96-1.97,7.9-3.97,11.84-5.99s8.75-3.82,12.13-6.96c2.19-2.04-.12-5.47-2.81-4.83-3.92.94-7.38,3.41-10.92,5.3-3.9,2.08-7.82,4.12-11.75,6.14-8.14,4.19-16.33,8.26-24.56,12.28s-15.95,7.57-23.91,11.4c-3.97,1.91-7.94,3.8-11.87,5.79-4.19,2.12-8.04,5.03-12.23,6.99-.38.18-.11.83.29.69h0Z"
+             style="fill: inherit;"
+             id="path18" />
+          <path
+             d="m96.85,3.01c3.16,13.75,8.56,26.46,14.22,39.38,5.79,13.22,11.47,26.91,18.96,39.27,2.02,3.33,6.62.42,5.11-2.99-5.76-12.98-12.44-25.58-18.33-38.52-5.86-12.89-11.29-25.68-19.11-37.5-.29-.44-.98-.17-.86.36h0Z"
+             style="fill: inherit;"
+             id="path19" />
+        </g>
+      </g>
+      <path
+         d="m1.25,49.55c.87,2.33,33.75,78.84,33.75,78.84l97.75-46.55L97.83,1.69,1.25,49.55Z"
+         stroke="#2b4d4a"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2.51"
+         style="fill: none;"
+         id="path20" />
+      <g
+         opacity=".49"
+         id="g21" />
+      <g
+         opacity=".49"
+         id="g22" />
+      <g
+         opacity=".49"
+         id="g23" />
+      <g
+         opacity=".49"
+         id="g24" />
+      <g
+         opacity=".49"
+         id="g25" />
+      <g
+         opacity=".49"
+         id="g26" />
+    </g>
+  </g>
+</svg>

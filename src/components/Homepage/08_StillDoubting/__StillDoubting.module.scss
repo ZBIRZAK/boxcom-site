@@ -1,0 +1,55 @@
+.screen8{
+    background-color: white;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    z-index: 0;
+    color: black;
+}
+.topSection{
+    width: 80%;
+    height: 20%;
+    position: absolute;
+    display: flex;
+    z-index: 20;
+    white-space: nowrap;
+    background-color: white;
+}
+.creatureWrapper {
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+    width: 12%;
+    height: 200px; 
+    overflow: visible; 
+    // padding: 30% 0% 0.2em;
+    padding-left: 0.1em;
+    // padding-top: 5%;
+    z-index: 25;
+  }
+.topSection .creatureContainer{
+    transform: scaleX(-1) rotate(-30deg);
+    will-change: transform;
+    position: absolute;
+    bottom: -10%;
+    width: 80%;
+}
+.topSection img{
+    width: 90%;
+}
+.topSection .textContainer{
+    width: 50%;
+    position: absolute;
+    left: 15%;
+    top: 50%;
+}
+.imageContainer{
+    width: 80%;
+}
+.scrollButtonContainer {
+    position: absolute;
+    bottom: 5%;
+    right: 5%
+}

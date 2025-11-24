@@ -1,0 +1,64 @@
+.screen7{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+.screen7::after {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.8); 
+    z-index:1;
+  }
+.screen7 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+.bottomBar {
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 0rem;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.bottomBar img {
+    position: relative;
+    width: 10%;
+    object-fit: contain;
+    max-height: 80px;
+}
+.zigzagContainer{
+    position: absolute;
+    top: 25%;
+    right: 45%;
+    width: 110%;
+    z-index: 150;
+}
+.zigzagContainer img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: 150;
+}
+.scrollButtonContainer {
+    position: absolute;
+    bottom: 5%;
+    right: 5%
+}

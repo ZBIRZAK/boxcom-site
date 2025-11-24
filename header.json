@@ -1,0 +1,36 @@
+{
+  "nav_menu": {
+    "link1": {
+      "text": "Digital Marketing",
+      "link": "%URL_DIGITAL_MARKETING%"
+    },
+    "link2": {
+      "text": "Creative Content",
+      "link": "%URL_CREATIVE_CONTENT%"
+    },
+    "link3": {
+      "text": "Web Development",
+      "link": "%URL_WEB_DEV%"
+    },
+    "link4": {
+      "text": "Lead Generation",
+      "link": "%URL_LEAD_GENERATION%"
+    },
+    "link5": {
+      "text": "Our Projects",
+      "link": "%URL_PROJECTS%"
+    },
+    "link6": {
+      "text": "Blog",
+      "link": "%URL_BLOG%"
+    },
+    "link7": {
+      "text": "About us",
+      "link": "%URL_ABOUT_US%"
+    },
+    "link8": {
+      "text": "Contact",
+      "link": "%URL_CONTACT%"
+    }
+  }
+}

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Calque_2"
+   data-name="Calque 2"
+   viewBox="0 0 134 129.63"
+   version="1.1"
+   sodipodi:docname="chart-without-curve.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview25"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="5.9631256"
+     inkscape:cx="67.078916"
+     inkscape:cy="64.815002"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Calque_2" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .cls-1 {
+        stroke-width: 1.5px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1, .cls-4, .cls-3 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-1, .cls-3 {
+        stroke: #2b4d4a;
+      }
+
+      .cls-5 {
+        opacity: .35;
+      }
+
+      .cls-2, .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke-width: 0px;
+      }
+
+      .cls-6 {
+        fill: #e74957;
+      }
+
+      .cls-10 {
+        opacity: .34;
+      }
+
+      .cls-7 {
+        fill: #eafdf2;
+      }
+
+      .cls-4 {
+        fill: #99eae0;
+        stroke: #231f20;
+      }
+
+      .cls-4, .cls-3 {
+        stroke-width: 2.51px;
+      }
+
+      .cls-11 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-12 {
+        opacity: .49;
+      }
+
+      .cls-8 {
+        fill: #eafdf1;
+      }
+
+      .cls-9 {
+        fill: #82263e;
+      }
+    </style>
+    <clipPath
+       id="clippath">
+      <path
+         class="cls-2"
+         d="m1.25,48.86c.87,2.33,33.75,78.84,33.75,78.84l97.75-46.55L97.83,1,1.25,48.86Z"
+         id="path1" />
+    </clipPath>
+  </defs>
+  <g
+     id="Layer_1"
+     data-name="Layer 1">
+    <g
+       id="g25">
+      <path
+         class="cls-4"
+         d="m1.25,49.11c.87,2.33,33.75,78.84,33.75,78.84l97.75-46.55L97.83,1.25,1.25,49.11Z"
+         id="path2" />
+      <g
+         id="g12">
+        <path
+           class="cls-1"
+           d="m7.83,64.6S104.5,16.55,104.65,16.9"
+           id="path3" />
+        <line
+           class="cls-1"
+           x1="11.66"
+           y1="43.96"
+           x2="45.09"
+           y2="123.14"
+           id="line3" />
+        <line
+           class="cls-1"
+           x1="21.6"
+           y1="39.03"
+           x2="53.92"
+           y2="118.94"
+           id="line4" />
+        <line
+           class="cls-1"
+           x1="31.15"
+           y1="35.16"
+           x2="63.47"
+           y2="115.07"
+           id="line5" />
+        <line
+           class="cls-1"
+           x1="40.08"
+           y1="31.16"
+           x2="72.4"
+           y2="111.06"
+           id="line6" />
+        <line
+           class="cls-1"
+           x1="47.31"
+           y1="26.3"
+           x2="79.63"
+           y2="106.21"
+           id="line7" />
+        <line
+           class="cls-1"
+           x1="55.61"
+           y1="22.61"
+           x2="87.93"
+           y2="102.52"
+           id="line8" />
+        <line
+           class="cls-1"
+           x1="63.47"
+           y1="18.97"
+           x2="95.79"
+           y2="98.88"
+           id="line9" />
+        <line
+           class="cls-1"
+           x1="71.77"
+           y1="14.76"
+           x2="104.09"
+           y2="94.66"
+           id="line10" />
+        <line
+           class="cls-1"
+           x1="79.63"
+           y1="10.06"
+           x2="111.95"
+           y2="89.97"
+           id="line11" />
+        <line
+           class="cls-1"
+           x1="88.49"
+           y1="5.68"
+           x2="120.81"
+           y2="85.59"
+           id="line12" />
+      </g>
+      <g
+         class="cls-5"
+         id="g13" />
+      <g
+         class="cls-10"
+         id="g18">
+        <g
+           class="cls-11"
+           clip-path="url(#clippath)"
+           id="g17">
+          <path
+             class="cls-8"
+             d="m1.69,52.02c8.16.08,15.85-3.74,23.18-7.02,8.31-3.71,16.55-7.57,24.75-11.5,16.38-7.86,32.58-16.08,48.68-24.5,4.87-2.55.58-9.76-4.29-7.34-15.98,7.95-32.01,15.81-48.01,23.73-7.84,3.89-15.67,7.8-23.5,11.72s-15.8,7.37-21.22,13.94c-.3.36-.12.96.4.96h0Z"
+             id="path14" />
+          <path
+             class="cls-8"
+             d="m4.08,49.58c-.82,6.67,2.52,13.99,4.71,20.15,2.49,7,5.24,13.88,8.16,20.71s6.03,13.74,9.27,20.5c2.9,6.06,5.69,14.64,10.62,19.27,1.44,1.36,3.37-.04,3.1-1.81-.51-3.3-2.43-6.15-3.89-9.13-1.66-3.37-3.28-6.75-4.89-10.14-3.38-7.14-6.61-14.35-9.65-21.64-2.89-6.92-5.69-13.9-8.41-20.89-2.21-5.68-4.1-12.81-8.41-17.27-.23-.24-.57-.03-.6.25h0Z"
+             id="path15" />
+          <path
+             class="cls-8"
+             d="m35.72,126c4.38-1.6,9.09-2.29,13.54-3.89s8.81-3.35,13.17-5.14c7.81-3.22,15.5-6.74,23.17-10.28,8.03-3.7,16-7.55,23.92-11.49,3.96-1.97,7.9-3.97,11.84-5.99s8.75-3.82,12.13-6.96c2.19-2.04-.12-5.47-2.81-4.83-3.92.94-7.38,3.41-10.92,5.3-3.9,2.08-7.82,4.12-11.75,6.14-8.14,4.19-16.33,8.26-24.56,12.28s-15.95,7.57-23.91,11.4c-3.97,1.91-7.94,3.8-11.87,5.79-4.19,2.12-8.04,5.03-12.23,6.99-.38.18-.11.83.29.69h0Z"
+             id="path16" />
+          <path
+             class="cls-8"
+             d="m96.85,3.01c3.16,13.75,8.56,26.46,14.22,39.38,5.79,13.22,11.47,26.91,18.96,39.27,2.02,3.33,6.62.42,5.11-2.99-5.76-12.98-12.44-25.58-18.33-38.52-5.86-12.89-11.29-25.68-19.11-37.5-.29-.44-.98-.17-.86.36h0Z"
+             id="path17" />
+        </g>
+      </g>
+      <path
+         class="cls-3"
+         d="m1.25,49.55c.87,2.33,33.75,78.84,33.75,78.84l97.75-46.55L97.83,1.69,1.25,49.55Z"
+         id="path18" />
+      <g
+         class="cls-12"
+         id="g19" />
+      <g
+         class="cls-12"
+         id="g20" />
+      <g
+         class="cls-12"
+         id="g21" />
+      <g
+         class="cls-12"
+         id="g22" />
+      <g
+         class="cls-12"
+         id="g23" />
+      <g
+         class="cls-12"
+         id="g24" />
+    </g>
+  </g>
+</svg>

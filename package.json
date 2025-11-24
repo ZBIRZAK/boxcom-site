@@ -1,0 +1,44 @@
+{
+  "name": "boxcom_frontend",
+  "version": "0.37.0",
+  "homepage": "https://primesynergygroup.github.io/boxcom_frontend",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "dev2": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "next build && gh-pages -d out"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "axios-cache-interceptor": "^1.8.3",
+    "cheerio": "^1.1.2",
+    "clsx": "^2.1.1",
+    "gsap": "^3.13.0",
+    "howler": "^2.2.4",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.536.0",
+    "next": "^15.5.6",
+    "next-seo": "^7.0.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-hook-form": "^7.62.0",
+    "react-intersection-observer": "^9.16.0",
+    "react-use": "^17.6.0",
+    "sass": "^1.89.2",
+    "swiper": "^11.2.10",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@gsap/react": "^2.1.2",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "24.1.0",
+    "@types/react": "19.1.9",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "gh-pages": "^6.3.0",
+    "tailwindcss": "^4",
+    "typescript": "5.8.3"
+  }
+}
