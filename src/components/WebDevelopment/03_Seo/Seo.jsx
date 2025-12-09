@@ -90,7 +90,7 @@ const Seo = ({ data }) => {
           <Chart />
           <Arobase />
         </div>
-        <div className="absolute w-[110%] -right-10 md:bottom-[-10%] bottom-[-7%] rotate-177 z-1  pointer-events-none overflow-hidden ">
+        <div className="absolute w-[110%] -right-10 md:bottom-[-12%] bottom-[-7%] rotate-177 z-1  pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
         </div>
         

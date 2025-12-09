@@ -60,7 +60,7 @@ const StoryToLife = ({ data }) => {
         </div>
       </div>
       
-      <div className="absolute z-99999 w-full top-[-17px] md:top-[-10%] left-0 right-0 pointer-events-none overflow-hidden">
+      {/* <div className="absolute z-99999 w-full top-[-17px] md:top-[-10%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
           src="/images/objects/torn-papers/torn-paper-1.png"
           alt="Torn sheet"
@@ -71,7 +71,7 @@ const StoryToLife = ({ data }) => {
           src="/images/objects/torn-papers/torn-paper-1.png"
           alt="Torn sheet"
         />
-      </div>
+      </div> */}
     </section>
   );
 };

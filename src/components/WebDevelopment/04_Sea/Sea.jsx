@@ -70,9 +70,9 @@ const Sea = ({ data }) => {
           className="w-full h-full"
         />
 
-        <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+        {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
-        </div>
+        </div> */}
         <div className="absolute w-[100%] md:w-[100%] max-h-[50%] md:max-h-full h-auto md:bottom-[-5%] bottom-[0%] md:left-[7%] z-[1]">
           <img
             src="/images/persons/colorful_girl.png"
@@ -103,13 +103,13 @@ const Sea = ({ data }) => {
         </div>
       </ColumnContentWrapper>
       
-      <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
+      {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
         <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
-      </div>
+      </div> */}
       
-      <div className="absolute z-99999 w-full top-[-1px] md:top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+      <div className="absolute z-99999 w-full top-[-10px] md:top-[-3%] left-0 right-0 pointer-events-none overflow-hidden z-[99] ">
         <img
-          src="/images/objects/torn-papers/torn-paper-1.png"
+          src="/images/objects/torn-papers/torn-paper-6.svg"
           alt="Torn sheet"
         />
       </div>

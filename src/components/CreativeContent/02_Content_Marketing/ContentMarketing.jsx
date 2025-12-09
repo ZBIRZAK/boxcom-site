@@ -82,9 +82,9 @@ const ContentMarketing = ({ data }) => {
           src="/images/creative_content/girl-with-book.png"
           className="absolute w-[80%] scale-150 bottom-0 left-[20%] md:w-[90%] md:-bottom-[5%] md:-left-[6%] md:scale-100"
         />
-        <div className="absolute w-[105%] md:bottom-[-5%] bottom-[-7%] right-[-2%] pointer-events-none overflow-hidden">
+        {/* <div className="absolute w-[105%] md:bottom-[-5%] bottom-[-2%] right-[-2%] pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
-        </div>
+        </div> */}
         <div className="md:hidden top-20 !text-shadow-lg w-full absolute text-center z-1">
           <h2
             className="title"

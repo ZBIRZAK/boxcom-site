@@ -101,7 +101,7 @@ const MaintenanceAndAnalytics = ({ data }) => {
         </div>
       </div>
       
-      <div className="absolute z-99999 w-full top-[-1px] md:top-[-7%] left-[6%] right-0 pointer-events-none overflow-hidden">
+      <div className="absolute z-99 w-full top-[-1.2%] md:top-[-7%] md:left-[6%] left-[0%]  right-0 pointer-events-none overflow-hidden">
         <img
           src="/images/objects/torn-papers/torn-paper-1.png"
           alt="Torn sheet"
