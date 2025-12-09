@@ -49,11 +49,11 @@ const MaintenanceAndAnalytics = ({ data }) => {
   return (
     <section
       id="page04_screen05"
-      className={`screen03 w-full !h-auto relative section-dark grid grid-cols-1 md:grid-cols-[55%_45%] overflow-hidden`}
+      className={`screen03  w-full !h-auto relative section-dark grid grid-cols-1 md:grid-cols-[55%_45%] overflow-hidden`}
     >
-      <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+      {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
-      </div>
+      </div> */}
       <ColumnContentWrapper
         id="maintenance-text"
         className={"md:!order-1 !order-2"}
@@ -101,9 +101,9 @@ const MaintenanceAndAnalytics = ({ data }) => {
         </div>
       </div>
       
-      <div className="absolute z-99 w-full top-[-1.2%] md:top-[-7%] md:left-[6%] left-[0%]  right-0 pointer-events-none overflow-hidden">
+      <div className="absolute z-99 w-full top-[-1.2%] md:top-[-4%] md:left-[0%] left-[0%]  right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-1.png"
+          src="/images/objects/torn-papers/torn-paper-6.svg"
           alt="Torn sheet"
         />
       </div>

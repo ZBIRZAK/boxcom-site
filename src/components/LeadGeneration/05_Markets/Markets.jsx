@@ -143,10 +143,10 @@ const Markets = ({ data }) => {
   return (
     <section
       id="page05_screen05"
-      className="relative overflow-hidden !h-auto grid grid-cols-1 md:grid-cols-[65%_35%] w-full md:min-h-screen section-dark"
+      className="relative !h-auto grid grid-cols-1 md:grid-cols-[65%_35%] w-full md:min-h-screen section-dark"
     >
       <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          {/* <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" /> */}
       </div>
       
       <ColumnContentWrapper id="markets-text">
@@ -196,9 +196,9 @@ const Markets = ({ data }) => {
         </div>
       </div>
       
-      <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+      <div className="absolute z-99 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-1.png"
+          src="/images/objects/torn-papers/torn-paper-6.svg"
           alt="Torn sheet"
         />
       </div>

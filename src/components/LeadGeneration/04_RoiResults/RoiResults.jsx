@@ -56,9 +56,9 @@ const RoiResults = ({ data }) => {
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
         </div> */}
-        <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
+        {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-        </div>
+        </div> */}
         <div className="md:hidden top-35 text-shadow-lg w-full absolute text-center z-1">
           <h2
             className="title"
@@ -95,9 +95,9 @@ const RoiResults = ({ data }) => {
       </div>
       </ColumnContentWrapper>
       
-      <div className="absolute z-99 w-full md:top-[-9%] top-[-0%] left-0 right-0 pointer-events-none overflow-hidden">
+      <div className="absolute z-99 w-full md:top-[-4%] top-[-0%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-1.png"
+          src="/images/objects/torn-papers/torn-paper-6.svg"
           alt="Torn sheet"
         />
       </div>
