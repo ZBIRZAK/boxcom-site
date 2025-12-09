@@ -50,7 +50,7 @@ const GraphicDesign = ({ data }) => {
 
   return (
     <section
-      className="!h-auto section-light overflow-hidden relative grid grid-cols-1 md:grid-cols-[45%_55%] w-full md:min-h-screen"
+      className="!h-auto section-light relative grid grid-cols-1 md:grid-cols-[45%_55%] w-full md:min-h-screen"
       id="page02_screen03"
     >
       <div
@@ -62,6 +62,9 @@ const GraphicDesign = ({ data }) => {
           className="w-full h-full object-cover object-center"
         />
         
+        <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+            <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+        </div>
 
         {/* LE CADRE */}
         <div className="absolute w-[40%] bottom-[10%] right-[-12%] h-auto md:w-[35%] md:-bottom-[10%] md:right-[-6%]">
@@ -83,9 +86,6 @@ const GraphicDesign = ({ data }) => {
           />
           <Crown />
           <FaceEmoji />
-        </div>
-        <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-            <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
         </div>
         <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
@@ -112,6 +112,13 @@ const GraphicDesign = ({ data }) => {
           <ScrollButton to="page02_screen04" />
         </div>
       </ColumnContentWrapper>
+      
+      <div className="absolute z-99999 w-full top-[-17px] md:top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
+      </div>
     </section>
   );
 };

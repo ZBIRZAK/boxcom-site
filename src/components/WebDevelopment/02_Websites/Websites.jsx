@@ -98,6 +98,9 @@ const Websites = ({ data }) => {
         <Dinosaur />
         <WaterSplash />
         <FlyingButterfly />
+        <div className="absolute w-[105%] md:bottom-[-8%] bottom-[-7%] -left-4 pointer-events-none overflow-hidden">
+          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+        </div>
       </div>
       <ColumnContentWrapper id="websites-text">
         <Title1 html={data.title} />
@@ -110,6 +113,13 @@ const Websites = ({ data }) => {
           <ScrollButton to="page04_screen03" />
         </div>
       </ColumnContentWrapper>
+      
+      {/* <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
+      </div> */}
     </section>
   );
 };

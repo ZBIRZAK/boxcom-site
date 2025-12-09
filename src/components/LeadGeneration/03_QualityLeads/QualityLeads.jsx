@@ -56,8 +56,8 @@ const QualityLeads = ({ data }) => {
       </ColumnContentWrapper>
       
       <div id="cont-img-girl-with-mushrooms" className="relative md:overflow-visible overflow-hidden order-1 md:order-2 h-screen">
-      <div className="absolute w-[110%] -left-10 md:bottom-[-15%] bottom-[-7%] z-1 -rotate-3  pointer-events-none overflow-hidden ">
-        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+      <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
       </div>
         <div className="absolute w-full h-full overflow-hidden">
           <img
@@ -71,7 +71,7 @@ const QualityLeads = ({ data }) => {
         <Yes/>
         <Phone/>
         <Magnet/>
-        <div className="absolute w-[110%] rotate-2 -left-10 md:top-[-13%] top-[-7%] z-1  pointer-events-none overflow-hidden ">
+        <div className="absolute w-[105%] md:bottom-[-8%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
         </div>
         {/* TITRE POUR MOBILE */}
@@ -81,6 +81,13 @@ const QualityLeads = ({ data }) => {
         ></h2>
 
         {!isMobile && <ScrollButton to="page05_screen04" />}
+      </div>
+      
+      <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
       </div>
     </section>
   )

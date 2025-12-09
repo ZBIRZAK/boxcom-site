@@ -145,11 +145,8 @@ const Markets = ({ data }) => {
       id="page05_screen05"
       className="relative overflow-hidden !h-auto grid grid-cols-1 md:grid-cols-[65%_35%] w-full md:min-h-screen section-dark"
     >
-      <div className="absolute w-[60%] -left-10 md:top-[-15%] top-[-2%] z-1  pointer-events-none overflow-hidden ">
-        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-      </div>
-      <div className="absolute md:w-[60%] w-[70%]  -right-10 md:top-[-15%] top-[-2%] z-1  pointer-events-none overflow-hidden ">
-        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+      <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
       </div>
       
       <ColumnContentWrapper id="markets-text">
@@ -197,6 +194,13 @@ const Markets = ({ data }) => {
         <div className="hidden md:block">
           <ScrollButton to="page05_screen06" />
         </div>
+      </div>
+      
+      <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
       </div>
     </section>
   );

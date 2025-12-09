@@ -47,16 +47,16 @@ const RoiResults = ({ data }) => {
   return (
     <section
       id="page05_screen04"
-      className="relative overflow-hidden !h-auto grid grid-cols-1 md:grid-cols-[37%_63%] w-full md:min-h-screen section-light"
+      className="relative !h-auto grid grid-cols-1 md:grid-cols-[37%_63%] w-full md:min-h-screen section-light"
     >
       <div
         id="cont-img-woman-card"
         className="overflow-hidden md:overflow-visible relative h-screen"
       >
-        <div className="absolute w-[110%] -left-10 md:top-[-7%] top-[-5%] z-1  pointer-events-none overflow-hidden ">
+        {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-        </div>
-        <div className="absolute w-[110%] -left-10 md:top-[-7%] md:hidden block bottom-[-5%] z-1  pointer-events-none overflow-hidden ">
+        </div> */}
+        <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
         </div>
         <div className="md:hidden top-35 text-shadow-lg w-full absolute text-center z-1">
@@ -94,7 +94,13 @@ const RoiResults = ({ data }) => {
         <ScrollButton to="page05_screen05" />
       </div>
       </ColumnContentWrapper>
-
+      
+      <div className="absolute z-99 w-full top-[-8%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
+      </div>
     </section>
   );
 };

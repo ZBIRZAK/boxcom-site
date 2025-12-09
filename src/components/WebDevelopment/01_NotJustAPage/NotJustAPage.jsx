@@ -64,6 +64,10 @@ const NotJustAPage = ({ data }) => {
       <div className="hidden md:block">
         <ScrollButton to="page04_screen02" />
       </div>
+      
+      {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
+        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+      </div> */}
     </section>
   );
 };

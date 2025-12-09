@@ -52,14 +52,17 @@ const AnalyticsOptimization = ({ data }) => {
       className="relative overflow-hidden !h-auto grid grid-cols-1 md:grid-cols-[37%_63%] w-full md:min-h-screen section-light"
     >
       {/* COLONNE IMAGE */}
-      <div id="cont-img-old-woman" className="relative h-screen overflow-hidden md:overflow-visible">
+      <div
+        id="cont-img-old-woman"
+        className="relative h-screen overflow-hidden md:overflow-visible"
+      >
         <div className="md:hidden top-40 text-shadow-lg w-full absolute text-center z-1">
           <h2
             className="title"
             dangerouslySetInnerHTML={{ __html: data.title }}
           ></h2>
         </div>
-        <div className="absolute w-[110%] -left-10 md:top-[-10%] top-[-5%] z-1  pointer-events-none overflow-hidden ">
+        <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
         </div>
         <img
@@ -77,6 +80,9 @@ const AnalyticsOptimization = ({ data }) => {
         <Chart />
         {/* <Canvas /> */}
         <Robot />
+        <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
+          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+        </div>
       </div>
 
       {/* COLONNE TEXTE */}
@@ -93,6 +99,12 @@ const AnalyticsOptimization = ({ data }) => {
         </div>
       </ColumnContentWrapper>
       
+      <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
+      </div>
     </section>
   );
 };

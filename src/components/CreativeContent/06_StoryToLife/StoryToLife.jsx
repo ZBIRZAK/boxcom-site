@@ -13,7 +13,7 @@ const StoryToLife = ({ data }) => {
   return (
     <section
       id="page02_screen06"
-      className="relative h-screen w-full overflow-hidden"
+      className="relative h-screen w-full"
     >
 
       <div className="absolute inset-0 w-full h-full ">
@@ -21,9 +21,12 @@ const StoryToLife = ({ data }) => {
           src="/images/creative_content/metro.jpeg"
           className="h-full w-full object-cover object-left md:object-center"
         />
-        <div className="absolute md:w-[55%] w-[100%] md:top-[-15%] top-[-7%] -left-10   pointer-events-none overflow-hidden ">
+        {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+            <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+        </div> */}
+        {/* <div className="absolute md:w-[55%] w-[100%] md:top-[-15%] top-[-7%] -left-10   pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="  w-full  " />
-        </div>
+        </div> */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2  w-[105%]  md:left-auto md:right-[20%] md:translate-x-0 md:w-[33%]">
           <img src="/images/creative_content/man-yellow-costume.png" alt="" />
           <Moustache />
@@ -55,6 +58,19 @@ const StoryToLife = ({ data }) => {
             <ButtonCTA data={data} />
           </div>
         </div>
+      </div>
+      
+      <div className="absolute z-99999 w-full top-[-17px] md:top-[-10%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
+      </div>
+      <div className="absolute z-99999 w-full top-[-17px] md:top-[-10%] left-[20%] right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
       </div>
     </section>
   );

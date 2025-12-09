@@ -73,11 +73,10 @@ const VideoProduction = ({ data }) => {
           />
         </div>
 
-        <div className="absolute w-[160%] md:top-[-17%] top-[-7%] -right-0   pointer-events-none overflow-hidden ">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="  w-full  " />
+        <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+            <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
         </div>
         
-
         {/* TITRE POUR MOBILE */}
         <div className="md:hidden top-20 !text-shadow-lg w-full absolute text-center z-1">
           <h2
@@ -92,15 +91,23 @@ const VideoProduction = ({ data }) => {
         ></h2> */}
 
         <CameraMan />
-        <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -right-0 rotate-180  pointer-events-none overflow-hidden ">
+        {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className=" w-full  " />
-        </div>
+        </div> */}
         <Yes />
         <Coffee />
         {/* <Stain /> */}
         <Camera />
         {!isMobile && <ScrollButton to="page02_screen06" />}
       </div>
+      
+      <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
+      </div>
+      
     </section>
   );
 };

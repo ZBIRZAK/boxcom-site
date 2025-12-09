@@ -51,11 +51,8 @@ const MaintenanceAndAnalytics = ({ data }) => {
       id="page04_screen05"
       className={`screen03 w-full !h-auto relative section-dark grid grid-cols-1 md:grid-cols-[55%_45%] overflow-hidden`}
     >
-      <div className="absolute w-[60%] -right-10 md:top-[-15%] top-[-2%] z-1 -rotate-3  pointer-events-none overflow-hidden ">
-        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-      </div>
-      <div className="absolute w-[70%] -left-10 md:top-[-17%] top-[-3%] z-1  pointer-events-none overflow-hidden ">
-        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+      <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
       </div>
       <ColumnContentWrapper
         id="maintenance-text"
@@ -102,6 +99,13 @@ const MaintenanceAndAnalytics = ({ data }) => {
         <div className="hidden md:block">
           <ScrollButton to="page04_screen06" />
         </div>
+      </div>
+      
+      <div className="absolute z-99999 w-full top-[-1px] md:top-[-7%] left-[6%] right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
       </div>
     </section>
   );

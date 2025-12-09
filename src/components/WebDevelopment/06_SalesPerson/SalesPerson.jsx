@@ -10,10 +10,10 @@ import Trophy from "./Trophy/Trophy";
 
 const SalesPerson = ({ data }) => {
   return (
-    <section id="page04_screen06" className="w-full h-screen overflow-hidden">
-      <div className="absolute md:w-[60%] w-[120%] -left-10 md:top-[-15%] top-[-7%] z-1  pointer-events-none overflow-hidden ">
-        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-      </div>
+    <section id="page04_screen06" className="w-full h-screen">
+      {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] z-99 -left-5 pointer-events-none overflow-hidden">
+          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+      </div> */}
       <div className="absolute w-full h-full">
         <img
           className="w-full h-full object-cover"
@@ -55,6 +55,13 @@ const SalesPerson = ({ data }) => {
             <BtnFreeConsult text={data.bouton_cta} link={formatUrl(data.button_link)} />
           </div>
         </div>
+      </div>
+      
+      <div className="absolute z-99 w-full top-[-17px] md:top-[-7%] left-[0] right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
       </div>
     </section>
   );

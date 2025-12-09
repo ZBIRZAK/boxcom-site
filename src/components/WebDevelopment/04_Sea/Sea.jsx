@@ -51,7 +51,7 @@ const Sea = ({ data }) => {
   return (
     <section
       id="page04_screen04"
-      className="screen04 w-full !h-auto relative overflow-hidden section-light grid grid-col-1 md:grid-cols-[45%_55%]"
+      className="screen04 w-full !h-auto relative section-light grid grid-col-1 md:grid-cols-[45%_55%]"
     >
       <div
         className="relative h-screen md:overflow-visible overflow-hidden"
@@ -70,7 +70,10 @@ const Sea = ({ data }) => {
           className="w-full h-full"
         />
 
-        <div className="absolute w-[100%] md:w-[100%] max-h-[50%] md:max-h-full h-auto md:bottom-[-10%] bottom-[0%] md:left-[7%] z-[1]">
+        <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+        </div>
+        <div className="absolute w-[100%] md:w-[100%] max-h-[50%] md:max-h-full h-auto md:bottom-[-5%] bottom-[0%] md:left-[7%] z-[1]">
           <img
             src="/images/persons/colorful_girl.png"
             className="w-full h-full"
@@ -81,12 +84,9 @@ const Sea = ({ data }) => {
           <Up />
           <Calculator />
         </div>
-        <div className="absolute w-[110%] -left-10 md:top-[-12%] top-[-7%] z-1  pointer-events-none overflow-hidden ">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-        </div>
-        <div className="absolute w-[110%] -left-10 md:hidden block bottom-[-7%] z-1  pointer-events-none overflow-hidden ">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-        </div>
+        {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+        </div> */}
       </div>
       <ColumnContentWrapper id="sea-text">
         <Title1 html={data.title} />
@@ -102,6 +102,17 @@ const Sea = ({ data }) => {
           <ScrollButton to="page04_screen05" />
         </div>
       </ColumnContentWrapper>
+      
+      <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
+        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+      </div>
+      
+      <div className="absolute z-99999 w-full top-[-1px] md:top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-1.png"
+          alt="Torn sheet"
+        />
+      </div>
     </section>
   );
 };
