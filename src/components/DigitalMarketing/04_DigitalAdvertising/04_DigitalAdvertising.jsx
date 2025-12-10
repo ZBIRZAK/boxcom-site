@@ -76,7 +76,7 @@ const DigitalAdvertising = ({ data }) => {
         {/* <div className="absolute w-[105%] md:top-[-5%] top-[-3%] left-0  pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" />
         </div> */}
-        <div className="absolute md:w-[115%] w-[82%] md:bottom-[-10%] bottom-[-5%] top-[-222%] -left-0 rotate-177  pointer-events-none overflow-hidden ">
+        <div className="absolute md:w-[115%] w-[82%] md:bottom-[-10%] bottom-[-5%] top-[-222%] -left-[20%] rotate-177  pointer-events-none overflow-hidden ">
           <img
             src="/images/objects/torn_sheet.png"
             alt="Torn sheet"
