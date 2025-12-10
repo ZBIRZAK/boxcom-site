@@ -98,9 +98,9 @@ const Websites = ({ data }) => {
         <Dinosaur />
         <WaterSplash />
         <FlyingButterfly />
-        <div className="absolute w-[105%] md:bottom-[-5%] bottom-[-7%] -left-4 pointer-events-none overflow-hidden">
+        {/* <div className="absolute w-[105%] md:bottom-[-5%] bottom-[-7%] -left-4 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
-        </div>
+        </div> */}
       </div>
       <ColumnContentWrapper id="websites-text">
         <Title1 html={data.title} />

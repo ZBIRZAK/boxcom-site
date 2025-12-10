@@ -51,7 +51,7 @@ const Seo = ({ data }) => {
   return (
     <section
       id="page04_screen03"
-      className="relative overflow-hidden !h-auto section-dark grid grid-cols-1 md:grid-cols-[55%_45%]"
+      className="relative !h-auto section-dark grid grid-cols-1 md:grid-cols-[55%_45%]"
     >
       {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
@@ -90,9 +90,9 @@ const Seo = ({ data }) => {
           <Chart />
           <Arobase />
         </div>
-        <div className="absolute w-[110%] -right-10 md:bottom-[-12%] bottom-[-7%] rotate-177 z-1  pointer-events-none overflow-hidden ">
+        {/* <div className="absolute w-[110%] -right-10 md:bottom-[-12%] bottom-[-7%] rotate-177 z-1  pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-        </div>
+        </div> */}
         
         <div className="hidden  md:block">
           <ScrollButton to="page04_screen04" />

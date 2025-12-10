@@ -162,9 +162,9 @@ const Markets = ({ data }) => {
         id="cont-img-woman-paperplane"
         className="relative md:overflow-visible overflow-hidden order-1 md:order-2 md:h-screen h-[80vh]"
       >
-        <div className="absolute w-[140%] -rotate-3 -right-10 md:bottom-[-15%] bottom-[-12%] z-1  pointer-events-none overflow-hidden ">
+        {/* <div className="absolute w-[140%] -rotate-3 -right-10 md:bottom-[-15%] bottom-[-12%] z-1  pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-        </div>
+        </div> */}
         <div className="md:hidden top-5 text-shadow-lg w-full absolute text-center z-1">
           <h2
             className="title"
