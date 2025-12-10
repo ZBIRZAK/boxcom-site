@@ -111,9 +111,9 @@ const DigitalAdvertising = ({ data }) => {
         </div>
       </ColumnContentWrapper>
       
-      <div className="absolute z-99999 w-full top-[-20px] md:top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+      <div className="absolute z-99999 w-full top-[-0.5%] md:top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-1.png"
+          src="/images/objects/torn-papers/torn-paper-6.svg"
           alt="Torn sheet"
         />
       </div>

@@ -71,9 +71,9 @@ const QualityLeads = ({ data }) => {
         <Yes/>
         <Phone/>
         <Magnet/>
-        <div className="absolute w-[105%] md:bottom-[-16%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden ">
+        {/* <div className="absolute w-[105%] md:bottom-[-16%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-        </div>
+        </div> */}
         {/* TITRE POUR MOBILE */}
         <h2
           dangerouslySetInnerHTML={{ __html: data.title }}

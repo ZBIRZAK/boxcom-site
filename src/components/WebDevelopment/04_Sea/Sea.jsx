@@ -73,7 +73,7 @@ const Sea = ({ data }) => {
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
         </div> */}
-        <div className="absolute w-[100%] md:w-[100%] max-h-[50%] md:max-h-full h-auto md:bottom-[-5%] bottom-[0%] md:left-[7%] z-[1]">
+        <div className="absolute w-[100%] md:w-[100%] max-h-[50%] md:max-h-full h-auto md:bottom-[0%] bottom-[0%] md:left-[7%] z-[1]">
           <img
             src="/images/persons/colorful_girl.png"
             className="w-full h-full"

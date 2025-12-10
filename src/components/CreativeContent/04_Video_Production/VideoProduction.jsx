@@ -47,7 +47,7 @@ const VideoProduction = ({ data }) => {
   return (
     <section
       id="page02_screen04"
-      className="relative !h-auto overflow-hidden section-dark grid grid-cols-1 md:grid-cols-[65%_35%]"
+      className="relative !h-auto section-dark grid grid-cols-1 md:grid-cols-[65%_35%]"
     >
       {/* Text column */}
 
@@ -101,9 +101,9 @@ const VideoProduction = ({ data }) => {
         {!isMobile && <ScrollButton to="page02_screen06" />}
       </div>
       
-      <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+      <div className="absolute z-99999 w-full md:top-[-7%] top-[-2%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-1.png"
+          src="/images/objects/torn-papers/torn-paper-6.svg"
           alt="Torn sheet"
         />
       </div>

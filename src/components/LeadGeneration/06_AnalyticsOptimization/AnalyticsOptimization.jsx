@@ -80,9 +80,9 @@ const AnalyticsOptimization = ({ data }) => {
         <Chart />
         {/* <Canvas /> */}
         <Robot />
-        <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
+        {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-        </div>
+        </div> */}
       </div>
 
       {/* COLONNE TEXTE */}
@@ -99,7 +99,7 @@ const AnalyticsOptimization = ({ data }) => {
         </div>
       </ColumnContentWrapper>
       
-      <div className="absolute z-99 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+      <div className="absolute z-99 w-full md:top-[-4%] top-[-0.5%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
           src="/images/objects/torn-papers/torn-paper-6.svg"
           alt="Torn sheet"
