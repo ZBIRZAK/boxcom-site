@@ -19,7 +19,7 @@ import BtnCTA from "./BtnCTA";
 const StartScaling = ({ data }) => {
   const router = useRouter();
   return (
-    <section id="page03_screen05" className="relative h-screen overflow-hidden">
+    <section id="page03_screen05" className="relative h-screen">
       <img
         src="/images/digital_marketing/coloured-street2.jpg"
         className="w-full h-full object-cover"
@@ -28,7 +28,7 @@ const StartScaling = ({ data }) => {
         <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
       </div>
       
-      <div className="absolute z-99999 w-full top-[-8%] left-0 right-0 pointer-events-none overflow-hidden">
+      <div className="absolute z-9 w-full top-[-8%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
           src="/images/objects/torn-papers/torn-paper-1.png"
           alt="Torn sheet"

@@ -76,14 +76,14 @@ const DigitalAdvertising = ({ data }) => {
         {/* <div className="absolute w-[105%] md:top-[-5%] top-[-3%] left-0  pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" />
         </div> */}
-        <div className="absolute w-[115%] md:bottom-[-15%] bottom-[-5%] top-[-222%] -left-0 rotate-177  pointer-events-none overflow-hidden ">
+        <div className="absolute w-[115%] md:bottom-[-10%] bottom-[-5%] top-[-222%] -left-0 rotate-177  pointer-events-none overflow-hidden ">
           <img
             src="/images/objects/torn_sheet.png"
             alt="Torn sheet"
             className=""
           />
         </div>
-        <div className="absolute -bottom-1 -right-[12%] md:w-[73%] w-[130%] ">
+        <div className="absolute -bottom-1 z-99 -right-[12%] md:w-[73%] w-[130%] ">
           <img
             src="/images/digital_marketing/yellow-robot.png"
             className=""
@@ -111,7 +111,7 @@ const DigitalAdvertising = ({ data }) => {
         </div>
       </ColumnContentWrapper>
       
-      <div className="absolute z-99999 w-full top-[-0.5%] md:top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+      <div className="absolute z-99 w-full top-[-0.5%] md:top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
           src="/images/objects/torn-papers/torn-paper-6.svg"
           alt="Torn sheet"
