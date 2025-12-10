@@ -47,7 +47,7 @@ const SocialMediaManagement = ({ data }) => {
         ></h2>
       </div> */}
 
-      <ColumnContentWrapper id="socialmedia-text">
+      <ColumnContentWrapper id="socialmedia-text" className="container-mobile-90">
         <Title1 html={data.title} />
         <Subtitle1 html={data.subtitle} className="subtitle--white" />
         <ParagraphText html={data.text} className="text--white" />
@@ -60,7 +60,7 @@ const SocialMediaManagement = ({ data }) => {
         className="relative h-screen md:order-2 order-1 md:overflow-visible overflow-hidden "
         id="cont-img-superwoman-pink-hair"
       >
-        <div className="md:hidden top-35 text-shadow-lg w-full absolute text-center z-1">
+        <div className="md:hidden top-35 text-shadow-lg w-full absolute text-center z-1 container-mobile-90">
           <h2
             className="title"
             dangerouslySetInnerHTML={{ __html: data.title }}

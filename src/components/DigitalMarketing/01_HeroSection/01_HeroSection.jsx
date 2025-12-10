@@ -128,7 +128,7 @@ const HeroSection = ({ data }) => {
         <Surfer />
         <SpiralGlasses />
       </div>
-      <div className="absolute left-0 top-[10%] right-0 md:top-[20%] md:right-[5%] z-20 md:text-end text-center flex flex-col md:items-end items-center  ">
+      <div className="absolute left-0 top-[10%] right-0 md:top-[20%] md:right-[5%] z-20 md:text-end text-center flex flex-col md:items-end items-center container-mobile-90">
         {/* It’s not about surfing on the trend. */}
         <h3
           dangerouslySetInnerHTML={{ __html: data.title_1 }}

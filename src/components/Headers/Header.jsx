@@ -9,7 +9,7 @@ import gsap from "gsap";
 
 const Logo = ({ onClick }) => (
   <Link
-    className="flex-1/2 md:flex-3/12 flex items-center px-2 md:justify-center z-[9999]"
+    className="flex-1/2 md:flex-3/12 flex items-center px-2 md:justify-center z-[9999] container-mobile-90"
     href={urls.homepage}
     onClick={onClick}
   >
@@ -136,7 +136,7 @@ const Header = ({ data, dark = false, transitionToDark = false }) => {
     <header
       ref={bgRef}
       className={clsx(
-        "fixed top-0 left-0 right-0 h-[70px] w-full flex justify-between z-1000",
+        "fixed top-0 left-0 right-0 h-[70px] w-full flex justify-between z-1000 container-mobile-90",
         dark && "bg-[#000000bb]"
       )}
     >
@@ -153,7 +153,7 @@ const Header = ({ data, dark = false, transitionToDark = false }) => {
         onClickLink={setActiveLink}
       />
 
-      <nav className="md:hidden flex-1/2 flex justify-end items-center px-2 z-[9999]">
+      <nav className="md:hidden flex-1/2 flex justify-end items-center px-2 z-[9999] container-mobile-90">
         <MenuHamburger isOpen={isMenuOpen} onClick={toggleMenu} />
       </nav>
 

@@ -40,7 +40,7 @@ const DigitalStrategy = ({ data }) => {
         className="relative h-screen md:overflow-visible overflow-hidden "
         id="cont-img-door-beach"
       >
-        <div className="md:hidden top-35 text-shadow-lg w-full absolute text-center z-1">
+        <div className="md:hidden top-35 text-shadow-lg w-full absolute text-center z-1 container-mobile-90">
           <h2
             className="title"
             dangerouslySetInnerHTML={{ __html: data.title }}
@@ -79,7 +79,7 @@ const DigitalStrategy = ({ data }) => {
           <img src="/images/nature/sun2.svg" />
         </div>
       </div>
-      <ColumnContentWrapper id="strategy-text">
+      <ColumnContentWrapper id="strategy-text" className="container-mobile-90">
         <Title1 html={data.title} />
         <Subtitle1 html={data.subtitle} />
         <ParagraphText html={data.text} />
