@@ -21,6 +21,15 @@ const Lately = async ({ sectionId, portfolioCategoryId }) => {
       id={sectionId}
       className="relative h-screen w-full overflow-hidden z-30"
     >
+      {/* Ripped paper effect at the top of this section */}
+      {/* <div className="absolute z-99999 w-full top-[-1px] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-6.svg"
+          alt="Torn sheet"
+          className="w-full"
+        />
+      </div> */}
+      
       <img
         src="/images/bg-screen6-9-3.webp"
         alt=""

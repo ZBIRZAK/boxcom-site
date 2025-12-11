@@ -7,7 +7,7 @@ const OurTeam = ({ data }) => {
   return (
     <section
       id="page06_screen09"
-      className="!h-auto section-dark overflow-hidden relative grid grid-cols-1 md:grid-cols-[55%_45%] w-full md:min-h-screen"
+      className="!h-auto section-dark relative grid grid-cols-1 md:grid-cols-[55%_45%] w-full md:min-h-screen"
     >
       <ColumnContentWrapper id="our-team-text">
         <Title1 html={data.title} className={"!text-white"} />
@@ -22,6 +22,15 @@ const OurTeam = ({ data }) => {
         <div className="hidden md:block">
           <ScrollButton to="page06_screen10" />
         </div>
+      </div>
+
+      {/* Ripped paper effect at the bottom of this section */}
+      <div className="absolute z-10 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-6.svg"
+          alt="Torn sheet"
+          className="w-full"
+        />
       </div>
     </section>
   );

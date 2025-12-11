@@ -71,12 +71,21 @@ const DistributionAndRepurposing = ({ data }) => {
         {!isMobile && <ScrollButton to="page02_screen06" />}
       </div>
       
-      <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+      <div className="absolute z-99 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-1.png"
+          src="/images/objects/torn-papers/torn-paper-6.svg"
           alt="Torn sheet"
         />
       </div>
+      
+      {/* Ripped paper effect at the bottom of this section */}
+      {/* <div className="absolute z-99999 w-full bottom-[-1px] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn_sheet.png"
+          alt="Torn sheet"
+          className="w-full"
+        />
+      </div> */}
     </section>
   );
 };

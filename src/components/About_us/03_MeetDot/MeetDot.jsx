@@ -9,7 +9,7 @@ import WaterSplash from "./WaterSplash"
 
 const MeetDot = ({data}) => {
     return(
-        <section id="page06_screen03" className="relative md:screen w-full overflow-hidden">
+        <section id="page06_screen03" className="relative md:screen w-full">
             <div className="absolute w-full h-full">
                 <img src="/images/persons/dot.jpg" alt="Meetdot" className="w-full h-full object-cover object-center " />
             </div>
@@ -31,6 +31,24 @@ const MeetDot = ({data}) => {
             </div>
             
             <ScrollButton  to="page06_screen04" />
+
+            {/* Ripped paper effect at the top of this section */}
+            <div className="absolute z-10 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+                <img
+                src="/images/objects/torn-papers/torn-paper-6.svg"
+                alt="Torn sheet"
+                className="w-full"
+                />
+            </div>
+
+            {/* Ripped paper effect at the bottom of this section */}
+            <div className="absolute z-10 w-full bottom-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+                <img
+                src="/images/objects/torn-papers/torn-paper-6.svg"
+                alt="Torn sheet"
+                className="w-full"
+                />
+            </div>
         </section>
     )
 }

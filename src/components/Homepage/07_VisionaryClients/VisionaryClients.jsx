@@ -22,7 +22,7 @@ const VisionaryClients = ({ data }) => {
   return (
     <div
       id="page01_screen07"
-      className="w-full md:!h-screen bg-black h-auto min-h-screen relative overflow-hidden z-30 "
+      className="w-full md:!h-screen bg-black h-auto min-h-screen relative z-30 "
     >
       {/* <div className="w-full h-full absolute top-0 left-0 z-0">
         <img
@@ -51,7 +51,26 @@ const VisionaryClients = ({ data }) => {
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Ripped paper effect at the top of this section */}
+      <div className="absolute z-99999 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+          <img
+            src="/images/objects/torn-papers/torn-paper-6.svg"
+            alt="Torn sheet"
+            className="w-full"
+          />
+      </div>
+
+      {/* Ripped paper effect at the top of this section */}
+      <div className="absolute z-99999 w-full bottom-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+          <img
+            src="/images/objects/torn-papers/torn-paper-6.svg"
+            alt="Torn sheet"
+            className="w-full"
+          />
+      </div>
+  </div>
+
   );
 };
 export default VisionaryClients;

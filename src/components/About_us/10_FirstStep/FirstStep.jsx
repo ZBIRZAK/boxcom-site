@@ -5,7 +5,7 @@ import BtnFreeConsult from "./BtnFreeConsult";
 
 const FirstStep = ({ data }) => {
   return (
-    <section id="page06_screen10" className="w-full h-screen overflow-hidden">
+    <section id="page06_screen10" className="w-full h-screen">
       <div className="absolute w-full h-full">
         <img
           src="/images/about_us/bg-colorfull-wall.jpeg"
@@ -45,6 +45,15 @@ const FirstStep = ({ data }) => {
             <BtnFreeConsult text={data.button} link={data.button_link} />
           </div>
         </div>
+      </div>
+
+      {/* Ripped paper effect at the bottom of this section */}
+      <div className="absolute z-10 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-6.svg"
+          alt="Torn sheet"
+          className="w-full"
+        />
       </div>
     </section>
   );

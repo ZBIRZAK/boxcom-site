@@ -25,7 +25,7 @@ export default function LetsMakeItHappen({ data }) {
   return (
     <section
       id="page10_letsMakeItHappen"
-      className="relative !h-screen flex justify-end overflow-hidden z-30"
+      className="relative !h-screen flex justify-end z-30"
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
@@ -95,6 +95,15 @@ export default function LetsMakeItHappen({ data }) {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Ripped paper effect at the bottom of this section */}
+      <div className="absolute z-99999 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-6.svg"
+          alt="Torn sheet"
+          className="w-full"
+        />
       </div>
     </section>
   );

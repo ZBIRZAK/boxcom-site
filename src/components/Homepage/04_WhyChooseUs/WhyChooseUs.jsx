@@ -96,7 +96,7 @@ const WhyChooseUs = ({ data }) => {
   return (
     <section
       id="page01_screen04"
-      className="relative md:!h-screen !h-[120vh] w-full overflow-hidden z-30"
+      className="relative md:!h-screen !h-[120vh] w-full z-30"
       ref={sectionRef}
     >
       <img
@@ -177,6 +177,15 @@ const WhyChooseUs = ({ data }) => {
 
       <div className="hidden md:block">
         <ScrollButton to="page01_screen05" />
+      </div>
+
+      {/* Ripped paper effect at the bottom of this section */}
+      <div className="absolute z-99999 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+        <img
+          src="/images/objects/torn-papers/torn-paper-6.svg"
+          alt="Torn sheet"
+          className="w-full"
+        />
       </div>
     </section>
   );

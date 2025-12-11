@@ -18,7 +18,7 @@ const EveryClickCounts = ({ data }) => {
   return (
     <section
       id="page05_screen07"
-      className="relative !h-screen w-full overflow-hidden"
+      className="relative !h-screen w-full"
     >
       <div className="absolute inset-0 w-full h-full ">
         <img
@@ -68,12 +68,14 @@ const EveryClickCounts = ({ data }) => {
         </div>
       </div>
       
-      {/* <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+      {/* Ripped paper effect at the bottom of this section */}
+      <div className="absolute z-99999 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-1.png"
+          src="/images/objects/torn-papers/torn-paper-6.svg"
           alt="Torn sheet"
+          className="w-full"
         />
-      </div> */}
+      </div>
     </section>
   );
 };
