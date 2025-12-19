@@ -17,7 +17,7 @@ const OurImpact = ({ data }) => {
           html={data.title}
           className={"!text-white !text-start px-5 ml-5"}
         />
-        <div className="flex flex-wrap justify-start mt-15 items-center px-5">
+        <div className="flex flex-wrap justify-start mt-15 px-5">
           <div className="w-[45%] md:mt-0 mt-5">
             <Title1
               html={data.years_expertise.subtitle}
@@ -28,7 +28,7 @@ const OurImpact = ({ data }) => {
               className={"!text-white !text-center"}
             />
           </div>
-          <div className="w-[45%] ">
+          <div className="w-[45%] md:mt-0 mt-5">
             <Title1
               html={data.successful_launches.subtitle}
               className={"!text-white !text-center !block"}
@@ -38,7 +38,7 @@ const OurImpact = ({ data }) => {
               className={"!text-white !text-center"}
             />
           </div>
-          <div className="w-[45%] mt-10 ">
+          <div className="w-[45%] md:mt-0 mt-5">
             <Title1
               html={data.campaigns_crafted.subtitle}
               className={"!text-white !text-center !block"}
@@ -48,7 +48,7 @@ const OurImpact = ({ data }) => {
               className={"!text-white !text-center"}
             />
           </div>
-          <div className="w-[45%] mt-15 ">
+          <div className="w-[45%] md:mt-0 mt-5">
             <Title1
               html={data.stories_to_life.subtitle}
               className={"!text-white !text-center !block"}
