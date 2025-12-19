@@ -109,7 +109,7 @@ const Sea = ({ data }) => {
       
       <div className="absolute z-99999 w-full top-[-10px] md:top-[-3%] left-0 right-0 pointer-events-none overflow-hidden z-[99] ">
         <img
-          src="/images/objects/torn-papers/torn-paper-6.svg"
+          src="/images/objects/torn-papers/torn-paper-7.svg"
           alt="Torn sheet"
         />
       </div>

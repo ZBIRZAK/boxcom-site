@@ -103,7 +103,7 @@ const MaintenanceAndAnalytics = ({ data }) => {
       
       <div className="absolute z-99 w-full top-[-1.2%] md:top-[-4%] md:left-[0%] left-[0%]  right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-6.svg"
+          src="/images/objects/torn-papers/torn-paper-8.svg"
           alt="Torn sheet"
         />
       </div>
