@@ -70,13 +70,13 @@ const SocialMediaManagement = ({ data }) => {
           src="/images/digital_marketing/bg-screen3.png"
           className="w-full h-full object-cover"
         />
-        <div className="absolute w-[105%] md:top-[-13%] top-[-3%] right-0  pointer-events-none overflow-hidden ">
+        {/* <div className="absolute w-[105%] md:top-[-13%] top-[-3%] right-0  pointer-events-none overflow-hidden ">
           <img
             src="/images/objects/torn_sheet.png"
             alt="Torn sheet"
             className="scale-x-110 -rotate-1"
           />
-        </div>
+        </div> */}
         <div className="absolute bottom-0 right-[0%] md:right-[-7%] w-full md:w-[90%]">
           <img
             src="/images/digital_marketing/pinkhair-woman.png"
@@ -95,16 +95,16 @@ const SocialMediaManagement = ({ data }) => {
           <Star4 />
           <Star5 />
         </div>
-        <div className="absolute w-[105%] md:top-[-10%] top-[-5%] left-0 pointer-events-none overflow-hidden">
+        {/* <div className="absolute w-[105%] md:top-[-10%] top-[-5%] left-0 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" />
-        </div>
-        <div className="absolute w-[115%] md:bottom-[-12%] bottom-[-5%]  -left-10 rotate-177  pointer-events-none overflow-hidden ">
+        </div> */}
+        {/* <div className="absolute w-[115%] md:bottom-[-12%] bottom-[-5%]  -left-10 rotate-177  pointer-events-none overflow-hidden ">
           <img
             src="/images/objects/torn_sheet.png"
             alt="Torn sheet"
             className=""
           />
-        </div>
+        </div> */}
         <CleDeSol />
         <CrocheViolette />
         <DoubleCrocheJaune />
@@ -118,12 +118,12 @@ const SocialMediaManagement = ({ data }) => {
         <ScrollButton to="page03_screen04" />
       </div>
 
-      <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
+      {/* <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
           src="/images/objects/torn-papers/torn-paper-1.png"
           alt="Torn sheet"
         />
-      </div>
+      </div> */}
     </section>
   );
 };

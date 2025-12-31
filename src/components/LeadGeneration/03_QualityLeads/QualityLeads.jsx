@@ -56,9 +56,9 @@ const QualityLeads = ({ data }) => {
       </ColumnContentWrapper>
       
       <div id="cont-img-girl-with-mushrooms" className="relative md:overflow-visible overflow-hidden order-1 md:order-2 h-screen">
-      <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+      {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
-      </div>
+      </div> */}
         <div className="absolute w-full h-full overflow-hidden">
           <img
             src="/images/lead_generation/bg-puzzle-heads.jpeg"
@@ -83,12 +83,12 @@ const QualityLeads = ({ data }) => {
         {!isMobile && <ScrollButton to="page05_screen04" />}
       </div>
       
-      <div className="absolute z-99 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+      {/* <div className="absolute z-99 w-full top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
           src="/images/objects/torn-papers/torn-paper-7.svg"
           alt="Torn sheet"
         />
-      </div>
+      </div> */}
     </section>
   )
 };

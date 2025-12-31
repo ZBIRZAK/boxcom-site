@@ -62,9 +62,9 @@ const GraphicDesign = ({ data }) => {
           className="w-full h-full object-cover object-center"
         />
         
-        <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
+        {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
             <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
-        </div>
+        </div> */}
 
         {/* LE CADRE */}
         <div className="absolute w-[40%] bottom-[10%] right-[-12%] h-auto md:w-[35%] md:-bottom-[10%] md:right-[-6%]">
@@ -113,12 +113,12 @@ const GraphicDesign = ({ data }) => {
         </div>
       </ColumnContentWrapper>
       
-      <div className="absolute z-99 w-full top-[-11px] md:top-[-2%] left-0 right-0 pointer-events-none overflow-hidden">
+      {/* <div className="absolute z-99 w-full top-[-11px] md:top-[-2%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
           src="/images/objects/torn-papers/torn-paper-6.svg"
           alt="Torn sheet"
         />
-      </div>
+      </div> */}
     </section>
   );
 };

@@ -100,7 +100,7 @@ const Header = ({ data, dark = false, transitionToDark = false }) => {
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
-  const links = Object.values(data.nav_menu);
+  const links = Object.values(data.nav_menu).filter(link => link.text.toLowerCase() !== 'blog');
   links.forEach((link) => {
     link.link = formatUrl(link.link);
   });

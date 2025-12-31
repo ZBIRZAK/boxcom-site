@@ -38,6 +38,8 @@ const DigitalAdvertising = ({ data }) => {
           end: "bottom bottom",
           pin: "#cont-img-open-field",
           pinSpacing: false,
+          // Add a custom class to the pin spacer element
+          pinSpacer: ".custom-pin-spacer",
           // markers: true,
         });
 
@@ -48,6 +50,7 @@ const DigitalAdvertising = ({ data }) => {
     }
   }, [isMobile]);
   return (
+    
     <section
       className="!h-auto section-light relative grid grid-cols-1 md:grid-cols-[45%_55%] w-full md:min-h-screen"
       id="page03_screen04"
@@ -58,6 +61,7 @@ const DigitalAdvertising = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: data.title }}
         ></h2>
       </div> */}
+      
 
       <div
         className="relative h-screen md:overflow-visible"
@@ -76,13 +80,13 @@ const DigitalAdvertising = ({ data }) => {
         {/* <div className="absolute w-[105%] md:top-[-5%] top-[-3%] left-0  pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" />
         </div> */}
-        <div className="absolute md:w-[115%] w-[82%] md:bottom-[-10%] bottom-[-5%] top-[-222%] -left-[20%] rotate-177  pointer-events-none overflow-hidden ">
+        {/* <div className="absolute md:w-[115%] w-[82%] md:bottom-[-10%] bottom-[-5%] top-[-222%] -left-[20%] rotate-177  pointer-events-none overflow-hidden ">
           <img
             src="/images/objects/torn_sheet.png"
             alt="Torn sheet"
             className=""
           />
-        </div>
+        </div> */}
         <div className="absolute -bottom-1 z-99 -right-[12%] md:w-[73%] w-[130%] ">
           <img
             src="/images/digital_marketing/yellow-robot.png"
@@ -111,12 +115,14 @@ const DigitalAdvertising = ({ data }) => {
         </div>
       </ColumnContentWrapper>
       
-      <div className="absolute z-99 w-full top-[-0.5%] md:top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
+      {/* <div className="absolute z-99 w-full top-[-0.5%] md:top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
           src="/images/objects/torn-papers/torn-paper-8.svg"
           alt="Torn sheet"
         />
-      </div>
+      </div> */}
+
+
     </section>
   );
 };

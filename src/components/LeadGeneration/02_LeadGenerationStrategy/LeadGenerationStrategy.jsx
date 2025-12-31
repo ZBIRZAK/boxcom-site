@@ -85,9 +85,9 @@ const LeadGenerationStrategy = ({ data }) => {
           <Books />
           <GlowingArrow />
         </div>
-        <div className="absolute w-[110%] -left-10 md:bottom-[-11%] bottom-[-7%] z-1  pointer-events-none overflow-hidden ">
+        {/* <div className="absolute w-[110%] -left-10 md:bottom-[-11%] bottom-[-7%] z-1  pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
-        </div>
+        </div> */}
       </div>
 
       {/* COLONNE TEXTE */}

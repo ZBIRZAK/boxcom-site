@@ -24,7 +24,7 @@ const Lately = async ({ sectionId, portfolioCategoryId }) => {
       {/* Ripped paper effect at the top of this section */}
       {/* <div className="absolute z-99999 w-full top-[-1px] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-6.svg"
+          src="/images/objects/torn_sheet.png"
           alt="Torn sheet"
           className="w-full"
         />

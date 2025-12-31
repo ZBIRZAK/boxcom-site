@@ -52,13 +52,13 @@ const DigitalStrategy = ({ data }) => {
             className="h-full w-full object-cover scale-126 "
           />
         </div>
-        <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-5%] left-0 rotate-180  pointer-events-none overflow-hidden ">
+        {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-5%] left-0 rotate-180  pointer-events-none overflow-hidden ">
           <img
             src="/images/objects/torn_sheet.png"
             alt="Torn sheet"
             className="scale-x-110 -rotate-1"
           />
-        </div>
+        </div> */}
         <div className="absolute bottom-0 right-[0%] md:right-[-7%] w-full md:w-[90%]">
           <img src="/images/digital_marketing/man-sofa.png" />
 
