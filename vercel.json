@@ -1,7 +1,6 @@
 {
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "createdAt": "Jan 20, 2026",
   "installCommand": "npm install",
   "outputDirectory": ".next",
   "functions": {
