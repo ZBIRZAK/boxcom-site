@@ -55,7 +55,7 @@ const GirlWithGlasses = ({ starStyles, delay = 2, duration = 3, context }) => {
     >
       <img
         // src="/images/homepage/hiba.png"
-        src="/images/homepage/girl-with-glasses.png"
+        src="/images/homepage/girl-with-glasses.webp"
         className="w-full h-full object-cover drop-shadow-[0_0_14px_rgb(76,76,76)]"
       />
       <BouncingCreature delay={5} />

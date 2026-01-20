@@ -49,7 +49,7 @@ const HeroSection = ({ data }) => {
         className="relative w-full h-screen overflow-hidden z-1 bg-[url('/images/bg_ecran1.jpg')] bg-cover bg-center"
       >
         <h1 className="hidden">{data.main_title}</h1>
-        <ImagePreloader imageUrls={["/images/homepage/girl-with-glasses.png"]}>
+        <ImagePreloader imageUrls={["/images/homepage/girl-with-glasses.webp"]}>
           <GirlWithGlasses
             starStyles={styles.purpleStarContainer}
             duration={3}
