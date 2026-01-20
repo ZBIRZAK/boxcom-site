@@ -3,7 +3,7 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - main
+      - main  # Trigger build: Jan 20, 2026
 
 jobs:
   deploy:
