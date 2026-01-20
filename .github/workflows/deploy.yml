@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -21,10 +22,75 @@ jobs:
         run: npm install
 
       - name: Build project
+        env:
+          FRONTEND_HOST: ${{ secrets.FRONTEND_HOST }}
+          BACKEND_HOST: ${{ secrets.BACKEND_HOST }}
+          BACKEND_URL: ${{ secrets.BACKEND_URL }}
+          BACKEND_POSTS: ${{ secrets.BACKEND_POSTS }}
+          BACKEND_PAGE: ${{ secrets.BACKEND_PAGE }}
+          BACKEND_PORTFOLIO: ${{ secrets.BACKEND_PORTFOLIO }}
+          BACKEND_MEDIA: ${{ secrets.BACKEND_MEDIA }}
+          BACKEND_SEO: ${{ secrets.BACKEND_SEO }}
+          FORM_SUBMISSION_URL: ${{ secrets.FORM_SUBMISSION_URL }}
+          BACKEND_USERS: ${{ secrets.BACKEND_USERS }}
+          BACKEND_TAG: ${{ secrets.BACKEND_TAG }}
+          BACKEND_TAGS: ${{ secrets.BACKEND_TAGS }}
+          HOMEPAGE_ID: ${{ secrets.HOMEPAGE_ID }}
+          CREATIVE_CONTENT_ID: ${{ secrets.CREATIVE_CONTENT_ID }}
+          DIGITAL_MARKETING_ID: ${{ secrets.DIGITAL_MARKETING_ID }}
+          LEAD_GENERATION_ID: ${{ secrets.LEAD_GENERATION_ID }}
+          WEB_DEV_ID: ${{ secrets.WEB_DEV_ID }}
+          ABOUT_US_ID: ${{ secrets.ABOUT_US_ID }}
+          FOOTER_ID: ${{ secrets.FOOTER_ID }}
+          HEADER_ID: ${{ secrets.HEADER_ID }}
+          BLOG_ID: ${{ secrets.BLOG_ID }}
+          FAQ_ID: ${{ secrets.FAQ_ID }}
+          OUR_PROJECTS_ID: ${{ secrets.OUR_PROJECTS_ID }}
+          CONTACT_ID: ${{ secrets.CONTACT_ID }}
+          CONTACT_FORM_ID: ${{ secrets.CONTACT_FORM_ID }}
+          CONTACT_FORM_KEY: ${{ secrets.CONTACT_FORM_KEY }}
+          PORTFOLIO_HOMEPAGE_ID: ${{ secrets.PORTFOLIO_HOMEPAGE_ID }}
+          PORTFOLIO_DIGITAL_MARKETING_ID: ${{ secrets.PORTFOLIO_DIGITAL_MARKETING_ID }}
+          PORTFOLIO_CREATIVE_CONTENT_ID: ${{ secrets.PORTFOLIO_CREATIVE_CONTENT_ID }}
+          PORTFOLIO_LEAD_GEN_ID: ${{ secrets.PORTFOLIO_LEAD_GEN_ID }}
+          PORTFOLIO_PROJECTS_ID: ${{ secrets.PORTFOLIO_PROJECTS_ID }}
+          PORTFOLIO_WEB_DEV_ID: ${{ secrets.PORTFOLIO_WEB_DEV_ID }}
         run: npm run build  # Adjust this if your project uses a different build command
 
       - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}  # Pulls Vercel token from GitHub secrets
+          FRONTEND_HOST: ${{ secrets.FRONTEND_HOST }}
+          BACKEND_HOST: ${{ secrets.BACKEND_HOST }}
+          BACKEND_URL: ${{ secrets.BACKEND_URL }}
+          BACKEND_POSTS: ${{ secrets.BACKEND_POSTS }}
+          BACKEND_PAGE: ${{ secrets.BACKEND_PAGE }}
+          BACKEND_PORTFOLIO: ${{ secrets.BACKEND_PORTFOLIO }}
+          BACKEND_MEDIA: ${{ secrets.BACKEND_MEDIA }}
+          BACKEND_SEO: ${{ secrets.BACKEND_SEO }}
+          FORM_SUBMISSION_URL: ${{ secrets.FORM_SUBMISSION_URL }}
+          BACKEND_USERS: ${{ secrets.BACKEND_USERS }}
+          BACKEND_TAG: ${{ secrets.BACKEND_TAG }}
+          BACKEND_TAGS: ${{ secrets.BACKEND_TAGS }}
+          HOMEPAGE_ID: ${{ secrets.HOMEPAGE_ID }}
+          CREATIVE_CONTENT_ID: ${{ secrets.CREATIVE_CONTENT_ID }}
+          DIGITAL_MARKETING_ID: ${{ secrets.DIGITAL_MARKETING_ID }}
+          LEAD_GENERATION_ID: ${{ secrets.LEAD_GENERATION_ID }}
+          WEB_DEV_ID: ${{ secrets.WEB_DEV_ID }}
+          ABOUT_US_ID: ${{ secrets.ABOUT_US_ID }}
+          FOOTER_ID: ${{ secrets.FOOTER_ID }}
+          HEADER_ID: ${{ secrets.HEADER_ID }}
+          BLOG_ID: ${{ secrets.BLOG_ID }}
+          FAQ_ID: ${{ secrets.FAQ_ID }}
+          OUR_PROJECTS_ID: ${{ secrets.OUR_PROJECTS_ID }}
+          CONTACT_ID: ${{ secrets.CONTACT_ID }}
+          CONTACT_FORM_ID: ${{ secrets.CONTACT_FORM_ID }}
+          CONTACT_FORM_KEY: ${{ secrets.CONTACT_FORM_KEY }}
+          PORTFOLIO_HOMEPAGE_ID: ${{ secrets.PORTFOLIO_HOMEPAGE_ID }}
+          PORTFOLIO_DIGITAL_MARKETING_ID: ${{ secrets.PORTFOLIO_DIGITAL_MARKETING_ID }}
+          PORTFOLIO_CREATIVE_CONTENT_ID: ${{ secrets.PORTFOLIO_CREATIVE_CONTENT_ID }}
+          PORTFOLIO_LEAD_GEN_ID: ${{ secrets.PORTFOLIO_LEAD_GEN_ID }}
+          PORTFOLIO_PROJECTS_ID: ${{ secrets.PORTFOLIO_PROJECTS_ID }}
+          PORTFOLIO_WEB_DEV_ID: ${{ secrets.PORTFOLIO_WEB_DEV_ID }}
         run: npx vercel --prod --token $VERCEL_TOKEN
       
