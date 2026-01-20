@@ -407,3 +407,7 @@ section {
   z-index: -10;
   transform: rotate(-3deg);
 }
+
+.relative {
+    margin-top: -2px;
+}
