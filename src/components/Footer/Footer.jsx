@@ -8,7 +8,9 @@ function getSectionLinks(section) {
   const links = entries
     .filter((entry) => /^link\d$/.test(entry[0]) && entry[1]?.text)
     .map((link) => link[1]);
-  return links;
+  // Filter out "Our Projects" links
+  //return links;
+  return links.filter(link => link.text.toLowerCase() !== 'our projects');
 }
 
 const ListLinks = ({ links }) => (
