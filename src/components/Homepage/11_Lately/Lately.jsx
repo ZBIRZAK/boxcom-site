@@ -3,7 +3,11 @@
 import Button from "../../Buttons/Button2";
 import InstaFeed from "./InstaFeed";
 
-const Lately = ({ data }) => {
+const Lately = ({ data, showSection = process.env.NEXT_PUBLIC_SHOW_LATELY_SECTION !== 'false' }) => {
+  // If showSection is false, don't render anything
+  if (!showSection) return null;
+
+
   const title = data.title
     .replace(
       "<span>",
