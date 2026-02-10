@@ -7,6 +7,7 @@ import { userAgent } from "next/server";
 import { headers } from "next/headers";
 import UserAgentProvider from "../contexts/UserAgentProvider";
 import { BreakpointIndicator } from "../components/Responsive/BreakpointIndicator";
+import GoogleAnalytics from "../components/GoogleAnalytics/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -66,6 +67,7 @@ export default async function RootLayout({ children }) {
             {children}
             <Footer />
             <BreakpointIndicator />
+            <GoogleAnalytics />
           </UserAgentProvider>
         </body>
       </html>
