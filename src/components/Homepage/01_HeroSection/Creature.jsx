@@ -45,16 +45,19 @@ const Creature = ({ className, ref }) => {
     <div ref={ref} className={clsx("absolute aspect-square", className)}>
       <img
         src="/images/creatures/creature-empty.svg"
+        alt=""
         className="inline-block w-full"
       />
       <img
         ref={L}
         src="/images/creatures/creature-left-eye.svg"
+        alt=""
         className="absolute md:top-[41%] top-[40%] left-[11%] w-[33%]"
       />
       <img
         ref={R}
         src="/images/creatures/creature-right-eye.svg"
+        alt=""
         className="absolute md:top-[43%] top-[40%] right-[19%] w-[35%]"
       />
     </div>

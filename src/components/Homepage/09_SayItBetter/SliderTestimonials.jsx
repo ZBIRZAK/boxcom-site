@@ -29,6 +29,8 @@ const Arrow = ({ ref, prev = true, onClick }) => {
     <button
       ref={ref}
       onClick={onClick}
+      type="button"
+      aria-label={prev ? "Previous testimonial" : "Next testimonial"}
       className={clsx(
         "group cursor-pointer absolute z-10 transition-all flex items-center justify-center",
         "w-10 h-10 md:w-20 md:h-20",
@@ -41,6 +43,7 @@ const Arrow = ({ ref, prev = true, onClick }) => {
             ? "/images/arrows/chevron-left.svg"
             : "/images/arrows/chevron-right.svg"
         }
+        alt=""
         className={clsx("h-[70%] transition-all group-hover:scale-120")}
       />
     </button>

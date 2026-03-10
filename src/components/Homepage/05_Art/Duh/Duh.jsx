@@ -120,7 +120,7 @@ const Duh = () => {
       </svg> */}
 
       <div ref={pencilRef} className="absolute w-[5%] -top-[10px] -left-[10%]">
-        <img src="/images/pencil.svg" />
+        <img src="/images/pencil.svg" alt="" />
       </div>
     </div>
   );

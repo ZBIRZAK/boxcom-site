@@ -98,16 +98,19 @@ const WaterSplash2 = ({ className, delay = 4.7 }) => {
       <img
         ref={splash1}
         src="/images/water/splash-stroke-half-1.svg"
+        alt=""
         className="w-[47%] bottom-0 left-0 opacity-0"
       />
       <img
         ref={splash2}
         src="/images/water/splash-stroke-half-2.svg"
+        alt=""
         className="w-[70%] bottom-[53%] left-[2%] opacity-0"
       />
       <img
         ref={splash3}
         src="/images/water/splash-stroke-half-3.svg"
+        alt=""
         className="w-[55%] bottom-[68%] left-[45%] opacity-0"
       />
     </div>

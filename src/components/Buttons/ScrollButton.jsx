@@ -26,8 +26,10 @@ const ScrollButton = ({ to }) => {
       <button
         className="cursor-pointer bg-white rounded-full shadow transition-shadow duration-300 border hover:shadow-lg w-12 h-12 text-gray-500 flex justify-center items-center"
         onClick={handleClick}
+        type="button"
+        aria-label="Scroll to next section"
       >
-        <ArrowDown />
+        <ArrowDown aria-hidden="true" />
       </button>
     </div>
   );

@@ -49,7 +49,9 @@ const HeroSection = ({ data }) => {
       >
         <h1 className="hidden">{data.main_title}</h1>
         <img
-          src="/images/bg_ecran1.webp"
+          src="/images/bg_ecran1-1410.webp"
+          srcSet="/images/bg_ecran1-1410.webp 1410w, /images/bg_ecran1.webp 1600w"
+          sizes="100vw"
           alt=""
           aria-hidden="true"
           loading="eager"

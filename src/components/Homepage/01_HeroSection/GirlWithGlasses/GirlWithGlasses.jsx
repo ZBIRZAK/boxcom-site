@@ -54,8 +54,9 @@ const GirlWithGlasses = ({ starStyles, delay = 2, duration = 3, context }) => {
       ref={refContainer}
     >
       <img
-        // src="/images/homepage/hiba.png"
-        src="/images/homepage/girl-with-glasses.webp"
+        src="/images/homepage/girl-with-glasses-800.webp"
+        srcSet="/images/homepage/girl-with-glasses-800.webp 800w, /images/homepage/girl-with-glasses-q68.webp 1280w"
+        sizes="(max-width: 767px) 100vw, 60vw"
         alt="Woman with glasses"
         width={1280}
         height={853}

@@ -98,11 +98,11 @@ const Footer = async () => {
 
         <div className={styles.links}>
           <div>
-            <h4>{footer.service_section.title}</h4>
+            <h3>{footer.service_section.title}</h3>
             <ListLinks links={serviceLinks} />
           </div>
           <div>
-            <h4>{footer.about_section.title}</h4>
+            <h3>{footer.about_section.title}</h3>
             <ListLinks links={aboutLinks} />
 
             <ul>

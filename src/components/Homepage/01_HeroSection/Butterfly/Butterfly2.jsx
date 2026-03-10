@@ -40,6 +40,7 @@ const Butterfly2 = ({ containerRef, className }) => {
       <div ref={L} className="absolute top-0 left-0 w-[50%]">
         <img
           src="/images/animals/butterfly/left-wing.svg"
+          alt=""
           className="w-full drop-shadow-lg/70"
         />
       </div>
@@ -47,6 +48,7 @@ const Butterfly2 = ({ containerRef, className }) => {
       <div ref={R} className="absolute top-0 right-0 w-[50%]">
         <img
           src="/images/animals/butterfly/right-wing.svg"
+          alt=""
           className="w-full drop-shadow-lg/70"
         />
       </div>
@@ -54,6 +56,7 @@ const Butterfly2 = ({ containerRef, className }) => {
       <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[20%]">
         <img
           src="/images/animals/butterfly/body.svg"
+          alt=""
           className="w-full drop-shadow-lg/70"
         />
       </div>

@@ -128,7 +128,7 @@ const MusicalNote2=()=>{
     <div ref={imgRef} className="absolute w-[3%] top-[65%] right-[15%]">
        <img
           src="/images/notes/double-croche.svg"
-          // alt={`Follower ${i + 1}`}
+          alt=""
           className="w-full h-full object-contain block"
         />
     </div>

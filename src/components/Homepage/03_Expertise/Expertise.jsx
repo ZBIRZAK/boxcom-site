@@ -42,7 +42,11 @@ const Expertise = ({ data, id, nextId, dark = false }) => {
       {!dark && (
         <div className="absolute inset-0 z-1">
           <img
-            src="/images/bg-screen6-9-3-opt.webp"
+            src="/images/bg-screen6-9-3-1410.webp"
+            srcSet="/images/bg-screen6-9-3-1410.webp 1410w, /images/bg-screen6-9-3-opt.webp 2400w"
+            sizes="100vw"
+            alt=""
+            aria-hidden="true"
             className="w-full h-full object-cover"
           />
         </div>

@@ -58,15 +58,17 @@ const RedMushroom2 = () => {
       ref={container}
       className="absolute w-[6%] left-[15%] bottom-[8%] aspect-square opacity-0"
     >
-      <img src="/images/nature/red-mushroom/RM-no-eyes.svg" />
+      <img src="/images/nature/red-mushroom/RM-no-eyes.svg" alt="" />
       <img
         ref={eyeL}
         src="/images/nature/red-mushroom/RM-eyeL.svg"
+        alt=""
         className="absolute w-[10%] left-[40%] top-[20%]"
       />
       <img
         ref={eyeR}
         src="/images/nature/red-mushroom/RM-eyeR.svg"
+        alt=""
         className="absolute w-[8%] left-[59%] top-[26%]"
       />
     </div>

@@ -41,10 +41,15 @@ const StillDoubting = ({ data }) => {
             <>
               <img
                 src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                alt="Video thumbnail"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <button className="bg-[#FF0000] cursor-pointer rounded-[20%] md:rounded-[30%] p-0 md:p-2 flex items-center justify-center shadow-lg">
+                <button
+                  type="button"
+                  aria-label="Play video"
+                  className="bg-[#FF0000] cursor-pointer rounded-[20%] md:rounded-[30%] p-0 md:p-2 flex items-center justify-center shadow-lg"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 68 48"

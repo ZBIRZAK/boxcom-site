@@ -64,7 +64,7 @@ export default async function RootLayout({ children }) {
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <UserAgentProvider reqUserAgent={reqUserAgent}>
-            {children}
+            <main>{children}</main>
             <Footer />
             <BreakpointIndicator />
             <GoogleAnalytics />

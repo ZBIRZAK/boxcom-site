@@ -51,7 +51,7 @@ export default function Ballon() {
 
   return (
     <div ref={wrapRef} className="absolute bottom-0 right-[0] md:w-[8%] w-[25%] z-[1] pointer-events-none select-none will-change-transform">
-      <img ref={imgRef} src="/images/objects/ballon.svg"/>
+      <img ref={imgRef} src="/images/objects/ballon.svg" alt="" />
     </div>
   );
 }

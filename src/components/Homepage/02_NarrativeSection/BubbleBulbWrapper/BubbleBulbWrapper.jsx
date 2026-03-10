@@ -143,7 +143,7 @@ const BubbleBulbWrapper = () => {
           ref={bubble1LRef}
           className="absolute w-[30%] -left-[5%] top-[79%]"
         >
-          <img src="/images/shapes/bubble-1.svg" className="scale-[70%]" />
+          <img src="/images/shapes/bubble-1.svg" alt="" className="scale-[70%]" />
         </div>
 
         {/* La petite bulle à droite */}
@@ -153,6 +153,7 @@ const BubbleBulbWrapper = () => {
         >
           <img
             src="/images/shapes/bubble-1.svg"
+            alt=""
             className="scale-[70%] scale-x-[-1]"
           />
         </div>
@@ -162,14 +163,14 @@ const BubbleBulbWrapper = () => {
           ref={bubble2LRef}
           className="absolute w-[30%] md:w-[35%] lg:w-[25%] xl:w-[23%] -left-[1%] top-[60%] xl:top-[63%]"
         >
-          <img src="/images/shapes/bubble-2.svg" />
+          <img src="/images/shapes/bubble-2.svg" alt="" />
         </div>
         {/* La bulle moyenne à droite */}
         <div
           ref={bubble2RRef}
           className="absolute w-[30%] md:w-[35%] lg:w-[30%] left-[70%] top-[55%]"
         >
-          <img src="/images/shapes/bubble-2.svg" className="scale-x-[-1]" />
+          <img src="/images/shapes/bubble-2.svg" alt="" className="scale-x-[-1]" />
         </div>
 
         {/* La grosse bulle */}
@@ -177,6 +178,7 @@ const BubbleBulbWrapper = () => {
           <img
             ref={mainBubbleRef}
             src="/images/shapes/bubble-3.svg"
+            alt=""
             className="absolute w-full h-full"
           />
         </div>

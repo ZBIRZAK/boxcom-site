@@ -30,8 +30,10 @@ export default function Coeur() {
   return (
     <img
       ref={ref}
-      src="/images/shapes/heart-darkpink.png"
+      src="/images/shapes/heart-darkpink.webp"
       alt="coeur"
+      width={181}
+      height={199}
       draggable="false"
       className=" absolute top-[50%] right-[10%] w-[10%]"
     />

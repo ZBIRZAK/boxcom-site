@@ -66,23 +66,28 @@ const NarrativeSection2 = ({ data }) => {
             />
           </div>
 
-          {/* VERSION COUPEE DE L'IMAGE POUR DESKTOP */}
-          <img
-            src="/images/women-working3-cut.png"
-            alt="Two women working"
-            loading="lazy"
-            decoding="async"
-            className="w-full h-full object-cover hidden md:block"
-          />
-
-          {/* VERSION NON COUPEE DE L'IMAGE POUR MOBILE */}
-          <img
-            src="/images/women-working3-uncut.webp"
-            alt="Two women working"
-            loading="lazy"
-            decoding="async"
-            className="w-full h-full object-cover block md:hidden object-[65%_50%] scale-120 translate-y-[2%]"
-          />
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcSet="/images/women-working3-cut.webp"
+              type="image/webp"
+            />
+            <source
+              media="(max-width: 767px)"
+              srcSet="/images/women-working3-uncut.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/women-working3-uncut.webp"
+              alt="Two women working"
+              width={896}
+              height={1280}
+              loading="lazy"
+              decoding="async"
+              sizes="(min-width: 768px) 45vw, 100vw"
+              className="w-full h-full object-cover md:object-center object-[65%_50%] md:scale-100 scale-120 md:translate-y-0 translate-y-[2%]"
+            />
+          </picture>
 
           {/* <img
             src="/images/women-working2-min.png"

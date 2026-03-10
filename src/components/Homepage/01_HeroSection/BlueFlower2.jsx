@@ -59,7 +59,7 @@ const BlueFlower2 = ({ delay }) => {
       ref={flower}
       className="absolute w-[8%] bottom-[5%] left-[5%] opacity-0"
     >
-      <img src="/images/flowers/full-blue-flower.svg" />
+      <img src="/images/flowers/full-blue-flower.svg" alt="" />
     </div>
   );
 };

@@ -14,7 +14,11 @@ const Logo = ({ onClick }) => (
     onClick={onClick}
   >
     <img
-      src="/Logos_Boxcom/logo-new-white-353.webp"
+      src="/Logos_Boxcom/logo-new-white-177.webp"
+      srcSet="/Logos_Boxcom/logo-new-white-177.webp 177w, /Logos_Boxcom/logo-new-white-353.webp 353w"
+      sizes="177px"
+      width={177}
+      height={50}
       className="h-[50px] transition-[filter] duration-300 ease-in-out drop-shadow-md/50"
       alt="Logo BoxCom"
     />
