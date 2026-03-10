@@ -186,6 +186,9 @@ const BubbleBulbWrapper = () => {
           <img
             ref={logoRef}
             src="/Logos_Boxcom/logo-boxcom-color-260.webp"
+            alt="Boxcom logo"
+            width={260}
+            height={73}
             className="absolute w-[70%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           />
         </div>

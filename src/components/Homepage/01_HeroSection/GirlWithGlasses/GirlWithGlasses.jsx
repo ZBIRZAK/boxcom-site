@@ -11,21 +11,21 @@ const GirlWithGlasses = ({ starStyles, delay = 2, duration = 3, context }) => {
   useEffect(() => {
     gsap.set(refContainer.current, {
       opacity: 0,
-      bottom: -500,
+      y: 120,
     });
 
     gsap.to(
       refContainer.current,
       {
         opacity: 1,
-        bottom: 0,
+        y: 0,
         duration,
         ease: "sine",
         onComplete: () => {
           // animation quand on va à l'écran 2
           gsap.to(refContainer.current, {
             scrollTrigger: scr1Scr2ScrollOptions,
-            bottom: -300,
+            y: 300,
           });
         },
       },
@@ -50,13 +50,15 @@ const GirlWithGlasses = ({ starStyles, delay = 2, duration = 3, context }) => {
   return (
     <div
       id="girl_with_glasses"
-      className="absolute  left-1/2 -translate-x-1/2 translate-y-0  md:w-[60%] w-[100%] md:h-auto h-[70%] z-20 opacity-0"
+      className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-0 md:w-[60%] w-[100%] md:h-auto h-[70%] z-20 opacity-0"
       ref={refContainer}
     >
       <img
         // src="/images/homepage/hiba.png"
         src="/images/homepage/girl-with-glasses.webp"
         alt="Woman with glasses"
+        width={1280}
+        height={853}
         loading="eager"
         fetchPriority="high"
         decoding="async"
