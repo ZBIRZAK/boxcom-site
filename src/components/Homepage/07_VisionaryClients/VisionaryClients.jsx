@@ -26,7 +26,7 @@ const VisionaryClients = ({ data }) => {
     >
       {/* <div className="w-full h-full absolute top-0 left-0 z-0">
         <img
-          src="/images/homepage/books-sky.jpg"
+          src="/images/homepage/books-sky.webp"
           className="w-full h-full object-cover"
         />
       </div> */}
@@ -39,7 +39,15 @@ const VisionaryClients = ({ data }) => {
         </div>
         <div className="w-full h-[80vh] flex flex-wrap justify-center items-center gap-4 p-4 md:[&>img]:w-[10%] [&>img]:w-[20%] object-contain ">
           {pageClients.map((client, i) => {
-            return <img key={i} src={client.img} alt={client.alt} />;
+            return (
+              <img
+                key={i}
+                src={client.img}
+                alt={client.alt}
+                loading="lazy"
+                decoding="async"
+              />
+            );
           })}
 
           <div className="hidden md:block">

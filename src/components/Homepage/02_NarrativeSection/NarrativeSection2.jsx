@@ -69,12 +69,18 @@ const NarrativeSection2 = ({ data }) => {
           {/* VERSION COUPEE DE L'IMAGE POUR DESKTOP */}
           <img
             src="/images/women-working3-cut.png"
+            alt="Two women working"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover hidden md:block"
           />
 
           {/* VERSION NON COUPEE DE L'IMAGE POUR MOBILE */}
           <img
-            src="/images/women-working3-uncut.jpg"
+            src="/images/women-working3-uncut.webp"
+            alt="Two women working"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover block md:hidden object-[65%_50%] scale-120 translate-y-[2%]"
           />
 

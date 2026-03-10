@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
+import { shouldSkipHeavyLottie } from "../lib/heavyAnimations";
 
 export function useDoodle(doodlePath, animOptions = {}) {
   const { from, to, delay } = animOptions;
@@ -9,12 +10,22 @@ export function useDoodle(doodlePath, animOptions = {}) {
   const doodleRef = useRef(null);
 
   useEffect(() => {
+    if (shouldSkipHeavyLottie(doodlePath)) {
+      setDoodle(null);
+      return;
+    }
+
+    let cancelled = false;
     fetch(doodlePath)
       .then((res) => res.json())
       .then((data) => {
-        setDoodle(data);
+        if (!cancelled) setDoodle(data);
       });
-  }, []);
+
+    return () => {
+      cancelled = true;
+    };
+  }, [doodlePath]);
 
   useEffect(() => {
     if (containerRef.current && doodle && from && to) {

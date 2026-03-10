@@ -2,11 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
+import { shouldSkipHeavyLottie } from "../../../../lib/heavyAnimations";
 
 export default function Versbleu() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    if (shouldSkipHeavyLottie("/animations/ecran10/versbleu.json")) return;
+
     fetch("/animations/ecran10/versbleu.json")
       .then(r => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
       .then(setData)

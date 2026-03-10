@@ -18,7 +18,7 @@ export default function SayItBetter({ data }) {
   return (
     <section
       id="page01_screen09"
-      className="bg-[url('/images/bg-screen6-9-3.webp')] bg-center bg-cover bg-no-repeat !h-auto flex flex-col items-center relative overflow-hidden z-30"
+      className="bg-[url('/images/bg-screen6-9-3-opt.webp')] bg-center bg-cover bg-no-repeat !h-auto flex flex-col items-center relative overflow-hidden z-30"
     >
       <h2
         className="heading-secondary heading-secondary--white mt-[80px] relative !text-[2rem] md:!text-[2.5rem]"

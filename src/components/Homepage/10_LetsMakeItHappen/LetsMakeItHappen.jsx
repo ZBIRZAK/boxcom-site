@@ -31,6 +31,10 @@ export default function LetsMakeItHappen({ data }) {
         <img
           className="absolute inset-0 w-full h-full object-cover object-left-bottom "
           src="/images/homepage/bg-blue-medina.jpeg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
         />
         <Ballon />
         <Versbleu />
@@ -40,6 +44,9 @@ export default function LetsMakeItHappen({ data }) {
           <img
             className="block w-full h-auto object-left-bottom origin-bottom-left "
             src="/images/homepage/dancing-girl.png"
+            alt="Dancing woman"
+            loading="lazy"
+            decoding="async"
           />
 
           <ClaDeSol />

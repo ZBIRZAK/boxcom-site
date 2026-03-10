@@ -49,7 +49,7 @@ const BooksGlobe = () => {
         ref={contGlobeRef}
         className="relative -right-[15%] w-[60%] md:w-[50%] mb-[-5%]"
       >
-        <Lottie animationData={globe} lottieRef={globeRef} />
+        {globe && <Lottie animationData={globe} lottieRef={globeRef} />}
       </div>
 
       <div ref={contBooksRef} className="w-[70%]">

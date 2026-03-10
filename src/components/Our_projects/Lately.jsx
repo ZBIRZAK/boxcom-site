@@ -31,7 +31,7 @@ const Lately = async ({ sectionId, portfolioCategoryId }) => {
       </div> */}
       
       <img
-        src="/images/bg-screen6-9-3.webp"
+        src="/images/bg-screen6-9-3-opt.webp"
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
       />

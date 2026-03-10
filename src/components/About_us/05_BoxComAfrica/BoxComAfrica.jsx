@@ -69,7 +69,7 @@ const BoxComAfrica = ({ data }) => {
         <div className="md:order-1 order-2 md:mt-0 mt-[40%]">
           <LogoContainer>
             <img
-              src="/Logos_Boxcom/logo-new-white.png"
+              src="/Logos_Boxcom/logo-new-white-353.webp"
               className="w-[200px] h-auto filter drop-shadow-lg/40"
             />
           </LogoContainer>

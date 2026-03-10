@@ -60,10 +60,17 @@ const ArtSection = ({ data }) => {
       >
         <img
           src="/images/homepage/bg-tableau.webp"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="absolute top-0 left-0 h-full"
         />
         <img
           src="/images/homepage/astronaute.png"
+          alt="Astronaut"
+          loading="lazy"
+          decoding="async"
           className="absolute -bottom-[20px] left-1/2 transform -translate-x-1/2 h-[92%]"
         />
         <div className="absolute top-[22%] md:left-[26%] left-[10%] w-[300px]">

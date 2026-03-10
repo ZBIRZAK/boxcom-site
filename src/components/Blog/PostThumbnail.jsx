@@ -30,6 +30,11 @@ const PostThumbnail = ({ post, featuredMedia }) => {
           {featuredMedia ? (
             <img
               src={featuredMedia.media_details.sizes.medium.source_url}
+              alt={post.title?.rendered?.replace(/<[^>]*>/g, "") || "Blog post"}
+              loading="lazy"
+              decoding="async"
+              width={featuredMedia.media_details?.sizes?.medium?.width || 400}
+              height={featuredMedia.media_details?.sizes?.medium?.height || 260}
               className="w-full h-full object-cover"
             />
           ) : (

@@ -18,7 +18,6 @@ import MusicalNote2 from "../../Doodles/MusicalNote2/MusicalNote2";
 import MusicalNote3 from "../../Doodles/MusicalNote3/MusicalNote3";
 import Butterfly from "./Butterfly/Butterfly";
 import ScrollButton from "../../Buttons/ScrollButton";
-import ImagePreloader from "../../Loaders/ImagePreloader";
 import PinkHeart2 from "../../Doodles/PinkHeart/PinkHeart2";
 import WaterSplashes from "./WaterSplashes";
 import BlueFlower2 from "./BlueFlower2";
@@ -46,14 +45,23 @@ const HeroSection = ({ data }) => {
     <HomepageProvider>
       <section
         id="page01_screen01"
-        className="relative w-full h-screen overflow-hidden z-1 bg-[url('/images/bg_ecran1.jpg')] bg-cover bg-center"
+        className="relative w-full h-screen overflow-hidden z-1"
       >
         <h1 className="hidden">{data.main_title}</h1>
-        <ImagePreloader imageUrls={["/images/homepage/girl-with-glasses.webp"]}>
+        <img
+          src="/images/bg_ecran1.webp"
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 z-10">
           <GirlWithGlasses
             starStyles={styles.purpleStarContainer}
             duration={3}
-            delay={2}
+            delay={0.2}
             context={context}
           />
 
@@ -64,9 +72,9 @@ const HeroSection = ({ data }) => {
             text1={data.title}
             text2={data.slogan}
             text1Duration={2}
-            text1Delay={3.5}
+            text1Delay={0.3}
             text2Duration={1}
-            text2Delay={7}
+            text2Delay={0.6}
             context={context}
           />
 
@@ -135,7 +143,7 @@ const HeroSection = ({ data }) => {
           </div>
 
           <Marquee context={context} data={data} />
-        </ImagePreloader>
+        </div>
       </section>
     </HomepageProvider>
   );

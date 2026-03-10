@@ -1,12 +1,35 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Button from "../../Buttons/Button2";
 import InstaFeed from "./InstaFeed";
 
-const Lately = ({ data, showSection = process.env.NEXT_PUBLIC_SHOW_LATELY_SECTION !== 'false' }) => {
+const Lately = ({
+  data,
+  showSection = process.env.NEXT_PUBLIC_SHOW_LATELY_SECTION !== "false",
+}) => {
+  const sectionRef = useRef(null);
+  const [shouldLoadFeed, setShouldLoadFeed] = useState(false);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShouldLoadFeed(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px 0px" }
+    );
+
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   // If showSection is false, don't render anything
   if (!showSection) return null;
-
 
   const title = data.title
     .replace(
@@ -19,9 +42,17 @@ const Lately = ({ data, showSection = process.env.NEXT_PUBLIC_SHOW_LATELY_SECTIO
     );
 
   return (
-    <section id="page01_screen11" className="relative w-full !h-screen z-9 ">
+    <section
+      id="page01_screen11"
+      className="relative w-full !h-screen z-9 "
+      ref={sectionRef}
+    >
       <img
-        src="/images/bg-screen6-9-3.webp"
+        src="/images/bg-screen6-9-3-opt.webp"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
         className="absolute w-full h-full object-cover"
       />
 
@@ -33,7 +64,7 @@ const Lately = ({ data, showSection = process.env.NEXT_PUBLIC_SHOW_LATELY_SECTIO
       </div>
 
       <div className="relative z-10">
-        <InstaFeed />
+        {shouldLoadFeed ? <InstaFeed /> : null}
       </div>
 
       <div className="relative z-10 flex justify-center">

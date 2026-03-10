@@ -63,6 +63,12 @@ const BlogPostPage = async ({ params }) => {
           {featuredMedia && (
             <img
               src={featuredMedia.media_details.sizes.full.source_url}
+              alt={post.title?.rendered?.replace(/<[^>]*>/g, "") || "Featured image"}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              width={featuredMedia.media_details?.sizes?.full?.width || 1600}
+              height={featuredMedia.media_details?.sizes?.full?.height || 900}
               className="w-full h-full object-cover"
             />
           )}

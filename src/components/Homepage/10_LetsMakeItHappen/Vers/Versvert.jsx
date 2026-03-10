@@ -1,11 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
+import { shouldSkipHeavyLottie } from "../../../../lib/heavyAnimations";
 
 export default function Versvert() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    if (shouldSkipHeavyLottie("/animations/ecran10/versvert.json")) return;
+
     fetch("/animations/ecran10/versvert.json")
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
       .then(setData)

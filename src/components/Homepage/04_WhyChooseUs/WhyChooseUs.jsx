@@ -100,7 +100,7 @@ const WhyChooseUs = ({ data }) => {
       ref={sectionRef}
     >
       <img
-        src="/images/homepage/bg-why-choose-us.jpg"
+        src="/images/homepage/bg-why-choose-us.webp"
         alt="Why choose BoxCom"
         className="absolute w-full h-full object-cover object-center"
       />

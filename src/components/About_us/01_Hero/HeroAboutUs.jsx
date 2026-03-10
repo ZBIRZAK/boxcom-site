@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const HeroAboutUs = () => {
-  const [videoActive, setVideoActive] = useState(true);
+  const [videoActive, setVideoActive] = useState(false);
 
   return (
     <section
@@ -13,9 +13,12 @@ const HeroAboutUs = () => {
       {videoActive ? (
         <div className="relative inset-0">
           <video
-            src="/videos/teaser-boxcom.mp4"
+            src="/videos/teaser-boxcom.webm"
             autoPlay
             muted
+            playsInline
+            preload="none"
+            poster="/images/about_us/bg-boxcom.jpg"
             className="relative w-full h-full object-cover obect-top"
             onEnded={() => {
               setVideoActive(false);
@@ -34,6 +37,7 @@ const HeroAboutUs = () => {
               setVideoActive(true);
             }}
             src="/images/buttons/play2.svg"
+            alt="Play video"
             className="absolute w-[30%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 opacity-50 hover:opacity-80 transition-opacity"
           />
         </div>

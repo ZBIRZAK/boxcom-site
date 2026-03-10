@@ -14,7 +14,7 @@ const Logo = ({ onClick }) => (
     onClick={onClick}
   >
     <img
-      src="/Logos_Boxcom/logo-new-white.png"
+      src="/Logos_Boxcom/logo-new-white-353.webp"
       className="h-[50px] transition-[filter] duration-300 ease-in-out drop-shadow-md/50"
       alt="Logo BoxCom"
     />

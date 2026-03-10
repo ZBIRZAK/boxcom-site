@@ -80,7 +80,7 @@ const OldHeader = ({ data, dark = false }) => {
           }}
         >
           <img
-            src="/Logos_Boxcom/logo-new-white.png"
+            src="/Logos_Boxcom/logo-new-white-353.webp"
             className="h-[50px] transition-[filter] duration-300 ease-in-out"
             alt="Logo BoxCom"
           />

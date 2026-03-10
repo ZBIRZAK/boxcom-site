@@ -2,12 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 import Lottie from "lottie-react";
+import { shouldSkipHeavyLottie } from "../../../../lib/heavyAnimations";
 
 export default function Oiseau() {
   const [data, setData] = useState(null);
   const lottieRef = useRef();
 
   useEffect(() => {
+    if (shouldSkipHeavyLottie("/animations/ecran10/oiseau.json")) return;
+
     fetch("/animations/ecran10/oiseau.json")
       .then((r) =>
         r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))

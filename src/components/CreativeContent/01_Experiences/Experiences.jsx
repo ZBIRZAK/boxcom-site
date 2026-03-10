@@ -47,13 +47,13 @@ const Experiences = ({ data }) => {
       <h1 className="hidden">{data.main_title}</h1>
       <ImagePreloader
         imageUrls={[
-          "/images/creative_content/bg_screen1.jpg",
+          "/images/creative_content/bg_screen1.webp",
           "/images/creative_content/man-brightened.png",
         ]}
       >
         <div className="absolute inset-0 w-full h-full object-cover">
           <img
-            src="/images/creative_content/bg_screen1.jpg"
+            src="/images/creative_content/bg_screen1.webp"
             className="h-full w-full"
           />
         </div>

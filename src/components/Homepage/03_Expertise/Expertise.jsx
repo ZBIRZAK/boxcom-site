@@ -15,11 +15,11 @@ const Icon = ({ name }) => {
     );
   if (name === "globe")
     return (
-      <div className="w-[60%] h-[60%] bg-[url('/images/globe.png')] bg-contain bg-no-repeat bg-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <div className="w-[60%] h-[60%] bg-[url('/images/globe.webp')] bg-contain bg-no-repeat bg-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
     );
   if (name === "saga")
     return (
-      <div className="w-[60%] h-[60%] bg-[url('/images/saga-africa.png')] bg-contain bg-no-repeat bg-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <div className="w-[60%] h-[60%] bg-[url('/images/saga-africa.webp')] bg-contain bg-no-repeat bg-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
     );
   return null;
 };
@@ -42,7 +42,7 @@ const Expertise = ({ data, id, nextId, dark = false }) => {
       {!dark && (
         <div className="absolute inset-0 z-1">
           <img
-            src="/images/bg-screen6-9-3.webp"
+            src="/images/bg-screen6-9-3-opt.webp"
             className="w-full h-full object-cover"
           />
         </div>

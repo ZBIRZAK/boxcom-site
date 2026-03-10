@@ -1,0 +1,21 @@
+source,action,target,quality,rewrite_refs,notes
+public/videos/teaser-boxcom.mp4,video_to_webm,public/videos/teaser-boxcom.webm,30,1,Top payload in About hero
+public/animations/ecran2/globe_terre.json,minify_json,public/animations/ecran2/globe_terre.json,0,0,Very large Lottie JSON
+public/animations/ecran1/red-mushroom.json,minify_json,public/animations/ecran1/red-mushroom.json,0,0,Very large Lottie JSON
+public/animations/ecran10/versvert.json,minify_json,public/animations/ecran10/versvert.json,0,0,Large Lottie JSON
+public/animations/ecran1/small-pink-dude.json,minify_json,public/animations/ecran1/small-pink-dude.json,0,0,Large Lottie JSON
+public/animations/ecran10/versbleu.json,minify_json,public/animations/ecran10/versbleu.json,0,0,Large Lottie JSON
+public/animations/ecran2/bulle.json,minify_json,public/animations/ecran2/bulle.json,0,0,Large Lottie JSON
+public/images/our_projects/bg.png,image_to_webp,public/images/our_projects/bg.webp,72,1,Referenced in projects section
+public/images/persons/girl_sitting.png,image_to_webp,public/images/persons/girl_sitting.webp,72,1,Referenced in projects section
+public/animations/ecran1/planete.json,minify_json,public/animations/ecran1/planete.json,0,0,Large Lottie JSON
+public/images/creative_content/bg_screen6.jpg,image_to_webp,public/images/creative_content/bg_screen6.webp,70,1,Potential future section background
+public/animations/ecran1/little-heart.json,minify_json,public/animations/ecran1/little-heart.json,0,0,Large Lottie JSON
+public/animations/ecran10/oiseau.json,minify_json,public/animations/ecran10/oiseau.json,0,0,Large Lottie JSON
+public/animations/ecran1/papillon_rose.json,minify_json,public/animations/ecran1/papillon_rose.json,0,0,Large Lottie JSON
+public/images/homepage/books-sky.jpg,image_to_webp,public/images/homepage/books-sky.webp,70,1,Heavy homepage image
+public/images/creative_content/bg_screen5.png,image_to_webp,public/images/creative_content/bg_screen5.webp,68,1,Heavy creative content background
+public/images/creative_content/bg_screen1.jpg,image_to_webp,public/images/creative_content/bg_screen1.webp,70,1,Referenced in experiences hero
+public/animations/ecran1/surfeuse.json,minify_json,public/animations/ecran1/surfeuse.json,0,0,Large Lottie JSON
+public/images/women-working.png,image_to_webp,public/images/women-working.webp,72,1,Legacy heavy image
+public/images/ecran5.jpg,image_to_webp,public/images/ecran5.webp,70,1,Legacy heavy image
