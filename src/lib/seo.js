@@ -1,7 +1,29 @@
 import * as cheerio from "cheerio";
+import { getHost } from "./helpers";
 
 const DEFAULT_META_DESCRIPTION = "Boxcom";
 const DEFAULT_META_TITLE = "Boxcom";
+
+function normalizeCanonical(url) {
+  if (!url) return undefined;
+
+  const host = getHost();
+
+  try {
+    const parsed = new URL(url, host);
+    const canonical = new URL(parsed.pathname, host);
+    canonical.hash = "";
+    canonical.search = "";
+
+    if (canonical.pathname !== "/" && canonical.pathname.endsWith("/")) {
+      canonical.pathname = canonical.pathname.replace(/\/+$/, "");
+    }
+
+    return canonical.toString();
+  } catch {
+    return undefined;
+  }
+}
 
 export function parseSeoTagsForMetaData(seo) {
   if (!seo?.success || !seo?.head) {
@@ -13,7 +35,8 @@ export function parseSeoTagsForMetaData(seo) {
 
   const $ = cheerio.load(seo.head);
 
-  const canonical = $('link[rel="canonical"]').attr("href");
+  const canonicalRaw = $('link[rel="canonical"]').attr("href");
+  const canonical = normalizeCanonical(canonicalRaw);
 
   const ogTitle = $('meta[property="og:title"]').attr("content");
   const ogType = $('meta[property="og:type"]').attr("content");
@@ -36,6 +59,13 @@ export function parseSeoTagsForMetaData(seo) {
   const twitterLabel2 = $('meta[name="twitter:label2"]').attr("content");
   const twitterData2 = $('meta[name="twitter:data2"]').attr("content");
 
+  const robotsMeta = ($('meta[name="robots"]').attr("content") || "").toLowerCase();
+  const googleBotMeta = ($('meta[name="googlebot"]').attr("content") || "").toLowerCase();
+  const index = !robotsMeta.includes("noindex");
+  const follow = !robotsMeta.includes("nofollow");
+  const googleIndex = !googleBotMeta.includes("noindex");
+  const googleFollow = !googleBotMeta.includes("nofollow");
+
   const data = {
     title:
       $('meta[property="og:title"]').attr("content") ||
@@ -46,12 +76,12 @@ export function parseSeoTagsForMetaData(seo) {
       canonical,
     },
     robots: {
-      index: true,
-      follow: true,
+      index,
+      follow,
       nocache: false,
       googleBot: {
-        index: true,
-        follow: true,
+        index: googleBotMeta ? googleIndex : index,
+        follow: googleBotMeta ? googleFollow : follow,
         noimageindex: false,
         "max-video-preview": -1,
         "max-image-preview": "large",
