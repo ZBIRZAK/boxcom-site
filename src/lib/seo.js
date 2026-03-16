@@ -1,8 +1,14 @@
 import * as cheerio from "cheerio";
 
+const DEFAULT_META_DESCRIPTION = "Boxcom";
+const DEFAULT_META_TITLE = "Boxcom";
+
 export function parseSeoTagsForMetaData(seo) {
-  if (!seo.success) {
-    return {};
+  if (!seo?.success || !seo?.head) {
+    return {
+      title: DEFAULT_META_TITLE,
+      description: DEFAULT_META_DESCRIPTION,
+    };
   }
 
   const $ = cheerio.load(seo.head);
@@ -31,6 +37,11 @@ export function parseSeoTagsForMetaData(seo) {
   const twitterData2 = $('meta[name="twitter:data2"]').attr("content");
 
   const data = {
+    title:
+      $('meta[property="og:title"]').attr("content") ||
+      $("title").text() ||
+      DEFAULT_META_TITLE,
+    description: DEFAULT_META_DESCRIPTION,
     alternates: {
       canonical,
     },
@@ -71,10 +82,7 @@ export function parseSeoTagsForMetaData(seo) {
   };
 
   const desc = $('meta[name="description"]').attr("content");
-
-  if (desc) {
-    data.description = desc;
-  }
+  data.description = desc || DEFAULT_META_DESCRIPTION;
 
   // console.log({ data });
 

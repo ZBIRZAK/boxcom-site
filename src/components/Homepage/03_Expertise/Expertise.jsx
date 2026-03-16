@@ -1,5 +1,9 @@
 import ScrollButton from "../../Buttons/ScrollButton";
 
+function ensureImgAltAttributes(html = "") {
+  return html.replace(/<img(?![^>]*\balt=)/gi, '<img alt=""');
+}
+
 const Icon = ({ name }) => {
   if (name === "star")
     return (
@@ -51,7 +55,7 @@ const Expertise = ({ data, id, nextId, dark = false }) => {
       <div className="relative z-10 w-full md:pt-[70px]">
         <h2
           className="hero-title2 text-center w-full "
-          dangerouslySetInnerHTML={{ __html: titleHtml }}
+          dangerouslySetInnerHTML={{ __html: ensureImgAltAttributes(titleHtml) }}
         />
       </div>
 

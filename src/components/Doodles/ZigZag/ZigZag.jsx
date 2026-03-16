@@ -29,7 +29,12 @@ const ZigZag = () => {
       className="absolute top-[37%] md:top-[58%] right-[35%] md:right-[30%] w-[33%] md:w-[17%]"
       ref={zigzagRef}
     >
-      <img src="/images/shapes/zigzag-pink.svg" className="w-full" />
+      <img
+        src="/images/shapes/zigzag-pink.svg"
+        alt=""
+        aria-hidden="true"
+        className="w-full"
+      />
     </div>
   );
 };

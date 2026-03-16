@@ -2,11 +2,15 @@
 
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import { useIsMobile } from "../../../../contexts/UserAgentProvider";
 
 const DropOfWater = () => {
   const dropRef = useRef(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
+    if (isMobile) return;
+
     gsap.to(dropRef.current, {
       opacity: 1,
       scrollTrigger: {
@@ -50,7 +54,9 @@ const DropOfWater = () => {
         },
       }
     );
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) return null;
 
   return (
     <div
