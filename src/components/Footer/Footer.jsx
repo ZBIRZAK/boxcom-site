@@ -28,9 +28,10 @@ const ListLinks = ({ links }) => (
 const Footer = async () => {
   const footer = await getFooter();
   const address = "3 Rue El Jihani, Quartier Racine, Casablanca, Morocco 20250";
-  const mapQuery = encodeURIComponent(address);
-  const mapHref = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
-  const mapEmbedSrc = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
+  const mapHref =
+    "https://www.google.com/maps/place/BOXCOM/@33.5873901,-7.6363122,17z/data=!3m1!4b1!4m6!3m5!1s0xda62d0ad638a2c1:0x5d32fe2f0cd9a876!8m2!3d33.5873901!4d-7.6363122!16s%2Fg%2F11j0jj051l?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D";
+  const mapEmbedSrc =
+    "https://www.google.com/maps?ll=33.5873901,-7.6363122&q=BOXCOM&z=17&output=embed";
 
   const serviceLinks = getSectionLinks(footer.service_section);
   const aboutLinks = getSectionLinks(footer.about_section);
