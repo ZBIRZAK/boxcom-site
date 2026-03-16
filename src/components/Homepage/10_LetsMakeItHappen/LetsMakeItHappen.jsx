@@ -80,26 +80,12 @@ export default function LetsMakeItHappen({ data }) {
           </div>
         </div>
 
-        <div className="flex md:gap-3 md:mt-0 mt-25 md:mr-5 justify-center md:w-[125%] w-full">
-          <div className="flex flex-col items-center justify-between ">
-              <p
-              dangerouslySetInnerHTML={{ __html: data.text }}
-              className="hero-text"
-            ></p>
+        <div className="md:mt-0 mt-25 md:mr-5 md:w-[125%] w-full">
+          <p dangerouslySetInnerHTML={{ __html: data.text }} className="hero-text"></p>
 
-            <div className="flex justify-center mt-[2em] ">
-              <BtnCTA to={formatUrl(data.button_link_1)}>{data.cta_button}</BtnCTA>
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-between ">
-              <p
-              dangerouslySetInnerHTML={{ __html: data.text }}
-              className="hero-text"
-            ></p>
-
-            <div className="flex justify-center mt-[2em] ">
-              <BtnCTA to={formatUrl(data.button_link_2)}>{data.button_cta_2}</BtnCTA>
-            </div>
+          <div className="flex md:gap-3 gap-2 justify-center mt-[2em]">
+            <BtnCTA to={formatUrl(data.button_link_1)}>{data.cta_button}</BtnCTA>
+            <BtnCTA to={formatUrl(data.button_link_2)}>{data.button_cta_2}</BtnCTA>
           </div>
         </div>
       </div>

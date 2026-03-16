@@ -5,6 +5,10 @@ import SliderTestimonials from "./SliderTestimonials";
 import ScrollButton from "../../Buttons/ScrollButton";
 import clsx from "clsx";
 
+function ensureImgAltAttributes(html = "") {
+  return html.replace(/<img(?![^>]*\balt=)/gi, '<img alt=""');
+}
+
 export default function SayItBetter({ data }) {
   const testimonials = Object.values(data.testimonials);
   // console.log({ testimonials, pages });
@@ -22,7 +26,7 @@ export default function SayItBetter({ data }) {
     >
       <h2
         className="heading-secondary heading-secondary--white mt-[80px] relative !text-[2rem] md:!text-[2.5rem]"
-        dangerouslySetInnerHTML={{ __html: titleHtml }}
+        dangerouslySetInnerHTML={{ __html: ensureImgAltAttributes(titleHtml) }}
       />
       {/* <FallingStars /> */}
 

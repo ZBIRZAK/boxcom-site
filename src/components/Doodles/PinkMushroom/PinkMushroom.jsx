@@ -21,7 +21,7 @@ const PinkMushroom = ({ containerStyles, context, delay }) => {
                 gsap.to(containerRef.current, {
                   scrollTrigger: scr1Scr2ScrollOptions,
                   opacity: 0,
-                  marginTop: "15%",
+                  y: 120,
                   scale: 3,
                 });
             }

@@ -4,6 +4,10 @@ import ScrollButton from "../../ScrollButton/ScrollButton";
 import Link from "next/link";
 import { formatUrl } from "../../../lib/urls";
 
+function ensureImgAltAttributes(html = "") {
+  return html.replace(/<img(?![^>]*\balt=)/gi, '<img alt=""');
+}
+
 const Service = ({ contents }) => {
   return (
     <Link href={formatUrl(contents.link)} className={styles.box}>
@@ -36,7 +40,7 @@ const OurServices = ({ data }) => {
         <h2
           className={`hero-title2 text-center mb-3 md:mt-5 [&_span]:relative [&_span]:inline-block [&_img]:absolute [&_img]:top-[0%] [&_img]:left-[50%] [&_img]:transform [&_img]:translate-x-[-50%] [&_img]:w-[200px] [&_img]:block`}
           dangerouslySetInnerHTML={{
-            __html: data.title,
+            __html: ensureImgAltAttributes(data.title),
           }}
         ></h2>
         <div className={styles.grid}>

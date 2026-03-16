@@ -39,6 +39,8 @@ const Footer = async () => {
             <img
               src="/Logos_Boxcom/logo-color-subtitle-white.png"
               alt="Boxcom Logo"
+              loading="lazy"
+              decoding="async"
               className="w-[170px] mb-[1rem]"
             />
           </Link>
@@ -50,6 +52,8 @@ const Footer = async () => {
                 <img
                   src="/images/social_networks/instagram.svg"
                   alt="BoxCom Instagram"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Link>
             )}
@@ -58,6 +62,8 @@ const Footer = async () => {
                 <img
                   src="/images/social_networks/tiktok.svg"
                   alt="BoxCom TikTok"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Link>
             )}
@@ -66,6 +72,8 @@ const Footer = async () => {
                 <img
                   src="/images/social_networks/youtube.svg"
                   alt="BoxCom YouTube"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Link>
             )}
@@ -74,6 +82,8 @@ const Footer = async () => {
                 <img
                   src="/images/social_networks/whatsapp.svg"
                   alt="BoxCom WhatsApp"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Link>
             )}
@@ -82,6 +92,8 @@ const Footer = async () => {
                 <img
                   src="/images/social_networks/facebook.svg"
                   alt="BoxCom Facebook"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Link>
             )}
@@ -90,6 +102,8 @@ const Footer = async () => {
                 <img
                   src="/images/social_networks/linkedin.svg"
                   alt="BoxCom LinkedIn"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Link>
             )}

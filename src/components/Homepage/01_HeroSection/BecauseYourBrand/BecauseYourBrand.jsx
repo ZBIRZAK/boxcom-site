@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { anton } from "../../../../app/font";
+import { useIsMobile } from "../../../../contexts/UserAgentProvider";
 
 const BecauseYourBrand = ({
   text1,
@@ -15,15 +16,22 @@ const BecauseYourBrand = ({
 }) => {
   const refTxt1 = useRef(null);
   const refTxt2 = useRef(null);
+  const isMobile = useIsMobile();
   const { scr1Scr2ScrollOptions } = context;
 
   useEffect(() => {
+    if (isMobile) {
+      gsap.set(refTxt1.current, { opacity: 1, y: 0, scale: 1 });
+      gsap.set(refTxt2.current, { opacity: 1, scaleX: 1, scaleY: 1, x: 0 });
+      return;
+    }
+
     if (refTxt1.current) {
-      gsap.set(refTxt1.current, { opacity: 0, marginTop: "25%", scale: 0.5 });
+      gsap.set(refTxt1.current, { opacity: 0, y: 80, scale: 0.5 });
 
       gsap.to(refTxt1.current, {
         opacity: 1,
-        marginTop: "12%",
+        y: 0,
         scale: 1,
         duration: text1Duration,
         delay: text1Delay,
@@ -33,7 +41,7 @@ const BecauseYourBrand = ({
           gsap.to(refTxt1.current, {
             scrollTrigger: scr1Scr2ScrollOptions,
             opacity: 0,
-            marginTop: "15%",
+            y: 120,
             scale: 3,
           });
         },
@@ -84,18 +92,18 @@ const BecauseYourBrand = ({
         text2Delay
       );
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className=" z-20  left-[20%] text-center border">
       <div
-        className="absolute md:text-[2rem] text-1xl z-10 opacity-0 text-center md:top-[-10%] top-[10%] w-full "
+        className={`absolute md:text-[2rem] text-1xl z-10 text-center md:top-[-10%] top-[10%] w-full ${isMobile ? "opacity-100" : "opacity-0"}`}
         ref={refTxt1}
       >
         {text1}
       </div>
       <div
-        className={`absolute md:right-[3%] w-[100%] text-center mt-[15%] md:top-0 top-[15%] md:text-[9rem] text-[3rem] z-19 ${anton.className} uppercase right-[7%] whitespace-nowrap opacity-0`}
+        className={`absolute md:right-[3%] w-[100%] text-center mt-[15%] md:top-0 top-[15%] md:text-[9rem] text-[3rem] z-19 ${anton.className} uppercase right-[7%] whitespace-nowrap ${isMobile ? "opacity-100" : "opacity-0"}`}
         ref={refTxt2}
       >
         {text2}

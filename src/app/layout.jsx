@@ -59,6 +59,14 @@ export default async function RootLayout({ children }) {
       <html lang="en" className={poppins.className}>
         <head>
           <link rel="manifest" href="/manifest.json?v=2025-11-04" />
+          <link
+            rel="preload"
+            as="image"
+            href="/images/homepage/girl-with-glasses-800.webp"
+            imageSrcSet="/images/homepage/girl-with-glasses-800.webp 800w, /images/homepage/girl-with-glasses-q68.webp 1280w"
+            imageSizes="(max-width: 767px) 100vw, 60vw"
+            fetchPriority="high"
+          />
         </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
