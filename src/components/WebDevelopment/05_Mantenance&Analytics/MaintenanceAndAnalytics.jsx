@@ -52,7 +52,7 @@ const MaintenanceAndAnalytics = ({ data }) => {
       className={`screen03  w-full !h-auto relative section-dark grid grid-cols-1 md:grid-cols-[55%_45%]`}
     >
       {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
       </div> */}
       <ColumnContentWrapper
         id="maintenance-text"
@@ -81,14 +81,14 @@ const MaintenanceAndAnalytics = ({ data }) => {
           ></h2>
         </div>
         <img
-          src="/images/web_dev/bg_screen5.jpeg"
+          src="/images/web_dev/bg_screen5.webp"
           className="w-full h-full object-cover scale-y-[1.3] scale-x-[1] sm:scale-x-[1] sm:scale-y-[1] translate-y-[100px] sm:translate-y-0 transform"
         />
         {/* <div className="absolute w-[120%] -left-10 md:bottom-[-15%] bottom-[-8%] -rotate-3 z-1  pointer-events-none overflow-hidden ">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="w-full" />
         </div> */}
         <div className="absolute w-[100%] sm:min-w-[100%] sm:max-h-full md:-bottom-[20%] bottom-0 left-1/2 -translate-x-1/2">
-          <img src="/images/web_dev/man_with_a_beard.png" alt="Man" />
+          <img src="/images/web_dev/man_with_a_beard.webp" alt="Man" />
           <Hammer />
           <Nail />
           <Robot />

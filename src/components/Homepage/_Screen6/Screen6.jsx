@@ -88,7 +88,7 @@ const Screen6 = () => {
               <strong>OUTGROWS BORDERS</strong>
             </h2>
             <div className={styles.screen6ImageWrapper}>
-              <img src="/images/ecran6.png" alt="Carte avec fusée" />
+              <img src="/images/ecran6.webp" alt="Carte avec fusée" />
               <Rocket
                 context={context}
                 containerStyles={styles.rocketContainer}

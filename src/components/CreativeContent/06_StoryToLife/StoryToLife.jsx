@@ -18,17 +18,17 @@ const StoryToLife = ({ data }) => {
 
       <div className="absolute inset-0 w-full h-full ">
         <img
-          src="/images/creative_content/metro.jpeg"
+          src="/images/creative_content/metro.webp"
           className="h-full w-full object-cover object-left md:object-center"
         />
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-            <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+            <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
         </div> */}
         {/* <div className="absolute md:w-[55%] w-[100%] md:top-[-15%] top-[-7%] -left-10   pointer-events-none overflow-hidden ">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="  w-full  " />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="  w-full  " />
         </div> */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2  w-[105%]  md:left-auto md:right-[20%] md:translate-x-0 md:w-[33%]">
-          <img src="/images/creative_content/man-yellow-costume.png" alt="" />
+          <img src="/images/creative_content/man-yellow-costume.webp" alt="" />
           <Moustache />
           <Heart />
         </div>
@@ -70,7 +70,7 @@ const StoryToLife = ({ data }) => {
       {/* Ripped paper effect at the bottom of this section */}
       {/* <div className="absolute z-99999 w-full bottom-[-1px] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn_sheet.png"
+          src="/images/objects/torn_sheet.webp"
           alt="Torn sheet"
           className="w-full"
         />

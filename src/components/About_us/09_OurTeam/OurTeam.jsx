@@ -18,7 +18,7 @@ const OurTeam = ({ data }) => {
         className="md:order-2 relative md:h-screen overflow-hidden md:pt-[70px] pt-[80px] flex justify-center items-center"
       >
         <Title1 html={data.title} className={"!text-white md:!hidden !block top-5 text-shadow-lg w-full  absolute !text-center z-1"} />
-        <img src="/images/persons/boxcom-team.jpg" className="max-h-full " />
+        <img src="/images/persons/boxcom-team.webp" className="max-h-full " />
         <div className="hidden md:block">
           <ScrollButton to="page06_screen10" />
         </div>

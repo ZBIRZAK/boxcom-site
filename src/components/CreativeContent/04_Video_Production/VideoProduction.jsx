@@ -67,14 +67,14 @@ const VideoProduction = ({ data }) => {
       >
         <div className="absolute w-full h-full overflow-hidden">
           <img
-            src="/images/creative_content/bg-cuisine.jpg"
+            src="/images/creative_content/bg-cuisine.webp"
             alt="A man is taking pictures with his camera"
             className="scale-120 translate-y-[10%] md:scale-120 object-cover w-full h-full"
           />
         </div>
 
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-            <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+            <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
         </div> */}
         
         {/* TITRE POUR MOBILE */}
@@ -92,7 +92,7 @@ const VideoProduction = ({ data }) => {
 
         <CameraMan />
         {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden ">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className=" w-full  " />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className=" w-full  " />
         </div> */}
         <Yes />
         <Coffee />

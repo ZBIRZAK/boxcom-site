@@ -63,15 +63,15 @@ const AnalyticsOptimization = ({ data }) => {
           ></h2>
         </div>
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="w-full" />
         </div> */}
         <img
-          src="/images/lead_generation/bg-analytics.jpg"
+          src="/images/lead_generation/bg-analytics.webp"
           className="absolute w-full h-full object-cover"
         />
 
         <img
-          src="/images/lead_generation/old-woman.png"
+          src="/images/lead_generation/old-woman.webp"
           className="absolute w-[100%] left-1/2 -translate-x-1/2 bottom-0 scale-120"
         />
 
@@ -81,7 +81,7 @@ const AnalyticsOptimization = ({ data }) => {
         {/* <Canvas /> */}
         <Robot />
         {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="w-full" />
         </div> */}
       </div>
 

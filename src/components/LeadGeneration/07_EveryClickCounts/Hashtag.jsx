@@ -23,7 +23,7 @@ const Hashtag = () => {
       className="absolute w-[10%] md:top-[35%] top-[45%] md:right-[-5%] right-[-15%]"
     >
       <img
-        src="/images/signs/hashtag.png"
+        src="/images/signs/hashtag.webp"
         className="h-full w-full"
         alt="Hashtag"
       />

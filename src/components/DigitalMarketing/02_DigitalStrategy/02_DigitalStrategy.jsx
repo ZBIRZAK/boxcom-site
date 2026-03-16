@@ -48,19 +48,19 @@ const DigitalStrategy = ({ data }) => {
         </div>
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="/images/digital_marketing/door-sea.jpeg"
+            src="/images/digital_marketing/door-sea.webp"
             className="h-full w-full object-cover scale-126 "
           />
         </div>
         {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-5%] left-0 rotate-180  pointer-events-none overflow-hidden ">
           <img
-            src="/images/objects/torn_sheet.png"
+            src="/images/objects/torn_sheet.webp"
             alt="Torn sheet"
             className="scale-x-110 -rotate-1"
           />
         </div> */}
         <div className="absolute bottom-0 right-[0%] md:right-[-7%] w-full md:w-[90%]">
-          <img src="/images/digital_marketing/man-sofa.png" />
+          <img src="/images/digital_marketing/man-sofa.webp" />
 
           <div className="absolute top-[-22%] md:top-[-18%] left-[21%] md:left-[24%] w-[33%] rotate-[-15deg]">
             <img src="/images/shapes/spiral-ribbon.svg"></img>

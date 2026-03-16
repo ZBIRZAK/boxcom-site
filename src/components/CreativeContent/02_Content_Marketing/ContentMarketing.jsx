@@ -75,15 +75,15 @@ const ContentMarketing = ({ data }) => {
         className="relative md:overflow-visible overflow-hidden !order-1 md:order-2 h-screen"
       >
         <img
-          src="/images/creative_content/bg-girl-with-book.png"
+          src="/images/creative_content/bg-girl-with-book.webp"
           className="w-full h-full object-cover"
         />
         <img
-          src="/images/creative_content/girl-with-book.png"
+          src="/images/creative_content/girl-with-book.webp"
           className="absolute w-[80%] scale-150 bottom-0 left-[20%] md:w-[90%] md:-bottom-[5%] md:-left-[6%] md:scale-100"
         />
         {/* <div className="absolute w-[105%] md:bottom-[-5%] bottom-[-2%] right-[-2%] pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
         </div> */}
         <div className="md:hidden top-20 !text-shadow-lg w-full absolute text-center z-1">
           <h2

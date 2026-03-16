@@ -33,7 +33,7 @@ const Man=()=>{
     return(
         <div ref={refContainer} className="absolute w-[clamp(550px,35vw,700px)] md:right-[18%] right-[-15%] bottom-0 object-contain">
             <img
-                src="/images/creative_content/man-brightened.png"
+                src="/images/creative_content/man-brightened.webp"
                 className="h-full w-full"
             />
             <Glasses />

@@ -94,7 +94,7 @@ const HeroSection = ({ data }) => {
     <section id="page03_screen01" className="relative h-screen overflow-hidden">
       <h1 className="hidden">{data.main_title}</h1>
       <img
-        src="/images/digital_marketing/bg-digital-marketing.jpg"
+        src="/images/digital_marketing/bg-digital-marketing.webp"
         className="w-full h-full object-cover"
       />
       <Flower1
@@ -121,7 +121,7 @@ const HeroSection = ({ data }) => {
       />
       <div className="w-[380px] left-[-20%] bottom-0 absolute sm:w-[40%] sm:h-auto sm:left-[5%]">
         <img
-          src="/images/digital_marketing/woman-mobile-pink.png"
+          src="/images/digital_marketing/woman-mobile-pink.webp"
           className="w-full h-auto z-10"
         />
         <Splash />

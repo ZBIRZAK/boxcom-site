@@ -57,11 +57,11 @@ const QualityLeads = ({ data }) => {
       
       <div id="cont-img-girl-with-mushrooms" className="relative md:overflow-visible overflow-hidden order-1 md:order-2 h-screen">
       {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
       </div> */}
         <div className="absolute w-full h-full overflow-hidden">
           <img
-            src="/images/lead_generation/bg-puzzle-heads.jpeg"
+            src="/images/lead_generation/bg-puzzle-heads.webp"
             alt="A girl under mushrooms"
             className="object-cover object-top w-full h-full"
           />
@@ -72,7 +72,7 @@ const QualityLeads = ({ data }) => {
         <Phone/>
         <Magnet/>
         {/* <div className="absolute w-[105%] md:bottom-[-16%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden ">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="w-full" />
         </div> */}
         {/* TITRE POUR MOBILE */}
         <h2

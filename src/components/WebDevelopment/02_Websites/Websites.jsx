@@ -68,13 +68,13 @@ const Websites = ({ data }) => {
 
         <div className="absolute h-full w-full overflow-hidden">
           <img
-            src="/images/web_dev/bg-websites.jpeg"
+            src="/images/web_dev/bg-websites.webp"
             className="h-[125%] md:h-[115%] w-auto object-cover"
           />
         </div>
         <div className="absolute h-[30%] w-full bottom-[18%] md:bottom-[23%]">
           <img
-            src="/images/web_dev/laptop.png"
+            src="/images/web_dev/laptop.webp"
             className="absolute left-1/2 -translate-x-1/2 scale-[1.3] md:scale-[1.2]"
           />
         </div>
@@ -99,7 +99,7 @@ const Websites = ({ data }) => {
         <WaterSplash />
         <FlyingButterfly />
         {/* <div className="absolute w-[105%] md:bottom-[-5%] bottom-[-7%] -left-4 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
         </div> */}
       </div>
       <ColumnContentWrapper id="websites-text">
@@ -116,7 +116,7 @@ const Websites = ({ data }) => {
       
       {/* <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-1.png"
+          src="/images/objects/torn-papers/torn-paper-1.webp"
           alt="Torn sheet"
         />
       </div> */}

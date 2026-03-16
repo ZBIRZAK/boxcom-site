@@ -27,6 +27,10 @@ const ListLinks = ({ links }) => (
 
 const Footer = async () => {
   const footer = await getFooter();
+  const address = "3 Rue El Jihani, Quartier Racine, Casablanca, Morocco 20250";
+  const mapQuery = encodeURIComponent(address);
+  const mapHref = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+  const mapEmbedSrc = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
 
   const serviceLinks = getSectionLinks(footer.service_section);
   const aboutLinks = getSectionLinks(footer.about_section);
@@ -37,11 +41,11 @@ const Footer = async () => {
         <div className={styles.boxcomInfo}>
           <Link href={urls.homepage}>
             <img
-              src="/Logos_Boxcom/logo-color-subtitle-white.png"
+              src="/Logos_Boxcom/logo-color-subtitle-white.webp"
               alt="Boxcom Logo"
               loading="lazy"
               decoding="async"
-              className="w-[170px] mb-[1rem]"
+              className={styles.brandLogo}
             />
           </Link>
           <div dangerouslySetInnerHTML={{ __html: footer.pitch }} />
@@ -110,26 +114,40 @@ const Footer = async () => {
           </div>
         </div>
 
-        <div className={styles.links}>
-          <div>
-            <h3>{footer.service_section.title}</h3>
-            <ListLinks links={serviceLinks} />
-          </div>
-          <div>
-            <h3>{footer.about_section.title}</h3>
-            <ListLinks links={aboutLinks} />
+        <div className={styles.sectionCol}>
+          <h3>{footer.service_section.title}</h3>
+          <ListLinks links={serviceLinks} />
+        </div>
+        <div className={styles.sectionCol}>
+          <h3>{footer.about_section.title}</h3>
+          <ListLinks links={aboutLinks} />
 
-            <ul>
-              <li className="mt-5">
-                <Link
-                  href={formatUrl(footer.btn_contact.link)}
-                  className={styles.contactButton}
-                >
-                  {footer.btn_contact.text}
-                </Link>
-              </li>
-            </ul>
+          <ul>
+            <li className="mt-5">
+              <Link
+                href={formatUrl(footer.btn_contact.link)}
+                className={styles.contactButton}
+              >
+                {footer.btn_contact.text}
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className={`${styles.sectionCol} ${styles.addressBlock}`}>
+          <h3>Visit Us</h3>
+          <address className={styles.addressText}>{address}</address>
+          <div className={styles.mapCard}>
+            <iframe
+              title="Boxcom office map"
+              src={mapEmbedSrc}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className={styles.mapFrame}
+            />
           </div>
+          <Link href={mapHref} target="_blank" className={styles.mapLink}>
+            Open in Google Maps
+          </Link>
         </div>
       </div>
     </footer>

@@ -65,17 +65,17 @@ const Sea = ({ data }) => {
           ></h2>
         </div>
         <img
-          src="/images/web_dev/bg-screen4.jpg"
+          src="/images/web_dev/bg-screen4.webp"
           alt=""
           className="w-full h-full"
         />
 
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
         </div> */}
         <div className="absolute w-[100%] md:w-[100%] max-h-[50%] md:max-h-full h-auto md:bottom-[0%] bottom-[0%] md:left-[7%] z-[1]">
           <img
-            src="/images/persons/colorful_girl.png"
+            src="/images/persons/colorful_girl.webp"
             className="w-full h-full"
           />
           <Loudspeaker />
@@ -85,7 +85,7 @@ const Sea = ({ data }) => {
           <Calculator />
         </div>
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
         </div> */}
       </div>
       <ColumnContentWrapper id="sea-text">
@@ -104,7 +104,7 @@ const Sea = ({ data }) => {
       </ColumnContentWrapper>
       
       {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
-        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+        <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
       </div> */}
       
       {/* <div className="absolute z-99999 w-full top-[-10px] md:top-[-3%] left-0 right-0 pointer-events-none overflow-hidden z-[99] ">

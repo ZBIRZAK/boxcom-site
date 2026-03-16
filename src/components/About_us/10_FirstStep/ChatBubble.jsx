@@ -29,7 +29,7 @@ const ChatBubble = () => {
     },[]);
     return (
         <div ref={BubbleRef} className="absolute top-[-100%] left-[-83%] w-[130%]" >
-            <img src="/images/misc/chat_bubble.png" alt="Chat Bubble" className="w-full" />
+            <img src="/images/misc/chat_bubble.webp" alt="Chat Bubble" className="w-full" />
             <Yes/>
         </div>
     )

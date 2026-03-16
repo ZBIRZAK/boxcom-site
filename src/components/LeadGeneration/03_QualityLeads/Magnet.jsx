@@ -49,7 +49,7 @@ const Magnet=()=>{
   
     return(
         <div ref={magnetRef} className="absolute w-[25%] top-[60%] left-[40%] -rotate-70 ">
-            <img src="/images/objects/magnet.png" alt="Magnet" />
+            <img src="/images/objects/magnet.webp" alt="Magnet" />
         </div>
     )
 }

@@ -23,7 +23,7 @@ const NotJustAPage = ({ data }) => {
       <div className="absolute w-full h-full">
         <img
           className="w-full h-full object-cover"
-          src="/images/web_dev/bg-colors.jpeg"
+          src="/images/web_dev/bg-colors.webp"
           alt="Background"
         />
       </div>
@@ -38,7 +38,7 @@ const NotJustAPage = ({ data }) => {
         <Button2 />
         <Button3 />
         <img
-          src="/images/web_dev/woman-cart.png"
+          src="/images/web_dev/woman-cart.webp"
           alt="Shopping girl"
           className="w-full h-full"
         />
@@ -66,7 +66,7 @@ const NotJustAPage = ({ data }) => {
       </div>
       
       {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
-        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+        <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
       </div> */}
     </section>
   );

@@ -400,7 +400,7 @@ const HeroSectionOld = ({ data }) => {
   return (
     <section ref={heroSectionRef} className={styles.heroSection}>
       <div ref={bgRef} className={styles.backgroundContainer}>
-        <img src="/images/ring-light.png" alt="" />
+        <img src="/images/ring-light.webp" alt="" />
       </div>
       <div className={styles.personnageContainer} ref={personnageRef}>
         {personnage && (

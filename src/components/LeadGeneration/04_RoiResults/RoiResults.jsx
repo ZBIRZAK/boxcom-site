@@ -54,10 +54,10 @@ const RoiResults = ({ data }) => {
         className="overflow-hidden md:overflow-visible relative h-screen"
       >
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="w-full" />
         </div> */}
         {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="w-full" />
         </div> */}
         <div className="md:hidden top-35 text-shadow-lg w-full absolute text-center z-1">
           <h2
@@ -66,12 +66,12 @@ const RoiResults = ({ data }) => {
           ></h2>
         </div>
         <img
-          src="/images/lead_generation/bg-roi-results.jpg"
+          src="/images/lead_generation/bg-roi-results.webp"
           className="absolute w-full h-full object-cover"
         />
 
         <img
-          src="/images/lead_generation/woman-card.png"
+          src="/images/lead_generation/woman-card.webp"
           className="absolute md:w-[80%] w-[90%] right-0 bottom-0"
         />
 

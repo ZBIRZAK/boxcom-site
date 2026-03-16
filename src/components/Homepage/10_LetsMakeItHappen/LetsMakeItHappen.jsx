@@ -30,7 +30,7 @@ export default function LetsMakeItHappen({ data }) {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           className="absolute inset-0 w-full h-full object-cover object-left-bottom "
-          src="/images/homepage/bg-blue-medina.jpeg"
+          src="/images/homepage/bg-blue-medina.webp"
           alt=""
           aria-hidden="true"
           loading="lazy"
@@ -43,7 +43,7 @@ export default function LetsMakeItHappen({ data }) {
         <div className="absolute md:left-17 -left-[30%] bottom-0 w-[clamp(660px,50vw,1200px)] ">
           <img
             className="block w-full h-auto object-left-bottom origin-bottom-left "
-            src="/images/homepage/dancing-girl.png"
+            src="/images/homepage/dancing-girl.webp"
             alt="Dancing woman"
             loading="lazy"
             decoding="async"

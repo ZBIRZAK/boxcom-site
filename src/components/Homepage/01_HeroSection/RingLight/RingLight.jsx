@@ -43,7 +43,7 @@ const RingLight = ({ containerStyles, timeline, context }) => {
       style={{ textAlign: "center" }}
     >
       <img
-        src="/images/white-ring-light.png"
+        src="/images/white-ring-light.webp"
         style={{
           width: "100%",
           height: "auto",

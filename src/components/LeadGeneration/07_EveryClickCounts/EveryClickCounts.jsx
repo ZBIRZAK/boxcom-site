@@ -22,12 +22,12 @@ const EveryClickCounts = ({ data }) => {
     >
       <div className="absolute inset-0 w-full h-full ">
         <img
-          src="/images/lead_generation/bg-every-click-counts.png"
+          src="/images/lead_generation/bg-every-click-counts.webp"
           className="h-full w-full object-cover object-center"
         />
         <div className="absolute bottom-0 md:left-[15%] left-[15%] md:w-[37%] w-[70%]">
           <img
-            src="/images/persons/man-with-phone.png"
+            src="/images/persons/man-with-phone.webp"
             alt=""
             className="w-full object-cover"
           />

@@ -44,12 +44,12 @@ const BoxComAfrica = ({ data }) => {
     >
       {/* Background pour desktop */}
       <img
-        src="/images/about_us/bg-boxcom-africa.jpg"
+        src="/images/about_us/bg-boxcom-africa.webp"
         className="absolute md:block hidden w-full h-full object-cover object-[center_40%]"
       />
       {/* Background Yin/Yang pour mobile */}
       <img
-        src="/images/about_us/yin-yang.jpg"
+        src="/images/about_us/yin-yang.webp"
         className="md:hidden mt-30 block absolute w-full  object-cover"
       />
       {/* Ligne d'orizon (enfin on imagine) rose.... oui, oui : ROSE */}
@@ -90,7 +90,7 @@ const BoxComAfrica = ({ data }) => {
         {/* La fille au centre */}
         <div className="relative md:mt-0  mt-15  flex justify-center pt-10 md:order-2 order-1">
           <img
-            src="/images/about_us/girl2.png"
+            src="/images/about_us/girl2.webp"
             className="relative w-[350px] h-auto mt-13"
           />
           <Leaf1 />
@@ -117,7 +117,7 @@ const BoxComAfrica = ({ data }) => {
         <div className="order-3">
           <LogoContainer>
             <img
-              src="/Logos_Boxcom/logo-boxcom-africa.png"
+              src="/Logos_Boxcom/logo-boxcom-africa.webp"
               className="w-[200px] h-auto drop-shadow-lg/40"
             />
           </LogoContainer>

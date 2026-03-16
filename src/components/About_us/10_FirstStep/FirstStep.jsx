@@ -8,14 +8,14 @@ const FirstStep = ({ data }) => {
     <section id="page06_screen10" className="w-full h-screen">
       <div className="absolute w-full h-full">
         <img
-          src="/images/about_us/bg-colorfull-wall.jpeg"
+          src="/images/about_us/bg-colorfull-wall.webp"
           alt="Colorful wall"
           className="w-full h-full object-cover"
         />
       </div>
       <div className="absolute -bottom-0 md:left-[27%] left-[30%] md:w-[38%] w-[50%] z-10">
         <img
-          src="/images/persons/yellow-girl.png?v=2025-10-19"
+          src="/images/persons/yellow-girl.webp?v=2025-10-19"
           alt="Yellow girl"
           className="w-full"
         />

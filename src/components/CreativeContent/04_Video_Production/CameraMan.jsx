@@ -29,7 +29,7 @@ const CameraMan = () => {
     <div className="absolute -bottom-20 right-0 w-[100%] md:w-[100%] md:right-0 md:-bottom-30 flex justify-end items-end pointer-events-none">
       <img
         ref={imgRef}
-        src="/images/persons/photographer.png"
+        src="/images/persons/photographer.webp"
         alt="A man is taking pictures with his camera"
       />
     </div>

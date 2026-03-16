@@ -30,7 +30,7 @@ const Ring = () => {
       ref={ringRef}
       className="absolute w-[7%] top-[30%] right-[30%] rotate-20"
     >
-      <img src="/images/accessories/ring.png" alt="Ring" className="w-full" />
+      <img src="/images/accessories/ring.webp" alt="Ring" className="w-full" />
     </div>
   );
 };

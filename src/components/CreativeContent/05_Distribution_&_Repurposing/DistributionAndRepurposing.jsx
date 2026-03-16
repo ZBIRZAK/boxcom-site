@@ -18,17 +18,17 @@ const DistributionAndRepurposing = ({ data }) => {
     >
       <div className="h-screen relative pr-[4rem] overflow-hidden">
         <img
-          src="/images/creative_content/bg-girl-colorful-costume.png"
+          src="/images/creative_content/bg-girl-colorful-costume.webp"
           className="w-full h-full object-cover object-top"
         />
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-            <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+            <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
         </div> */}
         <Plane1 />
         <Dog />
         <div className="absolute w-[85%] h-auto -bottom-[20%] right-0">
           <img
-            src="/images/creative_content/woman-paper-plane.png"
+            src="/images/creative_content/woman-paper-plane.webp"
           />
         </div>
         <Plane2 />
@@ -37,7 +37,7 @@ const DistributionAndRepurposing = ({ data }) => {
         <Plant />
         
         {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
         </div> */}
       </div>
 
@@ -81,7 +81,7 @@ const DistributionAndRepurposing = ({ data }) => {
       {/* Ripped paper effect at the bottom of this section */}
       {/* <div className="absolute z-99999 w-full bottom-[-1px] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn_sheet.png"
+          src="/images/objects/torn_sheet.webp"
           alt="Torn sheet"
           className="w-full"
         />

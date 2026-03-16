@@ -18,7 +18,7 @@ const HeroAboutUs = () => {
             muted
             playsInline
             preload="none"
-            poster="/images/about_us/bg-boxcom.jpg"
+            poster="/images/about_us/bg-boxcom.webp"
             className="relative w-full h-full object-cover obect-top"
             onEnded={() => {
               setVideoActive(false);
@@ -28,7 +28,7 @@ const HeroAboutUs = () => {
       ) : (
         <div className="relative inset-0">
           <img
-            src="/images/about_us/bg-boxcom.jpg"
+            src="/images/about_us/bg-boxcom.webp"
             alt="Boxcom"
             className="relative w-full h-full object-cover object-top"
           />

@@ -50,7 +50,7 @@ const Present = () => {
       className="absolute md:bottom-[1%] bottom-[8%] right-[-40%] md:w-[25%] w-[40%] pointer-events-none"
     >
       <img
-        src="/images/web_dev/doodles/present.png"
+        src="/images/web_dev/doodles/present.webp"
         alt="Present"
         className="w-full"
       />

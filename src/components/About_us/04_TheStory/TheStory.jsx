@@ -64,7 +64,7 @@ const TheStory = ({ data }) => {
           className="overflow-hidden relative w-full h-full"
         >
           <img
-            src="/images/persons/two_women_cut.jpg"
+            src="/images/persons/two_women_cut.webp"
             className="w-full h-full object-cover object-center md:object-[0%_10%]"
           />
 

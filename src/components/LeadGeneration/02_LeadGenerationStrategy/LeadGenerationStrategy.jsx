@@ -69,16 +69,16 @@ const LeadGenerationStrategy = ({ data }) => {
           ></h2>
         </div>
         <img
-          src="/images/lead_generation/chess.png"
+          src="/images/lead_generation/chess.webp"
           className="w-full h-full object-cover md:object-bottom object-right "
         />
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
         </div> */}
         
         <div className="absolute md:w-[79%] w-[100%] bottom-[0%] md:left-[30%] ">
           <img
-            src="/images/persons/man-riding-horse.png"
+            src="/images/persons/man-riding-horse.webp"
             alt="Man Riding A Horse"
           />
           <Calculator />
@@ -86,7 +86,7 @@ const LeadGenerationStrategy = ({ data }) => {
           <GlowingArrow />
         </div>
         {/* <div className="absolute w-[110%] -left-10 md:bottom-[-11%] bottom-[-7%] z-1  pointer-events-none overflow-hidden ">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="w-full" />
         </div> */}
       </div>
 
@@ -105,7 +105,7 @@ const LeadGenerationStrategy = ({ data }) => {
       
       {/* <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-1.png"
+          src="/images/objects/torn-papers/torn-paper-1.webp"
           alt="Torn sheet"
         />
       </div> */}

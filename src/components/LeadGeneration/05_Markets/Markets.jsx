@@ -146,7 +146,7 @@ const Markets = ({ data }) => {
       className="relative !h-auto grid grid-cols-1 md:grid-cols-[65%_35%] w-full md:min-h-screen section-dark"
     >
       {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
       </div> */}
       
       <ColumnContentWrapper id="markets-text">
@@ -163,7 +163,7 @@ const Markets = ({ data }) => {
         className="relative md:overflow-visible overflow-hidden order-1 md:order-2 md:h-screen h-[80vh]"
       >
         {/* <div className="absolute w-[140%] -rotate-3 -right-10 md:bottom-[-15%] bottom-[-12%] z-1  pointer-events-none overflow-hidden ">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="w-full" />
         </div> */}
         <div className="md:hidden top-5 text-shadow-lg w-full absolute text-center z-1">
           <h2
@@ -172,13 +172,13 @@ const Markets = ({ data }) => {
           ></h2>
         </div>
         <img
-          src="/images/lead_generation/bg-markets.jpg"
+          src="/images/lead_generation/bg-markets.webp"
           className="absolute w-full h-full object-cover"
         />
 
         <div className="absolute w-full h-full overflow-hidden">
           <img
-            src="/images/lead_generation/woman-paperplane.png"
+            src="/images/lead_generation/woman-paperplane.webp"
             className="absolute w-[100%] right-[0] -bottom-[9%]"
           />
         </div>

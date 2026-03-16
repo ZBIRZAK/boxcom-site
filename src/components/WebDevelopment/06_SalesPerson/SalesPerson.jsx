@@ -12,12 +12,12 @@ const SalesPerson = ({ data }) => {
   return (
     <section id="page04_screen06" className="w-full h-screen">
       {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] z-99 -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
       </div> */}
       <div className="absolute w-full h-full">
         <img
           className="w-full h-full object-cover"
-          src="/images/web_dev/bg-screen6.jpg"
+          src="/images/web_dev/bg-screen6.webp"
           alt="Background"
         />
       </div>
@@ -29,7 +29,7 @@ const SalesPerson = ({ data }) => {
         <Ring />
         <Donut />
         <img
-          src="/images/web_dev/woman-shopping.png"
+          src="/images/web_dev/woman-shopping.webp"
           alt="Shopping gwoman"
           className="w-full"
         />

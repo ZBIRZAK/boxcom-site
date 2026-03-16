@@ -74,22 +74,22 @@ const DigitalAdvertising = ({ data }) => {
           ></h2>
         </div>
         <img
-          src="/images/digital_marketing/urban-street.png "
+          src="/images/digital_marketing/urban-street.webp "
           className="w-full h-full object-cover "
         />
         {/* <div className="absolute w-[105%] md:top-[-5%] top-[-3%] left-0  pointer-events-none overflow-hidden ">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" />
         </div> */}
         {/* <div className="absolute md:w-[115%] w-[82%] md:bottom-[-10%] bottom-[-5%] top-[-222%] -left-[20%] rotate-177  pointer-events-none overflow-hidden ">
           <img
-            src="/images/objects/torn_sheet.png"
+            src="/images/objects/torn_sheet.webp"
             alt="Torn sheet"
             className=""
           />
         </div> */}
         <div className="absolute -bottom-1 z-99 -right-[12%] md:w-[73%] w-[130%] ">
           <img
-            src="/images/digital_marketing/yellow-robot.png"
+            src="/images/digital_marketing/yellow-robot.webp"
             className=""
           ></img>
           

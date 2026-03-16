@@ -90,7 +90,7 @@ const NarrativeSection2 = ({ data }) => {
           </picture>
 
           {/* <img
-            src="/images/women-working2-min.png"
+            src="/images/women-working2-min.webp"
             className="w-full h-full object-cover object-center md:object-[0%_70%]"
           /> */}
 

@@ -48,7 +48,7 @@ const Experiences = ({ data }) => {
       <ImagePreloader
         imageUrls={[
           "/images/creative_content/bg_screen1.webp",
-          "/images/creative_content/man-brightened.png",
+          "/images/creative_content/man-brightened.webp",
         ]}
       >
         <div className="absolute inset-0 w-full h-full object-cover">

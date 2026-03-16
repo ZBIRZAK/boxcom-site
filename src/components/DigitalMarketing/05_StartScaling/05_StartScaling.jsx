@@ -21,11 +21,11 @@ const StartScaling = ({ data }) => {
   return (
     <section id="page03_screen05" className="relative h-screen">
       <img
-        src="/images/digital_marketing/coloured-street2.jpg"
+        src="/images/digital_marketing/coloured-street2.webp"
         className="w-full h-full object-cover"
       />
       {/* <div className="absolute md:w-[55%] w-[110%] -right-5 md:top-[-15%] top-[-5%]   pointer-events-none overflow-hidden ">
-        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+        <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="w-full" />
       </div> */}
       
       {/* <div className="absolute z-9 w-full md:top-[-4%] top-[-2%] left-0 right-0 pointer-events-none overflow-hidden ">
@@ -50,7 +50,7 @@ const StartScaling = ({ data }) => {
         <LeftFirework />
         <div className="relative">
           <img
-            src="/images/digital_marketing/happy-man-jumping.png"
+            src="/images/digital_marketing/happy-man-jumping.webp"
             className=" w-full h-auto z-2"
           />
         </div>

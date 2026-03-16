@@ -58,18 +58,18 @@ const GraphicDesign = ({ data }) => {
         className="relative h-screen overflow-hidden"
       >
         <img
-          src="/images/creative_content/bg-screen3.jpg"
+          src="/images/creative_content/bg-screen3.webp"
           className="w-full h-full object-cover object-center"
         />
         
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-            <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+            <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
         </div> */}
 
         {/* LE CADRE */}
         <div className="absolute w-[40%] bottom-[10%] right-[-12%] h-auto md:w-[35%] md:-bottom-[10%] md:right-[-6%]">
           <img
-            src="/images/creative_content/painting.png "
+            src="/images/creative_content/painting.webp "
             className="w-full h-full scale-120 md:scale-100"
           />
           <div className="absolute -left-[5%] top-[35%] md:top-5/12 md:left-[10%] scale-x-[-1] -rotate-12">
@@ -81,14 +81,14 @@ const GraphicDesign = ({ data }) => {
         {/* LE POULET */}
         <div className="absolute w-[85%] h-auto bottom-0 right-[29%] md:w-[58%] md:bottom-[-7%]">
           <img
-            src="/images/creative_content/chicken.png"
+            src="/images/creative_content/chicken.webp"
             className="w-full h-full"
           />
           <Crown />
           <FaceEmoji />
         </div>
         {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
         </div> */}
 
         {/* Titre pour mobile */}

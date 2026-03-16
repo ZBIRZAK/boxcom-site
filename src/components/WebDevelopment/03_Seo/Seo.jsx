@@ -54,7 +54,7 @@ const Seo = ({ data }) => {
       className="relative !h-auto section-dark grid grid-cols-1 md:grid-cols-[55%_45%]"
     >
       {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] -left-5 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
       </div> */}
   
       <ColumnContentWrapper id="seo-text" className="md:order-2">
@@ -78,20 +78,20 @@ const Seo = ({ data }) => {
           ></h2>
         </div>
         <img
-          src="/images/web_dev/bg-planets.jpeg"
+          src="/images/web_dev/bg-planets.webp"
           alt=""
           className="w-full h-full object-cover object-top"
         />
         <Stars />
         <div className="absolute max-h-[80%] sm:max-h-full w-full bottom-0 md:-left-10 z-1">
-          <img src="/images/persons/man-with-rocket.png" alt="Man" />
+          <img src="/images/persons/man-with-rocket.webp" alt="Man" />
           <SeoDoodle />
           <Hashtag1 />
           <Chart />
           <Arobase />
         </div>
         {/* <div className="absolute w-[110%] -right-10 md:bottom-[-12%] bottom-[-7%] rotate-177 z-1  pointer-events-none overflow-hidden ">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="w-full" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="w-full" />
         </div> */}
         
         <div className="hidden  md:block">

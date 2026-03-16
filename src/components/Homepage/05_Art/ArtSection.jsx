@@ -67,7 +67,7 @@ const ArtSection = ({ data }) => {
           className="absolute top-0 left-0 h-full"
         />
         <img
-          src="/images/homepage/astronaute.png"
+          src="/images/homepage/astronaute.webp"
           alt="Astronaut"
           loading="lazy"
           decoding="async"

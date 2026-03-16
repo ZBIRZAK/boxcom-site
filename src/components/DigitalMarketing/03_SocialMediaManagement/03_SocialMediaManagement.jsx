@@ -67,19 +67,19 @@ const SocialMediaManagement = ({ data }) => {
           ></h2>
         </div>
         <img
-          src="/images/digital_marketing/bg-screen3.png"
+          src="/images/digital_marketing/bg-screen3.webp"
           className="w-full h-full object-cover"
         />
         {/* <div className="absolute w-[105%] md:top-[-13%] top-[-3%] right-0  pointer-events-none overflow-hidden ">
           <img
-            src="/images/objects/torn_sheet.png"
+            src="/images/objects/torn_sheet.webp"
             alt="Torn sheet"
             className="scale-x-110 -rotate-1"
           />
         </div> */}
         <div className="absolute bottom-0 right-[0%] md:right-[-7%] w-full md:w-[90%]">
           <img
-            src="/images/digital_marketing/pinkhair-woman.png"
+            src="/images/digital_marketing/pinkhair-woman.webp"
             className="w-full"
           />
 
@@ -96,11 +96,11 @@ const SocialMediaManagement = ({ data }) => {
           <Star5 />
         </div>
         {/* <div className="absolute w-[105%] md:top-[-10%] top-[-5%] left-0 pointer-events-none overflow-hidden">
-          <img src="/images/objects/torn_sheet.png" alt="Torn sheet" />
+          <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" />
         </div> */}
         {/* <div className="absolute w-[115%] md:bottom-[-12%] bottom-[-5%]  -left-10 rotate-177  pointer-events-none overflow-hidden ">
           <img
-            src="/images/objects/torn_sheet.png"
+            src="/images/objects/torn_sheet.webp"
             alt="Torn sheet"
             className=""
           />
@@ -120,7 +120,7 @@ const SocialMediaManagement = ({ data }) => {
 
       {/* <div className="absolute z-99999 w-full top-[-7%] left-0 right-0 pointer-events-none overflow-hidden">
         <img
-          src="/images/objects/torn-papers/torn-paper-1.png"
+          src="/images/objects/torn-papers/torn-paper-1.webp"
           alt="Torn sheet"
         />
       </div> */}

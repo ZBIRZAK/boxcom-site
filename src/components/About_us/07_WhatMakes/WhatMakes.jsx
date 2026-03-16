@@ -13,7 +13,7 @@ const WhatMakes = ({data}) => {
     <section id="page06_screen07" className="!h-auto section-light relative grid grid-cols-1 md:grid-cols-[45%_55%] w-full md:min-h-screen" >
         <div  className="relative h-screen overflow-hidden">
         <Title1 html={data.title} className={"md:!hidden !block top-5 text-shadow-lg w-full absolute  !text-center z-1"} />
-            <img src="/images/about_us/bg_whatmakes.jpeg" alt="Women" className="w-full h-full object-cover" />
+            <img src="/images/about_us/bg_whatmakes.webp" alt="Women" className="w-full h-full object-cover" />
             <Duh/>
             <Heart/>
             <Hashtag/>

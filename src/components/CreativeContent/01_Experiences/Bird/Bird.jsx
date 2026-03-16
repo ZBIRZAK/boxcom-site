@@ -65,7 +65,7 @@ const Bird = () => {
       <img src="/images/animals/bird-without-wing.svg" />
       <img
         ref={refWing}
-        src="/images/animals/bird-wing.png"
+        src="/images/animals/bird-wing.webp"
         className="absolute top-[31%] left-[36%] w-[40%]"
       />
     </div>

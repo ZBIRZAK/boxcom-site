@@ -65,7 +65,7 @@ const OurImpact = ({ data }) => {
         className="md:order-2 relative h-screen w-full  h-full overflow-hidden"
       >
         <img
-          src="/images/persons/surprised_man.jpeg"
+          src="/images/persons/surprised_man.webp"
           alt="Surprised man"
           className=" w-full  h-full object-cover"
         />

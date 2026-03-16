@@ -15,12 +15,12 @@ const Hero = ({ data }) => {
     >
       <h1 className="hidden">{data.main_title}</h1>
       <img
-        src="/images/lead_generation/bg-hero.jpg"
+        src="/images/lead_generation/bg-hero.webp"
         className="absolute w-full h-full object-cover"
       />
 
       <img
-        src="/images/lead_generation/man-open-arm.png"
+        src="/images/lead_generation/man-open-arm.webp"
         className="absolute md:scale-[1] scale-[2.5] md:w-[76%] w-[100%] left-0 md:bottom-0 bottom-30"
       />
 
@@ -50,7 +50,7 @@ const Hero = ({ data }) => {
       </div>
       
       {/* <div className="absolute w-[105%] md:bottom-[-10%] bottom-[-7%] -left-5 pointer-events-none overflow-hidden">
-        <img src="/images/objects/torn_sheet.png" alt="Torn sheet" className="" />
+        <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
       </div> */}
     </section>
   );
