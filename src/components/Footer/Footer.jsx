@@ -145,9 +145,9 @@ const Footer = async () => {
               className={styles.mapFrame}
             />
           </div>
-          <Link href={mapHref} target="_blank" className={styles.mapLink}>
+          {/* <Link href={mapHref} target="_blank" className={styles.mapLink}>
             Open in Google Maps
-          </Link>
+          </Link> */}
         </div>
       </div>
     </footer>
