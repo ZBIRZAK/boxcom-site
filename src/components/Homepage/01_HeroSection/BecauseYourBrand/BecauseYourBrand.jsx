@@ -95,7 +95,7 @@ const BecauseYourBrand = ({
   }, [isMobile]);
 
   return (
-    <div className=" z-20  left-[20%] text-center border">
+    <div className=" z-20  left-[20%] text-center border" style={{ display: "contents" }}>
       <div
         className={`absolute md:text-[2rem] text-1xl z-10 text-center md:top-[-10%] top-[10%] w-full ${isMobile ? "opacity-100" : "opacity-0"}`}
         ref={refTxt1}
