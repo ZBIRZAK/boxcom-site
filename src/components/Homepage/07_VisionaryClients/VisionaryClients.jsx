@@ -2,22 +2,12 @@ import styles from "./VisionaryClients.module.scss";
 import ScrollButton from "../../ScrollButton/ScrollButton";
 import Zigzag from "./Zigzag/Zigzag";
 
-function fillArray(arr, size) {
-  const result = [];
-  for (let i = 0; i < size; i++) {
-    result.push(arr[i % arr.length]);
-  }
-  return result;
-}
-
 const VisionaryClients = ({ data }) => {
   const clients = Object.entries(data)
     .filter(([key, value]) => {
       return /^client_\d/.test(key) && !!value.img;
     })
     .map(([key, value]) => value);
-
-  const pageClients = fillArray(clients, 25);
 
   return (
     <div
@@ -38,7 +28,7 @@ const VisionaryClients = ({ data }) => {
           <Zigzag />
         </div>
         <div className="w-full h-[80vh] flex flex-wrap justify-center items-center gap-4 p-4 md:[&>img]:w-[10%] [&>img]:w-[20%] object-contain ">
-          {pageClients.map((client, i) => {
+          {clients.map((client, i) => {
             return (
               <img
                 key={i}

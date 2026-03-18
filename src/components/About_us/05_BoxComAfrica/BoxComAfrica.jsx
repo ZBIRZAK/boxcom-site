@@ -40,7 +40,7 @@ const BoxComAfrica = ({ data }) => {
   return (
     <section
       id="page06_screen05"
-      className="relative section-light !bg-[#F5B7CC] md:!h-screen !h-auto overflow-hidden"
+      className="relative section-light !bg-[#F5B7CC] md:min-h-screen !h-auto overflow-hidden md:overflow-visible"
     >
       {/* Background pour desktop */}
       <img
@@ -108,7 +108,7 @@ const BoxComAfrica = ({ data }) => {
           <Leaf6 />
           <Newspaper />
           <div
-            className="absolute w-[90vw] md:w-[80vw] py-3 text-center text-black font-bold  md:bottom-[-10%] bottom-[-20%]"
+            className="absolute w-[90vw] md:w-[80vw] py-3 text-center text-black font-bold md:bottom-[-10%] bottom-[-20%]"
             dangerouslySetInnerHTML={{ __html: data.bottomText }}
           />
         </div>
@@ -131,6 +131,17 @@ const BoxComAfrica = ({ data }) => {
               <Title>{data.title4}</Title>
               <Content value={data.content4} />
               <Microphone />
+            </div>
+            <div className="mt-8">
+              <p className="text-black font-semibold">You have a PR project?</p>
+              <a
+                href="https://boxcom-africa.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex mt-4 rounded-full border-2 border-black px-6 py-2 font-semibold text-black hover:bg-black hover:text-white transition-colors"
+              >
+                Visit our website
+              </a>
             </div>
           </div>
         </div>
