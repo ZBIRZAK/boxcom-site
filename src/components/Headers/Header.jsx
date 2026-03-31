@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 
-const Logo = ({ onClick }) => (
+const Logo = ({ onClick, light = false, scrolled = false }) => (
   <Link
     className="flex-1/2 md:flex-3/12 flex items-center px-2 md:justify-center z-[9999] container-mobile-90"
     href={urls.homepage}
@@ -16,23 +16,34 @@ const Logo = ({ onClick }) => (
     <img
       src="/Logos_Boxcom/logo-new-white-177.webp"
       srcSet="/Logos_Boxcom/logo-new-white-177.webp 177w, /Logos_Boxcom/logo-new-white-353.webp 353w"
-      sizes="177px"
+      sizes="(max-width: 767px) 140px, 177px"
       width={177}
       height={50}
-      className="h-[50px] transition-[filter] duration-300 ease-in-out drop-shadow-md/50"
+      className={clsx(
+        "h-auto w-[140px] md:w-[177px] max-w-full shrink-0 object-contain transition-[filter] duration-300 ease-in-out",
+        light ? "" : "drop-shadow-md/50"
+      )}
+      style={
+        light && !scrolled ? { filter: "brightness(0) saturate(100%)" } : undefined
+      }
       alt="Logo BoxCom"
     />
   </Link>
 );
 
-const MenuHamburger = ({ isOpen, onClick }) => (
+const MenuHamburger = ({ isOpen, onClick, light = false, scrolled = false }) => (
   <button
     className="mobile-menu-toggle cursor-pointer drop-shadow-md/50"
     onClick={onClick}
     aria-label={isOpen ? "Close menu" : "Open menu"}
     aria-expanded={isOpen}
   >
-    <div className="burger-icon w-6 h-[18px] relative cursor-pointer [&_span]:absolute [&_span]:block [&_span]:w-full [&_span]:h-[2px] [&_span]:bg-white [&_span]:transition-all [&_span]:duration-300 [&_span]:ease-in-out [&_span]:origin-center">
+    <div
+      className={clsx(
+        "burger-icon w-6 h-[18px] relative cursor-pointer [&_span]:absolute [&_span]:block [&_span]:w-full [&_span]:h-[2px] [&_span]:transition-all [&_span]:duration-300 [&_span]:ease-in-out [&_span]:origin-center",
+        light && !scrolled ? "[&_span]:bg-black" : "[&_span]:bg-white"
+      )}
+    >
       <span
         className={clsx(
           isOpen ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"
@@ -50,7 +61,13 @@ const MenuHamburger = ({ isOpen, onClick }) => (
   </button>
 );
 
-const NavDesktop = ({ links, activeLink, onClickLink }) => (
+const NavDesktop = ({
+  links,
+  activeLink,
+  onClickLink,
+  light = false,
+  scrolled = false,
+}) => (
   <nav className="hidden flex-9/12 md:flex gap-2 md:gap-4 lg:gap-5 xl:gap-6 2xl:gap-10 items-center-safe justify-center-safe">
     {links.map((item, i) => {
       const isLast = i === links.length - 1;
@@ -62,11 +79,24 @@ const NavDesktop = ({ links, activeLink, onClickLink }) => (
           href={item.link}
           className={clsx(
             "relative !no-underline",
+            light && !isLast && !scrolled && "text-[#666666]",
+            light && !isLast && scrolled && "text-[#f0f0f0]",
             !isLast &&
               "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full",
-            isActive && "text-[#ff0077]",
-            isLast && "bg-white rounded-full py-3 px-5",
-            isLast && !isActive && "text-black"
+            light &&
+              !isLast &&
+              !scrolled &&
+              "after:bg-[#1b1b1b]",
+            light &&
+              !isLast &&
+              scrolled &&
+              "after:bg-[#ffffff]",
+            !light && isActive && "text-[#ff0077]",
+            light && isActive && !isLast && !scrolled && "text-[#1b1b1b] font-semibold",
+            light && isActive && !isLast && scrolled && "text-[#ff0077] font-semibold",
+            !light && isLast && "bg-white rounded-full py-3 px-5",
+            !light && isLast && !isActive && "text-black",
+            light && isLast && "bg-[#ff0062] rounded-full py-3 px-5 text-white font-semibold"
           )}
           onClick={() => onClickLink(item.link)}
         >
@@ -96,18 +126,35 @@ const NavMobile = ({ links, activeLink, onClickLink, isOpen }) => (
   </nav>
 );
 
-const Header = ({ data, dark = false, transitionToDark = false }) => {
+const Header = ({ data, dark = false, transitionToDark = false, light = false }) => {
   const path = usePathname();
   const [activeLink, setActiveLink] = useState(path);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const bgRef = useRef();
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
-  const links = Object.values(data.nav_menu).filter(link => link.text.toLowerCase() !== 'blog' && link.text.toLowerCase() !== 'our projects');
+  const links = Object.values(data.nav_menu).filter((link) => {
+    const text = link.text?.toLowerCase().trim();
+    const url = formatUrl(link.link || "").toLowerCase();
+
+    if (text === "blog") return false;
+    if (text === "our projects") return false;
+    if (url === urls.projects || url.startsWith(`${urls.projects}/`)) return false;
+
+    return true;
+  });
   links.forEach((link) => {
     link.link = formatUrl(link.link);
   });
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     // gsap.set(bgRef.current, {
@@ -140,11 +187,15 @@ const Header = ({ data, dark = false, transitionToDark = false }) => {
     <header
       ref={bgRef}
       className={clsx(
-        "fixed top-0 left-0 right-0 h-[70px] w-full flex justify-between z-1000 container-mobile-90",
-        dark && "bg-[#000000bb]"
+        "fixed top-0 left-0 right-0 h-[70px] w-full flex justify-between z-1000 container-mobile-90 transition-colors duration-300",
+        dark && "bg-[#000000bb]",
+        light && !isScrolled && "text-[#1b1b1b]",
+        light && isScrolled && "bg-[#111111e6] text-white"
       )}
     >
       <Logo
+        light={light}
+        scrolled={isScrolled}
         onClick={() => {
           setIsMenuOpen(false);
           setActiveLink(urls.homepage);
@@ -155,15 +206,23 @@ const Header = ({ data, dark = false, transitionToDark = false }) => {
         links={links}
         activeLink={activeLink}
         onClickLink={setActiveLink}
+        light={light}
+        scrolled={isScrolled}
       />
 
-      <nav className="md:hidden flex-1/2 flex justify-end items-center px-2 z-[9999] container-mobile-90">
-        <MenuHamburger isOpen={isMenuOpen} onClick={toggleMenu} />
+      <nav className="md:hidden ml-auto flex justify-end items-center pr-3 z-[9999]">
+        <MenuHamburger
+          isOpen={isMenuOpen}
+          onClick={toggleMenu}
+          light={light}
+          scrolled={isScrolled}
+        />
       </nav>
 
       <div
         className={clsx(
-          "fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center invisible opacity-0 transition-opacity duration-300 ease-in-out",
+          "fixed inset-0 w-full h-dvh flex items-center justify-center invisible opacity-0 transition-opacity duration-300 ease-in-out",
+          light ? "bg-[#ececec] text-[#1b1b1b]" : "bg-black text-white",
           isMenuOpen && "visible opacity-100"
         )}
       >

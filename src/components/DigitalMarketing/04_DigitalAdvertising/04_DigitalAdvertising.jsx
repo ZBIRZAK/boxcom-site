@@ -64,7 +64,7 @@ const DigitalAdvertising = ({ data }) => {
       
 
       <div
-        className="relative h-screen md:overflow-visible"
+        className="relative h-screen overflow-hidden md:overflow-visible"
         id="cont-img-open-field"
       >
         <div className="md:hidden top-20 !text-shadow-lg w-full absolute text-center z-1">
@@ -87,7 +87,7 @@ const DigitalAdvertising = ({ data }) => {
             className=""
           />
         </div> */}
-        <div className="absolute -bottom-1 z-99 -right-[12%] md:w-[73%] w-[130%] ">
+        <div className="absolute -bottom-1 z-99 -right-[6%] w-[112%] md:-right-[12%] md:w-[73%]">
           <img
             src="/images/digital_marketing/yellow-robot.webp"
             className=""

@@ -1,7 +1,12 @@
 import { getMediaById, getPortfolioPosts } from "../../lib/BackendContents";
+import { isLatelySectionEnabled } from "../../lib/helpers";
 import ProjectsList from "../Our_projects/ProjectsList";
 
 const Lately = async ({ sectionId, portfolioCategoryId }) => {
+  if (!isLatelySectionEnabled()) {
+    return null;
+  }
+
   const posts = await getPortfolioPosts(portfolioCategoryId);
 
   const medias = {};

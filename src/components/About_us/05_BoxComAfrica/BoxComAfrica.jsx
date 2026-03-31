@@ -70,7 +70,7 @@ const BoxComAfrica = ({ data }) => {
           <LogoContainer>
             <img
               src="/Logos_Boxcom/logo-new-white-353.webp"
-              className="w-[200px] h-auto filter drop-shadow-lg/40"
+              className="w-[52vw] max-w-[200px] h-auto filter drop-shadow-lg/40"
             />
           </LogoContainer>
           <div className="mt-10 pl-[15%]">
@@ -91,7 +91,7 @@ const BoxComAfrica = ({ data }) => {
         <div className="relative md:mt-0  mt-15  flex justify-center pt-10 md:order-2 order-1">
           <img
             src="/images/about_us/girl2.webp"
-            className="relative w-[350px] h-auto mt-13"
+            className="relative w-[85vw] max-w-[350px] h-auto mt-13"
           />
           <Leaf1 />
           <Subscribe />
@@ -118,7 +118,7 @@ const BoxComAfrica = ({ data }) => {
           <LogoContainer>
             <img
               src="/Logos_Boxcom/logo-boxcom-africa.webp"
-              className="w-[200px] h-auto drop-shadow-lg/40"
+              className="w-[52vw] max-w-[200px] h-auto drop-shadow-lg/40"
             />
           </LogoContainer>
           <div className="mt-10 pl-10 pr-[15%]">

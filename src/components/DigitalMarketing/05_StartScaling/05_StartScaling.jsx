@@ -73,7 +73,7 @@ const StartScaling = ({ data }) => {
         <RightSpiral />
       </div>
 
-      <div className="absolute w-screen h-screen top-0 right-0 flex flex-col justify-center  md:right-[-200] md:w-[65%] md:h-[60%] md:top-[30%] ">
+      <div className="absolute inset-x-0 top-0 w-full h-full flex flex-col justify-center md:right-[-200] md:inset-x-auto md:w-[65%] md:h-[60%] md:top-[30%] ">
         <div className="w-full md:w-[60%] md:h-auto flex flex-col justify-center items-center text-center mt-30 md:mt-0">
           <h3
             dangerouslySetInnerHTML={{ __html: data.title1 }}

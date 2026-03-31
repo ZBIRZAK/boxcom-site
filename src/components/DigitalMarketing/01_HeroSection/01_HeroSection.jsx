@@ -119,7 +119,7 @@ const HeroSection = ({ data }) => {
       // addUserNote("C4")
       // }}
       />
-      <div className="w-[380px] left-[-20%] bottom-0 absolute sm:w-[40%] sm:h-auto sm:left-[5%]">
+      <div className="w-[72vw] max-w-[380px] left-[-10%] bottom-0 absolute sm:w-[40%] sm:h-auto sm:left-[5%]">
         <img
           src="/images/digital_marketing/woman-mobile-pink.webp"
           className="w-full h-auto z-10"

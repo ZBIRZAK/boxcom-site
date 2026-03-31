@@ -73,7 +73,7 @@ const ArtSection = ({ data }) => {
           decoding="async"
           className="absolute -bottom-[20px] left-1/2 transform -translate-x-1/2 h-[92%]"
         />
-        <div className="absolute top-[22%] md:left-[26%] left-[10%] w-[300px]">
+        <div className="absolute top-[22%] md:left-[26%] left-[10%] w-[72vw] max-w-[300px]">
           <Duh />
         </div>
 

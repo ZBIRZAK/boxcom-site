@@ -17,18 +17,32 @@ const GirlWithGlasses = ({ context }) => {
       "(prefers-reduced-motion: reduce)"
     )?.matches;
 
-    // Desktop: restore original "fade-up" hero feel.
-    if (!isMobile && !reduceMotion) {
-      gsap.set(refContainer.current, { y: 120, opacity: 0 });
-      gsap.to(refContainer.current, {
-        y: 0,
-        opacity: 1,
-        duration: 3,
-        delay: 0.2,
-        ease: "sine",
-      });
+    if (!reduceMotion) {
+      if (isMobile) {
+        gsap.set(refContainer.current, { y: 40, opacity: 0 });
+        gsap.to(refContainer.current, {
+          y: 0,
+          opacity: 1,
+          duration: 1.1,
+          delay: 0.1,
+          ease: "power2.out",
+        });
+      } else {
+        // Desktop: keep original "fade-up" hero feel.
+        gsap.set(refContainer.current, { y: 120, opacity: 0 });
+        gsap.to(refContainer.current, {
+          y: 0,
+          opacity: 1,
+          duration: 3,
+          delay: 0.2,
+          ease: "sine",
+        });
+      }
     } else {
-      gsap.set(refContainer.current, { y: 0, opacity: 1 });
+      gsap.to(refContainer.current, {
+        opacity: 1,
+        y: 0,
+      });
     }
 
     if (!isMobile) {

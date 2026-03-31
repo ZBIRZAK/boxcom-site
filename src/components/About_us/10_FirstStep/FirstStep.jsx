@@ -23,7 +23,7 @@ const FirstStep = ({ data }) => {
         <Phone />
         <Paperplane />
       </div>
-      <div className="absolute w-screen top-0 right-[0%]  flex flex-col justify-center items-end md:right-[5%] md:w-[65%] md:h-[60%] md:top-[20%] z-1 ">
+      <div className="absolute inset-x-0 top-0 w-full flex flex-col justify-center items-end md:right-[5%] md:inset-x-auto md:w-[65%] md:h-[60%] md:top-[20%] z-1 ">
         <div className="w-full md:w-[60%] md:h-auto flex flex-col justify-center items-center text-center mt-30 md:mt-0">
           <h3
             dangerouslySetInnerHTML={{ __html: data.title1 }}

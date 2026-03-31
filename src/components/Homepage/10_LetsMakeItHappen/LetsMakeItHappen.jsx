@@ -40,7 +40,7 @@ export default function LetsMakeItHappen({ data }) {
         <Versbleu />
         <Versvert />
 
-        <div className="absolute md:left-17 -left-[30%] bottom-0 w-[clamp(660px,50vw,1200px)] ">
+        <div className="absolute bottom-0 -left-[18%] w-[125%] max-w-none md:left-17 md:w-[clamp(660px,50vw,1200px)]">
           <img
             className="block w-full h-auto object-left-bottom origin-bottom-left "
             src="/images/homepage/dancing-girl.webp"

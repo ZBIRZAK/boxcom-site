@@ -2,9 +2,11 @@ import { useEffect, useState, useRef } from "react";
 import Lottie from "lottie-react";
 import { gsap } from "gsap";
 import Butterfly2 from "./Butterfly2";
+import { useIsMobile } from "../../../../contexts/UserAgentProvider";
 
 export default function Butterfly() {
   // const [butterfly, setButterfly] = useState(null);
+  const isMobile = useIsMobile();
   const targetPos = useRef({ x: 0, y: 0 });
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const rafId = useRef(null);
@@ -17,6 +19,7 @@ export default function Butterfly() {
   // }, []);
 
   useEffect(() => {
+    if (isMobile) return;
     targetPos.current = {
       x: window.innerWidth / 2,
       y: window.innerHeight / 2,
@@ -25,17 +28,19 @@ export default function Butterfly() {
       x: window.innerWidth / 2,
       y: window.innerHeight / 2,
     });
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
+    if (isMobile) return;
     const handleMouseMove = (e) => {
       targetPos.current = { x: e.clientX, y: e.clientY };
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
+    if (isMobile) return;
     const lerp = (start, end, amt) => start + (end - start) * amt;
 
     const animate = () => {
@@ -51,7 +56,7 @@ export default function Butterfly() {
     return () => {
       if (rafId.current) cancelAnimationFrame(rafId.current);
     };
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     if (butterflyRef.current) {
@@ -72,16 +77,16 @@ export default function Butterfly() {
   return (
     <div
       ref={butterflyRef}
-      className="md:block hidden"
+      className="block"
       style={{
-        position: "fixed",
-        left: pos.x,
-        top: pos.y,
-        transform: "translate(-50%, -50%)",
+        position: isMobile ? "absolute" : "fixed",
+        left: isMobile ? "18%" : pos.x,
+        top: isMobile ? "42%" : pos.y,
+        transform: isMobile ? "none" : "translate(-50%, -50%)",
         pointerEvents: "none",
         zIndex: 21,
-        width: "80px",
-        height: "80px",
+        width: isMobile ? "56px" : "80px",
+        height: isMobile ? "56px" : "80px",
         opacity: 0,
       }}
     >

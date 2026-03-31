@@ -10,7 +10,7 @@ import Trophy from "./Trophy/Trophy";
 
 const SalesPerson = ({ data }) => {
   return (
-    <section id="page04_screen06" className="w-full h-screen">
+    <section id="page04_screen06" className="w-full h-screen overflow-hidden">
       {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] z-99 -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
       </div> */}
@@ -22,7 +22,7 @@ const SalesPerson = ({ data }) => {
         />
       </div>
 
-      <div className="absolute -bottom-0 md:left-0 -left-10 md:w-[55%] w-[120%] z-1">
+      <div className="absolute -bottom-0 md:left-0 -left-6 md:w-[55%] w-[110%] z-1">
         <Flower1 />
         <Flower2 />
         <Flower3 />
@@ -35,7 +35,7 @@ const SalesPerson = ({ data }) => {
         />
       </div>
       <Trophy />
-      <div className="absolute w-screen top-0 right-0 flex flex-col justify-center items-center md:right-[-50] md:w-[65%] md:h-[60%] md:top-[20%] ">
+      <div className="absolute inset-x-0 top-0 w-full flex flex-col justify-center items-center md:right-[-50] md:inset-x-auto md:w-[65%] md:h-[60%] md:top-[20%] ">
         <div className="w-full md:w-[60%] md:h-auto flex flex-col justify-center items-center text-center mt-30 md:mt-0">
           <h3
             dangerouslySetInnerHTML={{ __html: data.title1 }}

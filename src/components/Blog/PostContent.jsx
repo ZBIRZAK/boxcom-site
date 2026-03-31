@@ -1,10 +1,6 @@
 "use client";
 
-import Link from "next/link";
-
 const PostContent = ({ post }) => {
-  console.log({ post });
-
   return (
     <>
       {/* <div

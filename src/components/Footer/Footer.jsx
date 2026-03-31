@@ -28,6 +28,8 @@ const ListLinks = ({ links }) => (
 const Footer = async () => {
   const footer = await getFooter();
   const address = "3 Rue El Jihani, Quartier Racine, Casablanca, Morocco 20250";
+  const phoneNumber = "+212 5 22 21 99 33";
+  const phoneHref = "tel:+212522219933";
   const mapHref =
     "https://www.google.com/maps/place/BOXCOM/@33.5873901,-7.6363122,17z/data=!3m1!4b1!4m6!3m5!1s0xda62d0ad638a2c1:0x5d32fe2f0cd9a876!8m2!3d33.5873901!4d-7.6363122!16s%2Fg%2F11j0jj051l?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D";
   const mapEmbedSrc =
@@ -137,6 +139,9 @@ const Footer = async () => {
         <div className={`${styles.sectionCol} ${styles.addressBlock}`}>
           <h3>Visit Us</h3>
           <address className={styles.addressText}>{address}</address>
+          <a href={phoneHref} className={styles.phoneText}>
+            {phoneNumber}
+          </a>
           <div className={styles.mapCard}>
             <iframe
               title="Boxcom office map"

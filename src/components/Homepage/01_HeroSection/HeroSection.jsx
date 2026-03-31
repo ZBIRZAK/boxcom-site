@@ -44,8 +44,7 @@ const HeroSection = ({ data }) => {
   const [showDecorations, setShowDecorations] = useState(false);
 
   useEffect(() => {
-    if (isMobile) return;
-    const timer = setTimeout(() => setShowDecorations(true), 200);
+    const timer = setTimeout(() => setShowDecorations(true), isMobile ? 350 : 200);
     return () => clearTimeout(timer);
   }, [isMobile]);
 
@@ -82,30 +81,23 @@ const HeroSection = ({ data }) => {
             context={context}
           />
 
-          {showDecorations && !isMobile && (
+          {showDecorations && (
             <>
               <WaterSplashes />
-
-              <Surfer delay={6} context={context} />
-
-              <Hello delay={5} />
-              <Planet delay={5} />
-
-              <Enveloppe delay={10} />
+              <Hello delay={isMobile ? 1 : 5} />
+              <Planet delay={isMobile ? 1 : 5} />
               <Butterfly />
-
-              <BlueFlower2 delay={5} />
-
-              <OrangeFlower context={context} delay={5} />
-              <PinkHeart2 delay={5} />
-              <RedMushroom2 delay={5} />
-              <PinkMushroom context={context} delay={5} />
-
-              <YellowButterfly context={context} delay={5} />
-
-              <MusicalNote1 delay={5} />
-              <MusicalNote2 delay={5} />
-              <MusicalNote3 delay={5} />
+              <BlueFlower2 delay={isMobile ? 1 : 5} />
+              <OrangeFlower context={context} delay={isMobile ? 1 : 5} />
+              <PinkHeart2 delay={isMobile ? 1 : 5} />
+              <YellowButterfly context={context} delay={isMobile ? 1 : 5} />
+              <Surfer delay={isMobile ? 1 : 6} context={context} />
+              <Enveloppe delay={isMobile ? 1 : 10} />
+              <RedMushroom2 delay={isMobile ? 1 : 5} />
+              <PinkMushroom context={context} delay={isMobile ? 1 : 5} />
+              <MusicalNote1 delay={isMobile ? 1 : 5} />
+              <MusicalNote2 delay={isMobile ? 1 : 5} />
+              <MusicalNote3 delay={isMobile ? 1 : 5} />
             </>
           )}
 

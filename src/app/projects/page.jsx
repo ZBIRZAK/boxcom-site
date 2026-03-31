@@ -1,19 +1,18 @@
 import {
   getHeader,
-  getMediaById,
   getOurProjects,
   getOurProjectsSEO,
+  getPortfolioTags,
   getPortfolioPosts,
 } from "../../lib/BackendContents";
 import HeroSection from "../../components/Our_projects/HeroSection";
-import ProjectsList from "../../components/Our_projects/ProjectsList";
 import EveryProject from "../../components/Our_projects/EveryProject";
+import CaseStudiesCarousel from "../../components/Our_projects/CaseStudiesCarousel";
 import Header from "../../components/Headers/Header";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
-import Pencilcase2 from "../../components/Our_projects/Pencilcase2";
 
 gsap.registerPlugin(useGSAP);
 
@@ -25,14 +24,12 @@ export async function generateMetadata() {
 
 const ProjectPage = async () => {
   const posts = await getPortfolioPosts(process.env.PORTFOLIO_PROJECTS_ID);
-
-  const medias = {};
-  for (let i = 0; i < posts.length; i++) {
-    const post = posts[i];
-    if (post.featured_media) {
-      medias[post.featured_media] = await getMediaById(post.featured_media);
-    }
-  }
+  const portfolioTagIds = posts.flatMap((post) => post.portfolio_tag || []);
+  const portfolioTags = await getPortfolioTags(portfolioTagIds);
+  const tagNameMap = portfolioTags.reduce((acc, tag) => {
+    acc[tag.id] = tag.name;
+    return acc;
+  }, {});
   const header = await getHeader();
   const { dataEveryProjectIsAStory } = await getOurProjects();
 
@@ -43,7 +40,7 @@ const ProjectPage = async () => {
       <LDJsonScripts seoData={seo.head} />
       <Header data={header} dark={true} />
       <HeroSection />
-      <ProjectsList projects={posts} medias={medias} className="bg-white" />
+      <CaseStudiesCarousel posts={posts} tagNameMap={tagNameMap} />
       <EveryProject data={dataEveryProjectIsAStory} />
     </>
   );

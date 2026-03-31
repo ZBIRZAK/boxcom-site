@@ -13,7 +13,7 @@ const StoryToLife = ({ data }) => {
   return (
     <section
       id="page02_screen06"
-      className="relative h-screen w-full"
+      className="relative h-screen w-full overflow-hidden"
     >
 
       <div className="absolute inset-0 w-full h-full ">
@@ -27,7 +27,7 @@ const StoryToLife = ({ data }) => {
         {/* <div className="absolute md:w-[55%] w-[100%] md:top-[-15%] top-[-7%] -left-10   pointer-events-none overflow-hidden ">
           <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="  w-full  " />
         </div> */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2  w-[105%]  md:left-auto md:right-[20%] md:translate-x-0 md:w-[33%]">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full md:left-auto md:right-[20%] md:translate-x-0 md:w-[33%]">
           <img src="/images/creative_content/man-yellow-costume.webp" alt="" />
           <Moustache />
           <Heart />

@@ -46,7 +46,7 @@ const Surfer = ({ containerStyles, delay, context }) => {
   return (
     <div
       ref={containerRef}
-      className="md:block hidden absolute w-[10%] top-[45%] right-[25%] rotate-[0deg] cursor-pointer z-30"
+      className="absolute w-[24%] md:w-[10%] top-[58%] md:top-[45%] right-[6%] md:right-[25%] rotate-[0deg] cursor-pointer z-30"
       onClick={() => RideTheWave()}
     >
       {surfeuse && (

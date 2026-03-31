@@ -70,6 +70,17 @@
     margin-bottom: 0.9rem;
   }
 
+  .phoneText {
+    display: inline-block;
+    color: #d9d9d9;
+    margin-bottom: 1rem;
+    text-decoration: none;
+  }
+
+  .phoneText:hover {
+    text-decoration: underline;
+  }
+
   .mapCard {
     width: 100%;
     border: 1px solid #2a2a2a;

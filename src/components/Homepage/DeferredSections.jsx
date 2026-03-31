@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { isLatelySectionEnabled } from "../../lib/helpers";
 
 const StillDoubting = dynamic(() => import("./08_StillDoubting/StillDoubting"), {
   ssr: false,
@@ -19,12 +20,13 @@ export default function DeferredSections({
   dataTestimonials,
   dataLately,
 }) {
+  const showLatelySection = isLatelySectionEnabled();
+
   return (
     <>
       <StillDoubting data={dataSeeForYourself} />
       <SayItBetter data={dataTestimonials} />
-      <Lately data={dataLately} />
+      {showLatelySection ? <Lately data={dataLately} /> : null}
     </>
   );
 }
-

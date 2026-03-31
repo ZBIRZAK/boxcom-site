@@ -21,8 +21,40 @@ const BecauseYourBrand = ({
 
   useEffect(() => {
     if (isMobile) {
-      gsap.set(refTxt1.current, { opacity: 1, y: 0, scale: 1 });
-      gsap.set(refTxt2.current, { opacity: 1, scaleX: 1, scaleY: 1, x: 0 });
+      const tl = gsap.timeline();
+      tl.fromTo(
+        refTxt1.current,
+        { opacity: 0, y: 24, scale: 0.98 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          delay: 0.15,
+          ease: "power2.out",
+        }
+      ).fromTo(
+        refTxt2.current,
+        { opacity: 0, y: 16, scale: 0.92 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.9,
+          ease: "power2.out",
+          onComplete: () => {
+            gsap.to(refTxt2.current, {
+              y: -6,
+              scale: 1.03,
+              duration: 1.4,
+              repeat: -1,
+              yoyo: true,
+              ease: "sine.inOut",
+            });
+          },
+        },
+        "-=0.45"
+      );
       return;
     }
 
@@ -95,7 +127,7 @@ const BecauseYourBrand = ({
   }, [isMobile]);
 
   return (
-    <div className=" z-20  left-[20%] text-center border" style={{ display: "contents" }}>
+    <div className="z-20 left-[20%] text-center" style={{ display: "contents" }}>
       <div
         className={`absolute md:text-[2rem] text-1xl z-10 text-center md:top-[-10%] top-[10%] w-full ${isMobile ? "opacity-100" : "opacity-0"}`}
         ref={refTxt1}
@@ -103,7 +135,7 @@ const BecauseYourBrand = ({
         {text1}
       </div>
       <div
-        className={`absolute md:right-[3%] w-[100%] text-center mt-[15%] md:top-0 top-[15%] md:text-[9rem] text-[3rem] z-19 ${anton.className} uppercase right-[7%] whitespace-nowrap ${isMobile ? "opacity-100" : "opacity-0"}`}
+        className={`absolute left-1/2 -translate-x-1/2 w-[92%] md:w-full text-center mt-[15%] md:top-0 top-[15%] md:text-[9rem] text-[3rem] z-19 ${anton.className} uppercase md:left-auto md:right-[7%] md:translate-x-0 whitespace-nowrap ${isMobile ? "opacity-100" : "opacity-0"}`}
         ref={refTxt2}
       >
         {text2}

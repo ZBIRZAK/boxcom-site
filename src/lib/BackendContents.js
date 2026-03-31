@@ -212,6 +212,27 @@ export async function getProjectBySlug(slug) {
   }
 }
 
+export async function getPortfolioTagById(id) {
+  try {
+    const url = `/wp-json/wp/v2/portfolio_tag/${id}`;
+    const response = await backendClient.get(url);
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+export async function getPortfolioTags(ids = []) {
+  const uniqueIds = [...new Set((ids || []).filter(Boolean))];
+  return await Promise.all(
+    uniqueIds.map(async (id) => {
+      return await getPortfolioTagById(id);
+    })
+  );
+}
+
 export async function getMediaById(id) {
   try {
     const url = process.env.BACKEND_MEDIA.replace(":id", id);

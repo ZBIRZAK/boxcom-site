@@ -27,7 +27,7 @@ const NotJustAPage = ({ data }) => {
           alt="Background"
         />
       </div>
-      <div className="absolute -bottom-25 left-0 md:w-[60%] w-[140%] max-h-[80%] md:max-h-full">
+      <div className="absolute -bottom-25 -left-[8%] md:left-0 md:w-[60%] w-[115%] max-h-[80%] md:max-h-full">
         <Heart />
         <OrangeCandy />
         <RedCandy />

@@ -2,6 +2,15 @@ export function isDev() {
   return process.env.NODE_ENV === "development";
 }
 
+export function isLatelySectionEnabled() {
+  const value = process.env.NEXT_PUBLIC_SHOW_LATELY_SECTION;
+
+  if (typeof value !== "string") return true;
+
+  const normalized = value.trim().toLowerCase();
+  return normalized !== "false" && normalized !== "0";
+}
+
 export function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }

@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import Button from "../../Buttons/Button2";
 import InstaFeed from "./InstaFeed";
+import { isLatelySectionEnabled } from "../../../lib/helpers";
 
 const Lately = ({
   data,
-  showSection = process.env.NEXT_PUBLIC_SHOW_LATELY_SECTION !== "false",
+  showSection = isLatelySectionEnabled(),
 }) => {
   const sectionRef = useRef(null);
   const [shouldLoadFeed, setShouldLoadFeed] = useState(false);

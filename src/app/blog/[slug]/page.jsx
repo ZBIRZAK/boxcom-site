@@ -78,7 +78,7 @@ const BlogPostPage = async ({ params }) => {
             </HeroSmallTitle>
             <HeroMainTitle>
               <div
-                className="text-7xl font-bold text-shadow-lg"
+                className="text-3xl md:text-7xl font-bold text-shadow-lg px-4 text-center"
                 dangerouslySetInnerHTML={{ __html: post.title.rendered }}
               />
             </HeroMainTitle>
@@ -86,12 +86,12 @@ const BlogPostPage = async ({ params }) => {
         </div>
 
         <div className="flex justify-center">
-          <div className="pt-[100px] w-[900px] text-gray-800 px-2 md:px-0">
+          <div className="pt-[100px] w-full max-w-[900px] text-gray-800 px-4 md:px-0">
             <PostContent post={post} />
             <div className="my-10">
               {tags.length === 0 && <div>-</div>}
               {tags.length > 0 && (
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <div>Tags: </div>
                   {tags.map((tag, i) => (
                     <Link
