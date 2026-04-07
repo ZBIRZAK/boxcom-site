@@ -14,15 +14,15 @@ const VisionaryClients = ({ data }) => {
       id="page01_screen07"
       className="relative z-30 w-full overflow-hidden bg-black"
     >
-      <div className="relative z-10 mx-auto flex w-[92%] max-w-[1700px] flex-col items-center pb-8 pt-12 md:w-full md:min-h-screen md:px-6 md:pb-10 md:pt-14 lg:px-8">
-        <div className="mb-4 md:mb-6">
+      <div className="relative z-10 mx-auto flex w-[92%] max-w-[1700px] flex-col items-center pb-7 pt-11 md:w-full md:px-6 md:pb-8 md:pt-12 lg:px-8">
+        <div className="mb-3 md:mb-4">
           <h2 className="heading-primary heading-primary--stroke text-center !text-[2.2rem] leading-none md:!text-[3.3rem]">
             {data.title}
           </h2>
           <Zigzag />
         </div>
 
-        <div className="grid w-full flex-1 grid-cols-3 place-items-center gap-x-1 gap-y-2.5 pb-2 sm:grid-cols-4 sm:gap-x-1.5 sm:gap-y-3 md:grid-cols-7 md:gap-x-3 md:gap-y-3.5 lg:gap-x-4 lg:gap-y-4">
+        <div className="grid w-full grid-cols-3 place-items-center gap-x-1.5 gap-y-2.5 py-4 sm:grid-cols-4 sm:gap-x-2 sm:gap-y-3 sm:py-5 md:grid-cols-7 md:gap-x-2.5 md:gap-y-3 md:py-6 lg:gap-x-3 lg:gap-y-3.5 lg:py-7">
           {clients.map((client, i) => {
             return (
               <img
