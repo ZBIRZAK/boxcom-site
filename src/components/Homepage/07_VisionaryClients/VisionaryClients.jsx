@@ -3,7 +3,7 @@ import ScrollButton from "../../ScrollButton/ScrollButton";
 import Zigzag from "./Zigzag/Zigzag";
 
 const VisionaryClients = ({ data }) => {
-  const clients = Object.entries(data)
+  const clients = Object.entries(data || {})
     .filter(([key, value]) => {
       return /^client_\d/.test(key) && !!value.img;
     })
@@ -12,34 +12,31 @@ const VisionaryClients = ({ data }) => {
   return (
     <div
       id="page01_screen07"
-      className="w-full bg-black h-auto relative z-30 overflow-x-hidden md:!h-screen md:min-h-screen"
+      className="relative z-30 w-full overflow-hidden bg-black"
     >
-      {/* <div className="w-full h-full absolute top-0 left-0 z-0">
-        <img
-          src="/images/homepage/books-sky.webp"
-          className="w-full h-full object-cover"
-        />
-      </div> */}
-      <div className="relative z-10 flex flex-col items-center h-full">
-        <div>
-          <h2 className="heading-primary heading-primary--stroke text-center !text-[2.3rem] leading-none mb-3 mt-12 md:!text-[3.5rem] md:h-[18vh] md:mt-16">
+      <div className="relative z-10 mx-auto flex w-[92%] max-w-[1700px] flex-col items-center pb-8 pt-12 md:w-full md:min-h-screen md:px-6 md:pb-10 md:pt-14 lg:px-8">
+        <div className="mb-4 md:mb-6">
+          <h2 className="heading-primary heading-primary--stroke text-center !text-[2.2rem] leading-none md:!text-[3.3rem]">
             {data.title}
           </h2>
           <Zigzag />
         </div>
-        <div className="relative w-full max-w-[1400px] mx-auto min-h-[50vh] md:h-[72vh] grid grid-cols-3 md:grid-cols-6 auto-rows-min content-start md:content-center place-items-center gap-y-4 gap-x-2 px-3 pb-3 pt-2 md:p-4 md:px-8 md:gap-y-5 md:gap-x-6 [&>img]:min-w-0 [&>img]:max-w-full [&>img]:w-[92%] md:[&>img]:w-[94%] [&>img]:h-auto [&>img]:max-h-[64px] sm:[&>img]:max-h-[74px] md:[&>img]:max-h-[130px] [&>img]:object-contain">
+
+        <div className="grid w-full flex-1 grid-cols-3 place-items-center gap-x-1 gap-y-2.5 pb-2 sm:grid-cols-4 sm:gap-x-1.5 sm:gap-y-3 md:grid-cols-7 md:gap-x-3 md:gap-y-3.5 lg:gap-x-4 lg:gap-y-4">
           {clients.map((client, i) => {
             return (
               <img
                 key={i}
                 src={client.img}
-                alt={client.alt}
+                alt={client.alt || `Client logo ${i + 1}`}
                 loading="lazy"
                 decoding="async"
+                className="h-auto w-[90%] max-w-[190px] max-h-[58px] object-contain sm:max-h-[64px] md:w-[95%] md:max-h-[78px] lg:max-h-[84px]"
               />
             );
           })}
         </div>
+
         <div className="hidden md:block">
           <ScrollButton
             delay={0}
@@ -48,26 +45,7 @@ const VisionaryClients = ({ data }) => {
           />
         </div>
       </div>
-
-      {/* Ripped paper effect at the top of this section */}
-      {/* <div className="absolute z-99999 w-full top-[-1%] md:top-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
-          <img
-            src="/images/objects/torn-papers/torn-paper-6.svg"
-            alt="Torn sheet"
-            className="w-full"
-          />
-      </div> */}
-
-      {/* Ripped paper effect at the top of this section */}
-      {/* <div className="absolute z-99999 w-full bottom-[-1%] md:bottom-[-4%] left-0 right-0 pointer-events-none overflow-hidden">
-          <img
-            src="/images/objects/torn-papers/torn-paper-7.svg"
-            alt="Torn sheet"
-            className="w-full"
-          />
-      </div> */}
-  </div>
-
+    </div>
   );
 };
 export default VisionaryClients;
