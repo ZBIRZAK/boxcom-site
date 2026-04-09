@@ -61,10 +61,11 @@ export function parseSeoTagsForMetaData(seo) {
 
   const robotsMeta = ($('meta[name="robots"]').attr("content") || "").toLowerCase();
   const googleBotMeta = ($('meta[name="googlebot"]').attr("content") || "").toLowerCase();
-  const index = !robotsMeta.includes("noindex");
-  const follow = !robotsMeta.includes("nofollow");
-  const googleIndex = !googleBotMeta.includes("noindex");
-  const googleFollow = !googleBotMeta.includes("nofollow");
+  const honorBackendNoindex = process.env.HONOR_BACKEND_NOINDEX === "true";
+  const index = honorBackendNoindex ? !robotsMeta.includes("noindex") : true;
+  const follow = honorBackendNoindex ? !robotsMeta.includes("nofollow") : true;
+  const googleIndex = honorBackendNoindex ? !googleBotMeta.includes("noindex") : true;
+  const googleFollow = honorBackendNoindex ? !googleBotMeta.includes("nofollow") : true;
 
   const data = {
     title:
