@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 
-const CANONICAL_HOST = "box-com.com";
-
 function getHostname(hostHeader = "") {
   return hostHeader.split(":")[0].trim().toLowerCase();
 }
@@ -15,30 +13,23 @@ export function middleware(request) {
     .toLowerCase();
   const protocol = forwardedProto || url.protocol.replace(":", "");
 
-  const isCanonicalDomain = host === CANONICAL_HOST || host === `www.${CANONICAL_HOST}`;
-
-  if (!isCanonicalDomain) {
-    return NextResponse.next();
-  }
-
   // Legacy WP-style URLs should canonicalize to homepage.
   if (pathname === "/index.php" || pathname === "/index.php/") {
     url.protocol = "https";
-    url.host = CANONICAL_HOST;
+    url.host = host;
     url.pathname = "/";
     url.search = "";
     return NextResponse.redirect(url, 308);
   }
 
-  const needsHostRedirect = host !== CANONICAL_HOST;
   const needsProtocolRedirect = protocol !== "https";
 
-  if (!needsHostRedirect && !needsProtocolRedirect) {
+  if (!needsProtocolRedirect) {
     return NextResponse.next();
   }
 
   url.protocol = "https";
-  url.host = CANONICAL_HOST;
+  url.host = host;
 
   return NextResponse.redirect(url, 308);
 }

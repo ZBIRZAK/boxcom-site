@@ -11,23 +11,12 @@
   "redirects": [
     {
       "source": "/index.php",
-      "destination": "https://box-com.com/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/index.php/",
-      "destination": "https://box-com.com/",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.box-com.com"
-        }
-      ],
-      "destination": "https://box-com.com/:path*",
+      "destination": "/",
       "permanent": true
     }
   ],
