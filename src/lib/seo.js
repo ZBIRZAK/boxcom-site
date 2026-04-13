@@ -25,6 +25,27 @@ function normalizeCanonical(url) {
   }
 }
 
+function normalizeAbsoluteUrlToHost(url) {
+  if (!url) return undefined;
+
+  const host = getHost();
+
+  try {
+    const parsed = new URL(url, host);
+    const normalized = new URL(parsed.pathname, host);
+    normalized.search = parsed.search || "";
+    normalized.hash = "";
+
+    if (normalized.pathname !== "/" && normalized.pathname.endsWith("/")) {
+      normalized.pathname = normalized.pathname.replace(/\/+$/, "");
+    }
+
+    return normalized.toString();
+  } catch {
+    return undefined;
+  }
+}
+
 export function parseSeoTagsForMetaData(seo) {
   if (!seo?.success || !seo?.head) {
     return {
@@ -36,11 +57,12 @@ export function parseSeoTagsForMetaData(seo) {
   const $ = cheerio.load(seo.head);
 
   const canonicalRaw = $('link[rel="canonical"]').attr("href");
-  const canonical = normalizeCanonical(canonicalRaw);
 
   const ogTitle = $('meta[property="og:title"]').attr("content");
   const ogType = $('meta[property="og:type"]').attr("content");
   const ogUrl = $('meta[property="og:url"]').attr("content");
+  const canonical = normalizeCanonical(canonicalRaw || ogUrl);
+  const normalizedOgUrl = normalizeAbsoluteUrlToHost(ogUrl) || canonical;
   const ogSiteName = $('meta[property="og:site_name"]').attr("content");
   const ogLocale = $('meta[property="og:locale"]').attr("content");
   const ogUpdatedTime = $('meta[property="og:updated_time"]').attr("content");
@@ -92,7 +114,7 @@ export function parseSeoTagsForMetaData(seo) {
     openGraph: {
       title: ogTitle,
       type: ogType,
-      url: ogUrl,
+      url: normalizedOgUrl,
       siteName: ogSiteName,
       locale: ogLocale,
       modifiedTime: ogUpdatedTime,

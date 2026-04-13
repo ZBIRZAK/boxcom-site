@@ -4,6 +4,15 @@ function getHostname(hostHeader = "") {
   return hostHeader.split(":")[0].trim().toLowerCase();
 }
 
+function isLocalHost(host = "") {
+  return (
+    host === "localhost" ||
+    host === "127.0.0.1" ||
+    host === "::1" ||
+    host === "[::1]"
+  );
+}
+
 export function middleware(request) {
   const url = request.nextUrl.clone();
   const host = getHostname(request.headers.get("host") || url.host);
@@ -23,8 +32,10 @@ export function middleware(request) {
   }
 
   const needsProtocolRedirect = protocol !== "https";
+  const shouldForceHttps =
+    process.env.NODE_ENV === "production" && !isLocalHost(host);
 
-  if (!needsProtocolRedirect) {
+  if (!shouldForceHttps || !needsProtocolRedirect) {
     return NextResponse.next();
   }
 

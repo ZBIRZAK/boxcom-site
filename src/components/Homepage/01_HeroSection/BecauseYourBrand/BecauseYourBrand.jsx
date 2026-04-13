@@ -135,7 +135,7 @@ const BecauseYourBrand = ({
         {text1}
       </div>
       <div
-        className={`absolute left-1/2 -translate-x-1/2 w-[92%] md:w-full text-center mt-[15%] md:top-0 top-[15%] md:text-[9rem] text-[3rem] z-19 ${anton.className} uppercase md:left-auto md:right-[7%] md:translate-x-0 whitespace-nowrap ${isMobile ? "opacity-100" : "opacity-0"}`}
+        className={`absolute left-1/2 -translate-x-1/2 w-[92%] md:w-full text-center mt-[15%] md:top-0 top-[15%] md:text-[9rem] text-[3rem] z-19 ${anton.className} uppercase whitespace-nowrap ${isMobile ? "opacity-100" : "opacity-0"}`}
         ref={refTxt2}
       >
         {text2}
