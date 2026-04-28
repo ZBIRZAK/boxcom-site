@@ -14,13 +14,27 @@ function isLocalHost(host = "") {
 }
 
 function getCanonicalHostname() {
-  const frontendHost = process.env.FRONTEND_HOST || "https://box-com.com";
+  const fallback = "box-com.com";
+  const candidates = [
+    process.env.FRONTEND_HOST,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : undefined,
+    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined,
+    `https://${fallback}`,
+  ];
 
-  try {
-    return new URL(frontendHost).hostname.toLowerCase();
-  } catch {
-    return "box-com.com";
+  for (const candidate of candidates) {
+    if (!candidate) continue;
+    try {
+      const hostname = new URL(candidate).hostname.toLowerCase();
+      if (!isLocalHost(hostname)) return hostname;
+    } catch {
+      // Ignore invalid candidate and continue.
+    }
   }
+
+  return fallback;
 }
 
 export function middleware(request) {
