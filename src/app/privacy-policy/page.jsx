@@ -26,7 +26,7 @@ export default async function PrivacyPolicyPage() {
 
       <main className={styles.container}>
         <section className={styles.hero}>
-          <span className={styles.kicker}>Legal</span>
+          {/* <span className={styles.kicker}>Legal</span> */}
           <h1 className={styles.title}>BOXCOM PRIVACY POLICY</h1>
           <p className={styles.meta}>
             <span className={styles.label}>Effective date:</span>{" "}
