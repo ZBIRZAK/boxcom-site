@@ -79,6 +79,7 @@ const NavDesktop = ({
           href={item.link}
           className={clsx(
             "relative !no-underline",
+            !light && !isLast && "text-white",
             light && !isLast && !scrolled && "text-[#666666]",
             light && !isLast && scrolled && "text-[#f0f0f0]",
             !isLast &&
@@ -113,7 +114,10 @@ const NavMobile = ({ links, activeLink, onClickLink, isOpen }) => (
       <Link
         key={i}
         href={item.link}
-        className={clsx(activeLink === item.link ? "text-[#ff0077]" : "")}
+        className={clsx(
+          "text-white",
+          activeLink === item.link ? "text-[#ff0077]" : ""
+        )}
         onClick={() => {
           onClickLink(item.link);
         }}
