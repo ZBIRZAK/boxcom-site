@@ -126,6 +126,9 @@ const Footer = async () => {
           <ListLinks links={aboutLinks} />
 
           <ul>
+            <li>
+              <Link href={urls.privacyPolicy}>Privacy Policy</Link>
+            </li>
             <li className="mt-5">
               <Link
                 href={formatUrl(footer.btn_contact.link)}

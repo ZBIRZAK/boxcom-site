@@ -81,7 +81,7 @@ body {
   height: 100vh;
   scroll-behavior: smooth;
 }
-section {
+.scrollContainer > section {
   scroll-snap-align: start;
   height: 100vh;
   position: relative;

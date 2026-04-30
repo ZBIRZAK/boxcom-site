@@ -20,6 +20,8 @@ export function formatUrl(token) {
       return urls.contact;
     case "%URL_HOMEPAGE%":
       return urls.homepage;
+    case "%URL_PRIVACY_POLICY%":
+      return urls.privacyPolicy;
 
     default:
       return token;
@@ -38,4 +40,5 @@ export const urls = {
   blogPost: "/blog/:slug",
   about: "/about",
   contact: "/contact",
+  privacyPolicy: "/privacy-policy",
 };
