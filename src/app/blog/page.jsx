@@ -16,13 +16,29 @@ import { parseSeoTagsForMetaData } from "../../lib/seo";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
 import InputText from "../../components/Forms/InputText";
 import { Search } from "lucide-react";
+import { getHost } from "../../lib/helpers";
+import { urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
 
 export async function generateMetadata() {
   const seo = await getBlogSEO();
+  const data = parseSeoTagsForMetaData(seo);
+  const host = getHost();
 
-  return parseSeoTagsForMetaData(seo);
+  return {
+    ...data,
+    description:
+      "Insights, case studies, and practical marketing ideas from the Boxcom team.",
+    alternates: {
+      ...(data.alternates || {}),
+      canonical: `${host}${urls.blog}`,
+    },
+    openGraph: {
+      ...(data.openGraph || {}),
+      url: `${host}${urls.blog}`,
+    },
+  };
 }
 
 const HeroSection = ({ tag, data }) => {

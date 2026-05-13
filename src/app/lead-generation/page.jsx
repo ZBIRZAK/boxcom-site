@@ -16,13 +16,29 @@ import {
 import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
+import { getHost } from "../../lib/helpers";
+import { urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
 
 export async function generateMetadata() {
   const seo = await getLeadGenerationSEO();
+  const data = parseSeoTagsForMetaData(seo);
+  const host = getHost();
 
-  return parseSeoTagsForMetaData(seo);
+  return {
+    ...data,
+    description:
+      "Lead generation services designed to attract qualified prospects and convert demand into measurable pipeline growth.",
+    alternates: {
+      ...(data.alternates || {}),
+      canonical: `${host}${urls.leadGeneration}`,
+    },
+    openGraph: {
+      ...(data.openGraph || {}),
+      url: `${host}${urls.leadGeneration}`,
+    },
+  };
 }
 
 const PageLeadGeneration = async () => {

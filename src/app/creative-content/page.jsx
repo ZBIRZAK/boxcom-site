@@ -14,13 +14,29 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
+import { getHost } from "../../lib/helpers";
+import { urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
 
 export async function generateMetadata() {
   const seo = await getCreativeContentSEO();
+  const data = parseSeoTagsForMetaData(seo);
+  const host = getHost();
 
-  return parseSeoTagsForMetaData(seo);
+  return {
+    ...data,
+    description:
+      "Creative content services including content marketing, design, video production, and storytelling to make your brand stand out.",
+    alternates: {
+      ...(data.alternates || {}),
+      canonical: `${host}${urls.creativeContent}`,
+    },
+    openGraph: {
+      ...(data.openGraph || {}),
+      url: `${host}${urls.creativeContent}`,
+    },
+  };
 }
 
 const CreativeContentPage = async () => {

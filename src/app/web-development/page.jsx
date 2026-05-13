@@ -15,13 +15,29 @@ import {
 import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
+import { getHost } from "../../lib/helpers";
+import { urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
 
 export async function generateMetadata() {
   const seo = await getWebDevelopmentSEO();
+  const data = parseSeoTagsForMetaData(seo);
+  const host = getHost();
 
-  return parseSeoTagsForMetaData(seo);
+  return {
+    ...data,
+    description:
+      "Web development services for high-performing websites built for branding, user experience, and business growth.",
+    alternates: {
+      ...(data.alternates || {}),
+      canonical: `${host}${urls.webDevelopment}`,
+    },
+    openGraph: {
+      ...(data.openGraph || {}),
+      url: `${host}${urls.webDevelopment}`,
+    },
+  };
 }
 
 const WebDevPage = async () => {

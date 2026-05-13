@@ -12,15 +12,33 @@ import { getHeader, getHomepage, getHomepageSEO } from "../lib/BackendContents";
 import Header from "../components/Headers/Header";
 import LDJsonScripts from "../components/Seo/LDJsonScripts";
 import { parseSeoTagsForMetaData } from "../lib/seo";
+import { getHost } from "../lib/helpers";
+import { urls } from "../lib/urls";
 
 export async function generateMetadata() {
   try {
     const seo = await getHomepageSEO();
-    return parseSeoTagsForMetaData(seo);
+    const data = parseSeoTagsForMetaData(seo);
+    const host = getHost();
+
+    return {
+      ...data,
+      description:
+        "Digital marketing agency in Morocco helping brands grow through strategy, creative content, web development, and lead generation.",
+      alternates: {
+        ...(data.alternates || {}),
+        canonical: `${host}${urls.homepage}`,
+      },
+      openGraph: {
+        ...(data.openGraph || {}),
+        url: `${host}${urls.homepage}`,
+      },
+    };
   } catch {
     return {
       title: "Boxcom",
-      description: "Boxcom",
+      description:
+        "Digital marketing agency in Morocco helping brands grow through strategy, creative content, web development, and lead generation.",
     };
   }
 }

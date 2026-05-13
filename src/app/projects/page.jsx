@@ -13,13 +13,29 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
+import { getHost } from "../../lib/helpers";
+import { urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
 
 export async function generateMetadata() {
   const seo = await getOurProjectsSEO();
+  const data = parseSeoTagsForMetaData(seo);
+  const host = getHost();
 
-  return parseSeoTagsForMetaData(seo);
+  return {
+    ...data,
+    description:
+      "Explore Boxcom projects and case studies across digital marketing, creative content, lead generation, and web development.",
+    alternates: {
+      ...(data.alternates || {}),
+      canonical: `${host}${urls.projects}`,
+    },
+    openGraph: {
+      ...(data.openGraph || {}),
+      url: `${host}${urls.projects}`,
+    },
+  };
 }
 
 const ProjectPage = async () => {

@@ -20,13 +20,29 @@ import {
 import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
+import { getHost } from "../../lib/helpers";
+import { urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
 
 export async function generateMetadata() {
   const seo = await getAboutUsSEO();
+  const data = parseSeoTagsForMetaData(seo);
+  const host = getHost();
 
-  return parseSeoTagsForMetaData(seo);
+  return {
+    ...data,
+    description:
+      "Discover Boxcom's story, team, and approach to building growth-focused digital marketing and creative experiences.",
+    alternates: {
+      ...(data.alternates || {}),
+      canonical: `${host}${urls.about}`,
+    },
+    openGraph: {
+      ...(data.openGraph || {}),
+      url: `${host}${urls.about}`,
+    },
+  };
 }
 
 const PageAbout = async () => {

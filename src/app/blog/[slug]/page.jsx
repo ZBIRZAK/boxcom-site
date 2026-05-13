@@ -18,6 +18,7 @@ import { parseSeoTagsForMetaData } from "../../../lib/seo";
 import LDJsonScripts from "../../../components/Seo/LDJsonScripts";
 import Link from "next/link";
 import { urls } from "../../../lib/urls";
+import { getHost } from "../../../lib/helpers";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -28,8 +29,21 @@ export async function generateMetadata({ params }) {
   }
 
   const seo = await getArticleSEO(post.link);
+  const data = parseSeoTagsForMetaData(seo);
+  const host = getHost();
+  const canonical = `${host}${urls.blog}/${slug}`;
 
-  return parseSeoTagsForMetaData(seo);
+  return {
+    ...data,
+    alternates: {
+      ...(data.alternates || {}),
+      canonical,
+    },
+    openGraph: {
+      ...(data.openGraph || {}),
+      url: canonical,
+    },
+  };
 }
 
 const BlogPostPage = async ({ params }) => {

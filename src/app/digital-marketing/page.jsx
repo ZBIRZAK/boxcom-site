@@ -14,13 +14,29 @@ import {
 import { useGSAP } from "@gsap/react";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
+import { getHost } from "../../lib/helpers";
+import { urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
 
 export async function generateMetadata() {
   const seo = await getDigitalMarketingSEO();
+  const data = parseSeoTagsForMetaData(seo);
+  const host = getHost();
 
-  return parseSeoTagsForMetaData(seo);
+  return {
+    ...data,
+    description:
+      "Digital marketing services focused on social media management, digital advertising, and growth strategy for ambitious brands.",
+    alternates: {
+      ...(data.alternates || {}),
+      canonical: `${host}${urls.digitalMarketing}`,
+    },
+    openGraph: {
+      ...(data.openGraph || {}),
+      url: `${host}${urls.digitalMarketing}`,
+    },
+  };
 }
 
 const DigitalMarketingPage = async () => {
