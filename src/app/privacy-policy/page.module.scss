@@ -5,6 +5,9 @@
     #ffffff;
   min-height: 100vh;
   color: #111111;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
 
 .page section {
@@ -18,6 +21,8 @@
   width: min(960px, 92vw);
   margin: 0 auto;
   padding: 6.2rem 0 5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .hero {

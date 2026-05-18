@@ -5,7 +5,7 @@ import BtnFreeConsult from "./BtnFreeConsult";
 
 const FirstStep = ({ data }) => {
   return (
-    <section id="page06_screen10" className="w-full h-screen">
+    <section id="page06_screen10" className="relative w-full h-screen overflow-hidden">
       <div className="absolute w-full h-full">
         <img
           src="/images/about_us/bg-colorfull-wall.webp"

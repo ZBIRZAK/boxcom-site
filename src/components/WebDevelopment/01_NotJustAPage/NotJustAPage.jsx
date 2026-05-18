@@ -18,7 +18,7 @@ import BottomSection from "./BottonSection";
 const NotJustAPage = ({ data }) => {
   const titleHtml = data.title_1.replace("styles.pinkBg", styles.pinkBg);
   return (
-    <section id="page04_screen01" className="w-full h-screen overflow-hidden">
+    <section id="page04_screen01" className="relative w-full h-screen overflow-hidden">
       <h1 className="hidden">{data.main_title}</h1>
       <div className="absolute w-full h-full">
         <img
