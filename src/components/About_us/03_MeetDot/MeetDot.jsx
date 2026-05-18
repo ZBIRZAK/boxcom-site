@@ -9,7 +9,7 @@ import WaterSplash from "./WaterSplash"
 
 const MeetDot = ({data}) => {
     return(
-        <section id="page06_screen03" className="relative md:screen w-full">
+        <section id="page06_screen03" className="relative w-full h-screen overflow-hidden">
             <div className="absolute w-full h-full">
                 <img src="/images/persons/dot.webp" alt="Meetdot" className="w-full h-full object-cover object-center " />
             </div>

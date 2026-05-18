@@ -40,7 +40,7 @@ const BoxComAfrica = ({ data }) => {
   return (
     <section
       id="page06_screen05"
-      className="relative section-light !bg-[#F5B7CC] md:min-h-screen !h-auto overflow-hidden md:overflow-visible"
+      className="relative section-light !bg-[#F5B7CC] md:min-h-screen !h-auto overflow-hidden"
     >
       {/* Background pour desktop */}
       <img
