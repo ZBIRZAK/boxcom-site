@@ -11,7 +11,7 @@ const Hero = ({ data }) => {
   return (
     <section
       id="page05_screen01"
-      className="relative md:!h-screen  w-full overflow-hidden"
+      className="relative md:min-h-screen  w-full overflow-hidden"
     >
       <h1 className="hidden">{data.main_title}</h1>
       <img

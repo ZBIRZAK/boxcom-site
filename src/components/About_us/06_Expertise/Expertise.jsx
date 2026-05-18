@@ -37,7 +37,7 @@ const Expertise = ({ data, dark = false }) => {
   return (
     <section
       id="page06_screen06"
-      className="relative w-full md:overflow-hidden !h-auto md:!h-screen"
+      className="relative w-full md:overflow-hidden !h-auto md:min-h-screen"
     >
       {!dark && (
         <div className="absolute inset-0 z-1">

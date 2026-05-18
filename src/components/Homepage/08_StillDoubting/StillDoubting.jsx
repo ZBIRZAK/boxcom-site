@@ -15,7 +15,7 @@ const StillDoubting = ({ data }) => {
     <section
       id="page01_screen08"
       className={
-        "section-light bg-white w-full relative overflow-hidden md:!h-screen !h-auto flex justify-center z-30"
+        "section-light bg-white w-full relative overflow-hidden md:min-h-screen !h-auto flex justify-center z-30"
       }
     >
       <div className="w-full max-w-[850px]">

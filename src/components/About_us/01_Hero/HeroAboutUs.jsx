@@ -4,7 +4,7 @@ const HeroAboutUs = () => {
   return (
     <section
       id="page06_screen01"
-      className="bg-black relative md:!h-screen !h-auto w-full overflow-hidden section-light pt-[70px] lg:pt-0"
+      className="bg-black relative !h-auto w-full overflow-hidden section-light pt-[70px] lg:pt-0"
     >
       <div className="relative inset-0">
         <video

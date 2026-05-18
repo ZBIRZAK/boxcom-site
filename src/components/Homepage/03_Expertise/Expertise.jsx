@@ -41,7 +41,7 @@ const Expertise = ({ data, id, nextId, dark = false }) => {
   return (
     <section
       id={id}
-      className="relative w-full !h-auto md:!h-screen"
+      className="relative w-full !h-auto md:min-h-screen"
     >
       {!dark && (
         <div className="absolute inset-0 z-1">

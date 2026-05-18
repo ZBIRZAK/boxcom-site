@@ -96,7 +96,7 @@ const WhyChooseUs = ({ data }) => {
   return (
     <section
       id="page01_screen04"
-      className="relative md:!h-screen !h-[120vh] w-full z-30"
+      className="relative md:min-h-screen !h-[120vh] w-full z-30"
       ref={sectionRef}
     >
       <img
