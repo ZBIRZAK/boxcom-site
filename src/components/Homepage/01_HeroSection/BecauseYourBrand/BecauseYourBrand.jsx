@@ -93,9 +93,9 @@ const BecauseYourBrand = ({
         refTxt2.current,
         {
           opacity: 1,
-          scaleX: 1.4,
-          scaleY: 1.2,
-          x: 30,
+          scaleX: 1.08,
+          scaleY: 1.04,
+          x: 0,
           duration: text2Duration,
           // color: "#ff0077",
           // textShadow: "0px 0px 20px #FF0077",
@@ -114,8 +114,8 @@ const BecauseYourBrand = ({
                 // scrub: 1,
               },
               opacity: 0,
-              scaleX: 2,
-              scaleY: 2,
+              scaleX: 1.5,
+              scaleY: 1.5,
               y: "+=200px",
               color: "#ffffff",
             });
@@ -135,7 +135,7 @@ const BecauseYourBrand = ({
         {text1}
       </div>
       <div
-        className={`absolute left-1/2 -translate-x-1/2 w-[92%] md:w-full text-center mt-[15%] md:top-0 top-[15%] md:text-[9rem] text-[3rem] z-19 ${anton.className} uppercase whitespace-nowrap ${isMobile ? "opacity-100" : "opacity-0"}`}
+        className={`absolute left-1/2 -translate-x-1/2 w-[92%] md:w-[96%] text-center mt-[15%] md:top-0 top-[15%] md:text-[clamp(4.5rem,10vw,8rem)] text-[3rem] leading-[0.95] z-19 ${anton.className} uppercase whitespace-nowrap ${isMobile ? "opacity-100" : "opacity-0"}`}
         ref={refTxt2}
       >
         {text2}
