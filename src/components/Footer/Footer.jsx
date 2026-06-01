@@ -10,7 +10,22 @@ function getSectionLinks(section) {
     .map((link) => link[1]);
   // Filter out "Our Projects" links
   //return links;
-  return links.filter(link => link.text.toLowerCase() !== 'our projects');
+  return links.filter((link) => {
+    const normalizedText = link.text.toLowerCase().trim();
+    return normalizedText !== "our projects" && normalizedText !== "pr";
+  });
+}
+
+function cleanFooterPitch(pitch = "") {
+  return pitch
+    .replace(
+      /,\s*we collaborate with prominent organizations in Morocco and globally,\s*providing exceptional PR,\s*Digital,\s*and Video services\.?/gi,
+      ""
+    )
+    .replace(/\band\s+PR\b/gi, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+,/g, ",")
+    .trim();
 }
 
 const ListLinks = ({ links }) => (
@@ -27,6 +42,7 @@ const ListLinks = ({ links }) => (
 
 const Footer = async () => {
   const footer = await getFooter();
+  const cleanPitch = cleanFooterPitch(footer.pitch);
   const address = "3 Rue El Jihani, Quartier Racine, Casablanca, Morocco 20250";
   const phoneNumber = "+212 5 22 21 99 33";
   const phoneHref = "tel:+212522219933";
@@ -51,7 +67,7 @@ const Footer = async () => {
               className={styles.brandLogo}
             />
           </Link>
-          <div dangerouslySetInnerHTML={{ __html: footer.pitch }} />
+          <div dangerouslySetInnerHTML={{ __html: cleanPitch }} />
 
           <div className={styles.socialIcons}>
             {footer.link_instagram && (
