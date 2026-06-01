@@ -84,7 +84,6 @@ const BecauseYourBrand = ({
         opacity: 0,
         scaleX: 0.5,
         scaleY: 0.5,
-        x: 0,
         color: "#ffffff",
         textShadow: "4px 0px 14px rgb(119, 119, 119)",
       });
@@ -95,7 +94,6 @@ const BecauseYourBrand = ({
           opacity: 1,
           scaleX: 1.08,
           scaleY: 1.04,
-          x: 0,
           duration: text2Duration,
           // color: "#ff0077",
           // textShadow: "0px 0px 20px #FF0077",
