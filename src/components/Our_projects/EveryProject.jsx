@@ -13,12 +13,12 @@ const EveryProject = ({ data }) => {
       className="relative h-screen w-full overflow-hidden"
     >
       <img
-        src="/images/our_projects/bg.webp"
+        src="/images/our_projects/bg.png"
         alt="Bg"
         className="w-full h-full object-cover object-center"
       />
       <div className="absolute md:w-[80%] w-[160%] bottom-0 md:left-0 left-[-40%]">
-        <img src="/images/persons/girl_sitting.webp" alt="girl" />
+        <img src="/images/persons/girl_sitting.png" alt="girl" />
         <Stain />
         <Brush />
         <PaperPlane />
