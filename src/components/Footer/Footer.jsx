@@ -53,22 +53,6 @@ const Footer = async ({ locale = "en" }) => {
 
   const serviceLinks = getSectionLinks(footer.service_section);
   const aboutLinks = getSectionLinks(footer.about_section);
-  const exploreLinks = [
-    { href: localizeUrl(urls.about, locale), label: "About Boxcom" },
-    { href: localizeUrl(urls.blog, locale), label: "Blog" },
-    {
-      href: localizeUrl(urls.creativeContent, locale),
-      label: "Creative Content",
-    },
-    {
-      href: localizeUrl(urls.webDevelopment, locale),
-      label: "Web Development",
-    },
-    {
-      href: localizeUrl(urls.leadGeneration, locale),
-      label: "Lead Generation",
-    },
-  ];
 
   return (
     <footer className={`${styles.footer}`}>
@@ -84,17 +68,6 @@ const Footer = async ({ locale = "en" }) => {
             />
           </Link>
           <div dangerouslySetInnerHTML={{ __html: cleanPitch }} />
-
-          <div className={styles.quickLinksBlock}>
-            <h3>Explore Boxcom</h3>
-            <ul className={styles.quickLinksList}>
-              {exploreLinks.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href}>{item.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           <div className={styles.socialIcons}>
             {footer.link_instagram && (
