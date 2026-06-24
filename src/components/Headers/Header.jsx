@@ -2,15 +2,17 @@
 
 import clsx from "clsx";
 import Link from "next/link";
-import { formatUrl, urls } from "../../lib/urls";
+import { formatUrl, localizeUrl, urls } from "../../lib/urls";
+import { isLanguageSwitchEnabled } from "../../lib/helpers";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
+import { getLocaleFromPathname, normalizeLocale } from "../../lib/locale";
 
-const Logo = ({ onClick, light = false, scrolled = false }) => (
+const Logo = ({ onClick, href, light = false, scrolled = false }) => (
   <Link
     className="flex-1/2 md:flex-3/12 flex items-center px-2 md:justify-center z-[9999] container-mobile-90"
-    href={urls.homepage}
+    href={href}
     onClick={onClick}
   >
     <img
@@ -130,27 +132,70 @@ const NavMobile = ({ links, activeLink, onClickLink, isOpen }) => (
   </nav>
 );
 
-const Header = ({ data, dark = false, transitionToDark = false, light = false }) => {
+const LanguageSwitch = ({ locale, light = false, scrolled = false }) => {
+  const isFrench = locale === "fr";
+  const inactiveClass = light
+    ? scrolled
+      ? "text-white/70"
+      : "text-[#666666]"
+    : "text-white/70";
+
+  return (
+    <div className="hidden md:flex items-center gap-2 pr-4 text-sm font-semibold uppercase z-[9999]">
+      <Link
+        href={localizeUrl(urls.homepage, "en")}
+        className={clsx(!isFrench ? "text-[#ff0077]" : inactiveClass)}
+      >
+        EN
+      </Link>
+      <span className={clsx(light && !scrolled ? "text-[#666666]" : "text-white/50")}>
+        /
+      </span>
+      <Link
+        href={localizeUrl(urls.homepage, "fr")}
+        className={clsx(isFrench ? "text-[#ff0077]" : inactiveClass)}
+      >
+        FR
+      </Link>
+    </div>
+  );
+};
+
+const Header = ({
+  data,
+  dark = false,
+  transitionToDark = false,
+  light = false,
+  locale,
+}) => {
   const path = usePathname();
+  const currentLocale = normalizeLocale(locale || getLocaleFromPathname(path));
+  const showLanguageSwitch = isLanguageSwitchEnabled();
   const [activeLink, setActiveLink] = useState(path);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const bgRef = useRef();
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const localizedProjectsUrl = localizeUrl(urls.projects, currentLocale);
 
   const links = Object.values(data.nav_menu).filter((link) => {
     const text = link.text?.toLowerCase().trim();
-    const url = formatUrl(link.link || "").toLowerCase();
+    const url = formatUrl(link.link || "", currentLocale).toLowerCase();
 
     if (text === "blog") return false;
     if (text === "our projects") return false;
-    if (url === urls.projects || url.startsWith(`${urls.projects}/`)) return false;
+    if (
+      url === localizedProjectsUrl ||
+      url.startsWith(`${localizedProjectsUrl}/`)
+    ) {
+      return false;
+    }
 
     return true;
   });
   links.forEach((link) => {
-    link.link = formatUrl(link.link);
+    link.link = formatUrl(link.link, currentLocale);
   });
 
   useEffect(() => {
@@ -159,6 +204,10 @@ const Header = ({ data, dark = false, transitionToDark = false, light = false })
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setActiveLink(path);
+  }, [path]);
 
   useEffect(() => {
     // gsap.set(bgRef.current, {
@@ -198,11 +247,12 @@ const Header = ({ data, dark = false, transitionToDark = false, light = false })
       )}
     >
       <Logo
+        href={localizeUrl(urls.homepage, currentLocale)}
         light={light}
         scrolled={isScrolled}
         onClick={() => {
           setIsMenuOpen(false);
-          setActiveLink(urls.homepage);
+          setActiveLink(localizeUrl(urls.homepage, currentLocale));
         }}
       />
 
@@ -222,6 +272,14 @@ const Header = ({ data, dark = false, transitionToDark = false, light = false })
           scrolled={isScrolled}
         />
       </nav>
+
+      {showLanguageSwitch && (
+        <LanguageSwitch
+          locale={currentLocale}
+          light={light}
+          scrolled={isScrolled}
+        />
+      )}
 
       <div
         className={clsx(

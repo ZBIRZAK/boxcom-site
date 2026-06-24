@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getLocaleFromPathname } from "./lib/locale";
 
 function getHostname(hostHeader = "") {
   return hostHeader.split(":")[0].trim().toLowerCase();
@@ -14,7 +15,7 @@ function isLocalHost(host = "") {
 }
 
 function getCanonicalHostname() {
-  const fallback = "box-com.com";
+  const fallback = "www.box-com.com";
   const candidates = [
     process.env.FRONTEND_HOST,
     process.env.VERCEL_PROJECT_PRODUCTION_URL
@@ -42,6 +43,7 @@ export function middleware(request) {
   const host = getHostname(request.headers.get("host") || url.host);
   const canonicalHost = getCanonicalHostname();
   const pathname = (url.pathname || "").toLowerCase();
+  const locale = getLocaleFromPathname(pathname);
   const forwardedProto = (request.headers.get("x-forwarded-proto") || "")
     .trim()
     .toLowerCase();
@@ -55,7 +57,13 @@ export function middleware(request) {
   const needsIndexPhpRedirect = isIndexPhp;
 
   if (!needsProtocolRedirect && !needsHostRedirect && !needsIndexPhpRedirect) {
-    return NextResponse.next();
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set("x-locale", locale);
+    return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
   }
 
   if (shouldCanonicalize) {

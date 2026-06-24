@@ -15,7 +15,6 @@ import {
   getAboutUsSEO,
   getHeader,
   getHomepage,
-  getHomepageSEO,
 } from "../../lib/BackendContents";
 import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
@@ -29,18 +28,36 @@ export async function generateMetadata() {
   const seo = await getAboutUsSEO();
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
+  const title = "About Boxcom | Digital Marketing & Creative Agency in Casablanca";
+  const description =
+    "Learn about Boxcom, our team, and our approach to digital marketing, creative content, web development, and growth strategy in Casablanca and across Morocco.";
 
   return {
     ...data,
-    description:
-      "Discover Boxcom's story, team, and approach to building growth-focused digital marketing and creative experiences.",
+    title,
+    description,
+    keywords: [
+      "about boxcom",
+      "boxcom agency",
+      "digital agency casablanca",
+      "creative agency morocco",
+      "marketing agency morocco",
+    ],
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${urls.about}`,
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title,
+      description,
       url: `${host}${urls.about}`,
+      type: "website",
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title,
+      description,
     },
   };
 }
@@ -60,7 +77,7 @@ const PageAbout = async () => {
 
   const { dataExpertiseSection } = await getHomepage();
 
-  const seo = await getHomepageSEO();
+  const seo = await getAboutUsSEO();
 
   return (
     <>

@@ -39,6 +39,39 @@
     margin-bottom: 1rem;
   }
 
+  .quickLinksBlock {
+    margin-top: 1.5rem;
+  }
+
+  .quickLinksBlock h3 {
+    color: #ff0078;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .quickLinksList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .quickLinksList li {
+    margin-bottom: 0;
+  }
+
+  .quickLinksList a {
+    color: #d9d9d9;
+    text-decoration: none;
+  }
+
+  .quickLinksList a:hover {
+    text-decoration: underline;
+  }
+
   .sectionCol {
     min-width: 0;
   }

@@ -1,23 +1,12 @@
-import HeroSection from "../components/Homepage/01_HeroSection/HeroSection";
-import NarrativeSection2 from "../components/Homepage/02_NarrativeSection/NarrativeSection2";
-import Expertise from "../components/Homepage/03_Expertise/Expertise";
-import WhyChooseUs from "../components/Homepage/04_WhyChooseUs/WhyChooseUs";
-import ArtSection from "../components/Homepage/05_Art/ArtSection";
-import OurServices from "../components/Homepage/06_OurServices/OurServices";
-import VisionaryClients from "../components/Homepage/07_VisionaryClients/VisionaryClients";
-import LetsMakeItHappen from "../components/Homepage/10_LetsMakeItHappen/LetsMakeItHappen";
-import DeferredSections from "../components/Homepage/DeferredSections";
-import DropOfWater from "../components/Homepage/01_HeroSection/DropOfWater/DropOfWater";
 import { getHeader, getHomepage, getHomepageSEO } from "../lib/BackendContents";
-import Header from "../components/Headers/Header";
-import LDJsonScripts from "../components/Seo/LDJsonScripts";
 import { parseSeoTagsForMetaData } from "../lib/seo";
 import { getHost } from "../lib/helpers";
-import { urls } from "../lib/urls";
+import { localizeUrl, urls } from "../lib/urls";
+import HomepagePage from "../components/Homepage/HomepagePage";
 
 export async function generateMetadata() {
   try {
-    const seo = await getHomepageSEO();
+    const seo = await getHomepageSEO("en");
     const data = parseSeoTagsForMetaData(seo);
     const host = getHost();
 
@@ -27,11 +16,15 @@ export async function generateMetadata() {
         "Digital marketing agency in Morocco helping brands grow through strategy, creative content, web development, and lead generation.",
       alternates: {
         ...(data.alternates || {}),
-        canonical: `${host}${urls.homepage}`,
+        canonical: `${host}${localizeUrl(urls.homepage, "en")}`,
+        languages: {
+          en: `${host}${localizeUrl(urls.homepage, "en")}`,
+          fr: `${host}${localizeUrl(urls.homepage, "fr")}`,
+        },
       },
       openGraph: {
         ...(data.openGraph || {}),
-        url: `${host}${urls.homepage}`,
+        url: `${host}${localizeUrl(urls.homepage, "en")}`,
       },
     };
   } catch {
@@ -45,47 +38,10 @@ export async function generateMetadata() {
 
 export default async function Homepage() {
   const [header, homepage, seo] = await Promise.all([
-    getHeader(),
-    getHomepage(),
-    getHomepageSEO(),
+    getHeader("en"),
+    getHomepage("en"),
+    getHomepageSEO("en"),
   ]);
 
-  const {
-    dataHeroSection,
-    dataNarrativeSection,
-    dataExpertiseSection,
-    dataWhyChooseUs,
-    dataBigIdeas,
-    dataServices,
-    dataClients,
-    dataSeeForYourself,
-    dataTestimonials,
-    dataLetsMakeItHappen,
-    dataLately,
-  } = homepage;
-
-  return (
-    <div className="relative">
-      <LDJsonScripts seoData={seo.head} />
-      <Header data={header} transitionToDark={true} />
-      <DropOfWater />
-      <HeroSection data={dataHeroSection} />
-      <NarrativeSection2 data={dataNarrativeSection} />
-      <Expertise
-        id="page01_screen03"
-        nextId="page01_screen04"
-        data={dataExpertiseSection}
-      />
-      <WhyChooseUs data={dataWhyChooseUs} />
-      <ArtSection data={dataBigIdeas} />
-      <OurServices data={dataServices} />
-      <VisionaryClients data={dataClients} />
-      <DeferredSections
-        dataSeeForYourself={dataSeeForYourself}
-        dataTestimonials={dataTestimonials}
-        dataLately={dataLately}
-      />
-      <LetsMakeItHappen data={dataLetsMakeItHappen} />
-    </div>
-  );
+  return <HomepagePage header={header} homepage={homepage} seo={seo} locale="en" />;
 }

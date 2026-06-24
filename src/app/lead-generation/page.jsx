@@ -25,18 +25,36 @@ export async function generateMetadata() {
   const seo = await getLeadGenerationSEO();
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
+  const title = "Lead Generation Agency in Morocco | Boxcom";
+  const description =
+    "Boxcom helps brands generate qualified leads with full-funnel strategy, campaign execution, optimization, and measurable pipeline growth.";
 
   return {
     ...data,
-    description:
-      "Lead generation services designed to attract qualified prospects and convert demand into measurable pipeline growth.",
+    title,
+    description,
+    keywords: [
+      "lead generation agency morocco",
+      "qualified leads casablanca",
+      "b2b lead generation morocco",
+      "performance marketing morocco",
+      "pipeline growth agency",
+    ],
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${urls.leadGeneration}`,
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title,
+      description,
       url: `${host}${urls.leadGeneration}`,
+      type: "website",
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title,
+      description,
     },
   };
 }

@@ -8,6 +8,7 @@ import { headers } from "next/headers";
 import UserAgentProvider from "../contexts/UserAgentProvider";
 import { BreakpointIndicator } from "../components/Responsive/BreakpointIndicator";
 import GoogleAnalytics from "../components/GoogleAnalytics/GoogleAnalytics";
+import { DEFAULT_LOCALE, normalizeLocale } from "../lib/locale";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,13 +52,17 @@ const poppins = Poppins({
 });
 
 export default async function RootLayout({ children }) {
+  const requestHeaders = await headers();
   const reqUserAgent = userAgent({
-    headers: await headers(),
+    headers: requestHeaders,
   });
+  const locale = normalizeLocale(
+    requestHeaders.get("x-locale") || DEFAULT_LOCALE
+  );
 
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${poppins.className} dark`}
       suppressHydrationWarning
     >
@@ -78,7 +83,7 @@ export default async function RootLayout({ children }) {
         <ThemeProvider>
           <UserAgentProvider reqUserAgent={reqUserAgent}>
             <main>{children}</main>
-            <Footer />
+            <Footer locale={locale} />
             <BreakpointIndicator />
             <GoogleAnalytics />
           </UserAgentProvider>

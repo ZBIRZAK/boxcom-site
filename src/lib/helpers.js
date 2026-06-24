@@ -11,6 +11,15 @@ export function isLatelySectionEnabled() {
   return normalized !== "false" && normalized !== "0";
 }
 
+export function isLanguageSwitchEnabled() {
+  const value = process.env.NEXT_PUBLIC_SHOW_LANGUAGE_SWITCH;
+
+  if (typeof value !== "string") return true;
+
+  const normalized = value.trim().toLowerCase();
+  return normalized !== "false" && normalized !== "0";
+}
+
 export function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
@@ -21,7 +30,7 @@ function isLocalHost(value) {
 }
 
 export function getHost() {
-  const fallbackHost = "https://box-com.com";
+  const fallbackHost = "https://www.box-com.com";
   const configuredHost = process.env.FRONTEND_HOST;
   const vercelHost = process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`

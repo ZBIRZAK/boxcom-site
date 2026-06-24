@@ -1,5 +1,5 @@
 import { getFooter } from "../../lib/BackendContents";
-import { formatUrl, urls } from "../../lib/urls";
+import { formatUrl, localizeUrl, urls } from "../../lib/urls";
 import styles from "./Footer.module.scss";
 import Link from "next/link";
 
@@ -28,20 +28,20 @@ function cleanFooterPitch(pitch = "") {
     .trim();
 }
 
-const ListLinks = ({ links }) => (
+const ListLinks = ({ links, locale }) => (
   <ul>
     {links.map((item, i) => {
       return (
         <li key={i}>
-          <Link href={formatUrl(item.link)}>{item.text}</Link>
+          <Link href={formatUrl(item.link, locale)}>{item.text}</Link>
         </li>
       );
     })}
   </ul>
 );
 
-const Footer = async () => {
-  const footer = await getFooter();
+const Footer = async ({ locale = "en" }) => {
+  const footer = await getFooter(locale);
   const cleanPitch = cleanFooterPitch(footer.pitch);
   const address = "3 Rue El Jihani, Quartier Racine, Casablanca, Morocco 20250";
   const phoneNumber = "+212 5 22 21 99 33";
@@ -53,12 +53,28 @@ const Footer = async () => {
 
   const serviceLinks = getSectionLinks(footer.service_section);
   const aboutLinks = getSectionLinks(footer.about_section);
+  const exploreLinks = [
+    { href: localizeUrl(urls.about, locale), label: "About Boxcom" },
+    { href: localizeUrl(urls.blog, locale), label: "Blog" },
+    {
+      href: localizeUrl(urls.creativeContent, locale),
+      label: "Creative Content",
+    },
+    {
+      href: localizeUrl(urls.webDevelopment, locale),
+      label: "Web Development",
+    },
+    {
+      href: localizeUrl(urls.leadGeneration, locale),
+      label: "Lead Generation",
+    },
+  ];
 
   return (
     <footer className={`${styles.footer}`}>
       <div className={styles.container}>
         <div className={styles.boxcomInfo}>
-          <Link href={urls.homepage}>
+          <Link href={localizeUrl(urls.homepage, locale)}>
             <img
               src="/Logos_Boxcom/logo-color-subtitle-white.webp"
               alt="Boxcom Logo"
@@ -68,6 +84,17 @@ const Footer = async () => {
             />
           </Link>
           <div dangerouslySetInnerHTML={{ __html: cleanPitch }} />
+
+          <div className={styles.quickLinksBlock}>
+            <h3>Explore Boxcom</h3>
+            <ul className={styles.quickLinksList}>
+              {exploreLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href}>{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className={styles.socialIcons}>
             {footer.link_instagram && (
@@ -135,19 +162,21 @@ const Footer = async () => {
 
         <div className={styles.sectionCol}>
           <h3>{footer.service_section.title}</h3>
-          <ListLinks links={serviceLinks} />
+          <ListLinks links={serviceLinks} locale={locale} />
         </div>
         <div className={styles.sectionCol}>
           <h3>{footer.about_section.title}</h3>
-          <ListLinks links={aboutLinks} />
+          <ListLinks links={aboutLinks} locale={locale} />
 
           <ul>
             <li>
-              <Link href={urls.privacyPolicy}>Privacy Policy</Link>
+              <Link href={localizeUrl(urls.privacyPolicy, locale)}>
+                Privacy Policy
+              </Link>
             </li>
             <li className="mt-5">
               <Link
-                href={formatUrl(footer.btn_contact.link)}
+                href={formatUrl(footer.btn_contact.link, locale)}
                 className={styles.contactButton}
               >
                 {footer.btn_contact.text}

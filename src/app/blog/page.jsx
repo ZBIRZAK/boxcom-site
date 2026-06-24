@@ -17,6 +17,7 @@ import LDJsonScripts from "../../components/Seo/LDJsonScripts";
 import InputText from "../../components/Forms/InputText";
 import { Search } from "lucide-react";
 import { getHost } from "../../lib/helpers";
+import Link from "next/link";
 import { urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
@@ -25,18 +26,36 @@ export async function generateMetadata() {
   const seo = await getBlogSEO();
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
+  const title = "Boxcom Blog | Digital Marketing, Content & Web Insights";
+  const description =
+    "Explore Boxcom articles on digital marketing, social media, creative content, branding, lead generation, and web development.";
 
   return {
     ...data,
-    description:
-      "Insights, case studies, and practical marketing ideas from the Boxcom team.",
+    title,
+    description,
+    keywords: [
+      "boxcom blog",
+      "digital marketing blog morocco",
+      "content marketing insights",
+      "web development blog",
+      "lead generation tips",
+    ],
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${urls.blog}`,
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title,
+      description,
       url: `${host}${urls.blog}`,
+      type: "website",
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title,
+      description,
     },
   };
 }
@@ -129,6 +148,42 @@ const BlogPage = async ({ searchParams }) => {
 
         {/* LISTE DES ARTICLES */}
         <div className="w-full md:max-w-[1250px] mx-auto pt-20 pb-10 px-2 md:px-0 text-black">
+          <div className="mb-10 rounded-3xl border border-black/10 bg-white px-6 py-6 shadow-lg/10">
+            <p className="text-base leading-7 text-gray-700">
+              Explore practical ideas from the Boxcom team, then dive deeper
+              into our core services:
+              {" "}
+              <Link
+                href={urls.creativeContent}
+                className="font-semibold text-black underline underline-offset-4"
+              >
+                Creative Content
+              </Link>
+              ,{" "}
+              <Link
+                href={urls.webDevelopment}
+                className="font-semibold text-black underline underline-offset-4"
+              >
+                Web Development
+              </Link>
+              , and{" "}
+              <Link
+                href={urls.leadGeneration}
+                className="font-semibold text-black underline underline-offset-4"
+              >
+                Lead Generation
+              </Link>
+              . If you are new to Boxcom, start with our{" "}
+              <Link
+                href={urls.about}
+                className="font-semibold text-black underline underline-offset-4"
+              >
+                About page
+              </Link>
+              .
+            </p>
+          </div>
+
           {posts.length === 0 && search && (
             <div
               className="text-xl text-center"

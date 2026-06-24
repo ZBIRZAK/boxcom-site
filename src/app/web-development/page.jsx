@@ -24,18 +24,36 @@ export async function generateMetadata() {
   const seo = await getWebDevelopmentSEO();
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
+  const title = "Web Development Agency in Morocco | Boxcom";
+  const description =
+    "Boxcom builds high-performing websites in Morocco with strong UX, technical foundations, SEO support, and conversion-focused design.";
 
   return {
     ...data,
-    description:
-      "Web development services for high-performing websites built for branding, user experience, and business growth.",
+    title,
+    description,
+    keywords: [
+      "web development agency morocco",
+      "web agency casablanca",
+      "website design morocco",
+      "seo web development",
+      "high performing websites",
+    ],
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${urls.webDevelopment}`,
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title,
+      description,
       url: `${host}${urls.webDevelopment}`,
+      type: "website",
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title,
+      description,
     },
   };
 }

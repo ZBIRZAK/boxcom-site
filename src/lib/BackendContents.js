@@ -1,9 +1,18 @@
 "use server";
 
 import { backendClient, seoClient } from "./HttpClients";
+import { DEFAULT_LOCALE, normalizeLocale } from "./locale";
 
-export async function getHomepage() {
-  const data = await getBackendACF(process.env.HOMEPAGE_ID);
+function getLocalizedContentId(key, locale = DEFAULT_LOCALE) {
+  const normalizedLocale = normalizeLocale(locale).toUpperCase();
+  return (
+    process.env[`${key}_${normalizedLocale}`] ||
+    process.env[key]
+  );
+}
+
+export async function getHomepage(locale = DEFAULT_LOCALE) {
+  const data = await getBackendACF(getLocalizedContentId("HOMEPAGE_ID", locale));
 
   return {
     dataHeroSection: data.hero_section,
@@ -20,12 +29,12 @@ export async function getHomepage() {
   };
 }
 
-export async function getFooter() {
-  return await getBackendACF(process.env.FOOTER_ID);
+export async function getFooter(locale = DEFAULT_LOCALE) {
+  return await getBackendACF(getLocalizedContentId("FOOTER_ID", locale));
 }
 
-export async function getHeader() {
-  return await getBackendACF(process.env.HEADER_ID);
+export async function getHeader(locale = DEFAULT_LOCALE) {
+  return await getBackendACF(getLocalizedContentId("HEADER_ID", locale));
 }
 
 export async function getFAQ() {
@@ -290,8 +299,8 @@ export async function getArticleSEO(url) {
   }
 }
 
-export async function getHomepageSEO() {
-  return await getSEO(process.env.HOMEPAGE_ID);
+export async function getHomepageSEO(locale = DEFAULT_LOCALE) {
+  return await getSEO(getLocalizedContentId("HOMEPAGE_ID", locale));
 }
 
 export async function getDigitalMarketingSEO() {

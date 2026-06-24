@@ -96,7 +96,7 @@ const WhyChooseUs = ({ data }) => {
   return (
     <section
       id="page01_screen04"
-      className="relative md:min-h-screen !h-[120vh] w-full z-30"
+      className="relative min-h-[120vh] md:min-h-screen w-full z-30"
       ref={sectionRef}
     >
       <img
@@ -131,7 +131,7 @@ const WhyChooseUs = ({ data }) => {
         {/* CHOOSE */}
         <div
           ref={chooseRef}
-          className="absolute top-[30%] md:top-[45%] left-1/2 -translate-x-1/2"
+          className="absolute top-[30%] md:top-[32%] lg:top-[36%] left-1/2 md:left-[62%] lg:left-[58%] -translate-x-1/2"
         >
           {data.choose.toUpperCase()}
         </div>
@@ -139,13 +139,13 @@ const WhyChooseUs = ({ data }) => {
         {/* US */}
         <div
           ref={usRef}
-          className="absolute top-[50%] md:top-[78%] right-[10%] md:right-[15%]"
+          className="absolute top-[50%] md:top-[68%] right-[10%] md:right-[15%]"
         >
           {data.us.toUpperCase()}
         </div>
         <div
           ref={us2Ref}
-          className="absolute top-[50%] md:top-[78%] right-[10%] md:right-[15%] opacity-0"
+          className="absolute top-[50%] md:top-[68%] right-[10%] md:right-[15%] opacity-0"
         >
           {data.us.toUpperCase()}
         </div>
@@ -153,13 +153,13 @@ const WhyChooseUs = ({ data }) => {
 
       <ZigZag />
 
-      <div className="absolute top-[61%] md:top-[60%] left-0 px-3 md:px-0 md:left-[8%] w-full md:w-[40%] color-white z-2">
+      <div className="absolute top-[61%] left-0 w-full px-3 color-white z-2 md:top-auto md:bottom-10 md:left-[8%] md:w-[34%] md:max-w-[460px] md:px-0 lg:bottom-16 lg:w-[38%] lg:max-w-[520px]">
         <div
           ref={paragraphRef}
-          className="text-[0.9rem] md:text-[1rem] italic mb-4"
+          className="mb-4 text-[0.95rem] italic leading-[1.55] md:text-[0.95rem] md:leading-[1.6] lg:text-[1rem] lg:leading-[1.7] [&_p]:mb-3 [&_p]:leading-[1.55] md:[&_p]:leading-[1.6] lg:[&_p]:leading-[1.7]"
           dangerouslySetInnerHTML={{ __html: data.paragraph }}
         ></div>
-        <h3 className="text-[1.6rem] md:text-[2.8rem] font-bold mt-2">
+        <h3 className="mt-2 max-w-[18ch] text-[1.6rem] font-bold leading-[1.15] md:max-w-[16ch] md:text-[2rem] lg:max-w-[20ch] lg:text-[2.8rem] md:leading-[1.12]">
           {data.title}
         </h3>
         <div className="relative mt-4 md:mt-6">
@@ -168,6 +168,7 @@ const WhyChooseUs = ({ data }) => {
             variant="outline"
             size="xl"
             end="arrow"
+            className="w-fit"
             onClick={() => router.push(formatUrl(data.button_link))}
           >
             {data.ct_button}

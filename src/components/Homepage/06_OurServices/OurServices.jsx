@@ -2,7 +2,7 @@ import Button2 from "../../Buttons/Button2";
 import styles from "./OurServices.module.scss";
 import ScrollButton from "../../ScrollButton/ScrollButton";
 import Link from "next/link";
-import { formatUrl } from "../../../lib/urls";
+import { formatUrl, urls } from "../../../lib/urls";
 
 function ensureImgAltAttributes(html = "") {
   return html.replace(/<img(?![^>]*\balt=)/gi, '<img alt=""');
@@ -49,6 +49,18 @@ const OurServices = ({ data }) => {
             return <Service key={i} contents={content} />;
           })}
         </div>
+        <p className="mt-8 max-w-[760px] text-center text-white/85 text-base leading-7">
+          Looking for more context before choosing a service? Visit our{" "}
+          <Link href={urls.about} className="underline underline-offset-4">
+            About page
+          </Link>{" "}
+          to learn how Boxcom works, or explore the{" "}
+          <Link href={urls.blog} className="underline underline-offset-4">
+            Blog
+          </Link>{" "}
+          for insights on digital marketing, creative content, lead generation,
+          and web development.
+        </p>
       </div>
       <div className="hidden md:block">
         <ScrollButton

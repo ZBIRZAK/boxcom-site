@@ -23,18 +23,36 @@ export async function generateMetadata() {
   const seo = await getCreativeContentSEO();
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
+  const title = "Creative Content Agency in Morocco | Boxcom";
+  const description =
+    "Boxcom creates creative content that helps brands stand out through content marketing, graphic design, video production, and visual storytelling.";
 
   return {
     ...data,
-    description:
-      "Creative content services including content marketing, design, video production, and storytelling to make your brand stand out.",
+    title,
+    description,
+    keywords: [
+      "creative content agency morocco",
+      "content marketing morocco",
+      "graphic design agency casablanca",
+      "video production morocco",
+      "brand storytelling agency",
+    ],
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${urls.creativeContent}`,
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title,
+      description,
       url: `${host}${urls.creativeContent}`,
+      type: "website",
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title,
+      description,
     },
   };
 }

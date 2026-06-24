@@ -7,19 +7,22 @@ import { useEffect } from 'react';
 export default function GoogleAnalytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   useEffect(() => {
-    const url = pathname + searchParams.toString();
-    
-    // Vérifier si gtag est disponible
+    if (!measurementId) return;
+
+    const query = searchParams.toString();
+    const url = query ? `${pathname}?${query}` : pathname;
+
     if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID, {
+      window.gtag('config', measurementId, {
         page_path: url,
       });
     }
-  }, [pathname, searchParams]);
+  }, [measurementId, pathname, searchParams]);
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== 'production' || !measurementId) {
     return null;
   }
 
@@ -27,7 +30,7 @@ export default function GoogleAnalytics() {
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
       />
       <Script
         id="gtag-init"
@@ -37,7 +40,7 @@ export default function GoogleAnalytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
+            gtag('config', '${measurementId}', {
               page_path: window.location.pathname,
             });
           `,
