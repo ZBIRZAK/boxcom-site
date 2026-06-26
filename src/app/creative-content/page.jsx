@@ -15,12 +15,12 @@ import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
 import { getHost } from "../../lib/helpers";
-import { urls } from "../../lib/urls";
+import { localizeUrl, urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
 
 export async function generateMetadata() {
-  const seo = await getCreativeContentSEO();
+  const seo = await getCreativeContentSEO("en");
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
   const title = "Creative Content Agency in Morocco | Boxcom";
@@ -40,13 +40,17 @@ export async function generateMetadata() {
     ],
     alternates: {
       ...(data.alternates || {}),
-      canonical: `${host}${urls.creativeContent}`,
+      canonical: `${host}${localizeUrl(urls.creativeContent, "en")}`,
+      languages: {
+        en: `${host}${localizeUrl(urls.creativeContent, "en")}`,
+        fr: `${host}${localizeUrl(urls.creativeContent, "fr")}`,
+      },
     },
     openGraph: {
       ...(data.openGraph || {}),
       title,
       description,
-      url: `${host}${urls.creativeContent}`,
+      url: `${host}${localizeUrl(urls.creativeContent, "en")}`,
       type: "website",
     },
     twitter: {
@@ -58,7 +62,7 @@ export async function generateMetadata() {
 }
 
 const CreativeContentPage = async () => {
-  const header = await getHeader();
+  const header = await getHeader("en");
 
   let {
     dataExperiencesSection,
@@ -66,16 +70,16 @@ const CreativeContentPage = async () => {
     dataGraphicDesignSection,
     dataVideoProductionSection,
     dataStoryToLifeSection,
-  } = await getCreativeContent();
+  } = await getCreativeContent("en");
 
-  const seo = await getCreativeContentSEO();
+  const seo = await getCreativeContentSEO("en");
 
   return (
     <>
       <LDJsonScripts seoData={seo.head} />
 
-      <Header data={header} transitionToDark={true} />
-      <Experiences data={dataExperiencesSection} />
+      <Header data={header} transitionToDark={true} locale="en" />
+      <Experiences data={dataExperiencesSection} locale="en" />
       <ContentMarketing data={dataContentMarketingSection} />
       <GraphicDesign data={dataGraphicDesignSection} />
       <VideoProduction data={dataVideoProductionSection} />

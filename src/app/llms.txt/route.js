@@ -1,5 +1,5 @@
 import { getHost } from "../../lib/helpers";
-import { urls } from "../../lib/urls";
+import { localizeUrl, urls } from "../../lib/urls";
 
 export async function GET() {
   const host = getHost();
@@ -24,14 +24,14 @@ export async function GET() {
 
 ## Pages
 - [Accueil](${host}${urls.homepage})
-- [Contact](${host}${urls.contact})
+- [Contact](${host}${localizeUrl(urls.contact, "fr")})
 - [Our Projects](${host}${urls.projects})
-- [About us](${host}${urls.about})
-- [Blog](${host}${urls.blog})
-- [Lead Generation](${host}${urls.leadGeneration})
-- [Digital Marketing](${host}${urls.digitalMarketing})
-- [Web Development](${host}${urls.webDevelopment})
-- [Creative content](${host}${urls.creativeContent})
+- [About us](${host}${localizeUrl(urls.about, "fr")})
+- [Blog](${host}${localizeUrl(urls.blog, "fr")})
+- [Lead Generation](${host}${localizeUrl(urls.leadGeneration, "fr")})
+- [Digital Marketing](${host}${localizeUrl(urls.digitalMarketing, "fr")})
+- [Web Development](${host}${localizeUrl(urls.webDevelopment, "fr")})
+- [Creative content](${host}${localizeUrl(urls.creativeContent, "fr")})
 `;
   return new Response(content, {
     headers: {

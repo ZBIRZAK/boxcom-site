@@ -35,10 +35,9 @@ function parseStringToElements(input) {
   });
 }
 
-const Experiences = ({ data }) => {
+const Experiences = ({ data, locale = "en" }) => {
   const title1 = parseStringToElements(data.title1);
   const isMobile = useIsMobile();
-  console.log("Experiences DATA:", data);
   return (
     <section
       id="page02_screen01"
@@ -77,7 +76,11 @@ const Experiences = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: title1 }}
           className="absolute text-center top-3/12  w-[65%] heading-primary heading-secondary--white"
         ></h1> */}
-        <BottomSection data={data} buttonContainer={styles.buttonContainer} />
+        <BottomSection
+          data={data}
+          locale={locale}
+          buttonContainer={styles.buttonContainer}
+        />
         {/* <div className="absolute top-0 left-0 w-full h-auto">
           <Ball />
         </div> */}

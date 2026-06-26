@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getLocaleFromPathname } from "./lib/locale";
+import { localizeUrl, urls } from "./lib/urls";
 
 function getHostname(hostHeader = "") {
   return hostHeader.split(":")[0].trim().toLowerCase();
@@ -49,17 +50,78 @@ export function middleware(request) {
     .toLowerCase();
   const protocol = forwardedProto || url.protocol.replace(":", "");
   const isIndexPhp = pathname === "/index.php" || pathname === "/index.php/";
+  const localizedRouteMappings = [
+    urls.homepage,
+    urls.about,
+    urls.blog,
+    urls.contact,
+    urls.creativeContent,
+    urls.digitalMarketing,
+    urls.leadGeneration,
+    urls.webDevelopment,
+  ];
+  const toInternalFrenchPath = (routePath) =>
+    routePath === urls.homepage ? "/fr" : `/fr${routePath}`;
+  const matchedPublicFrenchRoute = localizedRouteMappings.find(
+    (routePath) => pathname === localizeUrl(routePath, "fr")
+  );
+  const matchedPublicEnglishRoute = localizedRouteMappings.find(
+    (routePath) => pathname === localizeUrl(routePath, "en")
+  );
+  const matchedInternalFrenchRoute = localizedRouteMappings.find(
+    (routePath) => pathname === toInternalFrenchPath(routePath)
+  );
+  const matchedLegacyEnglishRoute = localizedRouteMappings.find(
+    (routePath) =>
+      routePath !== urls.homepage &&
+      pathname === routePath &&
+      localizeUrl(routePath, "fr") !== routePath
+  );
 
   const shouldCanonicalize =
     process.env.NODE_ENV === "production" && !isLocalHost(host);
   const needsProtocolRedirect = shouldCanonicalize && protocol !== "https";
   const needsHostRedirect = shouldCanonicalize && host !== canonicalHost;
   const needsIndexPhpRedirect = isIndexPhp;
+  const needsInternalFrenchRedirect = !!matchedInternalFrenchRoute;
+  const needsLegacyEnglishRedirect = !!matchedLegacyEnglishRoute;
 
-  if (!needsProtocolRedirect && !needsHostRedirect && !needsIndexPhpRedirect) {
+  if (
+    !needsProtocolRedirect &&
+    !needsHostRedirect &&
+    !needsIndexPhpRedirect &&
+    !needsInternalFrenchRedirect &&
+    !needsLegacyEnglishRedirect &&
+    !matchedPublicFrenchRoute &&
+    !matchedPublicEnglishRoute
+  ) {
     const requestHeaders = new Headers(request.headers);
     requestHeaders.set("x-locale", locale);
     return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
+  }
+
+  if (matchedPublicFrenchRoute) {
+    const rewriteUrl = request.nextUrl.clone();
+    rewriteUrl.pathname = toInternalFrenchPath(matchedPublicFrenchRoute);
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set("x-locale", "fr");
+    return NextResponse.rewrite(rewriteUrl, {
+      request: {
+        headers: requestHeaders,
+      },
+    });
+  }
+
+  if (matchedPublicEnglishRoute) {
+    const rewriteUrl = request.nextUrl.clone();
+    rewriteUrl.pathname = matchedPublicEnglishRoute;
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set("x-locale", "en");
+    return NextResponse.rewrite(rewriteUrl, {
       request: {
         headers: requestHeaders,
       },
@@ -75,6 +137,14 @@ export function middleware(request) {
   if (needsIndexPhpRedirect) {
     url.pathname = "/";
     url.search = "";
+  }
+
+  if (needsInternalFrenchRedirect && matchedInternalFrenchRoute) {
+    url.pathname = localizeUrl(matchedInternalFrenchRoute, "fr");
+  }
+
+  if (needsLegacyEnglishRedirect && matchedLegacyEnglishRoute) {
+    url.pathname = localizeUrl(matchedLegacyEnglishRoute, "en");
   }
 
   return NextResponse.redirect(url, 308);

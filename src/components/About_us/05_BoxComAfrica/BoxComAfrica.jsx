@@ -19,6 +19,17 @@ import Subscribe from "./Subscribe";
 import ScrollButton from "../../Buttons/ScrollButton";
 import Title1 from "../../Contents/Title1";
 
+const prProjectCopy = {
+  en: {
+    question: "You have a PR project?",
+    cta: "Visit our website",
+  },
+  fr: {
+    question: "Vous avez un projet RP ?",
+    cta: "Visitez notre site web",
+  },
+};
+
 const LogoContainer = ({ children }) => (
   <div className="flex justify-center pt-5 h-[100px] items-start">
     {children}
@@ -36,7 +47,9 @@ const Content = ({ value }) => (
   ></div>
 );
 
-const BoxComAfrica = ({ data }) => {
+const BoxComAfrica = ({ data, locale = "en" }) => {
+  const copy = prProjectCopy[locale] || prProjectCopy.en;
+
   return (
     <section
       id="page06_screen05"
@@ -133,14 +146,14 @@ const BoxComAfrica = ({ data }) => {
               <Microphone />
             </div>
             <div className="mt-8">
-              <p className="text-black font-semibold">You have a PR project?</p>
+              <p className="text-black font-semibold">{copy.question}</p>
               <a
                 href="https://boxcom-africa.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex mt-4 rounded-full border-2 border-black px-6 py-2 font-semibold text-black hover:bg-black hover:text-white transition-colors"
               >
-                Visit our website
+                {copy.cta}
               </a>
             </div>
           </div>

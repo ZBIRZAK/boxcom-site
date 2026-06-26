@@ -17,12 +17,12 @@ import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
 import { getHost } from "../../lib/helpers";
-import { urls } from "../../lib/urls";
+import { localizeUrl, urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
 
 export async function generateMetadata() {
-  const seo = await getLeadGenerationSEO();
+  const seo = await getLeadGenerationSEO("en");
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
   const title = "Lead Generation Agency in Morocco | Boxcom";
@@ -42,13 +42,17 @@ export async function generateMetadata() {
     ],
     alternates: {
       ...(data.alternates || {}),
-      canonical: `${host}${urls.leadGeneration}`,
+      canonical: `${host}${localizeUrl(urls.leadGeneration, "en")}`,
+      languages: {
+        en: `${host}${localizeUrl(urls.leadGeneration, "en")}`,
+        fr: `${host}${localizeUrl(urls.leadGeneration, "fr")}`,
+      },
     },
     openGraph: {
       ...(data.openGraph || {}),
       title,
       description,
-      url: `${host}${urls.leadGeneration}`,
+      url: `${host}${localizeUrl(urls.leadGeneration, "en")}`,
       type: "website",
     },
     twitter: {
@@ -60,7 +64,7 @@ export async function generateMetadata() {
 }
 
 const PageLeadGeneration = async () => {
-  const header = await getHeader();
+  const header = await getHeader("en");
 
   const {
     dataHero,
@@ -70,14 +74,14 @@ const PageLeadGeneration = async () => {
     dataMarkets,
     dataAnalyticsOptimization,
     dataEveryClickCounts,
-  } = await getLeadGeneration();
+  } = await getLeadGeneration("en");
 
-  const seo = await getLeadGenerationSEO();
+  const seo = await getLeadGenerationSEO("en");
 
   return (
     <>
       <LDJsonScripts seoData={seo.head} />
-      <Header data={header} transitionToDark={true} />
+      <Header data={header} transitionToDark={true} locale="en" />
       <Hero data={dataHero} />
       <LeadGenerationStrategy data={dataLeadGenerationStrategy} />
       <QualityLeads data={dataQualityLeads} />

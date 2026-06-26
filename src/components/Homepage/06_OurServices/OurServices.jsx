@@ -2,15 +2,35 @@ import Button2 from "../../Buttons/Button2";
 import styles from "./OurServices.module.scss";
 import ScrollButton from "../../ScrollButton/ScrollButton";
 import Link from "next/link";
-import { formatUrl, urls } from "../../../lib/urls";
+import { formatUrl, localizeUrl, urls } from "../../../lib/urls";
+
+const serviceHelperCopy = {
+  en: {
+    intro: "Looking for more context before choosing a service? Visit our",
+    about: "About page",
+    middle: "to learn how Boxcom works, or explore the",
+    blog: "Blog",
+    outro:
+      "for insights on digital marketing, creative content, lead generation, and web development.",
+  },
+  fr: {
+    intro:
+      "Vous souhaitez mieux comprendre notre approche avant de choisir un service ? Consultez notre",
+    about: "page A Propos",
+    middle: "pour decouvrir comment Boxcom travaille, ou explorez le",
+    blog: "Blog",
+    outro:
+      "pour des insights sur le marketing digital, le contenu creatif, la generation de leads et le developpement web.",
+  },
+};
 
 function ensureImgAltAttributes(html = "") {
   return html.replace(/<img(?![^>]*\balt=)/gi, '<img alt=""');
 }
 
-const Service = ({ contents }) => {
+const Service = ({ contents, locale }) => {
   return (
-    <Link href={formatUrl(contents.link)} className={styles.box}>
+    <Link href={formatUrl(contents.link, locale)} className={styles.box}>
       <h3 className="title2 text-center !text-[#ff0062] md:mb-0 mb-4 ">
         {contents.title}
       </h3>
@@ -28,8 +48,9 @@ const Service = ({ contents }) => {
   );
 };
 
-const OurServices = ({ data }) => {
+const OurServices = ({ data, locale }) => {
   const values = Array.from({ length: 4 }, (_, i) => i + 1);
+  const copy = serviceHelperCopy[locale] || serviceHelperCopy.en;
   // console.log({data});
   return (
     <section
@@ -46,20 +67,25 @@ const OurServices = ({ data }) => {
         <div className={styles.grid}>
           {values.map((i) => {
             const content = data.services["service_" + i];
-            return <Service key={i} contents={content} />;
+            return <Service key={i} contents={content} locale={locale} />;
           })}
         </div>
-        <p className="mt-8 max-w-[760px] text-center text-white/85 text-base leading-7">
-          Looking for more context before choosing a service? Visit our{" "}
-          <Link href={urls.about} className="underline underline-offset-4">
-            About page
+        <p className="mx-auto mt-8 max-w-[760px] text-center text-balance text-white/85 text-base leading-7">
+          {copy.intro}{" "}
+          <Link
+            href={localizeUrl(urls.about, locale)}
+            className="underline underline-offset-4"
+          >
+            {copy.about}
           </Link>{" "}
-          to learn how Boxcom works, or explore the{" "}
-          <Link href={urls.blog} className="underline underline-offset-4">
-            Blog
+          {copy.middle}{" "}
+          <Link
+            href={localizeUrl(urls.blog, locale)}
+            className="underline underline-offset-4"
+          >
+            {copy.blog}
           </Link>{" "}
-          for insights on digital marketing, creative content, lead generation,
-          and web development.
+          {copy.outro}
         </p>
       </div>
       <div className="hidden md:block">

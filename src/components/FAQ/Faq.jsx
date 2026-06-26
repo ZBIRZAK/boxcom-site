@@ -1,7 +1,7 @@
 import { getFAQ } from "../../lib/BackendContents";
 
-const Faq = async () => {
-  const faq = await getFAQ();
+const Faq = async ({ locale }) => {
+  const faq = await getFAQ(locale);
 
   const items = Object.keys(faq).map((key) => faq[key]);
 

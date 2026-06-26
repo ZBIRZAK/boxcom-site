@@ -2,12 +2,36 @@
 
 import clsx from "clsx";
 import Link from "next/link";
-import { formatUrl, localizeUrl, urls } from "../../lib/urls";
+import {
+  formatUrl,
+  getLocalizedSiblingUrl,
+  localizeUrl,
+  urls,
+} from "../../lib/urls";
 import { isLanguageSwitchEnabled } from "../../lib/helpers";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { getLocaleFromPathname, normalizeLocale } from "../../lib/locale";
+
+const frenchNavLabelMap = {
+  "digital marketing": "Marketing Digital",
+  "creative content": "Contenu Creatif",
+  "web development": "Developpement Web",
+  "lead generation": "Generation de Leads",
+  "about us": "A Propos de Nous",
+  about: "A Propos",
+  contact: "Contactez-nous",
+  "contact us": "Contactez-nous",
+  home: "Accueil",
+};
+
+function localizeNavText(text = "", locale = "en") {
+  if (locale !== "fr") return text;
+
+  const normalized = text.trim().toLowerCase();
+  return frenchNavLabelMap[normalized] || text;
+}
 
 const Logo = ({ onClick, href, light = false, scrolled = false }) => (
   <Link
@@ -70,7 +94,7 @@ const NavDesktop = ({
   light = false,
   scrolled = false,
 }) => (
-  <nav className="hidden flex-9/12 md:flex gap-2 md:gap-4 lg:gap-5 xl:gap-6 2xl:gap-10 items-center-safe justify-center-safe">
+  <nav className="hidden flex-9/12 md:flex gap-2 md:gap-3 lg:gap-4 xl:gap-5 2xl:gap-6 items-center-safe justify-center-safe">
     {links.map((item, i) => {
       const isLast = i === links.length - 1;
       const isActive = activeLink === item.link;
@@ -80,7 +104,7 @@ const NavDesktop = ({
           key={i}
           href={item.link}
           className={clsx(
-            "relative !no-underline",
+            "relative !no-underline whitespace-nowrap text-sm lg:text-base xl:text-[1.05rem]",
             !light && !isLast && "text-white",
             light && !isLast && !scrolled && "text-[#666666]",
             light && !isLast && scrolled && "text-[#f0f0f0]",
@@ -97,9 +121,11 @@ const NavDesktop = ({
             !light && isActive && "text-[#ff0077]",
             light && isActive && !isLast && !scrolled && "text-[#1b1b1b] font-semibold",
             light && isActive && !isLast && scrolled && "text-[#ff0077] font-semibold",
-            !light && isLast && "bg-white rounded-full py-3 px-5",
+            !light && isLast && "bg-white rounded-full py-3 px-6 whitespace-nowrap leading-none",
             !light && isLast && !isActive && "text-black",
-            light && isLast && "bg-[#ff0062] rounded-full py-3 px-5 text-white font-semibold"
+            light &&
+              isLast &&
+              "bg-[#ff0062] rounded-full py-3 px-6 whitespace-nowrap leading-none text-white font-semibold"
           )}
           onClick={() => onClickLink(item.link)}
         >
@@ -134,29 +160,110 @@ const NavMobile = ({ links, activeLink, onClickLink, isOpen }) => (
 
 const LanguageSwitch = ({ locale, light = false, scrolled = false }) => {
   const isFrench = locale === "fr";
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const englishHref = getLocalizedSiblingUrl(pathname, "en");
+  const frenchHref = getLocalizedSiblingUrl(pathname, "fr");
+  const wrapperClass = light
+    ? scrolled
+      ? "bg-white/10 border-white/15"
+      : "bg-black/[0.04] border-black/8"
+    : "bg-white/10 border-white/10";
+  const activeClass = light
+    ? scrolled
+      ? "bg-white text-[#111111] shadow-[0_8px_18px_rgba(0,0,0,0.16)]"
+      : "bg-[#111111] text-white shadow-[0_8px_18px_rgba(0,0,0,0.1)]"
+    : "bg-white text-[#111111] shadow-[0_8px_18px_rgba(0,0,0,0.2)]";
   const inactiveClass = light
     ? scrolled
-      ? "text-white/70"
-      : "text-[#666666]"
-    : "text-white/70";
+      ? "text-white/70 hover:text-white"
+      : "text-[#666666] hover:text-[#111111]"
+    : "text-white/65 hover:text-white";
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (!menuRef.current?.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
 
   return (
-    <div className="hidden md:flex items-center gap-2 pr-4 text-sm font-semibold uppercase z-[9999]">
-      <Link
-        href={localizeUrl(urls.homepage, "en")}
-        className={clsx(!isFrench ? "text-[#ff0077]" : inactiveClass)}
+    <div
+      ref={menuRef}
+      className={clsx("relative hidden md:flex items-center self-center z-[9999] ml-3")}
+    >
+      <button
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className={clsx(
+          "flex h-[42px] items-center gap-1.5 rounded-full border px-3 text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-200",
+          wrapperClass,
+          light && !scrolled
+            ? "text-[#111111] hover:bg-black/[0.06]"
+            : "text-white hover:bg-white/10"
+        )}
+        aria-haspopup="menu"
+        aria-expanded={isOpen}
       >
-        EN
-      </Link>
-      <span className={clsx(light && !scrolled ? "text-[#666666]" : "text-white/50")}>
-        /
-      </span>
-      <Link
-        href={localizeUrl(urls.homepage, "fr")}
-        className={clsx(isFrench ? "text-[#ff0077]" : inactiveClass)}
+        <span>{isFrench ? "FR" : "EN"}</span>
+        <svg
+          className={clsx(
+            "h-3 w-3 opacity-75 transition-transform duration-200",
+            isOpen && "rotate-180"
+          )}
+          viewBox="0 0 12 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3 4.5L6 7.5L9 4.5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+
+      <div
+        className={clsx(
+          "absolute right-0 top-[calc(100%+0.5rem)] min-w-[9rem] rounded-[1.1rem] border p-1.5 shadow-[0_20px_45px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-200",
+          wrapperClass,
+          isOpen
+            ? "visible translate-y-0 opacity-100"
+            : "invisible -translate-y-1 opacity-0"
+        )}
       >
-        FR
-      </Link>
+        <Link
+          href={englishHref}
+          className={clsx(
+            "flex items-center justify-between rounded-[0.9rem] px-3.5 py-3 text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-200",
+            !isFrench ? activeClass : inactiveClass
+          )}
+          onClick={() => setIsOpen(false)}
+        >
+          <span>Anglais</span>
+        </Link>
+        <Link
+          href={frenchHref}
+          className={clsx(
+            "flex items-center justify-between rounded-[0.9rem] px-3.5 py-3 text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-200",
+            isFrench ? activeClass : inactiveClass
+          )}
+          onClick={() => setIsOpen(false)}
+        >
+          <span>Francais</span>
+        </Link>
+      </div>
     </div>
   );
 };
@@ -196,6 +303,7 @@ const Header = ({
   });
   links.forEach((link) => {
     link.link = formatUrl(link.link, currentLocale);
+    link.text = localizeNavText(link.text, currentLocale);
   });
 
   useEffect(() => {

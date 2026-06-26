@@ -37,12 +37,14 @@ export async function getHeader(locale = DEFAULT_LOCALE) {
   return await getBackendACF(getLocalizedContentId("HEADER_ID", locale));
 }
 
-export async function getFAQ() {
-  return await getBackendACF(process.env.FAQ_ID);
+export async function getFAQ(locale = DEFAULT_LOCALE) {
+  return await getBackendACF(getLocalizedContentId("FAQ_ID", locale));
 }
 
-export async function getCreativeContent() {
-  const data = await getBackendACF(process.env.CREATIVE_CONTENT_ID);
+export async function getCreativeContent(locale = DEFAULT_LOCALE) {
+  const data = await getBackendACF(
+    getLocalizedContentId("CREATIVE_CONTENT_ID", locale)
+  );
   return {
     dataExperiencesSection: data.experiences_section,
     dataContentMarketingSection: data.content_marketing_section,
@@ -54,8 +56,10 @@ export async function getCreativeContent() {
   };
 }
 
-export async function getDigitalMarketing() {
-  const data = await getBackendACF(process.env.DIGITAL_MARKETING_ID);
+export async function getDigitalMarketing(locale = DEFAULT_LOCALE) {
+  const data = await getBackendACF(
+    getLocalizedContentId("DIGITAL_MARKETING_ID", locale)
+  );
   // console.log(data);
   return {
     dataHeroSection: data.hero_section,
@@ -66,8 +70,8 @@ export async function getDigitalMarketing() {
   };
 }
 
-export async function getWebDevelopment() {
-  const data = await getBackendACF(process.env.WEB_DEV_ID);
+export async function getWebDevelopment(locale = DEFAULT_LOCALE) {
+  const data = await getBackendACF(getLocalizedContentId("WEB_DEV_ID", locale));
   // console.log(data);
   return {
     dataNotJustAPageSection: data.not_just_a_page_section,
@@ -79,8 +83,10 @@ export async function getWebDevelopment() {
   };
 }
 
-export async function getLeadGeneration() {
-  const data = await getBackendACF(process.env.LEAD_GENERATION_ID);
+export async function getLeadGeneration(locale = DEFAULT_LOCALE) {
+  const data = await getBackendACF(
+    getLocalizedContentId("LEAD_GENERATION_ID", locale)
+  );
   // console.log(data);
   return {
     dataHero: data.hero,
@@ -93,8 +99,8 @@ export async function getLeadGeneration() {
   };
 }
 
-export async function getAboutUs() {
-  const data = await getBackendACF(process.env.ABOUT_US_ID);
+export async function getAboutUs(locale = DEFAULT_LOCALE) {
+  const data = await getBackendACF(getLocalizedContentId("ABOUT_US_ID", locale));
   // console.log(data);
   return {
     dataWelcome: data.welcome,
@@ -109,17 +115,22 @@ export async function getAboutUs() {
   };
 }
 
-export async function getOurProjects() {
-  const data = await getBackendACF(process.env.OUR_PROJECTS_ID);
+export async function getOurProjects(locale = DEFAULT_LOCALE) {
+  const data = await getBackendACF(
+    getLocalizedContentId("OUR_PROJECTS_ID", locale)
+  );
   // console.log(data);
   return {
     dataEveryProjectIsAStory: data.every_project_is_a_story,
   };
 }
 
-export async function getBlog() {
+export async function getBlog(locale = DEFAULT_LOCALE) {
   try {
-    const url = process.env.BACKEND_PAGE.replace(":id", process.env.BLOG_ID);
+    const url = process.env.BACKEND_PAGE.replace(
+      ":id",
+      getLocalizedContentId("BLOG_ID", locale)
+    );
     const response = await backendClient.get(url, { params: { _embed: 1 } });
 
     return response.data;
@@ -303,32 +314,32 @@ export async function getHomepageSEO(locale = DEFAULT_LOCALE) {
   return await getSEO(getLocalizedContentId("HOMEPAGE_ID", locale));
 }
 
-export async function getDigitalMarketingSEO() {
-  return await getSEO(process.env.DIGITAL_MARKETING_ID);
+export async function getDigitalMarketingSEO(locale = DEFAULT_LOCALE) {
+  return await getSEO(getLocalizedContentId("DIGITAL_MARKETING_ID", locale));
 }
 
-export async function getCreativeContentSEO() {
-  return await getSEO(process.env.CREATIVE_CONTENT_ID);
+export async function getCreativeContentSEO(locale = DEFAULT_LOCALE) {
+  return await getSEO(getLocalizedContentId("CREATIVE_CONTENT_ID", locale));
 }
 
-export async function getWebDevelopmentSEO() {
-  return await getSEO(process.env.WEB_DEV_ID);
+export async function getWebDevelopmentSEO(locale = DEFAULT_LOCALE) {
+  return await getSEO(getLocalizedContentId("WEB_DEV_ID", locale));
 }
 
-export async function getLeadGenerationSEO() {
-  return await getSEO(process.env.LEAD_GENERATION_ID);
+export async function getLeadGenerationSEO(locale = DEFAULT_LOCALE) {
+  return await getSEO(getLocalizedContentId("LEAD_GENERATION_ID", locale));
 }
 
-export async function getAboutUsSEO() {
-  return await getSEO(process.env.ABOUT_US_ID);
+export async function getAboutUsSEO(locale = DEFAULT_LOCALE) {
+  return await getSEO(getLocalizedContentId("ABOUT_US_ID", locale));
 }
 
-export async function getOurProjectsSEO() {
-  return await getSEO(process.env.OUR_PROJECTS_ID);
+export async function getOurProjectsSEO(locale = DEFAULT_LOCALE) {
+  return await getSEO(getLocalizedContentId("OUR_PROJECTS_ID", locale));
 }
 
-export async function getBlogSEO() {
-  return await getSEO(process.env.BLOG_ID);
+export async function getBlogSEO(locale = DEFAULT_LOCALE) {
+  return await getSEO(getLocalizedContentId("BLOG_ID", locale));
 }
 
 export async function getAuthorById(id) {
@@ -375,6 +386,6 @@ export async function getTags(ids) {
   );
 }
 
-export async function getContact() {
-  return await getBackendACF(process.env.CONTACT_ID);
+export async function getContact(locale = DEFAULT_LOCALE) {
+  return await getBackendACF(getLocalizedContentId("CONTACT_ID", locale));
 }

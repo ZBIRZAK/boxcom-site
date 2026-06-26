@@ -40,7 +40,7 @@ export default function HomepagePage({ header, homepage, seo, locale }) {
       />
       <WhyChooseUs data={dataWhyChooseUs} />
       <ArtSection data={dataBigIdeas} />
-      <OurServices data={dataServices} />
+      <OurServices data={dataServices} locale={locale} />
       <VisionaryClients data={dataClients} />
       <DeferredSections
         dataSeeForYourself={dataSeeForYourself}

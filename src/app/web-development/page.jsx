@@ -16,12 +16,12 @@ import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
 import { getHost } from "../../lib/helpers";
-import { urls } from "../../lib/urls";
+import { localizeUrl, urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
 
 export async function generateMetadata() {
-  const seo = await getWebDevelopmentSEO();
+  const seo = await getWebDevelopmentSEO("en");
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
   const title = "Web Development Agency in Morocco | Boxcom";
@@ -41,13 +41,17 @@ export async function generateMetadata() {
     ],
     alternates: {
       ...(data.alternates || {}),
-      canonical: `${host}${urls.webDevelopment}`,
+      canonical: `${host}${localizeUrl(urls.webDevelopment, "en")}`,
+      languages: {
+        en: `${host}${localizeUrl(urls.webDevelopment, "en")}`,
+        fr: `${host}${localizeUrl(urls.webDevelopment, "fr")}`,
+      },
     },
     openGraph: {
       ...(data.openGraph || {}),
       title,
       description,
-      url: `${host}${urls.webDevelopment}`,
+      url: `${host}${localizeUrl(urls.webDevelopment, "en")}`,
       type: "website",
     },
     twitter: {
@@ -59,7 +63,7 @@ export async function generateMetadata() {
 }
 
 const WebDevPage = async () => {
-  const header = await getHeader();
+  const header = await getHeader("en");
 
   const {
     dataNotJustAPageSection,
@@ -68,15 +72,15 @@ const WebDevPage = async () => {
     dataSeaSection,
     dataMaintenanceAndAnalytics,
     dataSalesPerson,
-  } = await getWebDevelopment();
+  } = await getWebDevelopment("en");
 
-  const seo = await getWebDevelopmentSEO();
+  const seo = await getWebDevelopmentSEO("en");
 
   return (
     <>
       <LDJsonScripts seoData={seo.head} />
 
-      <Header data={header} transitionToDark={true} />
+      <Header data={header} transitionToDark={true} locale="en" />
       <NotJustAPage data={dataNotJustAPageSection} />
       <Websites data={dataWebsitesSection} />
       <Seo data={dataSeoSection} />

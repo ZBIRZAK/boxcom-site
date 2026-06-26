@@ -1,5 +1,5 @@
-export const DEFAULT_LOCALE = "en";
-export const SUPPORTED_LOCALES = ["en", "fr"];
+export const DEFAULT_LOCALE = "fr";
+export const SUPPORTED_LOCALES = ["fr", "en"];
 
 export function normalizeLocale(locale) {
   return SUPPORTED_LOCALES.includes(locale) ? locale : DEFAULT_LOCALE;

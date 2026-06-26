@@ -3,6 +3,36 @@ import { formatUrl, localizeUrl, urls } from "../../lib/urls";
 import styles from "./Footer.module.scss";
 import Link from "next/link";
 
+const footerTranslations = {
+  fr: {
+    serviceSectionTitle: "Nos Services",
+    aboutSectionTitle: "A Propos",
+    privacyPolicy: "Politique de Confidentialite",
+    visitUs: "Venez Nous Voir",
+    contactButton: "Contactez-nous",
+    pitch:
+      "Boxcom, agence digitale, accompagne ses clients dans la fidelisation et l'acquisition de nouveaux clients. Avec plus d'une decennie d'experience precieuse.",
+    linkText: {
+      "digital marketing": "Marketing Digital",
+      "creative content": "Contenu Creatif",
+      "web development": "Developpement Web",
+      "lead generation": "Generation de Leads",
+      "about us": "A Propos de Nous",
+      about: "A Propos",
+      blog: "Blog",
+      contact: "Contactez-nous",
+      "privacy policy": "Politique de Confidentialite",
+    },
+  },
+};
+
+function translateFooterText(text = "", locale = "en") {
+  if (locale !== "fr") return text;
+
+  const normalized = text.trim().toLowerCase();
+  return footerTranslations.fr.linkText[normalized] || text;
+}
+
 function getSectionLinks(section) {
   const entries = Object.entries(section);
   const links = entries
@@ -28,12 +58,31 @@ function cleanFooterPitch(pitch = "") {
     .trim();
 }
 
+function getLocalizedFooterPitch(pitch = "", locale = "en") {
+  const cleanedPitch = cleanFooterPitch(pitch);
+
+  if (locale !== "fr") return cleanedPitch;
+
+  const englishPitchPrefix =
+    "Boxcom, a digital agency, is committed to empowering clients in retaining and acquiring new customers. With over a decade of invaluable experience";
+
+  if (!cleanedPitch) return footerTranslations.fr.pitch;
+
+  if (cleanedPitch.startsWith(englishPitchPrefix)) {
+    return footerTranslations.fr.pitch;
+  }
+
+  return cleanedPitch;
+}
+
 const ListLinks = ({ links, locale }) => (
   <ul>
     {links.map((item, i) => {
       return (
         <li key={i}>
-          <Link href={formatUrl(item.link, locale)}>{item.text}</Link>
+          <Link href={formatUrl(item.link, locale)}>
+            {translateFooterText(item.text, locale)}
+          </Link>
         </li>
       );
     })}
@@ -42,8 +91,11 @@ const ListLinks = ({ links, locale }) => (
 
 const Footer = async ({ locale = "en" }) => {
   const footer = await getFooter(locale);
-  const cleanPitch = cleanFooterPitch(footer.pitch);
-  const address = "3 Rue El Jihani, Quartier Racine, Casablanca, Morocco 20250";
+  const cleanPitch = getLocalizedFooterPitch(footer.pitch, locale);
+  const address =
+    locale === "fr"
+      ? "3 Rue El Jihani, Quartier Racine, Casablanca, Maroc 20250"
+      : "3 Rue El Jihani, Quartier Racine, Casablanca, Morocco 20250";
   const phoneNumber = "+212 5 22 21 99 33";
   const phoneHref = "tel:+212522219933";
   const mapHref =
@@ -53,6 +105,22 @@ const Footer = async ({ locale = "en" }) => {
 
   const serviceLinks = getSectionLinks(footer.service_section);
   const aboutLinks = getSectionLinks(footer.about_section);
+  const t = footerTranslations[locale] || {};
+  const serviceSectionTitle =
+    locale === "fr"
+      ? t.serviceSectionTitle
+      : footer.service_section.title;
+  const aboutSectionTitle =
+    locale === "fr"
+      ? t.aboutSectionTitle
+      : footer.about_section.title;
+  const privacyPolicyLabel =
+    locale === "fr" ? t.privacyPolicy : "Privacy Policy";
+  const visitUsLabel = locale === "fr" ? t.visitUs : "Visit Us";
+  const contactButtonLabel =
+    locale === "fr"
+      ? t.contactButton
+      : footer.btn_contact.text;
 
   return (
     <footer className={`${styles.footer}`}>
@@ -134,17 +202,17 @@ const Footer = async ({ locale = "en" }) => {
         </div>
 
         <div className={styles.sectionCol}>
-          <h3>{footer.service_section.title}</h3>
+          <h3>{serviceSectionTitle}</h3>
           <ListLinks links={serviceLinks} locale={locale} />
         </div>
         <div className={styles.sectionCol}>
-          <h3>{footer.about_section.title}</h3>
+          <h3>{aboutSectionTitle}</h3>
           <ListLinks links={aboutLinks} locale={locale} />
 
           <ul>
             <li>
               <Link href={localizeUrl(urls.privacyPolicy, locale)}>
-                Privacy Policy
+                {privacyPolicyLabel}
               </Link>
             </li>
             <li className="mt-5">
@@ -152,13 +220,13 @@ const Footer = async ({ locale = "en" }) => {
                 href={formatUrl(footer.btn_contact.link, locale)}
                 className={styles.contactButton}
               >
-                {footer.btn_contact.text}
+                {contactButtonLabel}
               </Link>
             </li>
           </ul>
         </div>
         <div className={`${styles.sectionCol} ${styles.addressBlock}`}>
-          <h3>Visit Us</h3>
+          <h3>{visitUsLabel}</h3>
           <address className={styles.addressText}>{address}</address>
           <a href={phoneHref} className={styles.phoneText}>
             {phoneNumber}

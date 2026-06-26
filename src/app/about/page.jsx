@@ -20,12 +20,12 @@ import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
 import LDJsonScripts from "../../components/Seo/LDJsonScripts";
 import { getHost } from "../../lib/helpers";
-import { urls } from "../../lib/urls";
+import { localizeUrl, urls } from "../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
 
 export async function generateMetadata() {
-  const seo = await getAboutUsSEO();
+  const seo = await getAboutUsSEO("en");
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
   const title = "About Boxcom | Digital Marketing & Creative Agency in Casablanca";
@@ -45,13 +45,17 @@ export async function generateMetadata() {
     ],
     alternates: {
       ...(data.alternates || {}),
-      canonical: `${host}${urls.about}`,
+      canonical: `${host}${localizeUrl(urls.about, "en")}`,
+      languages: {
+        en: `${host}${localizeUrl(urls.about, "en")}`,
+        fr: `${host}${localizeUrl(urls.about, "fr")}`,
+      },
     },
     openGraph: {
       ...(data.openGraph || {}),
       title,
       description,
-      url: `${host}${urls.about}`,
+      url: `${host}${localizeUrl(urls.about, "en")}`,
       type: "website",
     },
     twitter: {
@@ -63,7 +67,7 @@ export async function generateMetadata() {
 }
 
 const PageAbout = async () => {
-  const header = await getHeader();
+  const header = await getHeader("en");
   const {
     dataWelcome,
     dataMeetDot,
@@ -73,21 +77,21 @@ const PageAbout = async () => {
     dataOurImpact,
     dataOurTeam,
     dataFirstStep,
-  } = await getAboutUs();
+  } = await getAboutUs("en");
 
-  const { dataExpertiseSection } = await getHomepage();
+  const { dataExpertiseSection } = await getHomepage("en");
 
-  const seo = await getAboutUsSEO();
+  const seo = await getAboutUsSEO("en");
 
   return (
     <>
       <LDJsonScripts seoData={seo.head} />
-      <Header dark data={header} />
+      <Header dark data={header} locale="en" />
       <HeroAboutUs />
       <Welcome data={dataWelcome} />
       <MeetDot data={dataMeetDot} />
       <TheStory data={dataTheStory} />
-      <BoxComAfrica data={dataBoxComAfrica} />
+      <BoxComAfrica data={dataBoxComAfrica} locale="en" />
       <Expertise
         id="page06_screen06"
         nextId="page06_screen07"

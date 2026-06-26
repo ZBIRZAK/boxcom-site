@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { urls } from "../../lib/urls";
+import { localizeUrl, urls } from "../../lib/urls";
 
 const PostContent = ({ post }) => {
   return (
@@ -19,35 +19,35 @@ const PostContent = ({ post }) => {
           Continue exploring Boxcom:
           {" "}
           <Link
-            href={urls.blog}
+            href={localizeUrl(urls.blog, "en")}
             className="font-semibold text-black underline underline-offset-4"
           >
             Blog
           </Link>
           ,{" "}
           <Link
-            href={urls.creativeContent}
+            href={localizeUrl(urls.creativeContent, "en")}
             className="font-semibold text-black underline underline-offset-4"
           >
             Creative Content
           </Link>
           ,{" "}
           <Link
-            href={urls.webDevelopment}
+            href={localizeUrl(urls.webDevelopment, "en")}
             className="font-semibold text-black underline underline-offset-4"
           >
             Web Development
           </Link>
           ,{" "}
           <Link
-            href={urls.leadGeneration}
+            href={localizeUrl(urls.leadGeneration, "en")}
             className="font-semibold text-black underline underline-offset-4"
           >
             Lead Generation
           </Link>
           , and{" "}
           <Link
-            href={urls.about}
+            href={localizeUrl(urls.about, "en")}
             className="font-semibold text-black underline underline-offset-4"
           >
             About Boxcom
