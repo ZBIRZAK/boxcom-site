@@ -23,9 +23,22 @@ export async function generateMetadata() {
   const seo = await getDigitalMarketingSEO("fr");
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
+  const title =
+    "Agence de Marketing Digital au Maroc | Social Media, Ads et Strategie | Boxcom";
+  const description =
+    "Boxcom accompagne les marques en marketing digital au Maroc avec strategie digitale, social media management, publicite en ligne et croissance mesurable.";
 
   return {
     ...data,
+    title,
+    description,
+    keywords: [
+      "agence marketing digital maroc",
+      "social media management maroc",
+      "publicite digitale casablanca",
+      "strategie digitale maroc",
+      "agence social media maroc",
+    ],
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${localizeUrl(urls.digitalMarketing, "fr")}`,
@@ -36,7 +49,14 @@ export async function generateMetadata() {
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title,
+      description,
       url: `${host}${localizeUrl(urls.digitalMarketing, "fr")}`,
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title,
+      description,
     },
   };
 }

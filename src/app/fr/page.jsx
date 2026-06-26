@@ -9,9 +9,22 @@ export async function generateMetadata() {
     const seo = await getHomepageSEO("fr");
     const data = parseSeoTagsForMetaData(seo);
     const host = getHost();
+    const title =
+      "Agence Digitale au Maroc | Marketing Digital, Contenu Creatif et Web | Boxcom";
+    const description =
+      "Boxcom, agence digitale au Maroc, accompagne les marques en marketing digital, contenu creatif, generation de leads et developpement web pour accelerer leur croissance.";
 
     return {
       ...data,
+      title,
+      description,
+      keywords: [
+        "agence digitale maroc",
+        "agence marketing digital maroc",
+        "agence creative casablanca",
+        "generation de leads maroc",
+        "developpement web maroc",
+      ],
       alternates: {
         ...(data.alternates || {}),
         canonical: `${host}${localizeUrl(urls.homepage, "fr")}`,
@@ -22,13 +35,22 @@ export async function generateMetadata() {
       },
       openGraph: {
         ...(data.openGraph || {}),
+        title,
+        description,
         url: `${host}${localizeUrl(urls.homepage, "fr")}`,
+      },
+      twitter: {
+        ...(data.twitter || {}),
+        title,
+        description,
       },
     };
   } catch {
     return {
-      title: "Boxcom",
-      description: "Boxcom",
+      title:
+        "Agence Digitale au Maroc | Marketing Digital, Contenu Creatif et Web | Boxcom",
+      description:
+        "Boxcom, agence digitale au Maroc, accompagne les marques en marketing digital, contenu creatif, generation de leads et developpement web pour accelerer leur croissance.",
     };
   }
 }

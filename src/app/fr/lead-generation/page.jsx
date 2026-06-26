@@ -25,9 +25,22 @@ export async function generateMetadata() {
   const seo = await getLeadGenerationSEO("fr");
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
+  const title =
+    "Agence de Generation de Leads au Maroc | Acquisition et Performance | Boxcom";
+  const description =
+    "Boxcom aide les entreprises a generer des leads qualifies au Maroc grace a une strategie d'acquisition, des campagnes performantes et une optimisation continue.";
 
   return {
     ...data,
+    title,
+    description,
+    keywords: [
+      "generation de leads maroc",
+      "leads qualifies casablanca",
+      "acquisition clients maroc",
+      "agence performance marketing maroc",
+      "agence generation de prospects",
+    ],
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${localizeUrl(urls.leadGeneration, "fr")}`,
@@ -38,7 +51,14 @@ export async function generateMetadata() {
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title,
+      description,
       url: `${host}${localizeUrl(urls.leadGeneration, "fr")}`,
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title,
+      description,
     },
   };
 }

@@ -7,15 +7,36 @@ import ContactForm from "../../contact/ContactForm";
 
 export async function generateMetadata() {
   const host = getHost();
+  const title = "Contactez-nous | Agence Digitale a Casablanca | Boxcom";
+  const description =
+    "Contactez Boxcom a Casablanca pour vos besoins en marketing digital, contenu creatif, generation de leads et developpement web au Maroc.";
 
   return {
-    title: "Contactez-nous | Boxcom",
+    title,
+    description,
+    keywords: [
+      "contact boxcom",
+      "agence digitale casablanca contact",
+      "contact marketing digital maroc",
+      "contact developpement web maroc",
+      "contact generation de leads maroc",
+    ],
     alternates: {
       canonical: `${host}${localizeUrl(urls.contact, "fr")}`,
       languages: {
         en: `${host}${localizeUrl(urls.contact, "en")}`,
         fr: `${host}${localizeUrl(urls.contact, "fr")}`,
       },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${host}${localizeUrl(urls.contact, "fr")}`,
+      type: "website",
+    },
+    twitter: {
+      title,
+      description,
     },
   };
 }

@@ -26,9 +26,22 @@ export async function generateMetadata() {
   const seo = await getBlogSEO("fr");
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
+  const title =
+    "Blog Boxcom | Marketing Digital, Contenu Creatif et Developpement Web";
+  const description =
+    "Explorez le blog Boxcom pour des conseils en marketing digital, contenu creatif, generation de leads et developpement web au Maroc.";
 
   return {
     ...data,
+    title,
+    description,
+    keywords: [
+      "blog marketing digital maroc",
+      "blog contenu creatif",
+      "blog developpement web",
+      "blog generation de leads",
+      "conseils marketing digital casablanca",
+    ],
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${localizeUrl(urls.blog, "fr")}`,
@@ -39,7 +52,14 @@ export async function generateMetadata() {
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title,
+      description,
       url: `${host}${localizeUrl(urls.blog, "fr")}`,
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title,
+      description,
     },
   };
 }

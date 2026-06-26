@@ -28,9 +28,21 @@ export async function generateMetadata() {
   const seo = await getAboutUsSEO("fr");
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
+  const title = "A Propos de Boxcom | Agence Digitale et Creative a Casablanca";
+  const description =
+    "Decouvrez Boxcom, agence digitale et creative a Casablanca, notre approche, notre experience et la maniere dont nous aidons les marques a gagner en visibilite et en croissance.";
 
   return {
     ...data,
+    title,
+    description,
+    keywords: [
+      "a propos boxcom",
+      "agence digitale casablanca",
+      "agence creative maroc",
+      "agence communication maroc",
+      "equipe marketing digital maroc",
+    ],
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${localizeUrl(urls.about, "fr")}`,
@@ -41,7 +53,14 @@ export async function generateMetadata() {
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title,
+      description,
       url: `${host}${localizeUrl(urls.about, "fr")}`,
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title,
+      description,
     },
   };
 }

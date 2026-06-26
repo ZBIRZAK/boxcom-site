@@ -23,9 +23,22 @@ export async function generateMetadata() {
   const seo = await getCreativeContentSEO("fr");
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
+  const title =
+    "Agence de Contenu Creatif au Maroc | Content Marketing, Design et Video | Boxcom";
+  const description =
+    "Boxcom cree des strategies de contenu creatif au Maroc: content marketing, design graphique, production video et diffusion de contenus pour renforcer votre marque.";
 
   return {
     ...data,
+    title,
+    description,
+    keywords: [
+      "agence contenu creatif maroc",
+      "content marketing maroc",
+      "design graphique casablanca",
+      "production video maroc",
+      "creation de contenu marque",
+    ],
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${localizeUrl(urls.creativeContent, "fr")}`,
@@ -36,7 +49,14 @@ export async function generateMetadata() {
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title,
+      description,
       url: `${host}${localizeUrl(urls.creativeContent, "fr")}`,
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title,
+      description,
     },
   };
 }

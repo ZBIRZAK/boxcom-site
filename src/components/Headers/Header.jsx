@@ -199,7 +199,7 @@ const LanguageSwitch = ({ locale, light = false, scrolled = false }) => {
   return (
     <div
       ref={menuRef}
-      className={clsx("relative hidden md:flex items-center self-center z-[9999] ml-3")}
+      className={clsx("relative hidden md:flex items-center self-center z-[9999] ml-3 mr-3 lg:mr-4")}
     >
       <button
         type="button"

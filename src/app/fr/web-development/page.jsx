@@ -24,9 +24,22 @@ export async function generateMetadata() {
   const seo = await getWebDevelopmentSEO("fr");
   const data = parseSeoTagsForMetaData(seo);
   const host = getHost();
+  const title =
+    "Agence de Developpement Web au Maroc | Sites Web, SEO et SEA | Boxcom";
+  const description =
+    "Boxcom conçoit des sites web performants au Maroc avec developpement web, SEO, SEA et maintenance pour transformer votre trafic en opportunites commerciales.";
 
   return {
     ...data,
+    title,
+    description,
+    keywords: [
+      "agence developpement web maroc",
+      "creation site web casablanca",
+      "seo maroc",
+      "sea maroc",
+      "maintenance site web maroc",
+    ],
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${localizeUrl(urls.webDevelopment, "fr")}`,
@@ -37,7 +50,14 @@ export async function generateMetadata() {
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title,
+      description,
       url: `${host}${localizeUrl(urls.webDevelopment, "fr")}`,
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title,
+      description,
     },
   };
 }
