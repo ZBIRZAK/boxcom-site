@@ -39,6 +39,30 @@ function getCanonicalHostname() {
   return fallback;
 }
 
+function stripHomepageTrackingParams(url) {
+  const cleanedUrl = url.clone();
+  const homepagePaths = new Set([
+    localizeUrl(urls.homepage, "fr"),
+    localizeUrl(urls.homepage, "en"),
+    "/fr",
+  ]);
+  const removableParams = ["trk", "rel"];
+  let changed = false;
+
+  if (!homepagePaths.has(cleanedUrl.pathname.toLowerCase())) {
+    return { changed: false, url: cleanedUrl };
+  }
+
+  for (const param of removableParams) {
+    if (cleanedUrl.searchParams.has(param)) {
+      cleanedUrl.searchParams.delete(param);
+      changed = true;
+    }
+  }
+
+  return { changed, url: cleanedUrl };
+}
+
 export function middleware(request) {
   const url = request.nextUrl.clone();
   const host = getHostname(request.headers.get("host") || url.host);
@@ -85,11 +109,14 @@ export function middleware(request) {
   const needsIndexPhpRedirect = isIndexPhp;
   const needsInternalFrenchRedirect = !!matchedInternalFrenchRoute;
   const needsLegacyEnglishRedirect = !!matchedLegacyEnglishRoute;
+  const homepageTrackingCleanup = stripHomepageTrackingParams(url);
+  const needsHomepageTrackingRedirect = homepageTrackingCleanup.changed;
 
   if (
     !needsProtocolRedirect &&
     !needsHostRedirect &&
     !needsIndexPhpRedirect &&
+    !needsHomepageTrackingRedirect &&
     !needsInternalFrenchRedirect &&
     !needsLegacyEnglishRedirect &&
     !matchedPublicFrenchRoute &&
@@ -131,6 +158,10 @@ export function middleware(request) {
   if (shouldCanonicalize) {
     url.protocol = "https";
     url.host = canonicalHost;
+  }
+
+  if (needsHomepageTrackingRedirect) {
+    url.search = homepageTrackingCleanup.url.search;
   }
 
   // Legacy WP-style URLs should canonicalize to homepage.
