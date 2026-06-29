@@ -26,7 +26,7 @@ const ZigZag = () => {
   }, []);
   return (
     <div
-      className="absolute top-[37%] md:top-[58%] right-[35%] md:right-[30%] w-[33%] md:w-[17%]"
+      className="absolute top-[39%] right-[32%] w-[36%] md:top-[58%] md:right-[30%] md:w-[17%]"
       ref={zigzagRef}
     >
       <img

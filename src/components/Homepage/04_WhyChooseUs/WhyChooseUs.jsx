@@ -96,7 +96,7 @@ const WhyChooseUs = ({ data }) => {
   return (
     <section
       id="page01_screen04"
-      className="relative min-h-[120vh] md:min-h-screen w-full z-30"
+      className="relative min-h-[122svh] overflow-hidden md:min-h-screen w-full z-30"
       ref={sectionRef}
     >
       <img
@@ -105,8 +105,63 @@ const WhyChooseUs = ({ data }) => {
         className="absolute w-full h-full object-cover object-center"
       />
 
+      <div className="absolute inset-0 bg-black/25 md:hidden" />
+
+      <div className="relative z-10 px-5 pb-[96px] pt-[96px] text-white md:hidden">
+        <div
+          className="relative mx-auto mb-8 h-[360px] max-w-[360px] text-transparent"
+          style={{
+            fontFamily:
+              "Impact, \"Anton\", Haettenschweiler, 'Arial Narrow Bold', sans-serif",
+            WebkitTextStroke: "2px white",
+            textStroke: "2px white",
+          }}
+        >
+          <div className="absolute left-1/2 top-0 -translate-x-1/2 text-[5.2rem] leading-none">
+            {data.why.toUpperCase()}
+          </div>
+          <div className="absolute left-1/2 top-[6.3rem] -translate-x-1/2 text-[5.9rem] leading-none">
+            {data.choose.toUpperCase()}
+          </div>
+          <div className="absolute left-1/2 top-[12.9rem] -translate-x-1/2 text-[5.2rem] leading-none">
+            {data.us.toUpperCase()}
+          </div>
+
+          <div className="absolute left-1/2 top-[9.4rem] w-[150px] -translate-x-1/2">
+            <img
+              src="/images/shapes/zigzag-pink.svg"
+              alt=""
+              aria-hidden="true"
+              className="w-full"
+            />
+          </div>
+        </div>
+
+        <div
+          className="mb-6 text-[1rem] italic leading-[1.65] [&_p]:mb-4 [&_p]:leading-[1.65]"
+          dangerouslySetInnerHTML={{ __html: data.paragraph }}
+        ></div>
+
+        <h3 className="max-w-[11ch] text-[2.1rem] font-bold leading-[1.05]">
+          {data.title}
+        </h3>
+
+        <div className="mt-5">
+          <Button2
+            dark={true}
+            variant="outline"
+            size="lg"
+            end="arrow"
+            className="w-full justify-center"
+            onClick={() => router.push(formatUrl(data.button_link))}
+          >
+            {data.ct_button}
+          </Button2>
+        </div>
+      </div>
+
       <div
-        className="w-full h-screen absolute text-transparent text-[5rem] md:text-[10rem]"
+        className="absolute inset-x-0 top-0 hidden h-[72svh] text-transparent text-[4.2rem] md:block md:h-screen md:text-[10rem]"
         style={{
           fontFamily:
             "Impact, \"Anton\", Haettenschweiler, 'Arial Narrow Bold', sans-serif",
@@ -117,13 +172,13 @@ const WhyChooseUs = ({ data }) => {
         {/* WHY */}
         <div
           ref={whyRef}
-          className="absolute top-[10%] md:top-[19%] left-[10%]"
+          className="absolute top-[19%] left-[10%]"
         >
           {data.why.toUpperCase()}
         </div>
         <div
           ref={why2Ref}
-          className="absolute top-[10%] md:top-[19%] left-[10%] opacity-0"
+          className="absolute top-[19%] left-[10%] opacity-0"
         >
           {data.why.toUpperCase()}
         </div>
@@ -131,7 +186,7 @@ const WhyChooseUs = ({ data }) => {
         {/* CHOOSE */}
         <div
           ref={chooseRef}
-          className="absolute top-[30%] md:top-[32%] lg:top-[36%] left-1/2 md:left-[62%] lg:left-[58%] -translate-x-1/2"
+          className="absolute top-[32%] lg:top-[36%] left-[62%] lg:left-[58%] -translate-x-1/2"
         >
           {data.choose.toUpperCase()}
         </div>
@@ -139,30 +194,32 @@ const WhyChooseUs = ({ data }) => {
         {/* US */}
         <div
           ref={usRef}
-          className="absolute top-[50%] md:top-[68%] right-[10%] md:right-[15%]"
+          className="absolute top-[68%] right-[15%]"
         >
           {data.us.toUpperCase()}
         </div>
         <div
           ref={us2Ref}
-          className="absolute top-[50%] md:top-[68%] right-[10%] md:right-[15%] opacity-0"
+          className="absolute top-[68%] right-[15%] opacity-0"
         >
           {data.us.toUpperCase()}
         </div>
       </div>
 
-      <ZigZag />
+      <div className="hidden md:block">
+        <ZigZag />
+      </div>
 
-      <div className="absolute top-[61%] left-0 w-full px-3 color-white z-2 md:top-auto md:bottom-10 md:left-[8%] md:w-[34%] md:max-w-[460px] md:px-0 lg:bottom-16 lg:w-[38%] lg:max-w-[520px]">
+      <div className="absolute bottom-10 left-[8%] hidden w-[34%] max-w-[460px] px-0 text-white z-2 md:block lg:bottom-16 lg:w-[38%] lg:max-w-[520px]">
         <div
           ref={paragraphRef}
-          className="mb-4 text-[0.95rem] italic leading-[1.55] md:text-[0.95rem] md:leading-[1.6] lg:text-[1rem] lg:leading-[1.7] [&_p]:mb-3 [&_p]:leading-[1.55] md:[&_p]:leading-[1.6] lg:[&_p]:leading-[1.7]"
+          className="mb-4 text-[0.95rem] italic leading-[1.6] lg:text-[1rem] lg:leading-[1.7] [&_p]:mb-3 [&_p]:leading-[1.6] lg:[&_p]:leading-[1.7]"
           dangerouslySetInnerHTML={{ __html: data.paragraph }}
         ></div>
-        <h3 className="mt-2 max-w-[18ch] text-[1.6rem] font-bold leading-[1.15] md:max-w-[16ch] md:text-[2rem] lg:max-w-[20ch] lg:text-[2.8rem] md:leading-[1.12]">
+        <h3 className="mt-2 max-w-[16ch] text-[2rem] font-bold leading-[1.12] lg:max-w-[20ch] lg:text-[2.8rem]">
           {data.title}
         </h3>
-        <div className="relative mt-4 md:mt-6">
+        <div className="relative mt-6">
           <Button2
             dark={true}
             variant="outline"
