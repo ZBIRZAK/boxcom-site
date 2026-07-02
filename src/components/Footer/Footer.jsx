@@ -6,22 +6,24 @@ import Link from "next/link";
 const footerTranslations = {
   fr: {
     serviceSectionTitle: "Nos Services",
-    aboutSectionTitle: "A Propos",
-    privacyPolicy: "Politique de Confidentialite",
+    aboutSectionTitle: "À Propos",
+    privacyPolicy: "Politique de Confidentialité",
     visitUs: "Venez Nous Voir",
     contactButton: "Contactez-nous",
     pitch:
       "Boxcom, agence digitale, accompagne ses clients dans la fidelisation et l'acquisition de nouveaux clients. Avec plus d'une decennie d'experience precieuse.",
     linkText: {
+      home: "Accueil",
       "digital marketing": "Marketing Digital",
-      "creative content": "Contenu Creatif",
-      "web development": "Developpement Web",
-      "lead generation": "Generation de Leads",
-      "about us": "A Propos de Nous",
-      about: "A Propos",
+      "creative content": "Contenu Créatif",
+      "web development": "Développement Web",
+      "lead generation": "Génération de Leads",
+      "about us": "À Propos de Nous",
+      about: "À Propos",
       blog: "Blog",
       contact: "Contactez-nous",
-      "privacy policy": "Politique de Confidentialite",
+      "contact us": "Contactez-nous",
+      "privacy policy": "Politique de Confidentialité",
     },
   },
 };
@@ -31,6 +33,25 @@ function translateFooterText(text = "", locale = "en") {
 
   const normalized = text.trim().toLowerCase();
   return footerTranslations.fr.linkText[normalized] || text;
+}
+
+function translateFooterItem(item, locale = "en") {
+  if (locale !== "fr") return item.text;
+
+  const resolvedHref = formatUrl(item.link, locale);
+  const routeLabels = {
+    [localizeUrl(urls.homepage, "fr")]: "Accueil",
+    [localizeUrl(urls.digitalMarketing, "fr")]: "Marketing Digital",
+    [localizeUrl(urls.creativeContent, "fr")]: "Contenu Créatif",
+    [localizeUrl(urls.webDevelopment, "fr")]: "Développement Web",
+    [localizeUrl(urls.leadGeneration, "fr")]: "Génération de Leads",
+    [localizeUrl(urls.about, "fr")]: "À Propos de Nous",
+    [localizeUrl(urls.contact, "fr")]: "Contactez-nous",
+    [localizeUrl(urls.privacyPolicy, "fr")]: "Politique de Confidentialité",
+    [localizeUrl(urls.blog, "fr")]: "Blog",
+  };
+
+  return routeLabels[resolvedHref] || translateFooterText(item.text, locale);
 }
 
 function getSectionLinks(section) {
@@ -75,13 +96,47 @@ function getLocalizedFooterPitch(pitch = "", locale = "en") {
   return cleanedPitch;
 }
 
+function formatFooterPitchMarkup(pitch = "") {
+  const trimmedPitch = pitch.trim();
+
+  if (!trimmedPitch) return "";
+
+  const hasHtmlTag = /<[^>]+>/.test(trimmedPitch);
+  return hasHtmlTag ? trimmedPitch : `<p>${trimmedPitch}</p>`;
+}
+
+function getFooterServiceLinks(links = [], locale = "en") {
+  const withoutLeadGeneration = links.filter((item) => {
+    const resolvedHref = formatUrl(item.link, locale);
+    return (
+      resolvedHref !== localizeUrl(urls.leadGeneration, "fr") &&
+      resolvedHref !== localizeUrl(urls.leadGeneration, "en")
+    );
+  });
+
+  return [
+    ...withoutLeadGeneration,
+    {
+      text: "Boxcom Africa",
+      link: "https://boxcom-africa.com/",
+    },
+  ];
+}
+
 const ListLinks = ({ links, locale }) => (
   <ul>
     {links.map((item, i) => {
+      const href = formatUrl(item.link, locale);
+      const isExternal = /^https?:\/\//i.test(href);
+
       return (
         <li key={i}>
-          <Link href={formatUrl(item.link, locale)}>
-            {translateFooterText(item.text, locale)}
+          <Link
+            href={href}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+          >
+            {translateFooterItem(item, locale)}
           </Link>
         </li>
       );
@@ -92,6 +147,7 @@ const ListLinks = ({ links, locale }) => (
 const Footer = async ({ locale = "en" }) => {
   const footer = await getFooter(locale);
   const cleanPitch = getLocalizedFooterPitch(footer.pitch, locale);
+  const footerPitchMarkup = formatFooterPitchMarkup(cleanPitch);
   const address =
     locale === "fr"
       ? "3 Rue El Jihani, Quartier Racine, Casablanca, Maroc 20250"
@@ -103,7 +159,10 @@ const Footer = async ({ locale = "en" }) => {
   const mapEmbedSrc =
     "https://www.google.com/maps?ll=33.5873901,-7.6363122&q=BOXCOM&z=17&output=embed";
 
-  const serviceLinks = getSectionLinks(footer.service_section);
+  const serviceLinks = getFooterServiceLinks(
+    getSectionLinks(footer.service_section),
+    locale
+  );
   const aboutLinks = getSectionLinks(footer.about_section);
   const t = footerTranslations[locale] || {};
   const serviceSectionTitle =
@@ -135,7 +194,10 @@ const Footer = async ({ locale = "en" }) => {
               className={styles.brandLogo}
             />
           </Link>
-          <div dangerouslySetInnerHTML={{ __html: cleanPitch }} />
+          <div
+            className={styles.pitch}
+            dangerouslySetInnerHTML={{ __html: footerPitchMarkup }}
+          />
 
           <div className={styles.socialIcons}>
             {footer.link_instagram && (

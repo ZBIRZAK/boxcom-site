@@ -25,7 +25,7 @@ export default function LetsMakeItHappen({ data }) {
   return (
     <section
       id="page10_letsMakeItHappen"
-      className="relative !h-screen flex justify-end z-30"
+      className="relative min-h-screen md:!h-screen flex justify-end overflow-hidden z-30"
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
@@ -40,7 +40,7 @@ export default function LetsMakeItHappen({ data }) {
         <Versbleu />
         <Versvert />
 
-        <div className="absolute bottom-0 -left-[18%] w-[125%] max-w-none md:left-17 md:w-[clamp(660px,50vw,1200px)]">
+        <div className="absolute bottom-0 -left-[12%] w-[135%] max-w-none md:-left-[18%] md:w-[125%] md:max-w-none lg:left-17 lg:w-[clamp(660px,50vw,1200px)]">
           <img
             className="block w-full h-auto object-left-bottom origin-bottom-left "
             src="/images/homepage/dancing-girl.webp"
@@ -67,7 +67,7 @@ export default function LetsMakeItHappen({ data }) {
         </div>
       </div>
 
-      <div className="z-2 max-w-full md:max-w-[50%] lg:max-w-[40%] px-[2%] xl:mx-10 flex flex-col items-center justify-center text-center md:pt-[80px]">
+      <div className="z-2 max-w-full md:max-w-[50%] lg:max-w-[40%] px-4 md:px-[2%] xl:mx-10 flex flex-col items-center justify-center text-center py-16 md:py-0 md:pt-[80px]">
         <div className="relative">
           <div className="relative inline-block mb-[10vh] md:mb-0">
             <h2
@@ -80,7 +80,7 @@ export default function LetsMakeItHappen({ data }) {
           </div>
         </div>
 
-        <div className="md:mt-0 mt-25 md:mr-5 md:w-[125%] w-full">
+        <div className="md:mt-0 mt-14 md:mr-5 md:w-[125%] w-full">
           <p dangerouslySetInnerHTML={{ __html: data.text }} className="hero-text"></p>
 
           <div className="flex md:gap-3 gap-2 justify-center mt-[2em]">

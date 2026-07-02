@@ -127,13 +127,13 @@ const BecauseYourBrand = ({
   return (
     <div className="z-20 left-[20%] text-center" style={{ display: "contents" }}>
       <div
-        className={`absolute md:text-[2rem] text-1xl z-10 text-center md:top-[16%] top-[17%] w-full ${isMobile ? "opacity-100" : "opacity-0"}`}
+        className={`absolute md:text-[2rem] text-1xl z-30 text-center md:top-[14.1%] top-[15.1%] w-full leading-[1.2] pt-1 md:pt-2 overflow-visible ${isMobile ? "opacity-100" : "opacity-0"}`}
         ref={refTxt1}
       >
         {text1}
       </div>
       <div
-        className={`absolute left-1/2 -translate-x-1/2 w-[92%] md:w-[96%] text-center md:top-[20.4%] top-[22.6%] md:text-[clamp(4.5rem,10vw,8rem)] text-[3rem] leading-[0.95] z-19 ${anton.className} uppercase whitespace-nowrap ${isMobile ? "opacity-100" : "opacity-0"}`}
+        className={`absolute left-1/2 -translate-x-1/2 w-[92%] md:w-[96%] text-center md:top-[21.6%] top-[22.2%] md:text-[clamp(4.5rem,10vw,8rem)] text-[3rem] leading-[0.95] z-19 ${anton.className} uppercase whitespace-nowrap ${isMobile ? "opacity-100" : "opacity-0"}`}
         ref={refTxt2}
       >
         {text2}

@@ -10,20 +10,26 @@ export async function generateMetadata() {
     const data = parseSeoTagsForMetaData(seo);
     const host = getHost();
     const title =
-      "Agence Digitale au Maroc | Marketing Digital, Contenu Creatif et Web | Boxcom";
+      "Agence de Marketing Digital au Maroc | Contenu Creatif & Developpement Web | Boxcom";
     const description =
-      "Boxcom, agence digitale au Maroc, accompagne les marques en marketing digital, contenu creatif, generation de leads et developpement web pour accelerer leur croissance.";
+      "Boxcom est une agence de marketing digital a Casablanca qui allie creativite et performance. Strategie de contenu, social media, developpement web et e-commerce au Maroc.";
 
     return {
       ...data,
       title,
       description,
       keywords: [
-        "agence digitale maroc",
         "agence marketing digital maroc",
-        "agence creative casablanca",
-        "generation de leads maroc",
+        "agence digitale maroc",
+        "agence digitale casablanca",
+        "strategie de contenu maroc",
+        "social media maroc",
+        "community management maroc",
+        "creation de contenu digital maroc",
         "developpement web maroc",
+        "creation site web maroc",
+        "site e-commerce maroc",
+        "referencement naturel maroc",
       ],
       alternates: {
         ...(data.alternates || {}),
@@ -37,6 +43,7 @@ export async function generateMetadata() {
         ...(data.openGraph || {}),
         title,
         description,
+        locale: "fr_MA",
         url: `${host}${localizeUrl(urls.homepage, "fr")}`,
       },
       twitter: {
@@ -48,9 +55,9 @@ export async function generateMetadata() {
   } catch {
     return {
       title:
-        "Agence Digitale au Maroc | Marketing Digital, Contenu Creatif et Web | Boxcom",
+        "Agence de Marketing Digital au Maroc | Contenu Creatif & Developpement Web | Boxcom",
       description:
-        "Boxcom, agence digitale au Maroc, accompagne les marques en marketing digital, contenu creatif, generation de leads et developpement web pour accelerer leur croissance.",
+        "Boxcom est une agence de marketing digital a Casablanca qui allie creativite et performance. Strategie de contenu, social media, developpement web et e-commerce au Maroc.",
     };
   }
 }

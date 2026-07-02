@@ -55,7 +55,7 @@ const NarrativeSection2 = ({ data }) => {
       >
         {/* Colonne gauche: image des 2 femmes */}
         <div
-          className="overflow-hidden relative h-screen"
+          className="overflow-hidden relative h-[72svh] min-h-[420px] md:h-screen"
           id="cont-img-women-wih-tea"
         >
           {/* Mobile title */}

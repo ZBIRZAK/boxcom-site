@@ -55,7 +55,7 @@ const ArtSection = ({ data }) => {
       </div>
 
       <div
-        className="overflow-hidden order-2 relative h-screen"
+        className="overflow-hidden order-2 relative h-[72svh] min-h-[420px] md:h-screen"
         id="cont-img-man-in-painting"
       >
         <img

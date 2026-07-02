@@ -45,7 +45,7 @@ const Lately = ({
   return (
     <section
       id="page01_screen11"
-      className="relative w-full !h-screen z-9 "
+      className="relative w-full min-h-screen md:!h-screen h-auto pb-12 md:pb-0 z-9"
       ref={sectionRef}
     >
       <img
@@ -74,6 +74,7 @@ const Lately = ({
           variant="outline"
           size="xl"
           end="arrow"
+          className="mb-4 md:mb-0"
           onClick={() => {
             document.location = data.cta_link;
           }}

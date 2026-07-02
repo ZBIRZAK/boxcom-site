@@ -111,22 +111,26 @@ const SliderTestimonials = ({ testimonials }) => {
         className="max-w-[300px] md:max-w-[1000px] !h-full"
       >
         {testimonials.map((item, i) => (
-          <SwiperSlide key={i}>
+          <SwiperSlide key={i} className="!h-auto">
             {/* <div className="grid grid-cols-1 md:[grid-template-columns:repeat(3,minmax(260px,1fr))] gap-8 w-full mt-[5%]"> */}
             {/* <div className="flex  gap-8 w-full mt-[5%]"> */}
             {/* {pageItems.map((item, j) => ( */}
             <article
               key={item.name}
-              className="h-[60vh] bg-[#f8026980] text-white rounded-[14px] py-6 px-3 shadow-[0_10px_30px_rgba(0,0,0,0.25)] border-2 border-white"
+              className="h-full min-h-[360px] bg-[#f8026980] text-white rounded-[14px] py-6 px-4 shadow-[0_10px_30px_rgba(0,0,0,0.25)] border-2 border-white flex flex-col"
               aria-label="Testimonial"
             >
-              <h3 className="tracking-[0.2px] mb-[0.35rem] text-[1.7rem] font-[impact,anton,sans-serif] leading-[1em]">
-                {item.name}
-              </h3>
-              <p className="italic text-sm h-[44px] overflow-hidden">
-                {item.job}
+              <div className="min-h-[88px] md:min-h-[96px]">
+                <h3 className="tracking-[0.2px] mb-[0.35rem] text-[1.7rem] font-[impact,anton,sans-serif] leading-[1em]">
+                  {item.name}
+                </h3>
+                <p className="italic text-sm min-h-[28px] md:min-h-[32px]">
+                  {item.job}
+                </p>
+              </div>
+              <p className="mt-3 text-[0.98rem] leading-[1.65]">
+                &ldquo;{item.quote}&rdquo;
               </p>
-              <p className="mt-5">&ldquo;{item.quote}&rdquo;</p>
             </article>
             {/* ))} */}
             {/* </div> */}

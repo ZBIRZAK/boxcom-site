@@ -55,20 +55,16 @@ const BoxComAfrica = ({ data, locale = "en" }) => {
       id="page06_screen05"
       className="relative section-light !bg-[#F5B7CC] md:min-h-screen !h-auto overflow-hidden"
     >
-      {/* Background pour desktop */}
       <img
         src="/images/about_us/bg-boxcom-africa.webp"
         className="absolute md:block hidden w-full h-full object-cover object-[center_40%]"
       />
-      {/* Background Yin/Yang pour mobile */}
       <img
         src="/images/about_us/yin-yang.webp"
         className="md:hidden mt-30 block absolute w-full  object-cover"
       />
-      {/* Ligne d'orizon (enfin on imagine) rose.... oui, oui : ROSE */}
       <div className="absolute md:hidden block top-[41.5%] w-full h-[2px] bg-[#EA389B] shadow-[0_0_10px_2px_rgba(234,56,155,0.6)]" />
 
-      {/* Two Entities, One Mission */}
       <Title1
         html={data.mobile_title}
         className={
@@ -76,9 +72,7 @@ const BoxComAfrica = ({ data, locale = "en" }) => {
         }
       />
 
-      {/* Ici le container des 3 colonnes */}
       <div className="relative grid md:grid-cols-3 grid-cols-1 pt-[70px]">
-        {/* Colonne gauche */}
         <div className="md:order-1 order-2 md:mt-0 mt-[40%]">
           <LogoContainer>
             <img
@@ -100,7 +94,6 @@ const BoxComAfrica = ({ data, locale = "en" }) => {
           </div>
         </div>
 
-        {/* La fille au centre */}
         <div className="relative md:mt-0  mt-15  flex justify-center pt-10 md:order-2 order-1">
           <img
             src="/images/about_us/girl2.webp"
@@ -126,7 +119,6 @@ const BoxComAfrica = ({ data, locale = "en" }) => {
           />
         </div>
 
-        {/* Colonne droite */}
         <div className="order-3">
           <LogoContainer>
             <img

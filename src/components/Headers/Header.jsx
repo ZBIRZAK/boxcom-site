@@ -16,11 +16,11 @@ import { getLocaleFromPathname, normalizeLocale } from "../../lib/locale";
 
 const frenchNavLabelMap = {
   "digital marketing": "Marketing Digital",
-  "creative content": "Contenu Creatif",
-  "web development": "Developpement Web",
-  "lead generation": "Generation de Leads",
-  "about us": "A Propos de Nous",
-  about: "A Propos",
+  "creative content": "Contenu Créatif",
+  "web development": "Développement Web",
+  "lead generation": "Génération de Leads",
+  "about us": "À Propos de Nous",
+  about: "À Propos",
   contact: "Contactez-nous",
   "contact us": "Contactez-nous",
   home: "Accueil",
