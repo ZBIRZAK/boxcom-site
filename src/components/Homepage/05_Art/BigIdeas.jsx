@@ -55,7 +55,7 @@ const BigIdeas = ({ data, paragraphStyles }) => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center md:order-1 order-2 md:pt-[70px] pt-[30px] mb-6" style={{ textAlign: "justify" }}>
+    <div className="flex flex-col justify-center md:order-1 order-2 md:pt-[70px] pt-[30px] mb-6">
       {/* <div className=""> */}
       <h2 className="ml-4 title !mb-0  md:block hidden">{data.title1}</h2>
 
@@ -67,7 +67,11 @@ const BigIdeas = ({ data, paragraphStyles }) => {
         </h2>
 
 
-      <div ref={refContents} className="opacity-0 space-y-3  p-5 list">
+      <div
+        ref={refContents}
+        className="opacity-0 space-y-3 p-5 list"
+        style={{ textAlign: "justify" }}
+      >
         <div
           className="subtitle"
           dangerouslySetInnerHTML={{ __html: data.intro }}

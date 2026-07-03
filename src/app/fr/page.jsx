@@ -1,4 +1,9 @@
-import { getHeader, getHomepage, getHomepageSEO } from "../../lib/BackendContents";
+import {
+  getAboutUs,
+  getHeader,
+  getHomepage,
+  getHomepageSEO,
+} from "../../lib/BackendContents";
 import { getHost } from "../../lib/helpers";
 import { parseSeoTagsForMetaData } from "../../lib/seo";
 import { localizeUrl, urls } from "../../lib/urls";
@@ -63,11 +68,20 @@ export async function generateMetadata() {
 }
 
 export default async function HomepageFr() {
-  const [header, homepage, seo] = await Promise.all([
+  const [header, homepage, seo, aboutUs] = await Promise.all([
     getHeader("fr"),
     getHomepage("fr"),
     getHomepageSEO("fr"),
+    getAboutUs("fr"),
   ]);
 
-  return <HomepagePage header={header} homepage={homepage} seo={seo} locale="fr" />;
+  return (
+    <HomepagePage
+      header={header}
+      homepage={homepage}
+      seo={seo}
+      locale="fr"
+      homepageBoxComAfrica={aboutUs.dataBoxComAfrica}
+    />
+  );
 }

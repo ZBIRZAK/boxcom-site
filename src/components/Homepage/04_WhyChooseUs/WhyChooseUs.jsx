@@ -172,13 +172,13 @@ const WhyChooseUs = ({ data }) => {
         {/* WHY */}
         <div
           ref={whyRef}
-          className="absolute top-[19%] left-[10%]"
+          className="absolute top-[18%] left-[10%]"
         >
           {data.why.toUpperCase()}
         </div>
         <div
           ref={why2Ref}
-          className="absolute top-[19%] left-[10%] opacity-0"
+          className="absolute top-[18%] left-[10%] opacity-0"
         >
           {data.why.toUpperCase()}
         </div>
@@ -186,7 +186,7 @@ const WhyChooseUs = ({ data }) => {
         {/* CHOOSE */}
         <div
           ref={chooseRef}
-          className="absolute top-[32%] lg:top-[36%] left-[62%] lg:left-[58%] -translate-x-1/2"
+          className="absolute top-[34%] lg:top-[37%] left-[62%] lg:left-[58%] -translate-x-1/2"
         >
           {data.choose.toUpperCase()}
         </div>
@@ -194,13 +194,13 @@ const WhyChooseUs = ({ data }) => {
         {/* US */}
         <div
           ref={usRef}
-          className="absolute top-[68%] right-[15%]"
+          className="absolute top-[71%] right-[15%]"
         >
           {data.us.toUpperCase()}
         </div>
         <div
           ref={us2Ref}
-          className="absolute top-[68%] right-[15%] opacity-0"
+          className="absolute top-[71%] right-[15%] opacity-0"
         >
           {data.us.toUpperCase()}
         </div>

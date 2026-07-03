@@ -87,6 +87,10 @@ function isBoxcomAfricaService(contents = {}) {
   );
 }
 
+function stripBoxcomAfricaPrefix(title = "") {
+  return (title || "").replace(/^boxcom africa\s*:\s*/i, "").trim();
+}
+
 function parseExternalCta(label = "") {
   const normalized = (label || "").trim();
   const spanMatch = normalized.match(/^(.*?)<span>(.*?)<\/span>$/i);
@@ -118,36 +122,8 @@ const ExternalServiceCard = ({ contents, locale }) => {
       rel="noopener noreferrer"
       className={`${styles.box} ${styles.boxAfrica}`}
     >
-      <div className={styles.africaVisual}>
-        <img
-          src="/images/about_us/yin-yang.webp"
-          alt=""
-          aria-hidden="true"
-          className={styles.africaVisualBg}
-        />
-        <div className={styles.africaVisualOverlay} />
-        <div className={styles.africaGlowLine} />
-        <div className={styles.africaLogoRow}>
-          <div className={styles.africaLogoChip}>
-            <img
-              src="/Logos_Boxcom/logo-new-white-353.webp"
-              alt="Boxcom"
-              className={styles.africaLogoPrimary}
-            />
-          </div>
-          <div className={styles.africaDivider} />
-          <div className={`${styles.africaLogoChip} ${styles.africaLogoChipAlt}`}>
-            <img
-              src="/Logos_Boxcom/logo-boxcom-africa.webp"
-              alt="Boxcom Africa"
-              className={styles.africaLogoSecondary}
-            />
-          </div>
-        </div>
-      </div>
-
       <h3 className={`${styles.boxTitle} ${styles.boxAfricaTitle} title2 !text-[#ff0062]`}>
-        {contents.title}
+        {stripBoxcomAfricaPrefix(contents.title)}
       </h3>
       <p className={`${styles.boxSubtitle} subtitle2`}>{contents.subtitle}</p>
       <div
@@ -158,7 +134,7 @@ const ExternalServiceCard = ({ contents, locale }) => {
       />
       <div className={styles.boxButtonRow}>
         <div className={styles.externalCtaWrap}>
-          <p className={styles.externalCtaEyebrow}>{eyebrow}</p>
+          {eyebrow ? <p className={styles.externalCtaEyebrow}>{eyebrow}</p> : null}
           <span className={styles.externalCta}>
             <span className={styles.externalCtaMain}>{mainCta}</span>
             <ExternalLink size={18} strokeWidth={2.3} />
@@ -217,23 +193,6 @@ const OurServices = ({ data, locale }) => {
             return <Service key={i} contents={content} locale={locale} />;
           })}
         </div>
-        <p className="mx-auto mt-8 max-w-[760px] text-center text-balance text-white/85 text-base leading-7">
-          {copy.intro}{" "}
-          <Link
-            href={localizeUrl(urls.about, locale)}
-            className="underline underline-offset-4"
-          >
-            {copy.about}
-          </Link>{" "}
-          {copy.middle}{" "}
-          <Link
-            href={localizeUrl(urls.blog, locale)}
-            className="underline underline-offset-4"
-          >
-            {copy.blog}
-          </Link>{" "}
-          {copy.outro}
-        </p>
       </div>
       <div className="hidden md:block">
         <ScrollButton

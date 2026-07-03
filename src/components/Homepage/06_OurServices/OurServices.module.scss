@@ -109,125 +109,26 @@
     position: relative;
     overflow: hidden;
     min-height: 0;
-    border-color: rgba(234, 56, 155, 0.9);
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.02) 26%),
-      #f5b7cc;
-    color: #111111;
-    box-shadow: 0 0 0 1px rgba(234, 56, 155, 0.18), 0 18px 38px rgba(0, 0, 0, 0.16);
+    border-color: #dedede;
+    background: transparent;
+    color: white;
+    box-shadow: none;
   }
 
   .boxAfrica:hover {
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.04) 26%),
-      #f3adc6;
-    border-color: rgba(234, 56, 155, 1);
-  }
-
-  .africaVisual {
-    position: relative;
-    width: calc(100% + 3rem);
-    margin: -1.5rem -1.5rem 0;
-    min-height: 128px;
-    overflow: hidden;
-    border-radius: 28px 28px 0 0;
-  }
-
-  .africaVisualBg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transform: scale(1.04);
-  }
-
-  .africaVisualOverlay {
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(17, 17, 17, 0.18) 100%),
-      linear-gradient(90deg, rgba(245, 183, 204, 0.14) 0%, rgba(255, 0, 98, 0.14) 100%);
-  }
-
-  .africaGlowLine {
-    display: none;
-  }
-
-  .africaLogoRow {
-    position: relative;
-    z-index: 1;
-    min-height: 132px;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 0.85rem;
-    padding: 0.8rem 1rem 0.5rem;
-  }
-
-  .africaLogoChip {
-    align-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 78px;
-    padding: 0.75rem 0.8rem;
-    border-radius: 1.1rem;
-    background: rgba(17, 17, 17, 0.14);
-    backdrop-filter: blur(8px);
-    box-shadow:
-      inset 0 0 0 1px rgba(255,255,255,0.24),
-      0 14px 28px rgba(109, 24, 68, 0.12);
-  }
-
-  .africaLogoChipAlt {
-    background: rgba(255, 255, 255, 0.22);
-  }
-
-  .africaLogoPrimary,
-  .africaLogoSecondary {
-    width: 100%;
-    height: auto;
-    max-height: 46px;
-    object-fit: contain;
-    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.24));
-  }
-
-  .africaLogoSecondary {
-    transform: scale(1.12);
-    transform-origin: center;
-  }
-
-  .africaDivider {
-    width: 1px;
-    height: 64px;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0) 100%);
-    align-self: center;
-    margin-top: 0;
-  }
-
-  .africaCaption {
-    position: relative;
-    z-index: 1;
-    margin: -0.35rem 1.35rem 0;
-    text-align: center;
-    font-size: 0.72rem;
-    line-height: 1.35;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(17, 17, 17, 0.78);
+    background-color: rgba(255, 255, 255, .1);
+    border-color: #dedede;
   }
 
   .boxAfricaTitle {
-    margin-top: 0.15rem;
+    margin-top: 0;
   }
 
   .boxAfricaTitle,
   .boxAfrica .boxSubtitle,
   .boxAfrica .boxDescription,
   .boxAfrica .boxDescription p {
-    color: #111111;
+    color: white;
   }
 
   .externalCtaWrap {
@@ -242,7 +143,7 @@
     font-size: 0.92rem;
     font-weight: 700;
     line-height: 1.25;
-    color: #111111;
+    color: white;
   }
 
   .externalCta {
@@ -254,9 +155,9 @@
     min-height: 54px;
     padding: 0.95rem 1.2rem;
     border-radius: 999px;
-    background: rgba(17, 17, 17, 0.06);
-    border: 1px solid rgba(17, 17, 17, 0.24);
-    color: #111111;
+    background: #ff0062;
+    border: 1px solid #ff0062;
+    color: white;
     transition: transform 300ms ease-in-out, background-color 300ms ease-in-out, border-color 300ms ease-in-out;
   }
 
@@ -264,12 +165,12 @@
     font-size: 1rem;
     font-weight: 800;
     line-height: 1.15;
-    color: #111111;
+    color: white;
   }
 
   .boxAfrica:hover .externalCta {
-    background: rgba(17, 17, 17, 0.1);
-    border-color: rgba(17, 17, 17, 0.42);
+    background: #ff2b80;
+    border-color: #ff2b80;
     transform: translateY(-2px);
   }
 
@@ -286,35 +187,6 @@
       min-height: 0;
       height: auto;
       align-self: start;
-    }
-
-    .africaVisual {
-      min-height: 118px;
-    }
-
-    .africaLogoRow {
-      min-height: 126px;
-      gap: 0.8rem;
-      padding: 0.75rem 0.8rem 0.45rem;
-    }
-
-    .africaLogoChip {
-      min-height: 74px;
-      padding: 0.7rem 0.7rem;
-      border-radius: 1.05rem;
-    }
-
-    .africaLogoPrimary,
-    .africaLogoSecondary {
-      max-height: 44px;
-    }
-
-    .africaLogoSecondary {
-      transform: scale(1.1);
-    }
-
-    .africaDivider {
-      height: 58px;
     }
 
     .externalCtaMain {

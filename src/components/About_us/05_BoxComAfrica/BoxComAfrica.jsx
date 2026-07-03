@@ -47,12 +47,41 @@ const Content = ({ value }) => (
   ></div>
 );
 
-const BoxComAfrica = ({ data, locale = "en" }) => {
+const InfoBlock = ({ title, content, children }) => {
+  if (!title && !content) return null;
+
+  return (
+    <div className="relative">
+      {title ? <Title>{title}</Title> : null}
+      {content ? <Content value={content} /> : null}
+      {children}
+    </div>
+  );
+};
+
+const BoxComAfrica = ({
+  data,
+  locale = "en",
+  sectionId = "page06_screen05",
+  nextId = "page06_screen06",
+  titleOverride,
+  contentOverrides,
+  questionOverride,
+  ctaOverride,
+}) => {
   const copy = prProjectCopy[locale] || prProjectCopy.en;
+  const sectionTitle = titleOverride || data.mobile_title;
+  const isHomepageVariant = sectionId === "page01_screen03b";
+  const mergedData = {
+    ...data,
+    ...(contentOverrides || {}),
+  };
+  const questionText = questionOverride || copy.question;
+  const ctaText = ctaOverride || copy.cta;
 
   return (
     <section
-      id="page06_screen05"
+      id={sectionId}
       className="relative section-light !bg-[#F5B7CC] md:min-h-screen !h-auto overflow-hidden"
     >
       <img
@@ -66,7 +95,7 @@ const BoxComAfrica = ({ data, locale = "en" }) => {
       <div className="absolute md:hidden block top-[41.5%] w-full h-[2px] bg-[#EA389B] shadow-[0_0_10px_2px_rgba(234,56,155,0.6)]" />
 
       <Title1
-        html={data.mobile_title}
+        html={sectionTitle}
         className={
           "!block top-[70px] w-full absolute !text-center z-1 !text-white drop-shadow-lg/40"
         }
@@ -74,23 +103,21 @@ const BoxComAfrica = ({ data, locale = "en" }) => {
 
       <div className="relative grid md:grid-cols-3 grid-cols-1 pt-[70px]">
         <div className="md:order-1 order-2 md:mt-0 mt-[40%]">
-          <LogoContainer>
+          <div className={isHomepageVariant ? "md:pt-20" : ""}>
+            <LogoContainer>
             <img
               src="/Logos_Boxcom/logo-new-white-353.webp"
               className="w-[52vw] max-w-[200px] h-auto filter drop-shadow-lg/40"
             />
-          </LogoContainer>
+            </LogoContainer>
+          </div>
           <div className="mt-10 pl-[15%]">
-            <div className="relative">
-              <Title>{data.title1}</Title>
-              <Content value={data.content1} />
+            <InfoBlock title={mergedData.title1} content={mergedData.content1}>
               <NumberOne />
-            </div>
-            <div className="relative">
-              <Title>{data.title2}</Title>
-              <Content value={data.content2} />
+            </InfoBlock>
+            <InfoBlock title={mergedData.title2} content={mergedData.content2}>
               <Magnet />
-            </div>
+            </InfoBlock>
           </div>
         </div>
 
@@ -115,43 +142,41 @@ const BoxComAfrica = ({ data, locale = "en" }) => {
           <Newspaper />
           <div
             className="absolute w-[90vw] md:w-[80vw] py-3 text-center text-black font-bold md:bottom-[-10%] bottom-[-20%]"
-            dangerouslySetInnerHTML={{ __html: data.bottomText }}
+            dangerouslySetInnerHTML={{ __html: mergedData.bottomText }}
           />
         </div>
 
         <div className="order-3">
-          <LogoContainer>
+          <div className={isHomepageVariant ? "md:pt-20" : ""}>
+            <LogoContainer>
             <img
               src="/Logos_Boxcom/logo-boxcom-africa.webp"
               className="w-[52vw] max-w-[200px] h-auto drop-shadow-lg/40"
             />
-          </LogoContainer>
+            </LogoContainer>
+          </div>
           <div className="mt-10 pl-10 pr-[15%]">
-            <div className="relative">
-              <Title>{data.title3}</Title>
-              <Content value={data.content3} />
+            <InfoBlock title={mergedData.title3} content={mergedData.content3}>
               <Megaphone />
-            </div>
-            <div className="relative">
-              <Title>{data.title4}</Title>
-              <Content value={data.content4} />
+            </InfoBlock>
+            <InfoBlock title={mergedData.title4} content={mergedData.content4}>
               <Microphone />
-            </div>
+            </InfoBlock>
             <div className="mt-8">
-              <p className="text-black font-semibold">{copy.question}</p>
+              <p className="text-black font-semibold">{questionText}</p>
               <a
                 href="https://boxcom-africa.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex mt-4 rounded-full border-2 border-black px-6 py-2 font-semibold text-black hover:bg-black hover:text-white transition-colors"
               >
-                {copy.cta}
+                {ctaText}
               </a>
             </div>
           </div>
         </div>
       </div>
-      <ScrollButton to="page06_screen06" />
+      <ScrollButton to={nextId} />
     </section>
   );
 };
