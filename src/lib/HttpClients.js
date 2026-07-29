@@ -8,13 +8,22 @@ import { setupCache } from "axios-cache-interceptor";
  * https://developer.wordpress.org/rest-api/reference/posts/
  */
 
+const DEFAULT_BACKEND_TIMEOUT_MS = 8 * 1000;
+const configuredTimeout = Number(process.env.BACKEND_REQUEST_TIMEOUT_MS);
+const backendTimeout =
+  Number.isFinite(configuredTimeout) && configuredTimeout > 0
+    ? configuredTimeout
+    : DEFAULT_BACKEND_TIMEOUT_MS;
+
 const clientParams = {
   baseURL: process.env.BACKEND_HOST,
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
   },
-  timeout: 30 * 1000,
+  // Fail before the Vercel function deadline so Next.js can return an error
+  // response instead of being terminated with FUNCTION_INVOCATION_TIMEOUT.
+  timeout: backendTimeout,
 };
 
 const _backendClient = axios.create(clientParams);

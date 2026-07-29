@@ -17,7 +17,7 @@ import BtnCTA from "./BtnCTA";
 const EveryClickCounts = ({ data }) => {
   return (
     <section
-      id="page05_screen07"
+      id="page05_screen09"
       className="relative !h-screen w-full"
     >
       <div className="absolute inset-0 w-full h-full ">

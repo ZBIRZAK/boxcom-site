@@ -12,7 +12,7 @@ import ButtonCTA from "./ButtonCTA";
 const StoryToLife = ({ data }) => {
   return (
     <section
-      id="page02_screen06"
+      id="page02_screen08"
       className="relative h-screen w-full overflow-hidden"
     >
 

@@ -7,6 +7,7 @@ import Seo from "../../../components/WebDevelopment/03_Seo/Seo";
 import Sea from "../../../components/WebDevelopment/04_Sea/Sea";
 import MaintenanceAndAnalytics from "../../../components/WebDevelopment/05_Mantenance&Analytics/MaintenanceAndAnalytics";
 import SalesPerson from "../../../components/WebDevelopment/06_SalesPerson/SalesPerson";
+import WebDevelopmentFAQSection from "../../../components/WebDevelopment/07_FAQSection/07_FAQSection";
 import {
   getHeader,
   getWebDevelopment,
@@ -15,7 +16,7 @@ import {
 import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../../lib/seo";
 import LDJsonScripts from "../../../components/Seo/LDJsonScripts";
-import { getHost } from "../../../lib/helpers";
+import { areServiceFaqsEnabled, getHost } from "../../../lib/helpers";
 import { localizeUrl, urls } from "../../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
@@ -83,6 +84,7 @@ export default async function WebDevelopmentFr() {
       <Seo data={dataSeoSection} />
       <Sea data={dataSeaSection} />
       <MaintenanceAndAnalytics data={dataMaintenanceAndAnalytics} />
+      {areServiceFaqsEnabled() && <WebDevelopmentFAQSection />}
       <Lately
         sectionId="page04_screen07"
         portfolioCategoryId={process.env.PORTFOLIO_WEB_DEV_ID}

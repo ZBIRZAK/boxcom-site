@@ -49,12 +49,12 @@ const AnalyticsOptimization = ({ data }) => {
   return (
     <section
       id="page05_screen06"
-      className="relative !h-auto grid grid-cols-1 md:grid-cols-[37%_63%] w-full md:min-h-screen section-light"
+      className="relative z-0 !h-auto grid grid-cols-1 md:grid-cols-[37%_63%] w-full md:min-h-screen section-light"
     >
       {/* COLONNE IMAGE */}
       <div
         id="cont-img-old-woman"
-        className="relative h-screen overflow-hidden md:overflow-visible"
+        className="relative z-0 h-screen overflow-hidden md:overflow-visible"
       >
         <div className="md:hidden top-40 text-shadow-lg w-full absolute text-center z-1">
           <h2

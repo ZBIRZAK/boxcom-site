@@ -7,6 +7,7 @@ import RoiResults from "../../../components/LeadGeneration/04_RoiResults/RoiResu
 import Markets from "../../../components/LeadGeneration/05_Markets/Markets";
 import AnalyticsOptimization from "../../../components/LeadGeneration/06_AnalyticsOptimization/AnalyticsOptimization";
 import EveryClickCounts from "../../../components/LeadGeneration/07_EveryClickCounts/EveryClickCounts";
+import LeadGenerationFAQSection from "../../../components/LeadGeneration/08_FAQSection/08_FAQSection";
 import Lately from "../../../components/Our_projects/Lately";
 import {
   getHeader,
@@ -16,7 +17,7 @@ import {
 import { useGSAP } from "@gsap/react";
 import { parseSeoTagsForMetaData } from "../../../lib/seo";
 import LDJsonScripts from "../../../components/Seo/LDJsonScripts";
-import { getHost } from "../../../lib/helpers";
+import { areServiceFaqsEnabled, getHost } from "../../../lib/helpers";
 import { localizeUrl, urls } from "../../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
@@ -86,6 +87,7 @@ export default async function LeadGenerationFr() {
       <RoiResults data={dataRoiResults} />
       <Markets data={dataMarkets} />
       <AnalyticsOptimization data={dataAnalyticsOptimization} />
+      {areServiceFaqsEnabled() && <LeadGenerationFAQSection />}
       <Lately
         sectionId="page05_screen08"
         portfolioCategoryId={process.env.PORTFOLIO_LEAD_GEN_ID}

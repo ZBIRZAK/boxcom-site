@@ -20,6 +20,15 @@ export function isLanguageSwitchEnabled() {
   return normalized !== "false" && normalized !== "0";
 }
 
+export function areServiceFaqsEnabled() {
+  const value = process.env.SHOW_SERVICE_FAQS;
+
+  if (typeof value !== "string") return false;
+
+  const normalized = value.trim().toLowerCase();
+  return normalized === "true" || normalized === "1";
+}
+
 export function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }

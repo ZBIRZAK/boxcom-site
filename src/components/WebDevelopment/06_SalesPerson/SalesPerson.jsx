@@ -10,7 +10,7 @@ import Trophy from "./Trophy/Trophy";
 
 const SalesPerson = ({ data }) => {
   return (
-    <section id="page04_screen06" className="relative w-full h-screen overflow-hidden">
+    <section id="page04_screen08" className="relative w-full h-screen overflow-hidden">
       {/* <div className="absolute w-[105%] md:top-[-10%] top-[-7%] z-99 -left-5 pointer-events-none overflow-hidden">
           <img src="/images/objects/torn_sheet.webp" alt="Torn sheet" className="" />
       </div> */}

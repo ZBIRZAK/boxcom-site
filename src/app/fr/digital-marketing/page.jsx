@@ -4,6 +4,7 @@ import DigitalStrategy from "../../../components/DigitalMarketing/02_DigitalStra
 import SocialMediaManagement from "../../../components/DigitalMarketing/03_SocialMediaManagement/03_SocialMediaManagement";
 import DigitalAdvertising from "../../../components/DigitalMarketing/04_DigitalAdvertising/04_DigitalAdvertising";
 import StartScaling from "../../../components/DigitalMarketing/05_StartScaling/05_StartScaling";
+import FAQSection from "../../../components/DigitalMarketing/06_FAQSection/06_FAQSection";
 import Header from "../../../components/Headers/Header";
 import Lately from "../../../components/Our_projects/Lately";
 import {
@@ -14,7 +15,7 @@ import {
 import { useGSAP } from "@gsap/react";
 import LDJsonScripts from "../../../components/Seo/LDJsonScripts";
 import { parseSeoTagsForMetaData } from "../../../lib/seo";
-import { getHost } from "../../../lib/helpers";
+import { areServiceFaqsEnabled, getHost } from "../../../lib/helpers";
 import { localizeUrl, urls } from "../../../lib/urls";
 
 gsap.registerPlugin(useGSAP);
@@ -84,6 +85,7 @@ export default async function DigitalMarketingFr() {
         sectionId="page03_screen06"
         portfolioCategoryId={process.env.PORTFOLIO_DIGITAL_MARKETING_ID}
       />
+      {areServiceFaqsEnabled() && <FAQSection />}
       <StartScaling data={dataStartScaling} />
     </>
   );

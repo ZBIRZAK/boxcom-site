@@ -2,6 +2,44 @@
 
 import { backendClient, seoClient } from "./HttpClients";
 import { DEFAULT_LOCALE, normalizeLocale } from "./locale";
+import { unstable_cache } from "next/cache";
+
+const WORDPRESS_CONTENT_REVALIDATE_SECONDS = 5 * 60;
+const WORDPRESS_SEO_REVALIDATE_SECONDS = 15 * 60;
+
+const getCachedBackendData = unstable_cache(
+  async (_baseUrl, url, params) => {
+    const response = await backendClient.get(url, {
+      params: params || undefined,
+    });
+    return response.data;
+  },
+  ["wordpress-backend-data-v1"],
+  {
+    revalidate: WORDPRESS_CONTENT_REVALIDATE_SECONDS,
+    tags: ["wordpress-content"],
+  }
+);
+
+const getCachedSeoData = unstable_cache(
+  async (_baseUrl, url) => {
+    const response = await seoClient.get(url);
+    return response.data;
+  },
+  ["wordpress-seo-data-v1"],
+  {
+    revalidate: WORDPRESS_SEO_REVALIDATE_SECONDS,
+    tags: ["wordpress-seo"],
+  }
+);
+
+function getBackendData(url, params) {
+  return getCachedBackendData(process.env.BACKEND_HOST, url, params);
+}
+
+function getSeoData(url) {
+  return getCachedSeoData(process.env.BACKEND_HOST, url);
+}
 
 function getLocalizedContentId(key, locale = DEFAULT_LOCALE) {
   const normalizedLocale = normalizeLocale(locale).toUpperCase();
@@ -131,9 +169,7 @@ export async function getBlog(locale = DEFAULT_LOCALE) {
       ":id",
       getLocalizedContentId("BLOG_ID", locale)
     );
-    const response = await backendClient.get(url, { params: { _embed: 1 } });
-
-    return response.data;
+    return await getBackendData(url, { _embed: 1 });
   } catch (error) {
     console.log(error);
     throw error;
@@ -173,9 +209,7 @@ export async function getBlogPosts(options = {}) {
 
     // console.log({ options, params });
 
-    const response = await backendClient.get(url, { params });
-
-    return response.data;
+    return await getBackendData(url, params);
   } catch (error) {
     console.log(error);
     throw error;
@@ -192,9 +226,7 @@ export async function getPortfolioPosts(...categoryIds) {
       page: 1,
       portfolio_category: categoryIds.join(","),
     };
-    const response = await backendClient.get(url, { params });
-
-    return response.data;
+    return await getBackendData(url, params);
   } catch (error) {
     console.log(error);
     throw error;
@@ -208,9 +240,9 @@ export async function getBlogPostBySlug(slug) {
       slug,
       _embed: true,
     };
-    const response = await backendClient.get(url, { params });
+    const data = await getBackendData(url, params);
 
-    return response.data[0] ?? null;
+    return data[0] ?? null;
   } catch (error) {
     console.log(error);
     throw error;
@@ -223,9 +255,9 @@ export async function getProjectBySlug(slug) {
     const params = {
       slug,
     };
-    const response = await backendClient.get(url, { params });
+    const data = await getBackendData(url, params);
 
-    return response.data[0] ?? null;
+    return data[0] ?? null;
   } catch (error) {
     console.log(error);
     throw error;
@@ -235,9 +267,7 @@ export async function getProjectBySlug(slug) {
 export async function getPortfolioTagById(id) {
   try {
     const url = `/wp-json/wp/v2/portfolio_tag/${id}`;
-    const response = await backendClient.get(url);
-
-    return response.data;
+    return await getBackendData(url);
   } catch (error) {
     console.log(error);
     throw error;
@@ -257,9 +287,7 @@ export async function getMediaById(id) {
   try {
     const url = process.env.BACKEND_MEDIA.replace(":id", id);
     // console.log("url: " + url);
-    const response = await backendClient.get(url);
-
-    return response.data;
+    return await getBackendData(url);
   } catch (error) {
     console.log(error);
     throw error;
@@ -269,9 +297,7 @@ export async function getMediaById(id) {
 async function getBackendInfos(id) {
   try {
     const url = process.env.BACKEND_PAGE.replace(":id", id);
-    const response = await backendClient.get(url);
-
-    return response.data;
+    return await getBackendData(url);
   } catch (error) {
     console.log(error);
     throw error;
@@ -288,9 +314,7 @@ async function getSEO(id) {
     const data = await getBackendInfos(id);
     const _url = process.env.BACKEND_SEO.replace(":url", data.link);
     // console.log("[SEO] id=" + id + ", get url=" + _url);
-    const response = await seoClient.get(_url);
-
-    return response.data;
+    return await getSeoData(_url);
   } catch (error) {
     console.log(error);
     throw error;
@@ -301,9 +325,7 @@ export async function getArticleSEO(url) {
   try {
     const _url = process.env.BACKEND_SEO.replace(":url", url);
     // console.log("[SEO] get url=" + _url);
-    const response = await seoClient.get(_url);
-
-    return response.data;
+    return await getSeoData(_url);
   } catch (error) {
     console.log(error);
     throw error;
@@ -345,9 +367,7 @@ export async function getBlogSEO(locale = DEFAULT_LOCALE) {
 export async function getAuthorById(id) {
   try {
     const url = process.env.BACKEND_USERS.replace(":id", id);
-    const response = await backendClient.get(url);
-
-    return response.data;
+    return await getBackendData(url);
   } catch (error) {
     console.log(error);
     throw error;
@@ -357,9 +377,7 @@ export async function getAuthorById(id) {
 export async function getTagById(id) {
   try {
     const url = process.env.BACKEND_TAG.replace(":id", id);
-    const response = await backendClient.get(url);
-
-    return response.data;
+    return await getBackendData(url);
   } catch (error) {
     console.log(error);
     throw error;
@@ -369,9 +387,9 @@ export async function getTagById(id) {
 export async function getTagBySlug(slug) {
   try {
     const url = process.env.BACKEND_TAGS;
-    const response = await backendClient.get(url + "?slug=" + slug);
+    const data = await getBackendData(url + "?slug=" + slug);
 
-    return response.data[0] ?? null;
+    return data[0] ?? null;
   } catch (error) {
     console.log(error);
     throw error;
