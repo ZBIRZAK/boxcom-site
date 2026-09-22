@@ -9,8 +9,17 @@ function ensureImgAltAttributes(html = "") {
   return html.replace(/<img(?![^>]*\balt=)/gi, '<img alt=""');
 }
 
+const removedTestimonialNames = new Set([
+  "sergey arzhevskiy",
+  "ahmed abuelela",
+  "fred sabbah",
+]);
+
 export default function SayItBetter({ data }) {
-  const testimonials = Object.values(data.testimonials);
+  const testimonials = Object.values(data.testimonials || {}).filter(
+    (testimonial) =>
+      !removedTestimonialNames.has(testimonial?.name?.trim().toLowerCase())
+  );
   // console.log({ testimonials, pages });
   const titleHtml = (data?.title || "")
     .replace("<span>", '<span class="relative inline-block text-[#ff0078]">')
@@ -30,9 +39,11 @@ export default function SayItBetter({ data }) {
       />
       {/* <FallingStars /> */}
 
-      <div className="mt-15">
-        <SliderTestimonials testimonials={testimonials} />
-      </div>
+      {testimonials.length > 0 && (
+        <div className="mt-15">
+          <SliderTestimonials testimonials={testimonials} />
+        </div>
+      )}
 
       <div
         className={clsx(
