@@ -109,7 +109,6 @@ function parseExternalCta(label = "") {
 }
 
 const ExternalServiceCard = ({ contents, locale }) => {
-  const href = formatUrl(contents.link, locale);
   const cta = parseExternalCta(contents.button);
   const copy = africaCardCopy[locale] || africaCardCopy.en;
   const eyebrow = cta.eyebrow || copy.eyebrow;
@@ -117,7 +116,7 @@ const ExternalServiceCard = ({ contents, locale }) => {
 
   return (
     <a
-      href={href}
+      href="https://boxcomafrica.com/"
       target="_blank"
       rel="noopener noreferrer"
       className={`${styles.box} ${styles.boxAfrica}`}

@@ -165,7 +165,7 @@ const BoxComAfrica = ({
             <div className="mt-8">
               <p className="text-black font-semibold">{questionText}</p>
               <a
-                href="https://boxcom-africa.com/"
+                href="https://boxcomafrica.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex mt-4 rounded-full border-2 border-black px-6 py-2 font-semibold text-black hover:bg-black hover:text-white transition-colors"

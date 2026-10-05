@@ -118,7 +118,7 @@ function getFooterServiceLinks(links = [], locale = "en") {
     ...withoutLeadGeneration,
     {
       text: "Boxcom Africa",
-      link: "https://boxcom-africa.com/",
+      link: "https://boxcomafrica.com/",
     },
   ];
 }
