@@ -4,6 +4,13 @@ function ensureImgAltAttributes(html = "") {
   return html.replace(/<img(?![^>]*\balt=)/gi, '<img alt=""');
 }
 
+const boxcomAfricaTimelineLink =
+  '<a href="https://www.boxcomafrica.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ff0062] transition-colors hover:text-white">$&</a>';
+
+function linkBoxcomAfricaInTimeline(html = "") {
+  return html.replace(/Boxcom Africa/i, boxcomAfricaTimelineLink);
+}
+
 const Icon = ({ name }) => {
   if (name === "star")
     return (
@@ -28,7 +35,13 @@ const Icon = ({ name }) => {
   return null;
 };
 
-const Expertise = ({ data, id, nextId, dark = false }) => {
+const Expertise = ({
+  data,
+  id,
+  nextId,
+  dark = false,
+  linkAfricaMilestone = false,
+}) => {
   const titleHtml = (data?.title || "")
     .replace("<span>", '<span class="relative inline-block text-[#ff0078] ">')
     .replace(
@@ -36,7 +49,13 @@ const Expertise = ({ data, id, nextId, dark = false }) => {
       '<img src="/images/Design-line.gif" alt="" class="absolute !w-[500px] md:top-[-20%] top-[-10%]"/></span>'
     );
 
-  const milestones = Object.values(data?.milestones || {});
+  const milestones = Object.values(data?.milestones || {}).map((item) => ({
+    ...item,
+    text:
+      linkAfricaMilestone && item.year === "2024-2025"
+        ? linkBoxcomAfricaInTimeline(item.text)
+        : item.text,
+  }));
 
   return (
     <section

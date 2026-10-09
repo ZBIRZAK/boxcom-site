@@ -25,15 +25,26 @@ export async function generateMetadata() {
 
   return {
     ...data,
+    title: "Nos projets | Boxcom",
     description:
-      "Explore Boxcom projects and case studies across digital marketing, creative content, lead generation, and web development.",
+      "Découvrez les projets et études de cas de Boxcom en marketing digital, contenu créatif, génération de leads et développement web.",
     alternates: {
       ...(data.alternates || {}),
       canonical: `${host}${urls.projects}`,
     },
     openGraph: {
       ...(data.openGraph || {}),
+      title: "Nos projets | Boxcom",
+      description:
+        "Découvrez les projets et études de cas de Boxcom en marketing digital, contenu créatif, génération de leads et développement web.",
+      locale: "fr_MA",
       url: `${host}${urls.projects}`,
+    },
+    twitter: {
+      ...(data.twitter || {}),
+      title: "Nos projets | Boxcom",
+      description:
+        "Découvrez les projets et études de cas de Boxcom en marketing digital, contenu créatif, génération de leads et développement web.",
     },
   };
 }

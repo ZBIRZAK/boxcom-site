@@ -54,6 +54,7 @@ export async function generateMetadata() {
       ...(data.openGraph || {}),
       title,
       description,
+      locale: "fr_MA",
       url: `${host}${localizeUrl(urls.leadGeneration, "fr")}`,
     },
     twitter: {
@@ -85,7 +86,7 @@ export default async function LeadGenerationFr() {
       <LeadGenerationStrategy data={dataLeadGenerationStrategy} />
       <QualityLeads data={dataQualityLeads} />
       <RoiResults data={dataRoiResults} />
-      <Markets data={dataMarkets} />
+      <Markets data={dataMarkets} locale="fr" />
       <AnalyticsOptimization data={dataAnalyticsOptimization} />
       {areServiceFaqsEnabled() && <LeadGenerationFAQSection />}
       <Lately

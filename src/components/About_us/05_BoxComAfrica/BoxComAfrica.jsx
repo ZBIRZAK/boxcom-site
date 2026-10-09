@@ -26,7 +26,7 @@ const prProjectCopy = {
   },
   fr: {
     question: "Vous avez un projet RP ?",
-    cta: "Visitez notre site web",
+    cta: "Découvrir Boxcom Africa",
   },
 };
 
@@ -65,6 +65,7 @@ const BoxComAfrica = ({
   sectionId = "page06_screen05",
   nextId = "page06_screen06",
   titleOverride,
+  introOverride,
   contentOverrides,
   questionOverride,
   ctaOverride,
@@ -76,8 +77,8 @@ const BoxComAfrica = ({
     ...data,
     ...(contentOverrides || {}),
   };
-  const questionText = questionOverride || copy.question;
-  const ctaText = ctaOverride || copy.cta;
+  const questionText = questionOverride ?? copy.question;
+  const ctaText = ctaOverride ?? copy.cta;
 
   return (
     <section
@@ -94,14 +95,28 @@ const BoxComAfrica = ({
       />
       <div className="absolute md:hidden block top-[41.5%] w-full h-[2px] bg-[#EA389B] shadow-[0_0_10px_2px_rgba(234,56,155,0.6)]" />
 
-      <Title1
-        html={sectionTitle}
-        className={
-          "!block top-[70px] w-full absolute !text-center z-1 !text-white drop-shadow-lg/40"
-        }
-      />
+      {introOverride ? (
+        <div className="relative z-10 mx-auto w-[94%] pt-[70px] text-center">
+          <Title1
+            html={sectionTitle}
+            className="!static !mb-0 !block w-full !text-center !text-white drop-shadow-lg/40"
+          />
+          <p className="mx-auto mt-5 max-w-[1100px] px-4 text-center leading-[1.45] text-black md:mt-6">
+            {introOverride}
+          </p>
+        </div>
+      ) : (
+        <Title1
+          html={sectionTitle}
+          className="!block top-[70px] w-full absolute !text-center z-1 !text-white drop-shadow-lg/40"
+        />
+      )}
 
-      <div className="relative grid md:grid-cols-3 grid-cols-1 pt-[70px]">
+      <div
+        className={`relative grid grid-cols-1 md:grid-cols-3 ${
+          introOverride ? "pt-6" : "pt-[70px]"
+        }`}
+      >
         <div className="md:order-1 order-2 md:mt-0 mt-[40%]">
           <div className={isHomepageVariant ? "md:pt-20" : ""}>
             <LogoContainer>
@@ -163,9 +178,11 @@ const BoxComAfrica = ({
               <Microphone />
             </InfoBlock>
             <div className="mt-8">
-              <p className="text-black font-semibold">{questionText}</p>
+              {questionText ? (
+                <p className="text-black font-semibold">{questionText}</p>
+              ) : null}
               <a
-                href="https://boxcomafrica.com/"
+                href="https://www.boxcomafrica.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex mt-4 rounded-full border-2 border-black px-6 py-2 font-semibold text-black hover:bg-black hover:text-white transition-colors"

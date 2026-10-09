@@ -18,7 +18,7 @@ import ScrollButton from "../../Buttons/ScrollButton";
 import TextList from "../../Contents/TextList";
 import EndTitle from "../../Contents/EndTitle";
 
-const DigitalAdvertising = ({ data }) => {
+const DigitalAdvertising = ({ data, locale = "en" }) => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -107,7 +107,7 @@ const DigitalAdvertising = ({ data }) => {
         <Subtitle1 html={data.subtitle} />
         <ParagraphText html={data.text} />
         <Title2 html={data.subtitle2} />
-        <TextList html={data.digital_advertising_services} />
+        <TextList html={data.digital_advertising_services} locale={locale} />
         <EndTitle html={data.bigEndText} />
 
         <div className="hidden left-15 relative md:block">

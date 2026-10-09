@@ -3,6 +3,7 @@
 import { backendClient, seoClient } from "./HttpClients";
 import { DEFAULT_LOCALE, normalizeLocale } from "./locale";
 import { unstable_cache } from "next/cache";
+import { normalizeBoxcomBrandDeep } from "./brand";
 
 const WORDPRESS_CONTENT_REVALIDATE_SECONDS = 5 * 60;
 const WORDPRESS_SEO_REVALIDATE_SECONDS = 15 * 60;
@@ -34,11 +35,15 @@ const getCachedSeoData = unstable_cache(
 );
 
 function getBackendData(url, params) {
-  return getCachedBackendData(process.env.BACKEND_HOST, url, params);
+  return getCachedBackendData(process.env.BACKEND_HOST, url, params).then(
+    normalizeBoxcomBrandDeep
+  );
 }
 
 function getSeoData(url) {
-  return getCachedSeoData(process.env.BACKEND_HOST, url);
+  return getCachedSeoData(process.env.BACKEND_HOST, url).then(
+    normalizeBoxcomBrandDeep
+  );
 }
 
 function getLocalizedContentId(key, locale = DEFAULT_LOCALE) {

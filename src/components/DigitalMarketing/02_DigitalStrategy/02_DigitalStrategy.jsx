@@ -17,7 +17,7 @@ import EndTitle from "../../Contents/EndTitle";
 import TextList from "../../Contents/TextList";
 import usePinImage from "../../../hooks/usePinImage";
 
-const DigitalStrategy = ({ data }) => {
+const DigitalStrategy = ({ data, locale = "en" }) => {
   usePinImage({
     textId: "strategy-text",
     imageId: "cont-img-door-beach",
@@ -84,7 +84,7 @@ const DigitalStrategy = ({ data }) => {
         <Subtitle1 html={data.subtitle} />
         <ParagraphText html={data.text} />
         <Title2 html={data.subtitle2} />
-        <TextList html={data.consulting_services} />
+        <TextList html={data.consulting_services} locale={locale} />
         <EndTitle html={data.bigEndText} />
 
         <div className="hidden relative md:block">

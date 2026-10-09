@@ -127,7 +127,7 @@ const NarrativeSection2 = ({ data }) => {
           <EndTitle html={data.bigEndText1} />
           <CTAButton data={data} />
           <div className="hidden md:block z-20">
-            <ScrollButton to="page01_screen03" />
+            <ScrollButton to="page01_screen03b" />
           </div>
         </ColumnContentWrapper>
       </section>

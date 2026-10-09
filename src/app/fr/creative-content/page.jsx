@@ -52,6 +52,7 @@ export async function generateMetadata() {
       ...(data.openGraph || {}),
       title,
       description,
+      locale: "fr_MA",
       url: `${host}${localizeUrl(urls.creativeContent, "fr")}`,
     },
     twitter: {
@@ -78,7 +79,7 @@ export default async function CreativeContentFr() {
       <LDJsonScripts seoData={seo.head} />
       <Header data={header} transitionToDark={true} locale="fr" />
       <Experiences data={dataExperiencesSection} locale="fr" />
-      <ContentMarketing data={dataContentMarketingSection} />
+      <ContentMarketing data={dataContentMarketingSection} locale="fr" />
       <GraphicDesign data={dataGraphicDesignSection} />
       <VideoProduction data={dataVideoProductionSection} />
       {areServiceFaqsEnabled() && <CreativeContentFAQSection />}

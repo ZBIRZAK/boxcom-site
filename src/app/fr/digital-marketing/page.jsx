@@ -52,6 +52,7 @@ export async function generateMetadata() {
       ...(data.openGraph || {}),
       title,
       description,
+      locale: "fr_MA",
       url: `${host}${localizeUrl(urls.digitalMarketing, "fr")}`,
     },
     twitter: {
@@ -78,9 +79,9 @@ export default async function DigitalMarketingFr() {
       <LDJsonScripts seoData={seo.head} />
       <Header data={header} dark={true} locale="fr" />
       <HeroSection data={dataHeroSection} />
-      <DigitalStrategy data={dataDigitalStrategy} />
-      <SocialMediaManagement data={dataSocialMediaManagement} />
-      <DigitalAdvertising data={dataDigitalAdvertising} />
+      <DigitalStrategy data={dataDigitalStrategy} locale="fr" />
+      <SocialMediaManagement data={dataSocialMediaManagement} locale="fr" />
+      <DigitalAdvertising data={dataDigitalAdvertising} locale="fr" />
       <Lately
         sectionId="page03_screen06"
         portfolioCategoryId={process.env.PORTFOLIO_DIGITAL_MARKETING_ID}

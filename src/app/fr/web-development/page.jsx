@@ -53,6 +53,7 @@ export async function generateMetadata() {
       ...(data.openGraph || {}),
       title,
       description,
+      locale: "fr_MA",
       url: `${host}${localizeUrl(urls.webDevelopment, "fr")}`,
     },
     twitter: {

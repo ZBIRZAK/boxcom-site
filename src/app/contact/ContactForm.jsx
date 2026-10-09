@@ -1,12 +1,13 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { SendContactAction } from "./FormAction";
 import { isDev } from "../../lib/helpers";
 import InputText from "../../components/Forms/InputText";
 import InputEmail from "../../components/Forms/InputEmail";
 import Textarea from "../../components/Forms/Textarea";
 import RequiredMention from "../../components/Forms/RequiredMention";
+import Select from "../../components/Forms/Select";
 
 const testDevData = {
   myname: "Abdellah Alaoui",
@@ -17,6 +18,17 @@ const testDevData = {
 };
 
 const ContactForm = ({ data }) => {
+  const subjectOptions = (data.subject.choices || "")
+    .split(/\r?\n/)
+    .map((option) => option.trim())
+    .filter(Boolean);
+  const hasSubjectOptions = subjectOptions.length > 0;
+  const [subject, setSubject] = useState("");
+  const showAfricaMessage = [
+    "Relations presse / Afrique",
+    "Press relations / Africa",
+  ].includes(subject);
+
   const initialState = isDev()
     ? {
         ...testDevData,
@@ -60,13 +72,39 @@ const ContactForm = ({ data }) => {
         defaultValue={state.email || ""}
       />
 
-      <InputText
-        name="subject"
-        label={data.subject.label}
-        placeholder={data.subject.placeholder}
-        required={data.subject.required}
-        defaultValue={state.subject || ""}
-      />
+      {hasSubjectOptions ? (
+        <Select
+          name="subject"
+          label={data.subject.label}
+          placeholder={data.subject.placeholder}
+          required={data.subject.required}
+          options={subjectOptions}
+          value={subject}
+          onChange={(event) => setSubject(event.target.value)}
+        />
+      ) : (
+        <InputText
+          name="subject"
+          label={data.subject.label}
+          placeholder={data.subject.placeholder}
+          required={data.subject.required}
+          defaultValue={state.subject || ""}
+        />
+      )}
+
+      {showAfricaMessage ? (
+        <div className="rounded-xl border border-[#ff0062]/30 bg-[#ff0062]/10 p-4">
+          <p>{data.subject.africa_message}</p>
+          <a
+            href={data.subject.africa_button_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex rounded-full bg-[#ff0062] px-5 py-2 font-semibold text-white transition-colors hover:bg-black"
+          >
+            {data.subject.africa_button_label}
+          </a>
+        </div>
+      ) : null}
 
       <Textarea
         name="message"

@@ -5,6 +5,13 @@ import { getHost } from "../../../lib/helpers";
 import { localizeUrl, urls } from "../../../lib/urls";
 import ContactForm from "../../contact/ContactForm";
 
+const pressRelationsLink =
+  '<a href="https://www.boxcomafrica.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ff0062] transition-colors hover:text-black">relations presse</a>';
+
+function linkPressRelations(html = "") {
+  return html.replace(/relations presse/i, pressRelationsLink);
+}
+
 export async function generateMetadata() {
   const host = getHost();
   const title = "Contactez-nous | Agence Digitale a Casablanca | Boxcom";
@@ -44,6 +51,7 @@ export async function generateMetadata() {
 export default async function ContactFrPage() {
   const header = await getHeader("fr");
   const contact = await getContact("fr");
+  const intro = linkPressRelations(contact.intro || "");
 
   return (
     <>
@@ -51,6 +59,9 @@ export default async function ContactFrPage() {
 
       <div className="mx-auto w-full max-w-5xl pt-[80px] space-y-5 mb-10">
         <h1 className="text-5xl">{contact.title}</h1>
+        {intro ? (
+          <div className="text" dangerouslySetInnerHTML={{ __html: intro }} />
+        ) : null}
         <Faq locale="fr" />
         <ContactForm data={contact} />
       </div>

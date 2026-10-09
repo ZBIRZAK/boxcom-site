@@ -116,7 +116,7 @@ const ExternalServiceCard = ({ contents, locale }) => {
 
   return (
     <a
-      href="https://boxcomafrica.com/"
+      href="https://www.boxcomafrica.com"
       target="_blank"
       rel="noopener noreferrer"
       className={`${styles.box} ${styles.boxAfrica}`}

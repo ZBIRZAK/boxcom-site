@@ -125,7 +125,7 @@ const BoxcomAfricaHome = ({ locale = "en" }) => {
             <p className={styles.ctaEyebrow}>{copy.eyebrow}</p>
           </div>
           <a
-            href="https://boxcomafrica.com/"
+            href="https://www.boxcomafrica.com"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.cta}

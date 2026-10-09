@@ -8,6 +8,10 @@ const Button_CTA = ({ html }) => {
   const router = useRouter();
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname);
+  const label =
+    locale === "fr" && /^Let(?:'|’)s talk\s*!?$/i.test((html || "").trim())
+      ? "Discutons !"
+      : html;
 
   return (
     <Button
@@ -17,7 +21,7 @@ const Button_CTA = ({ html }) => {
         router.push(localizeUrl(urls.contact, locale));
       }}
     >
-      {html}
+      {label}
     </Button>
   );
 };

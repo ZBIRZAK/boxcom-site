@@ -101,7 +101,7 @@ const WhyChooseUs = ({ data }) => {
     >
       <img
         src="/images/homepage/bg-why-choose-us.webp"
-        alt="Why choose BoxCom"
+        alt="Why choose Boxcom"
         className="absolute w-full h-full object-cover object-center"
       />
 

@@ -23,8 +23,38 @@ import ScrollButton from "../../Buttons/ScrollButton";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
-const ContentMarketing = ({ data }) => {
+const mediaRelationsSentence =
+  'Pour placer ces tribunes dans la presse, nos <a href="https://www.boxcomafrica.com/services/media-relations" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ff0062] transition-colors hover:text-white">relations médias</a> sont portées par Boxcom Africa.';
+const africanMediaSentence =
+  'Pour exister dans les médias africains, découvrez <a href="https://www.boxcomafrica.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ff0062] transition-colors hover:text-white">Boxcom Africa</a>.';
+
+function addMediaRelationsSentence(html = "") {
+  if (!html || html.includes(mediaRelationsSentence)) return html;
+
+  return html.replace(/<li\b[^>]*>[\s\S]*?<\/li>/gi, (listItem) =>
+    /Thought Leadership\s*(?:&amp;|&)\s*Ghostwriting/i.test(listItem)
+      ? listItem.replace(/<\/li>$/i, ` ${mediaRelationsSentence}</li>`)
+      : listItem
+  );
+}
+
+function addAfricanMediaSentence(html = "") {
+  if (!html || html.includes(africanMediaSentence)) return html;
+
+  return html.replace(/<li\b[^>]*>[\s\S]*?<\/li>/gi, (listItem) =>
+    /Contenu multilingue\s*(?:&amp;|&)\s*localisé/i.test(listItem)
+      ? listItem.replace(/<\/li>$/i, ` ${africanMediaSentence}</li>`)
+      : listItem
+  );
+}
+
+const ContentMarketing = ({ data, locale = "en" }) => {
   const isMobile = useIsMobile();
+  let contentServices = data.content_services;
+  if (locale === "fr") {
+    contentServices = addMediaRelationsSentence(contentServices);
+    contentServices = addAfricanMediaSentence(contentServices);
+  }
 
   useEffect(() => {
     if (isMobile) return;
@@ -65,7 +95,7 @@ const ContentMarketing = ({ data }) => {
         <Subtitle1 html={data.subtitle} />
         <ParagraphText html={data.text}  />
         <Title2 html={data.subtitle2} />
-        <TextList html={data.content_services} className={"[&_ul]:list-disc [&_ul]:list-inside [&_ul]:space-y-4"} />
+        <TextList html={contentServices} className={"[&_ul]:list-disc [&_ul]:list-inside [&_ul]:space-y-4"} />
         <EndTitle html={data.bigEndText} />
       </ColumnContentWrapper>
 

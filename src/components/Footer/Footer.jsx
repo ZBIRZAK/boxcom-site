@@ -118,7 +118,7 @@ function getFooterServiceLinks(links = [], locale = "en") {
     ...withoutLeadGeneration,
     {
       text: "Boxcom Africa",
-      link: "https://boxcomafrica.com/",
+      link: "https://www.boxcomafrica.com",
     },
   ];
 }
@@ -204,7 +204,7 @@ const Footer = async ({ locale = "en" }) => {
               <Link href={footer.link_instagram} target="_blank">
                 <img
                   src="/images/social_networks/instagram.svg"
-                  alt="BoxCom Instagram"
+                  alt="Boxcom Instagram"
                   loading="lazy"
                   decoding="async"
                 />
@@ -214,7 +214,7 @@ const Footer = async ({ locale = "en" }) => {
               <Link href={footer.link_tiktok} target="_blank">
                 <img
                   src="/images/social_networks/tiktok.svg"
-                  alt="BoxCom TikTok"
+                  alt="Boxcom TikTok"
                   loading="lazy"
                   decoding="async"
                 />
@@ -224,7 +224,7 @@ const Footer = async ({ locale = "en" }) => {
               <Link href={footer.link_youtube} target="_blank">
                 <img
                   src="/images/social_networks/youtube.svg"
-                  alt="BoxCom YouTube"
+                  alt="Boxcom YouTube"
                   loading="lazy"
                   decoding="async"
                 />
@@ -234,7 +234,7 @@ const Footer = async ({ locale = "en" }) => {
               <Link href={footer.whatsapp} target="_blank">
                 <img
                   src="/images/social_networks/whatsapp.svg"
-                  alt="BoxCom WhatsApp"
+                  alt="Boxcom WhatsApp"
                   loading="lazy"
                   decoding="async"
                 />
@@ -244,7 +244,7 @@ const Footer = async ({ locale = "en" }) => {
               <Link href={footer.link_facebook} target="_blank">
                 <img
                   src="/images/social_networks/facebook.svg"
-                  alt="BoxCom Facebook"
+                  alt="Boxcom Facebook"
                   loading="lazy"
                   decoding="async"
                 />
@@ -254,7 +254,7 @@ const Footer = async ({ locale = "en" }) => {
               <Link href={footer.link_linkedin} target="_blank">
                 <img
                   src="/images/social_networks/linkedin.svg"
-                  alt="BoxCom LinkedIn"
+                  alt="Boxcom LinkedIn"
                   loading="lazy"
                   decoding="async"
                 />

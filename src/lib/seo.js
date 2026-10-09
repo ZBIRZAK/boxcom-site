@@ -76,10 +76,12 @@ export function parseSeoTagsForMetaData(seo) {
   // === Extract Twitter Tags ===
   const twitterCard = $('meta[name="twitter:card"]').attr("content");
   const twitterTitle = $('meta[name="twitter:title"]').attr("content");
-  const twitterLabel1 = $('meta[name="twitter:label1"]').attr("content");
-  const twitterData1 = $('meta[name="twitter:data1"]').attr("content");
-  const twitterLabel2 = $('meta[name="twitter:label2"]').attr("content");
-  const twitterData2 = $('meta[name="twitter:data2"]').attr("content");
+  const twitterCreator = $('meta[name="twitter:creator"]').attr("content");
+  const validTwitterCreator = /^@[A-Za-z0-9_]{1,15}$/.test(
+    twitterCreator || ""
+  )
+    ? twitterCreator
+    : undefined;
 
   const robotsMeta = ($('meta[name="robots"]').attr("content") || "").toLowerCase();
   const googleBotMeta = ($('meta[name="googlebot"]').attr("content") || "").toLowerCase();
@@ -123,14 +125,7 @@ export function parseSeoTagsForMetaData(seo) {
     twitter: {
       card: twitterCard || "summary",
       title: twitterTitle,
-      creator: twitterData1,
-    },
-    other: {
-      // Custom meta tags not directly supported by Next.js Metadata API
-      "twitter:label1": twitterLabel1,
-      "twitter:data1": twitterData1,
-      "twitter:label2": twitterLabel2,
-      "twitter:data2": twitterData2,
+      creator: validTwitterCreator,
     },
   };
 

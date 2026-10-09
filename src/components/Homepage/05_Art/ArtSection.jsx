@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollButton from "../../Buttons/ScrollButton";
 
-const ArtSection = ({ data }) => {
+const ArtSection = ({ data, locale = "en" }) => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -50,7 +50,11 @@ const ArtSection = ({ data }) => {
 
       <div className="flex justify-center md:order-1 order-3 items-center bg-white text-black">
         <div id="art-text" className="max-w-[650px]">
-          <BigIdeas data={data} paragraphStyles={styles.paragraph} />
+          <BigIdeas
+            data={data}
+            locale={locale}
+            paragraphStyles={styles.paragraph}
+          />
         </div>
       </div>
 

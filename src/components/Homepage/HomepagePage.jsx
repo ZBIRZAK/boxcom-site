@@ -40,20 +40,20 @@ export default function HomepagePage({
       <DropOfWater />
       <HeroSection data={dataHeroSection} />
       <NarrativeSection2 data={dataNarrativeSection} />
-      <Expertise
-        id="page01_screen03"
-        nextId="page01_screen03b"
-        data={dataExpertiseSection}
-      />
       <BoxComAfrica
         data={homepageBoxComAfrica}
         locale={locale}
         sectionId="page01_screen03b"
-        nextId="page01_screen04"
+        nextId="page01_screen03"
         titleOverride={
           locale === "fr"
-            ? "DEUX ENTITÉS. UN MÊME ÉCOSYSTÈME."
+            ? "Deux agences, une même ambition"
             : "TWO ENTITIES. ONE ECOSYSTEM."
+        }
+        introOverride={
+          locale === "fr"
+            ? "Boxcom (marketing digital, contenu créatif, développement web et génération de leads) et Boxcom Africa (relations presse, réputation et influence) sont deux agences complémentaires, basées à Casablanca."
+            : undefined
         }
         contentOverrides={
           locale === "fr"
@@ -87,14 +87,21 @@ export default function HomepagePage({
               }
         }
         questionOverride={
-          locale === "fr" ? "Vous avez un projet RP ?" : "Got a PR project?"
+          locale === "fr" ? "" : "Got a PR project?"
         }
         ctaOverride={
-          locale === "fr" ? "Visitez Boxcom Africa" : "Visit Boxcom Africa"
+          locale === "fr"
+            ? "Vous avez un projet de relations presse ? Découvrez Boxcom Africa."
+            : "Visit Boxcom Africa"
         }
       />
+      <Expertise
+        id="page01_screen03"
+        nextId="page01_screen04"
+        data={dataExpertiseSection}
+      />
       <WhyChooseUs data={dataWhyChooseUs} />
-      <ArtSection data={dataBigIdeas} />
+      <ArtSection data={dataBigIdeas} locale={locale} />
       <OurServices data={dataServices} locale={locale} />
       <VisionaryClients data={dataClients} />
       <DeferredSections

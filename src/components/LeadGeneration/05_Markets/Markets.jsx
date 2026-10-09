@@ -18,7 +18,10 @@ import EndTitle from "../../Contents/EndTitle";
 import { useIsMobile } from "../../../contexts/UserAgentProvider";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Markets = ({ data }) => {
+const africaPressSentence =
+  'Pour installer votre marque dans les médias de ces marchés, <a href="https://www.boxcomafrica.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ff0062] transition-colors hover:text-white">Boxcom Africa</a> prend le relais en relations presse.';
+
+const Markets = ({ data, locale = "en" }) => {
 
   const isMobile = useIsMobile();
 
@@ -155,6 +158,7 @@ const Markets = ({ data }) => {
         <ParagraphText html={data.text} />
         <Title2 html={data.subtitle2} />
         <TextList html={data.text2} className="[&_ul]:list-disc [&_ul]:list-inside [&_ul]:space-y-4" />
+        {locale === "fr" ? <ParagraphText html={africaPressSentence} /> : null}
         <EndTitle html={data.bigEndText} />
       </ColumnContentWrapper>
 

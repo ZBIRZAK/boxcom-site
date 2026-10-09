@@ -28,7 +28,10 @@ import EndTitle from "../../Contents/EndTitle";
 import usePinImage from "../../../hooks/usePinImage";
 import ScrollButton from "../ScrollButton";
 
-const SocialMediaManagement = ({ data }) => {
+const influencerRelationsSentence =
+  'Besoin de partenariats avec des créateurs ? Nos <a href="https://www.boxcomafrica.com/services/influencer-relations" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ff0062] transition-colors hover:text-white">relations influenceurs</a> sont portées par Boxcom Africa.';
+
+const SocialMediaManagement = ({ data, locale = "en" }) => {
   usePinImage({
     textId: "socialmedia-text",
     imageId: "cont-img-superwoman-pink-hair",
@@ -52,7 +55,13 @@ const SocialMediaManagement = ({ data }) => {
         <Subtitle1 html={data.subtitle} className="subtitle--white" />
         <ParagraphText html={data.text} className="text--white" />
         <Title2 html={data.subtitle2} className="text--white" />
-        <TextList html={data.socialmedia_services} />
+        <TextList html={data.socialmedia_services} locale={locale} />
+        {locale === "fr" ? (
+          <ParagraphText
+            html={influencerRelationsSentence}
+            className="text--white"
+          />
+        ) : null}
         <EndTitle html={data.bigEndText} className="heading-secondary--white" />
       </ColumnContentWrapper>
 

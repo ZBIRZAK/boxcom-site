@@ -15,10 +15,22 @@ import ScrollButton from "../../Buttons/ScrollButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TheStory = ({ data }) => {
+const boxcomAfricaHistoryLink =
+  '<a href="https://www.boxcomafrica.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ff0062] transition-colors hover:text-white">Boxcom Africa</a>';
+
+function linkBoxcomAfricaInHistory(html = "") {
+  return html.replace(
+    /(donnant naissance à l[’']agence )(Boxcom Africa)/i,
+    `$1${boxcomAfricaHistoryLink}`
+  );
+}
+
+const TheStory = ({ data, locale = "en" }) => {
   // useNextScreenAboveCurrent("page01_screen02", "page01_screen03");
   const isMobile = useIsMobile();
   const router = useRouter();
+  const historyText =
+    locale === "fr" ? linkBoxcomAfricaInHistory(data.text2) : data.text2;
 
   useEffect(() => {
     if (isMobile) return;
@@ -57,7 +69,7 @@ const TheStory = ({ data }) => {
             <h1 className="title text-white">{data.title}</h1>
             <div className="text" dangerouslySetInnerHTML={{ __html: data.text }} />
             <p className="subtitle !text-[#ff0062]">{data.subtitle}</p>
-            <div className="text" dangerouslySetInnerHTML={{ __html: data.text2 }} />
+            <div className="text" dangerouslySetInnerHTML={{ __html: historyText }} />
         </ColumnContentWrapper>
         <div className="md:order-2  flex justify-center items-center md:p-[15%]  h-screen overflow-hidden" id="cont-img-women-wih-tea2">
         <div

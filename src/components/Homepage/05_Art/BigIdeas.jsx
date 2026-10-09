@@ -4,10 +4,25 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BigIdeas = ({ data, paragraphStyles }) => {
+const defactoPressParagraph =
+  '<p class="mt-3"><a href="https://www.boxcomafrica.com/en/projects/defacto" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ff0062] transition-colors hover:text-black">Côté relations presse, découvrez aussi notre travail avec DeFacto sur Boxcom Africa.</a></p>';
+
+function addDefactoPressLink(html = "") {
+  if (!html || html.includes(defactoPressParagraph)) return html;
+
+  return html.replace(/<p\b[^>]*>[\s\S]*?<\/p>/gi, (paragraph) =>
+    /DeFacto Morocco/i.test(paragraph)
+      ? `${paragraph}${defactoPressParagraph}`
+      : paragraph
+  );
+}
+
+const BigIdeas = ({ data, paragraphStyles, locale = "en" }) => {
   const refBigResults = useRef();
   const refBigResults2 = useRef();
   const refContents = useRef();
+  const paragraph =
+    locale === "fr" ? addDefactoPressLink(data.paragraph) : data.paragraph;
 
   useEffect(() => {
     // gsap.set(refBigResults.current, { opacity: 0, x: 500 });
@@ -78,7 +93,7 @@ const BigIdeas = ({ data, paragraphStyles }) => {
         />
         <div
           className="text"
-          dangerouslySetInnerHTML={{ __html: data.paragraph }}
+          dangerouslySetInnerHTML={{ __html: paragraph }}
         />
         <p className="end-title">{data.massive_text}</p>
       </div>

@@ -55,6 +55,7 @@ export async function generateMetadata() {
       ...(data.openGraph || {}),
       title,
       description,
+      locale: "fr_MA",
       url: `${host}${localizeUrl(urls.about, "fr")}`,
     },
     twitter: {
@@ -87,12 +88,13 @@ export default async function AboutFr() {
       <HeroAboutUs />
       <Welcome data={dataWelcome} />
       <MeetDot data={dataMeetDot} />
-      <TheStory data={dataTheStory} />
+      <TheStory data={dataTheStory} locale="fr" />
       <BoxComAfrica data={dataBoxComAfrica} locale="fr" />
       <Expertise
         id="page06_screen06"
         nextId="page06_screen07"
         data={dataExpertiseSection}
+        linkAfricaMilestone
       />
       <WhatMakes data={dataWhatMakes} />
       <OurImpact data={dataOurImpact} />

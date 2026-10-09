@@ -135,7 +135,7 @@ const CaseStudiesCarousel = ({ posts = [], tagNameMap = {} }) => {
                 href={urls.projectPost.replace(":slug", card.slug)}
                 className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#ff0062] px-5 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#ff0062] transition-colors hover:bg-[#ff0062] hover:text-white"
               >
-                <span>Read case study</span>
+                <span>Lire l’étude de cas</span>
                 <span aria-hidden="true" className="text-sm leading-none">
                   →
                 </span>

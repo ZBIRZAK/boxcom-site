@@ -52,7 +52,7 @@ const Logo = ({ onClick, href, light = false, scrolled = false }) => (
       style={
         light && !scrolled ? { filter: "brightness(0) saturate(100%)" } : undefined
       }
-      alt="Logo BoxCom"
+      alt="Logo Boxcom"
     />
   </Link>
 );
