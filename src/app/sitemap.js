@@ -9,13 +9,19 @@ export default function sitemap() {
     lastModified,
     changeFrequency: page.changeFrequency,
     priority: page.priority,
-    alternates: {
-      languages: {
-        en: host + localizeUrl(page.path, "en"),
-        fr: host + localizeUrl(page.path, "fr"),
-        "x-default": host + localizeUrl(page.path, "fr"),
-      },
-    },
+    alternates: page.englishOnly
+      ? {
+          languages: {
+            en: host + localizeUrl(page.path, "en"),
+          },
+        }
+      : {
+          languages: {
+            en: host + localizeUrl(page.path, "en"),
+            fr: host + localizeUrl(page.path, "fr"),
+            "x-default": host + localizeUrl(page.path, "fr"),
+          },
+        },
   });
 
   const englishPages = [
@@ -26,11 +32,17 @@ export default function sitemap() {
     { path: urls.leadGeneration, changeFrequency: "weekly", priority: 1, locale: "en" },
     { path: urls.about, changeFrequency: "weekly", priority: 1, locale: "en" },
     { path: urls.contact, changeFrequency: "weekly", priority: 1, locale: "en" },
+    {
+      path: urls.privacyPolicy,
+      changeFrequency: "monthly",
+      priority: 0.5,
+      locale: "en",
+      englishOnly: true,
+    },
   ];
 
   const untranslatedEnglishPages = [
     { path: urls.projects, changeFrequency: "weekly", priority: 1 },
-    { path: urls.privacyPolicy, changeFrequency: "monthly", priority: 0.5 },
   ];
 
   const frenchPages = [

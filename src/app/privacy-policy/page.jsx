@@ -1,7 +1,7 @@
 import Header from "../../components/Headers/Header";
 import { getHeader } from "../../lib/BackendContents";
 import { getHost } from "../../lib/helpers";
-import { urls } from "../../lib/urls";
+import { localizeUrl, urls } from "../../lib/urls";
 import styles from "./page.module.scss";
 
 export async function generateMetadata() {
@@ -12,17 +12,20 @@ export async function generateMetadata() {
     description:
       "Read Boxcom's Privacy Policy, including data collection, usage, retention, security, and your rights.",
     alternates: {
-      canonical: `${host}${urls.privacyPolicy}`,
+      canonical: `${host}${localizeUrl(urls.privacyPolicy, "en")}`,
+      languages: {
+        en: `${host}${localizeUrl(urls.privacyPolicy, "en")}`,
+      },
     },
   };
 }
 
 export default async function PrivacyPolicyPage() {
-  const header = await getHeader();
+  const header = await getHeader("en");
 
   return (
     <div className={styles.page}>
-      <Header data={header} dark />
+      <Header data={header} dark locale="en" />
 
       <main className={styles.container}>
         <section className={styles.hero}>
