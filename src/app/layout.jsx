@@ -71,9 +71,17 @@ export default async function RootLayout({ children }) {
         <link
           rel="preload"
           as="image"
-          href="/images/homepage/girl-with-glasses-800.webp"
-          imageSrcSet="/images/homepage/girl-with-glasses-800.webp 800w, /images/homepage/girl-with-glasses-q68.webp 1280w"
-          imageSizes="(max-width: 767px) 100vw, 60vw"
+          href="/images/homepage/girl-with-glasses-800.avif"
+          type="image/avif"
+          media="(max-width: 767px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/homepage/girl-with-glasses-q68.webp"
+          type="image/webp"
+          media="(min-width: 768px)"
           fetchPriority="high"
         />
       </head>

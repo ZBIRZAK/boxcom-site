@@ -67,18 +67,23 @@ const GirlWithGlasses = ({ context }) => {
       className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-0 md:w-[60%] w-[100%] md:h-auto h-[70%] z-20 will-change-transform opacity-100 md:opacity-0"
       ref={refContainer}
     >
-      <img
-        src="/images/homepage/girl-with-glasses-800.webp"
-        srcSet="/images/homepage/girl-with-glasses-800.webp 800w, /images/homepage/girl-with-glasses-q68.webp 1280w"
-        sizes="(max-width: 767px) 100vw, 60vw"
-        alt="Woman with glasses"
-        width={1280}
-        height={853}
-        loading="eager"
-        fetchPriority="high"
-        decoding="async"
-        className="w-full h-full object-cover drop-shadow-[0_0_14px_rgb(76,76,76)]"
-      />
+      <picture className="block w-full h-full">
+        <source
+          media="(max-width: 767px)"
+          srcSet="/images/homepage/girl-with-glasses-800.avif"
+          type="image/avif"
+        />
+        <img
+          src="/images/homepage/girl-with-glasses-q68.webp"
+          alt="Woman with glasses"
+          width={1280}
+          height={853}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="w-full h-full object-cover drop-shadow-[0_0_14px_rgb(76,76,76)]"
+        />
+      </picture>
       {showDecor && (
         <>
           <BouncingCreature delay={5} />

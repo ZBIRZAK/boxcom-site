@@ -74,7 +74,7 @@ const NarrativeSection2 = ({ data }) => {
             />
             <source
               media="(max-width: 767px)"
-              srcSet="/images/women-working3-uncut.webp"
+              srcSet="/images/women-working3-uncut-480.webp"
               type="image/webp"
             />
             <img
