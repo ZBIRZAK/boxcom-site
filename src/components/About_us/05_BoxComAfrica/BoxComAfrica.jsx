@@ -87,10 +87,18 @@ const BoxComAfrica = ({
     >
       <img
         src="/images/about_us/bg-boxcom-africa.webp"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
         className="absolute md:block hidden w-full h-full object-cover object-[center_40%]"
       />
       <img
         src="/images/about_us/yin-yang.webp"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
         className="md:hidden mt-30 block absolute w-full  object-cover"
       />
       <div className="absolute md:hidden block top-[41.5%] w-full h-[2px] bg-[#EA389B] shadow-[0_0_10px_2px_rgba(234,56,155,0.6)]" />
@@ -122,6 +130,11 @@ const BoxComAfrica = ({
             <LogoContainer>
             <img
               src="/Logos_Boxcom/logo-new-white-353.webp"
+              alt="Boxcom"
+              loading="lazy"
+              decoding="async"
+              width={353}
+              height={100}
               className="w-[52vw] max-w-[200px] h-auto filter drop-shadow-lg/40"
             />
             </LogoContainer>
@@ -139,6 +152,12 @@ const BoxComAfrica = ({
         <div className="relative md:mt-0  mt-15  flex justify-center pt-10 md:order-2 order-1">
           <img
             src="/images/about_us/girl2.webp"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            width={377}
+            height={602}
             className="relative w-[85vw] max-w-[350px] h-auto mt-13"
           />
           <Leaf1 />
@@ -166,6 +185,11 @@ const BoxComAfrica = ({
             <LogoContainer>
             <img
               src="/Logos_Boxcom/logo-boxcom-africa.webp"
+              alt="Boxcom Africa"
+              loading="lazy"
+              decoding="async"
+              width={722}
+              height={299}
               className="w-[52vw] max-w-[200px] h-auto drop-shadow-lg/40"
             />
             </LogoContainer>

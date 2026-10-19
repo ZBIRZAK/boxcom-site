@@ -44,7 +44,11 @@ const HeroSection = ({ data }) => {
   const [showDecorations, setShowDecorations] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowDecorations(true), isMobile ? 350 : 200);
+    const timer = setTimeout(
+      () => setShowDecorations(true),
+      // Keep non-essential Lottie/GSAP work away from the mobile LCP window.
+      isMobile ? 1500 : 200
+    );
     return () => clearTimeout(timer);
   }, [isMobile]);
 
@@ -64,7 +68,7 @@ const HeroSection = ({ data }) => {
           alt=""
           aria-hidden="true"
           loading="eager"
-          fetchPriority="high"
+          fetchPriority="low"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />

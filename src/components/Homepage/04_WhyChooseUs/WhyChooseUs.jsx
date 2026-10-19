@@ -102,6 +102,8 @@ const WhyChooseUs = ({ data }) => {
       <img
         src="/images/homepage/bg-why-choose-us.webp"
         alt="Why choose Boxcom"
+        loading="lazy"
+        decoding="async"
         className="absolute w-full h-full object-cover object-center"
       />
 

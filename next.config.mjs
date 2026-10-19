@@ -2,6 +2,7 @@ const isProd = process.env.NODE_ENV === "production";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  compress: true,
   // A lockfile also exists above this repository on the development machine.
   // Keep Turbopack scoped to this project instead of scanning the parent tree.
   turbopack: {

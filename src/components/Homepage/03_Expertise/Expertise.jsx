@@ -26,11 +26,25 @@ const Icon = ({ name }) => {
     );
   if (name === "globe")
     return (
-      <div className="w-[60%] h-[60%] bg-[url('/images/globe.webp')] bg-contain bg-no-repeat bg-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <img
+        src="/images/globe.webp"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        className="w-[60%] h-[60%] object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      />
     );
   if (name === "saga")
     return (
-      <div className="w-[60%] h-[60%] bg-[url('/images/saga-africa.webp')] bg-contain bg-no-repeat bg-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <img
+        src="/images/saga-africa.webp"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        className="w-[60%] h-[60%] object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      />
     );
   return null;
 };
@@ -70,6 +84,8 @@ const Expertise = ({
             sizes="100vw"
             alt=""
             aria-hidden="true"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         </div>

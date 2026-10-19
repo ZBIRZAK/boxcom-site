@@ -5,11 +5,32 @@ import ScrollButton from "../../Buttons/ScrollButton";
 import TopSection from "./TopSection";
 import { formatUrl } from "../../../lib/urls";
 import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 const StillDoubting = ({ data }) => {
   const router = useRouter();
-  // console.log(data);
   const videoId = data.youtube_id;
+  const videoContainerRef = useRef(null);
+  const [loadVideo, setLoadVideo] = useState(false);
+
+  useEffect(() => {
+    const container = videoContainerRef.current;
+    if (!container || !videoId) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setLoadVideo(true);
+        observer.disconnect();
+      },
+      // Start loading shortly before the section becomes visible so autoplay
+      // still feels immediate without making YouTube part of initial load.
+      { rootMargin: "600px 0px" }
+    );
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [videoId]);
 
   return (
     <section
@@ -23,13 +44,20 @@ const StillDoubting = ({ data }) => {
           <TopSection data={data} />
         </div>
 
-        <div className="aspect-video relative overflow-hidden rounded-lg">
-          <iframe
-            className="w-full h-full"
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${videoId}&controls=0&disablekb=1&modestbranding=1&rel=0`}
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+        <div
+          ref={videoContainerRef}
+          className="aspect-video relative overflow-hidden rounded-lg bg-black"
+        >
+          {loadVideo && videoId ? (
+            <iframe
+              className="w-full h-full"
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${videoId}&controls=0&disablekb=1&modestbranding=1&rel=0`}
+              title="Boxcom showreel"
+              loading="lazy"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+            />
+          ) : null}
         </div>
 
         {/* <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-4 md:mt-4  z-10 "> */}

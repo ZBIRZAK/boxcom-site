@@ -39,7 +39,12 @@ const africaCardCopy = {
 };
 
 function ensureImgAltAttributes(html = "") {
-  return html.replace(/<img(?![^>]*\balt=)/gi, '<img alt=""');
+  return html
+    // Some CMS rich-text values contain JSON-style escaped quotes. When they
+    // reach innerHTML unchanged, the quote becomes part of the asset URL and
+    // causes a costly 404 page request.
+    .replace(/\\"/g, '"')
+    .replace(/<img(?![^>]*\balt=)/gi, '<img alt=""');
 }
 
 function normalizeSentenceSpacing(html = "") {
