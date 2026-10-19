@@ -1,28 +1,18 @@
 "use client";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import dynamic from "next/dynamic";
 import GirlWithGlasses from "./GirlWithGlasses/GirlWithGlasses";
 import BecauseYourBrand from "./BecauseYourBrand/BecauseYourBrand";
-import Surfer from "../../Doodles/Surfer/Surfer";
-import Hello from "../../Doodles/Hello/Hello";
-import Enveloppe from "../../Doodles/Enveloppe/Enveloppe";
-import Planet from "../../Doodles/Planet/Planet";
 import HomepageProvider from "../HomepageProvider";
 import Marquee from "./Marquee/Marquee";
-import OrangeFlower from "../../Doodles/OrangeFlower/OrangeFlower";
-import PinkMushroom from "../../Doodles/PinkMushroom/PinkMushroom";
-import YellowButterfly from "../../Doodles/YellowButterfly/YellowButterfly";
-import MusicalNote1 from "../../Doodles/MusicalNote1/MusicalNote1";
-import MusicalNote2 from "../../Doodles/MusicalNote2/MusicalNote2";
-import MusicalNote3 from "../../Doodles/MusicalNote3/MusicalNote3";
-import Butterfly from "./Butterfly/Butterfly";
 import ScrollButton from "../../Buttons/ScrollButton";
-import PinkHeart2 from "../../Doodles/PinkHeart/PinkHeart2";
-import WaterSplashes from "./WaterSplashes";
-import BlueFlower2 from "./BlueFlower2";
-import RedMushroom2 from "./RedMushroom2";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../../../contexts/UserAgentProvider";
+
+const HeroDecorations = dynamic(() => import("./HeroDecorations"), {
+  ssr: false,
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,12 +34,22 @@ const HeroSection = ({ data }) => {
   const [showDecorations, setShowDecorations] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(
-      () => setShowDecorations(true),
-      // Keep non-essential Lottie/GSAP work away from the mobile LCP window.
-      isMobile ? 1500 : 200
+    if (!isMobile) {
+      const timer = setTimeout(() => setShowDecorations(true), 200);
+      return () => clearTimeout(timer);
+    }
+
+    const activate = () => setShowDecorations(true);
+    const events = ["pointerdown", "touchstart", "keydown", "scroll"];
+    events.forEach((event) =>
+      window.addEventListener(event, activate, { once: true, passive: true })
     );
-    return () => clearTimeout(timer);
+    const fallbackTimer = setTimeout(activate, 12000);
+
+    return () => {
+      clearTimeout(fallbackTimer);
+      events.forEach((event) => window.removeEventListener(event, activate));
+    };
   }, [isMobile]);
 
   // useNextScreenAboveCurrent("page01_screen01", "page01_screen02");
@@ -86,23 +86,7 @@ const HeroSection = ({ data }) => {
           />
 
           {showDecorations && (
-            <>
-              <WaterSplashes />
-              <Hello delay={isMobile ? 1 : 5} />
-              <Planet delay={isMobile ? 1 : 5} />
-              <Butterfly />
-              <BlueFlower2 delay={isMobile ? 1 : 5} />
-              <OrangeFlower context={context} delay={isMobile ? 1 : 5} />
-              <PinkHeart2 delay={isMobile ? 1 : 5} />
-              <YellowButterfly context={context} delay={isMobile ? 1 : 5} />
-              <Surfer delay={isMobile ? 1 : 6} context={context} />
-              <Enveloppe delay={isMobile ? 1 : 10} />
-              <RedMushroom2 delay={isMobile ? 1 : 5} />
-              <PinkMushroom context={context} delay={isMobile ? 1 : 5} />
-              <MusicalNote1 delay={isMobile ? 1 : 5} />
-              <MusicalNote2 delay={isMobile ? 1 : 5} />
-              <MusicalNote3 delay={isMobile ? 1 : 5} />
-            </>
+            <HeroDecorations context={context} isMobile={isMobile} />
           )}
 
           {showDecorations && (

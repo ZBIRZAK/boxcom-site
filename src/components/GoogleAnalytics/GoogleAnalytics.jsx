@@ -2,15 +2,32 @@
 
 import Script from 'next/script';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function GoogleAnalytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
     if (!measurementId) return;
+
+    const enable = () => setEnabled(true);
+    const events = ['pointerdown', 'touchstart', 'keydown', 'scroll'];
+    events.forEach((event) =>
+      window.addEventListener(event, enable, { once: true, passive: true })
+    );
+    const fallbackTimer = setTimeout(enable, 12000);
+
+    return () => {
+      clearTimeout(fallbackTimer);
+      events.forEach((event) => window.removeEventListener(event, enable));
+    };
+  }, [measurementId]);
+
+  useEffect(() => {
+    if (!measurementId || !enabled) return;
 
     const query = searchParams.toString();
     const url = query ? `${pathname}?${query}` : pathname;
@@ -20,9 +37,9 @@ export default function GoogleAnalytics() {
         page_path: url,
       });
     }
-  }, [measurementId, pathname, searchParams]);
+  }, [enabled, measurementId, pathname, searchParams]);
 
-  if (process.env.NODE_ENV !== 'production' || !measurementId) {
+  if (process.env.NODE_ENV !== 'production' || !measurementId || !enabled) {
     return null;
   }
 
