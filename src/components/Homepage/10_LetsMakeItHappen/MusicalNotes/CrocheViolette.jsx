@@ -37,6 +37,8 @@ export default function CrocheViolette() {
         ref={noteRef}
         src="/images/notes/croche-violette.svg"
         alt="croche violette"
+        loading="lazy"
+        decoding="async"
         className="block w-full h-auto select-none"
         draggable="false"
       />

@@ -63,6 +63,8 @@ export default function CleDeSol({ className = "" }) {
         ref={noteRef}
         src="/images/notes/cledesol.svg"
         alt="clé de sol"
+        loading="lazy"
+        decoding="async"
         className="block w-full h-auto select-none"
         draggable="false"
       />

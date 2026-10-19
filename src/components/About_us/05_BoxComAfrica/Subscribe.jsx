@@ -48,9 +48,9 @@ const Subscribe = () => {
       ref={containerRef}
       className="absolute w-[25%] -left-[70%] top-[85%] rotate-20"
     >
-      <img src="/images/texts/subscribe-without-text.svg" />
+      <img src="/images/texts/subscribe-without-text.svg" alt="" loading="lazy" decoding="async" />
       <div ref={textRef} className="absolute w-[100%] top-0">
-        <img src="/images/texts/subscribe-text.svg" />
+        <img src="/images/texts/subscribe-text.svg" alt="" loading="lazy" decoding="async" />
       </div>
     </div>
   );

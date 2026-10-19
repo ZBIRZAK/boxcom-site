@@ -47,6 +47,8 @@ export default function Whatsapp() {
         ref={iconRef}
         src="/images/social_networks/whatsapp.svg"
         alt="whatsapp"
+        loading="lazy"
+        decoding="async"
         className="block w-full h-auto select-none"
         draggable="false"
       />

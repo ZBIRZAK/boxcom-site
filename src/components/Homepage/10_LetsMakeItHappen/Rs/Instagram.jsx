@@ -40,6 +40,8 @@ export default function Instagram() {
         ref={iconRef}
         src="/images/social_networks/instagram.svg"
         alt="instagram"
+        loading="lazy"
+        decoding="async"
         className="block w-full h-auto select-none"
         draggable="false"
       />

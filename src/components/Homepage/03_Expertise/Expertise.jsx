@@ -60,7 +60,7 @@ const Expertise = ({
     .replace("<span>", '<span class="relative inline-block text-[#ff0078] ">')
     .replace(
       "</span>",
-      '<img src="/images/Design-line.gif" alt="" class="absolute !w-[500px] md:top-[-20%] top-[-10%]"/></span>'
+      '<img src="/images/Design-line.gif" alt="" loading="lazy" decoding="async" class="absolute !w-[500px] md:top-[-20%] top-[-10%]"/></span>'
     );
 
   const milestones = Object.values(data?.milestones || {}).map((item) => ({

@@ -40,6 +40,8 @@ export default function Youtube() {
         ref={iconRef}
         src="/images/social_networks/youtube.svg"
         alt="youtube"
+        loading="lazy"
+        decoding="async"
         className="block w-full h-auto select-none"
         draggable="false"
       />

@@ -34,6 +34,8 @@ export default function Coeur() {
       alt="coeur"
       width={181}
       height={199}
+      loading="lazy"
+      decoding="async"
       draggable="false"
       className=" absolute top-[50%] right-[10%] w-[10%]"
     />

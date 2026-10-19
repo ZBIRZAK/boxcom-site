@@ -135,17 +135,17 @@ const BrushStains = () => {
         ref={stain1Ref}
         className="absolute top-[40%] right-[20%] opacity-0 transition-opacity duration-500"
       >
-        <img src="/images/shapes/tache2.svg" alt="" width={113} height={104} />
+        <img src="/images/shapes/tache2.svg" alt="" width={113} height={104} loading="lazy" decoding="async" />
       </div>
       <div
         ref={stain2Ref}
         className="absolute w-[10%] top-[54%] left-[40%] opacity-0 transition-opacity duration-500"
       >
-        <img src="/images/shapes/tache1.svg" alt="" width={113} height={104} />
+        <img src="/images/shapes/tache1.svg" alt="" width={113} height={104} loading="lazy" decoding="async" />
       </div>
 
       <div ref={brushRef} className="w-[15%] absolute top-0 right-0">
-        <img src="/images/brush.svg" alt="" width={62} height={107} />
+        <img src="/images/brush.svg" alt="" width={62} height={107} loading="lazy" decoding="async" />
       </div>
     </div>
   );

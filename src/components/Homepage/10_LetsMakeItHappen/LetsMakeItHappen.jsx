@@ -19,6 +19,7 @@ import Versbleu from "./Vers/Versbleu";
 import Versvert from "./Vers/Versvert";
 import BtnCTA from "./BtnCTA";
 import { formatUrl, urls } from "../../../lib/urls";
+import RenderNearViewport from "../../Performance/RenderNearViewport";
 
 export default function LetsMakeItHappen({ data }) {
   // console.log("LetsMakeItHappen data:", data);
@@ -36,9 +37,11 @@ export default function LetsMakeItHappen({ data }) {
           loading="lazy"
           decoding="async"
         />
-        <Ballon />
-        <Versbleu />
-        <Versvert />
+        <RenderNearViewport targetId="page10_letsMakeItHappen">
+          <Ballon />
+          <Versbleu />
+          <Versvert />
+        </RenderNearViewport>
 
         <div className="absolute bottom-0 -left-[12%] w-[135%] max-w-none md:-left-[18%] md:w-[125%] md:max-w-none lg:left-17 lg:w-[clamp(660px,50vw,1200px)]">
           <img
@@ -49,21 +52,23 @@ export default function LetsMakeItHappen({ data }) {
             decoding="async"
           />
 
-          <ClaDeSol />
-          <CrocheVerte />
-          <CrocheViolette />
-          <DoubleCroche />
-          <Whatsapp />
-          <Youtube />
-          <Facebook />
-          <Tiktok />
-          <Instagram />
-          <Abeille />
-          <Fleur1 />
-          <Fleur2 />
-          <Fleur3 />
-          <Fleur4 />
-          <Oiseau />
+          <RenderNearViewport targetId="page10_letsMakeItHappen">
+            <ClaDeSol />
+            <CrocheVerte />
+            <CrocheViolette />
+            <DoubleCroche />
+            <Whatsapp />
+            <Youtube />
+            <Facebook />
+            <Tiktok />
+            <Instagram />
+            <Abeille />
+            <Fleur1 />
+            <Fleur2 />
+            <Fleur3 />
+            <Fleur4 />
+            <Oiseau />
+          </RenderNearViewport>
         </div>
       </div>
 

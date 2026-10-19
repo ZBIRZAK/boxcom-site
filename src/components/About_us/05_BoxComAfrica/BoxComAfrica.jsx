@@ -18,6 +18,7 @@ import SEO from "./SEO";
 import Subscribe from "./Subscribe";
 import ScrollButton from "../../Buttons/ScrollButton";
 import Title1 from "../../Contents/Title1";
+import RenderNearViewport from "../../Performance/RenderNearViewport";
 
 const prProjectCopy = {
   en: {
@@ -160,20 +161,22 @@ const BoxComAfrica = ({
             height={602}
             className="relative w-[85vw] max-w-[350px] h-auto mt-13"
           />
-          <Leaf1 />
-          <Subscribe />
-          <Magnifier />
-          <Leaf2 />
-          <SEO />
-          <Leaf3 />
-          <Enveloppe />
-          <Crown />
-          <Camera />
-          <Leaf4 />
-          <Leaf5 />
-          <Chart />
-          <Leaf6 />
-          <Newspaper />
+          <RenderNearViewport targetId={sectionId}>
+            <Leaf1 />
+            <Subscribe />
+            <Magnifier />
+            <Leaf2 />
+            <SEO />
+            <Leaf3 />
+            <Enveloppe />
+            <Crown />
+            <Camera />
+            <Leaf4 />
+            <Leaf5 />
+            <Chart />
+            <Leaf6 />
+            <Newspaper />
+          </RenderNearViewport>
           <div
             className="absolute w-[90vw] md:w-[80vw] py-3 text-center text-black font-bold md:bottom-[-10%] bottom-[-20%]"
             dangerouslySetInnerHTML={{ __html: mergedData.bottomText }}

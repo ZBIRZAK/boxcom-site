@@ -35,7 +35,7 @@ const Magnifier = () => {
   });
   return (
     <div ref={magnifierRef} className="absolute w-[12%] -left-[10%] top-[85%]">
-      <img src="/images/objects/magnifier.svg" />
+      <img src="/images/objects/magnifier.svg" alt="" loading="lazy" decoding="async" />
     </div>
   );
 };

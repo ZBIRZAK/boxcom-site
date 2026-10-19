@@ -83,12 +83,14 @@ const Megaphone = () => {
         ref={soundEffectsRef}
         className="absolute top-[-20%] -right-[40%] w-[50%] pointer-events-none z-0"
       >
-        <img src="/images/objects/sound-effects.svg" alt="Sound effects" />
+        <img src="/images/objects/sound-effects.svg" alt="Sound effects" loading="lazy" decoding="async" />
       </div>
       <img
         ref={speakerRef}
         src="/images/objects/speaker.svg"
         alt="Loudspeaker"
+        loading="lazy"
+        decoding="async"
         className="relative z-10"
       />
     </div>

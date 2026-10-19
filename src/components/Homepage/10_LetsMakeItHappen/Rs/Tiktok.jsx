@@ -47,6 +47,8 @@ export default function Tiktok() {
         ref={iconRef}
         src="/images/social_networks/tiktok.svg"
         alt="tiktok"
+        loading="lazy"
+        decoding="async"
         className="block w-full h-auto select-none"
         draggable="false"
       />

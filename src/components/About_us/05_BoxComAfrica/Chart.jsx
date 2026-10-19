@@ -37,7 +37,7 @@ const Chart = () => {
   });
   return (
     <div ref={chartRef} className="absolute w-[12%] -right-[35%] top-[75%]">
-      <img src="/images/shapes/chart-without-curve.svg" />
+      <img src="/images/shapes/chart-without-curve.svg" alt="" loading="lazy" decoding="async" />
       <div ref={containerRef} className="absolute w-[105%] top-0 left-0">
         {curve && <Lottie animationData={curve} lottieRef={curveRef} />}
       </div>

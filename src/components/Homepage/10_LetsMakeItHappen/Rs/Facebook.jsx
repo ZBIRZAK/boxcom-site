@@ -48,6 +48,8 @@ export default function Facebook() {
         ref={iconRef}
         src="/images/social_networks/facebook.svg"
         alt="facebook"
+        loading="lazy"
+        decoding="async"
         className="block w-full h-auto select-none"
         draggable="false"
       />

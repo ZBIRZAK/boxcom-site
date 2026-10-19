@@ -37,7 +37,7 @@ const NumberOne = ({ ref }) => {
   });
   return (
     <div ref={numberOneRef} className="absolute w-[10%] -left-[12%] top-[2%]">
-      <img src="/images/signs/hashtag_1.svg" />
+      <img src="/images/signs/hashtag_1.svg" alt="" loading="lazy" decoding="async" />
     </div>
   );
 };

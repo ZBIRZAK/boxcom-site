@@ -56,15 +56,15 @@ const Newspaper = () => {
       ref={newsRef}
       className="absolute w-[12%] -right-[75%] top-[90%] rotate-12"
     >
-      <img src="/images/misc/newspaper-without-text.svg" />
+      <img src="/images/misc/newspaper-without-text.svg" alt="" loading="lazy" decoding="async" />
       <div ref={imageRef} className="absolute w-[100%] top-[0%] opacity-0">
-        <img src="/images/misc/newspaper-image.svg" />
+        <img src="/images/misc/newspaper-image.svg" alt="" loading="lazy" decoding="async" />
       </div>
       <div ref={text1Ref} className="absolute w-[100%] top-[0%] opacity-0">
-        <img src="/images/misc/newspaper-text1.svg" />
+        <img src="/images/misc/newspaper-text1.svg" alt="" loading="lazy" decoding="async" />
       </div>
       <div ref={text2Ref} className="absolute w-[100%] top-[0%] opacity-0">
-        <img src="/images/misc/newspaper-text2.svg" />
+        <img src="/images/misc/newspaper-text2.svg" alt="" loading="lazy" decoding="async" />
       </div>
     </div>
   );
