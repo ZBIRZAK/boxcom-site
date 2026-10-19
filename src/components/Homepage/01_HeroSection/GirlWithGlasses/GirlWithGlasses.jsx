@@ -19,10 +19,12 @@ const GirlWithGlasses = ({ context }) => {
 
     if (!reduceMotion) {
       if (isMobile) {
-        gsap.set(refContainer.current, { y: 40, opacity: 0 });
+        // Keep the LCP image paintable from the initial frame. Fading it from
+        // opacity: 0 makes Lighthouse wait for the animation before recording
+        // LCP, while the existing upward entrance motion gives the same feel.
+        gsap.set(refContainer.current, { y: 40, opacity: 1 });
         gsap.to(refContainer.current, {
           y: 0,
-          opacity: 1,
           duration: 1.1,
           delay: 0.1,
           ease: "power2.out",
@@ -80,7 +82,7 @@ const GirlWithGlasses = ({ context }) => {
           height={853}
           loading="eager"
           fetchPriority="high"
-          decoding="async"
+          decoding="sync"
           className="w-full h-full object-cover drop-shadow-[0_0_14px_rgb(76,76,76)]"
         />
       </picture>
