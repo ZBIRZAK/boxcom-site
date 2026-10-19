@@ -1,10 +1,5 @@
 "use client";
 
-import GlassOfTea from "./GlassOfTea/GlassOfTea";
-import BooksGlobe from "./BooksGlobe/BooksGlobe";
-import SmallRobot from "./SmallRobot/SmallRobot";
-import BubbleBulbWrapper from "./BubbleBulbWrapper/BubbleBulbWrapper";
-import Flower from "./Flower/Flower";
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useIsMobile } from "../../../contexts/UserAgentProvider";
@@ -15,6 +10,7 @@ import Subtitle1 from "../../Contents/Subtitle1";
 import ParagraphText from "../../Contents/ParagraphText";
 import EndTitle from "../../Contents/EndTitle";
 import CTAButton from "./CTAButton";
+import DeferredNarrativeDecorations from "./DeferredNarrativeDecorations";
 
 const NarrativeSection2 = ({ data }) => {
   // useNextScreenAboveCurrent("page01_screen02", "page01_screen03");
@@ -94,7 +90,7 @@ const NarrativeSection2 = ({ data }) => {
             className="w-full h-full object-cover object-center md:object-[0%_70%]"
           /> */}
 
-          <BubbleBulbWrapper />
+          <DeferredNarrativeDecorations />
           {/* <div className="absolute aspect-square w-[40%] left-[31%] top-[25%] border-2 border-orange-500">
             <div className="absolute w-[40%] -left-[7%] top-[87%]">
               <img src="/images/shapes/bubble-1.svg" />
@@ -112,11 +108,6 @@ const NarrativeSection2 = ({ data }) => {
               <img src="/images/shapes/bubble-3.svg" />
             </div>
           </div> */}
-          <GlassOfTea />
-          {/* <Donut /> */}
-          <BooksGlobe />
-          <Flower />
-          <SmallRobot />
         </div>
 
         {/* Colonne droite: texte */}
